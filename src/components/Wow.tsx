@@ -42,16 +42,6 @@ export default function Wow({
     const el = ref.current;
     if (!el) return;
 
-    const reduced =
-      typeof window !== "undefined" &&
-      window.matchMedia &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (reduced) {
-      const t = setTimeout(() => setState("show"), 0);
-      return () => clearTimeout(t);
-    }
-
     const show = () => setState("show");
 
     const observer = new IntersectionObserver(

@@ -25,15 +25,15 @@ export default function Defense() {
   return (
     <section className="section defense">
       <div className="container">
-        <div>
-          <SectionHeading
-            title={
-              <>
-                Solving Business Problems With <span className="grad">Technical Solutions</span>
-              </>
-            }
-            desc="We turn your business challenges into smart IT solutions — end-to-end responsibility, from planning to support."
-          />
+        <SectionHeading
+          title={
+            <>
+              Solving Business Problems With <span className="grad">Technical Solutions</span>
+            </>
+          }
+          desc="We turn your business challenges into smart IT solutions — end-to-end responsibility, from planning to support."
+        />
+        <div className="defense-column">
           {features.map((feature, i) => (
             <Reveal key={feature.title} delay={i + 1}>
               <div className="defense-feature">

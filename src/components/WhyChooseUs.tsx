@@ -38,7 +38,8 @@ export default function WhyChooseUs() {
                 18+ Years of <span className="grad">Your Trust</span> & Successful IT Services
               </>
             }
-            desc="We provide IT Infrastructure & Cyber Security Services for your Business. We are a team of skilled experts dedicated to delivering tailored IT solutions to support our clients in meeting their business goals. At CoreGenix, we pride ourselves on our commitment to resolving intricate technological hurdles through thorough planning and consultancy services. Rest assured, every project we undertake strictly adheres to the relevant standards and specifications."
+            lead="We provide IT Infrastructure & Cyber Security Services for your Business"
+            desc="We are a team of skilled experts dedicated to delivering tailored IT solutions to support our clients in meeting their business goals. At CoreGenix, we pride ourselves on our commitment to resolving intricate technological hurdles through thorough planning and consultancy services. Rest assured, every project we undertake strictly adheres to the relevant standards and specifications."
           />
           <ul className="about-list">
             {features.map((feature, i) => (

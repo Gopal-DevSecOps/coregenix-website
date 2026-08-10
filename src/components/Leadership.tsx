@@ -3,11 +3,11 @@ import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
 const team = [
-  { name: "Maj. S K Goyal", role: "Founder & Director", image: "/images/coregenix/team-1.jpg" },
-  { name: "Alka", role: "Head of Operations", image: "/images/coregenix/team-2.jpg" },
-  { name: "Monika", role: "Delivery Manager", image: "/images/coregenix/team-3.jpg" },
-  { name: "Yusuf", role: "Technical Lead", image: "/images/coregenix/team-4.jpg" },
-  { name: "Sheltan", role: "Security Expert", image: "/images/coregenix/team-5.jpg" },
+  { name: "Maj. S K Goyal", role: "MD & CFO", image: "/images/coregenix/team-1.jpg" },
+  { name: "Alka", role: "Director", image: "/images/coregenix/team-2.jpg" },
+  { name: "Monika", role: "Business Head", image: "/images/coregenix/team-3.jpg" },
+  { name: "Yusuf", role: "Technology Lead", image: "/images/coregenix/team-4.jpg" },
+  { name: "Sheltan", role: "Tech & Innovation Head", image: "/images/coregenix/team-5.jpg" },
 ];
 
 export default function Leadership() {

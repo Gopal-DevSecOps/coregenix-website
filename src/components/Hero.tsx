@@ -15,15 +15,15 @@ const SLIDE_DURATION = 7000;
 const slides: Slide[] = [
   {
     bg: "/images/coregenix/hero-1.png",
-    line1: "Secure IT Infrastructure",
-    line2: "& Cloud Solutions",
-    desc: "CoreGenix engineers, secures and manages enterprise IT — from hybrid cloud and data centers to 24/7 managed support that keeps your business resilient, compliant and always ahead.",
+    line1: "A Strategy that",
+    line2: "Creates Solutions",
+    desc: "We are a strong team of professionals delivering IT Services.",
   },
   {
     bg: "/images/coregenix/hero-2.png",
-    line1: "Proactive Cyber Security",
-    line2: "& Managed IT Services",
-    desc: "From threat detection and OT security to staff augmentation and InfoSec GRC — we protect, optimize and scale your technology end-to-end, around the clock.",
+    line1: "Your vision will",
+    line2: "become a reality!",
+    desc: "Let's have a perfect game plan",
   },
 ];
 
@@ -96,12 +96,12 @@ export default function Hero() {
                 </h1>
                 <p className="hero-desc">{slide.desc}</p>
                 <div className="hero-actions">
-                  <a href="#contact" className="btn btn-grad hero-cta-primary">
+                  <a href="/contact" className="btn btn-grad hero-cta-primary">
                     Get Free Consultation
                     <ArrowRightIcon />
                   </a>
-                  <a href="#services" className="btn btn-hero-secondary">
-                    View Portfolio
+                  <a href="/services" className="btn btn-hero-secondary">
+                    View Solutions
                   </a>
                 </div>
               </div>

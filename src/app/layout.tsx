@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Open_Sans, Playfair_Display, Roboto } from "next/font/google";
+import HashLinkHandler from "@/components/HashLinkHandler";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -42,6 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body className={`${playfair.variable} ${openSans.variable} ${roboto.variable}`}>
+        <HashLinkHandler />
         {children}
       </body>
     </html>

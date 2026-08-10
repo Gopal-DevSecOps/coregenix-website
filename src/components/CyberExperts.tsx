@@ -20,8 +20,7 @@ export default function CyberExperts() {
               Cyber Security Experts
             </Wow>
             <Wow delay={350} as="h2" className="ce-title">
-              Comprehensive Cybersecurity Solutions for{" "}
-              <span className="grad">Modern Threats</span>
+              Comprehensive Cybersecurity Solutions for <span className="grad">Modern Threats</span>
             </Wow>
           </div>
 

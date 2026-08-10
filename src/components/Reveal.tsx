@@ -35,16 +35,6 @@ export default function Reveal({
     const el = ref.current;
     if (!el) return;
 
-    const reduced =
-      typeof window !== "undefined" &&
-      window.matchMedia &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (reduced) {
-      const t = setTimeout(() => setVisible(true), 0);
-      return () => clearTimeout(t);
-    }
-
     const show = () => setVisible(true);
 
     const observer = new IntersectionObserver(

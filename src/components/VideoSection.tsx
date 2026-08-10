@@ -92,7 +92,7 @@ export default function VideoSection() {
                 </>
               )}
             </button>
-            <a href="#contact" className="btn btn-light">
+            <a href="/contact" className="btn btn-light">
               Get Free Consultation
               <PhoneIcon />
             </a>

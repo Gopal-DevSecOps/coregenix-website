@@ -1,0 +1,144 @@
+.services-page {
+  padding-top: 70px;
+}
+
+.services-page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.service-page-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.service-page-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--gold-2);
+}
+
+.service-page-card .icon-box {
+  width: 58px;
+  height: 58px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  background: var(--accent-grad);
+  color: #fff;
+  margin-bottom: 22px;
+}
+
+.service-page-card .icon-box svg {
+  width: 28px;
+  height: 28px;
+}
+
+.service-page-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.service-page-card > p {
+  color: var(--text-soft);
+  font-size: 14.5px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.service-features {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.service-features li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 14.5px;
+  color: var(--text-soft);
+}
+
+.service-features li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent-grad);
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 700;
+  color: var(--gold);
+  transition: gap 0.3s ease;
+}
+
+.service-link svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.service-link:hover {
+  gap: 13px;
+}
+
+.services-cta {
+  padding-top: 0;
+}
+
+.services-cta-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background: var(--accent-grad);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 46px 52px;
+  box-shadow: var(--shadow-card);
+  flex-wrap: wrap;
+}
+
+.services-cta-box h2 {
+  color: #fff;
+  font-size: clamp(24px, 3vw, 34px);
+  max-width: 560px;
+}
+
+.services-cta-box p {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 992px) {
+  .services-page-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .services-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-cta-box {
+    padding: 34px 24px;
+    text-align: center;
+    justify-content: center;
+  }
+}

@@ -14,7 +14,7 @@ export default function Cta() {
                 and cyber security secure and efficient.
               </p>
             </div>
-            <a href="#contact" className="btn btn-light">
+            <a href="/contact" className="btn btn-light">
               Get Free Consultation
               <ArrowRightIcon />
             </a>

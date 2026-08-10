@@ -5,7 +5,14 @@ import {
   MapPinIcon,
 } from "./Icons";
 
-const companyLinks = ["About Us", "Our Team", "Our Services", "Contact Us", "Blog"];
+const companyLinks = [
+  { label: "About Us", href: "/about" },
+  { label: "Our Team", href: "/about#team" },
+  { label: "Our Services", href: "/services" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Blog", href: "/blog" },
+  { label: "Career", href: "/career" },
+];
 const serviceLinks = [
   "Managed Support Services",
   "Cloud Infrastructure",
@@ -31,12 +38,12 @@ export default function Footer() {
               technology partnership for your business growth and safety.
             </p>
             <div className="footer-social">
-              <a href="#home" aria-label="LinkedIn">
+              <a href="https://in.linkedin.com/company/cgces-pvt-ltd" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                   <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.55V9h3.57v11.45Z" />
                 </svg>
               </a>
-              <a href="#home" aria-label="Facebook">
+              <a href="https://www.facebook.com/people/CoreGenix/61583901786730/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                   <path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07Z" />
                 </svg>
@@ -53,8 +60,8 @@ export default function Footer() {
             <h4>Company</h4>
             <ul>
               {companyLinks.map((link) => (
-                <li key={link}>
-                  <a href="#about">{link}</a>
+                <li key={link.label}>
+                  <a href={link.href}>{link.label}</a>
                 </li>
               ))}
             </ul>

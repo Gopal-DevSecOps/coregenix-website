@@ -65,8 +65,7 @@ export default function Services() {
           center
           title={
             <>
-              We provide <span className="grad">IT Infrastructure</span> & Cyber Security Services for your Business
-            </>
+              We provide <span className="grad">IT Infrastructure</span> & Cyber Security Services for your Business</>
           }
           desc="Complete range of technology services — from IT support and cloud to security and compliance — tailored to your business."
         />

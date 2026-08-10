@@ -52,8 +52,7 @@ export default function WhatWeProvide() {
               What We Provide
             </Wow>
             <Wow delay={500} as="h2" className="section-title">
-              Robust Cybersecurity Services for{" "}
-              <span className="grad">Today&apos;s Threats</span>
+              Robust Cybersecurity Services for <span className="grad">Today&apos;s Threats</span>
             </Wow>
             <Wow delay={700} as="p" className="wwp-desc">
               Protect your business from ever-evolving cyber risks with our end-to-end
