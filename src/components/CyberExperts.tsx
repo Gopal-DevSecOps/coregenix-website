@@ -14,16 +14,16 @@ export default function CyberExperts() {
     <section id="cyber-experts" className="section cyber-experts">
       <div className="float-shape float-shape-1" aria-hidden="true" />
       <div className="container">
-        <div className="ce-grid">
-          <div className="ce-copy">
-            <Wow delay={200} as="span" className="eyebrow">
-              Cyber Security Experts
-            </Wow>
-            <Wow delay={350} as="h2" className="ce-title">
-              Comprehensive Cybersecurity Solutions for <span className="grad">Modern Threats</span>
-            </Wow>
-          </div>
+        <div className="ce-head">
+          <Wow delay={200} as="span" className="eyebrow">
+            Cyber Security Experts
+          </Wow>
+          <Wow delay={350} as="h2" className="ce-title">
+            Comprehensive Cybersecurity Solutions for <span className="grad">Modern Threats</span>
+          </Wow>
+        </div>
 
+        <div className="ce-grid">
           <div className="ce-media">
             <Wow animation="zoom" delay={300} className="ce-main-img">
               <Image

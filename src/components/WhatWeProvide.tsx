@@ -46,14 +46,17 @@ export default function WhatWeProvide() {
   return (
     <section id="what-we-provide" className="section wwp section-dark">
       <div className="container">
+        <div className="wwp-head">
+          <Wow delay={300} as="span" className="eyebrow">
+            What We Provide
+          </Wow>
+          <Wow delay={500} as="h2" className="section-title">
+            Robust Cybersecurity Services for <span className="grad">Today&apos;s Threats</span>
+          </Wow>
+        </div>
+
         <div className="wwp-grid">
           <div className="wwp-copy">
-            <Wow delay={300} as="span" className="eyebrow">
-              What We Provide
-            </Wow>
-            <Wow delay={500} as="h2" className="section-title">
-              Robust Cybersecurity Services for <span className="grad">Today&apos;s Threats</span>
-            </Wow>
             <Wow delay={700} as="p" className="wwp-desc">
               Protect your business from ever-evolving cyber risks with our end-to-end
               security solutions. We offer advanced threat detection, real-time monitoring,
