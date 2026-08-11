@@ -5,8 +5,8 @@ import SectionHeading from "./SectionHeading";
 const team = [
   { name: "Maj. S K Goyal", role: "MD & CFO", image: "/images/coregenix/team-1.jpg" },
   { name: "Alka", role: "Director", image: "/images/coregenix/team-2.jpg" },
-  { name: "Monika", role: "Business Head", image: "/images/coregenix/team-3.jpg" },
-  { name: "Yusuf", role: "Technology Lead", image: "/images/coregenix/team-4.jpg" },
+  { name: "Monika", role: "Sales Head", image: "/images/coregenix/team-3.jpg" },
+  { name: "Yusuf", role: "Cyber Security SME & Technical Director", image: "/images/coregenix/team-4.jpg" },
   { name: "Sheltan", role: "Tech & Innovation Head", image: "/images/coregenix/team-5.jpg" },
 ];
 

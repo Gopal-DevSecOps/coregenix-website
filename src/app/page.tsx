@@ -4,7 +4,6 @@ import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
 import CustomerSuccess from "@/components/CustomerSuccess";
 import Services from "@/components/Services";
-import WhyChooseUs from "@/components/WhyChooseUs";
 import Defense from "@/components/Defense";
 import TextMarquee from "@/components/TextMarquee";
 import WhatWeProvide from "@/components/WhatWeProvide";
@@ -26,17 +25,16 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
-        <WhyChooseUs />
         <TrustBar />
-        <CustomerSuccess />
         <Defense />
         <TextMarquee />
         <WhatWeProvide />
         <CyberExperts />
         <VideoSection />
+        <CustomerSuccess />
+        <Partners />
         <Testimonials />
         <Leadership />
-        <Partners />
         <BlogGrid />
         <Cta />
       </main>

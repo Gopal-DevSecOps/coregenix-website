@@ -4,17 +4,121 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { ChevronDownIcon, PhoneIcon, MailIcon, MapPinIcon } from "./Icons";
 
-const menu: { label: string; href: string; children?: { label: string; href: string }[] }[] = [
+interface MegaItem {
+  label: string;
+  href: string;
+}
+
+interface MegaGroup {
+  title: string;
+  items: MegaItem[];
+  wide?: boolean;
+}
+
+interface MenuItem {
+  label: string;
+  href: string;
+  mega?: MegaGroup[];
+  foot?: MegaItem[];
+  cols2?: boolean;
+}
+
+const menu: MenuItem[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Solutions & Services", href: "/solutions", children: [
-    { label: "Cyber Security Solutions & Services", href: "/solutions" },
-    { label: "IT Enterprise Solutions & Services", href: "/it-services" },
-    { label: "InfoSec GRC & Audits", href: "/solutions#grc" },
-    { label: "Cloud Infrastructure", href: "/services#cloud-infrastructure" },
-    { label: "Managed Support Services", href: "/services#managed-support" },
-    { label: "FMS & Staff Augmentation", href: "/services#staff-augmentation" },
-  ]},
+  {
+    label: "Services",
+    href: "/services",
+    mega: [
+      {
+        title: "IT Managed Services",
+        items: [
+          { label: "NOC", href: "/services" },
+          { label: "AMC", href: "/services" },
+          { label: "PMC", href: "/services" },
+        ],
+      },
+      {
+        title: "Cloud Managed Services",
+        items: [
+          { label: "Cloud Strategy", href: "/services" },
+          { label: "Cloud Infrastructure Management", href: "/services" },
+          { label: "Backup & Recovery", href: "/services" },
+        ],
+      },
+      {
+        title: "Audit & Assessment",
+        items: [
+          { label: "GRC & DPO", href: "/solutions#grc" },
+          { label: "VAPT", href: "/solutions#vapt" },
+          { label: "Red Teaming", href: "/solutions#vapt" },
+          { label: "Audit", href: "/solutions#grc" },
+        ],
+      },
+      {
+        title: "Managed Security Services",
+        wide: true,
+        items: [
+          { label: "Managed SOC", href: "/solutions#soc" },
+          { label: "Vulnerability Management-as-a-Service", href: "/solutions#xaas" },
+          { label: "WAF-as-a-Service", href: "/solutions#xaas" },
+          { label: "DLP-as-a-Service", href: "/solutions#xaas" },
+          { label: "Email Security", href: "/solutions#xaas" },
+          { label: "OT Security", href: "/solutions#ot-security" },
+        ],
+      },
+    ],
+  },
+  {
+    label: "Solutions",
+    href: "/solutions",
+    mega: [
+      {
+        title: "IT Infrastructure Solutions",
+        items: [
+          { label: "Network", href: "/it-services#infrastructure" },
+          { label: "DC", href: "/it-services#infrastructure" },
+          { label: "Data Backup", href: "/it-services#infrastructure" },
+          { label: "DR & BCP", href: "/it-services#infrastructure" },
+        ],
+      },
+      {
+        title: "Cloud Infrastructure Solutions",
+        items: [
+          { label: "Private Cloud", href: "/services" },
+          { label: "Public Cloud", href: "/services" },
+          { label: "Hybrid Cloud", href: "/services" },
+        ],
+      },
+      {
+        title: "Cyber Security Solutions",
+        items: [
+          { label: "Infrastructure Security", href: "/solutions#it-security" },
+          { label: "IAM", href: "/solutions#it-security" },
+          { label: "SSO", href: "/solutions#it-security" },
+          { label: "PAM", href: "/solutions#it-security" },
+          { label: "Zero Trust", href: "/solutions#it-security" },
+          { label: "DLP", href: "/solutions#it-security" },
+          { label: "EDR / MDR / XDR", href: "/solutions#it-security" },
+        ],
+      },
+      {
+        title: "GRC & DPO",
+        wide: true,
+        items: [
+          { label: "GRC & Cyber Audits", href: "/solutions#grc" },
+          { label: "Risk Management", href: "/solutions#grc" },
+          { label: "Compliance", href: "/solutions#grc" },
+          { label: "Risk & Compliance Assessment", href: "/solutions#grc" },
+          { label: "NIST CSF", href: "/solutions#grc" },
+          { label: "IT Risk Assessment", href: "/solutions#grc" },
+          { label: "IT Policy & Security Policy", href: "/solutions#grc" },
+          { label: "ISMS & Cyber Security", href: "/solutions#grc" },
+          { label: "BCP / DR", href: "/solutions#grc" },
+        ],
+      },
+    ],
+  },
   { label: "Blog", href: "/blog" },
   { label: "Career", href: "/career" },
   { label: "Contact", href: "/contact" },
@@ -24,11 +128,41 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openSub, setOpenSub] = useState<string | null>(null);
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
+  const [megaOpen, setMegaOpen] = useState<string | null>(null);
+  const [megaPos, setMegaPos] = useState<{ x: number; y: number } | null>(null);
   const lastY = useRef(0);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
+  const megaOpenRef = useRef<string | null>(null);
   const pathname = usePathname();
+
+  const megaItem = menu.find((i) => i.label === megaOpen);
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname === href;
+
+  const openMega = (label: string) => {
+    const el = linkRefs.current[label];
+    if (!el) return;
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    const rect = el.getBoundingClientRect();
+    setMegaPos({ x: rect.left + rect.width / 2, y: rect.bottom + 16 });
+    setMegaOpen(label);
+  };
+
+  const scheduleClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setMegaOpen(null), 160);
+  };
+
+  const cancelClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+  };
+
+  useEffect(() => {
+    megaOpenRef.current = megaOpen;
+  }, [megaOpen]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -41,10 +175,18 @@ export default function Header() {
       } else if (y < 40 && !goingDown) {
         setScrolled(false);
       }
+
+      if (megaOpenRef.current) setMegaOpen(null);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onResize = () => setMegaOpen(null);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, []);
 
   useEffect(() => {
@@ -111,25 +253,24 @@ export default function Header() {
             <nav className="nav" aria-label="Main navigation">
               {menu.map((item) => {
                 const active = isActive(item.href);
+                const isMega = Boolean(item.mega);
                 return (
                 <div className="nav-item" key={item.label}>
                   <a
-                    className={`nav-link ${active ? "active" : ""}`}
+                    ref={(el) => {
+                      linkRefs.current[item.label] = el;
+                    }}
+                    className={`nav-link ${active ? "active" : ""} ${megaOpen === item.label ? "hover" : ""}`}
                     href={item.href}
                     aria-current={active ? "page" : undefined}
+                    onMouseEnter={() => isMega && openMega(item.label)}
+                    onMouseLeave={scheduleClose}
+                    onFocus={() => isMega && openMega(item.label)}
+                    onBlur={scheduleClose}
                   >
                     <span className="nav-link-text">{item.label}</span>
-                    {item.children && <ChevronDownIcon className="chevron" />}
+                    {item.mega && <ChevronDownIcon className="chevron" />}
                   </a>
-                  {item.children && (
-                    <div className="dropdown">
-                      {item.children.map((child) => (
-                        <a key={child.label} href={child.href}>
-                          {child.label}
-                        </a>
-                      ))}
-                    </div>
-                  )}
                 </div>
                 );
               })}
@@ -149,24 +290,78 @@ export default function Header() {
             </div>
           </div>
         </div>
+
+        {megaItem?.mega && megaPos && (
+          <div
+            className={`dropdown mega mega--fixed ${megaItem.cols2 ? "mega--cols2" : ""}`}
+            style={{ left: megaPos.x, top: megaPos.y }}
+            onMouseEnter={cancelClose}
+            onMouseLeave={scheduleClose}
+            onFocus={cancelClose}
+            onBlur={scheduleClose}
+          >
+            <div className={`mega-groups ${megaItem.cols2 ? "mega-groups--cols2" : ""}`}>
+              {megaItem.mega.map((group) => (
+                <div className={`mega-group ${group.wide ? "mega-group--wide" : ""}`} key={group.title}>
+                  <h4 className="mega-group-title">{group.title}</h4>
+                  <div className={group.wide ? "mega-group-items" : undefined}>
+                    {group.items.map((sub) => (
+                      <a key={sub.label} href={sub.href}>
+                        {sub.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mega-foot">
+              {megaItem.foot?.map((f) => (
+                <a key={f.label} href={f.href} className="mega-foot-link">
+                  {f.label}
+                </a>
+              ))}
+              <a href="/contact" className="btn btn-grad btn-sm mega-foot-cta">
+                Get Free Consultation
+              </a>
+            </div>
+          </div>
+        )}
       </header>
 
       <div className={`mobile-menu ${mobileOpen ? "open" : ""}`}>
         {menu.map((item) => (
           <div className="m-menu-item" key={item.label}>
-            {item.children ? (
+            {item.mega ? (
               <>
                 <button
-                  className={`m-menu-toggle ${isActive(item.href) ? "active" : ""}`}
+                  className={`m-menu-toggle ${openSub === item.label ? "active" : ""}`}
                   onClick={() => setOpenSub(openSub === item.label ? null : item.label)}
                 >
                   {item.label}
                   <ChevronDownIcon />
                 </button>
-                <div className={`m-sub ${openSub === item.label ? "open" : ""}`}>
-                  {item.children.map((child) => (
-                    <a key={child.label} href={child.href} onClick={() => setMobileOpen(false)}>
-                      {child.label}
+                <div className={`m-sub m-mega-sub ${openSub === item.label ? "open" : ""}`}>
+                  {item.mega.map((group) => (
+                    <div className="m-group" key={group.title}>
+                      <button
+                        className={`m-group-toggle ${openGroup === group.title ? "active" : ""}`}
+                        onClick={() => setOpenGroup(openGroup === group.title ? null : group.title)}
+                      >
+                        {group.title}
+                        <ChevronDownIcon />
+                      </button>
+                      <div className={`m-group-items ${openGroup === group.title ? "open" : ""}`}>
+                        {group.items.map((sub) => (
+                          <a key={sub.label} href={sub.href} onClick={() => setMobileOpen(false)}>
+                            {sub.label}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                  {item.foot?.map((f) => (
+                    <a key={f.label} href={f.href} onClick={() => setMobileOpen(false)} className="m-group-standalone">
+                      {f.label}
                     </a>
                   ))}
                 </div>
