@@ -514,9 +514,7 @@ button {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: #ffffff;
   box-shadow: 0 4px 20px rgba(27, 42, 56, 0.08);
   transition: top 0.35s ease, background 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
   padding: 4px 0;
@@ -524,11 +522,14 @@ button {
 
 .header.scrolled {
   top: 0;
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: #ffffff;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
   padding: 2px 0;
+}
+
+.header.open {
+  z-index: 1200;
+  background: #fff;
 }
 
 .header-inner {
@@ -909,7 +910,7 @@ button {
 .hero-title .grad {
   font-style: italic;
   color: #f2711c;
-  font-size: 36px;
+  font-size: 1em;
   display: block;
   margin-top: 2px;
 }
@@ -2695,7 +2696,7 @@ button {
   .about .container,
   .defense .container { grid-template-columns: 1fr; gap: 50px; }
   .ce-grid { grid-template-columns: 1fr; gap: 44px; }
-  .ce-media { max-width: 640px; }
+  .ce-media { max-width: 640px; margin-inline: auto; width: 100%; }
   .wwp-grid { grid-template-columns: 1fr; gap: 44px; }
   .about-media .main-img,
   .defense-media .main-img { height: auto; aspect-ratio: 1376 / 768; }
@@ -2706,9 +2707,13 @@ button {
   .topbar { display: none; }
   .header { top: 0; }
   .header.scrolled { top: 0; }
+  .logo img { height: 68px; }
+  .header.scrolled .logo img { height: 60px; }
   .hero { min-height: 100vh; margin-top: 0; padding: 70px 0; }
   .hero-content { padding: 36px 40px; width: auto; max-width: 560px; height: auto; margin-right: auto; margin-left: 0; margin-top: 20px; }
   .trust-metrics { grid-template-columns: repeat(2, 1fr); }
+  .page-hero { padding: 112px 0 56px; }
+  .page-hero .page-hero-desc { font-size: 17px; }
 }
 
 @media (max-width: 768px) {
@@ -2749,11 +2754,18 @@ button {
   .hero-actions .btn { width: 100%; }
   .video-actions { flex-direction: column; width: 100%; }
   .video-actions .btn { width: 100%; }
+  .cta-box .btn,
+  .about-cta-box .btn,
+  .services-cta-box .btn,
+  .career-cta-box .btn { width: 100%; }
   .hero-title { font-size: 30px; }
-  .hero-title .grad { font-size: 36px; }
   .hero-desc { font-size: 15px; }
   .hero-slider-nav { bottom: 28px; }
   .stats-certs img { width: 90px; height: 90px; }
+  .page-hero { padding: 92px 0 44px; }
+  .page-hero .page-hero-title { font-size: clamp(28px, 7.5vw, 40px); }
+  .page-hero .page-hero-desc { font-size: 15.5px; }
+  .page-hero .page-hero-eyebrow { font-size: 12px; padding: 7px 14px; }
 }
 
 @media (max-width: 480px) {
@@ -2764,13 +2776,25 @@ button {
   .stats-grid { gap: 16px; }
   .stat-num { font-size: 40px; }
   .container { padding: 0 16px; }
-  .header { padding: 12px 0; }
+  .header { padding: 8px 0; }
   .logo { font-size: 22px; }
+  .logo img { height: 54px; }
+  .header.scrolled .logo img { height: 50px; }
   .tst-card { padding: 28px 18px; }
   .video-section { padding: 64px 0; }
   .cs-section { padding: 56px 0; }
   .cs-marquee--justified .cs-item { width: 46vw; height: 100px; }
   .cs-marquee--masonry .cs-item { width: 38vw; height: 90px; }
+  .hero-content { padding: 28px 20px; }
+  .hero-title { font-size: 26px; }
+  .hero-badge { padding: 8px 16px; font-size: 11px; margin-bottom: 20px; }
+  .hero-desc { margin-bottom: 28px; }
+  .ce-stat-card { left: 8px; bottom: 10px; padding: 14px 16px; max-width: 165px; }
+  .ce-stat-num { font-size: 26px; }
+  .ce-stat-label { font-size: 12px; }
+  .about-media .float-card { left: 8px; bottom: 12px; padding: 14px 18px; min-width: 0; }
+  .about-media .float-card .num { font-size: 28px; }
+  .mobile-menu { padding: 84px 20px 32px; }
 }
 
 @media (max-width: 768px) {

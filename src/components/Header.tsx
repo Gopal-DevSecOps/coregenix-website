@@ -95,7 +95,7 @@ export default function Header() {
         </div>
       </div>
 
-      <header className={`header ${scrolled ? "scrolled" : ""}`}>
+      <header className={`header ${scrolled ? "scrolled" : ""} ${mobileOpen ? "open" : ""}`}>
         <div className="container">
           <div className="header-inner">
             <a href="#home" className="logo" onClick={() => setMobileOpen(false)}>
