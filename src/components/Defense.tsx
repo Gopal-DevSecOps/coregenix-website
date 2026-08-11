@@ -26,6 +26,7 @@ export default function Defense() {
     <section className="section defense">
       <div className="container">
         <SectionHeading
+          center
           title={
             <>
               Solving Business Problems With <span className="grad">Technical Solutions</span>

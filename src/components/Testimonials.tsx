@@ -7,22 +7,23 @@ import { QuoteIcon } from "./Icons";
 
 const testimonials = [
   {
-    text: "The CoreGenix team completely transformed our IT infrastructure. Their support and professionalism are outstanding — and they directly contributed to our business growth.",
-    name: "Manish Mehta",
-    role: "Client",
-    avatar: "/images/coregenix/testi-1.png",
-  },
-  {
-    text: "For cyber security solutions, you can't find a better partner than CoreGenix. They fully secured our data and gave us peace of mind with real-time monitoring.",
+    text: "Services at CGCE are excellent, and they perfectly aligned with us for Cloud and software licenses. The renewal process was smooth, and they always adhered to timelines. We had a hassle-free and pleasant experience. Highly recommend CGCE for all IT needs!",
     name: "Yashwant",
-    role: "Client",
-    avatar: "/images/coregenix/testi-2.jpg",
+    role: "Head IT",
+    avatar: "/images/coregenix/yashwant.jpg",
   },
   {
-    text: "Cloud migration and backup solutions went very smoothly. Their team is always ready to resolve any issue quickly. Highly recommended!",
-    name: "Client",
-    role: "Satisfied Customer",
-    avatar: "/images/coregenix/testi-3.png",
+    text: "CGCE is a game-changer! Their digital transformation services exceeded our expectations with impeccable service, adhering to timelines without any hassle. Their proactive response to challenges proved their commitment to customer satisfaction. From start to finish, CGCE proved to be the ultimate one-stop shop for all our IT needs. We're thrilled with the results and highly recommend their services to all businesses seeking reliable IT solutions.",
+    name: "Mahindra & Mahindra",
+    role: "Verified Client",
+    avatar: "/images/coregenix/mahindra.png",
+    isLogo: true,
+  },
+  {
+    text: "CGCE, the IT company we recently collaborated with to purchase few firewall. Their service was truly outstanding, from start to finish. The team demonstrated remarkable professionalism and a keen understanding of our needs, resulting in a seamless and hassle-free process. What impressed us most was their adherence to timelines– they delivered the firewall promptly. Moreover their proactive response to potential issues showcased their commitment to customer satisfaction. We couldn't be happier with CGCE's expertise and dedication. They are definitely our go-to IT solution provider!",
+    name: "Manish Mehta",
+    role: "Head IT (India)",
+    avatar: "/images/coregenix/manish.png",
   },
 ];
 
@@ -48,6 +49,7 @@ export default function Testimonials() {
               Hear It from Our <span className="grad">Happy Customers</span>
             </>
           }
+          desc="Trusted by businesses for reliable, secure, and scalable IT solutions."
         />
 
         <div className="tst-stars" aria-label="5 star rating">
@@ -63,6 +65,9 @@ export default function Testimonials() {
             {testimonials.map((t) => (
               <div className="tst-slide" key={t.name}>
                 <div className="tst-card">
+                  <span className="tst-card-deco" aria-hidden="true">
+                    &ldquo;
+                  </span>
                   <span className="tst-quote">
                     <QuoteIcon />
                   </span>
@@ -71,13 +76,12 @@ export default function Testimonials() {
                     <Image
                       src={t.avatar}
                       alt={t.name}
-                      width={58}
-                      height={58}
-                      className="tst-avatar"
+                      width={t.isLogo ? 64 : 58}
+                      height={t.isLogo ? 44 : 58}
+                      className={t.isLogo ? "tst-logo" : "tst-avatar"}
                     />
-                    <span>
+                    <span className="tst-id">
                       <span className="tst-name">{t.name}</span>
-                      <br />
                       <span className="tst-role">{t.role}</span>
                     </span>
                   </div>
