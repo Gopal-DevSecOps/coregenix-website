@@ -271,7 +271,7 @@ button {
 /* ---------- Inner page hero ---------- */
 .page-hero {
   position: relative;
-  padding: 140px 0 70px;
+  padding: 197px 0 70px;
   background:
     radial-gradient(circle at 85% 20%, rgba(242, 107, 33, 0.14) 0%, rgba(242, 107, 33, 0) 45%),
     var(--bg-band);
@@ -753,6 +753,10 @@ button {
   font-weight: 600;
 }
 
+.mobile-menu .m-menu-toggle.active {
+  color: var(--gold);
+}
+
 .mobile-menu .m-sub {
   max-height: 0;
   overflow: hidden;
@@ -859,7 +863,7 @@ button {
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
   text-align: left;
   margin-right: auto;
-  margin-top: 60px;
+  margin-top: 97px;
 }
 
 .hero-badge {
@@ -1195,7 +1199,7 @@ button {
   width: 100%;
   overflow: hidden;
   background: var(--accent-grad);
-  padding: 26px 0;
+  padding: 10px 0;
   position: relative;
   z-index: 1;
 }
@@ -1203,7 +1207,7 @@ button {
 .tm-viewport {
   display: flex;
   width: max-content;
-  animation: marquee 35s linear infinite;
+  animation: marquee 45s linear infinite;
   will-change: transform;
 }
 
@@ -1214,20 +1218,21 @@ button {
 .tm-track {
   display: flex;
   align-items: center;
-  gap: 40px;
-  padding-right: 40px;
+  gap: 22px;
+  padding-right: 22px;
   flex-shrink: 0;
 }
 
 .tm-item {
   display: inline-flex;
   align-items: center;
-  gap: 40px;
+  gap: 22px;
   color: #fff;
   font-family: var(--font-heading);
-  font-size: clamp(18px, 2.2vw, 28px);
+  font-size: clamp(16px, 1.6vw, 22px);
   font-weight: 700;
   letter-spacing: -0.02em;
+  line-height: 1.4;
   white-space: nowrap;
   text-transform: uppercase;
 }
@@ -1240,7 +1245,7 @@ button {
 /* ---------- Customer Success gallery ---------- */
 .cs-section {
   background: var(--bg-darker);
-  padding: 70px 0;
+  padding: 70px 0 15px;
   position: relative;
   z-index: 5;
 }
@@ -1799,7 +1804,7 @@ button {
   backdrop-filter: blur(10px);
   border: 1px solid var(--border);
   border-radius: 18px;
-  padding: 26px 32px;
+  padding: 26px 67px;
   min-width: 210px;
   display: flex;
   align-items: center;
@@ -1965,17 +1970,21 @@ button {
   overflow: hidden;
 }
 
+.section.defense {
+  padding-top: 25px;
+}
+
 .defense .container {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 70px;
+  gap: 40px 60px;
   align-items: center;
 }
 
 .defense .section-heading {
   grid-column: 1 / -1;
   max-width: none;
-  margin-bottom: 48px;
+  margin-bottom: 0;
 }
 
 .defense .section-title {
@@ -2582,6 +2591,11 @@ button {
   gap: 12px;
   color: #cacaca;
   font-size: 15px;
+  line-height: 1.6;
+  align-items: center;
+}
+
+.footer-contact li:first-child {
   align-items: flex-start;
 }
 
@@ -2693,8 +2707,8 @@ button {
   .section { padding: 64px 0; }
   .blog-grid { grid-template-columns: repeat(2, 1fr); }
   .stats-grid { grid-template-columns: repeat(3, 1fr); }
-  .about .container,
-  .defense .container { grid-template-columns: 1fr; gap: 50px; }
+  .about .container { grid-template-columns: 1fr; gap: 50px; }
+  .defense .container { grid-template-columns: 1fr; gap: 40px; }
   .ce-grid { grid-template-columns: 1fr; gap: 44px; }
   .ce-media { max-width: 640px; margin-inline: auto; width: 100%; }
   .wwp-grid { grid-template-columns: 1fr; gap: 44px; }
@@ -2712,7 +2726,7 @@ button {
   .hero { min-height: 100vh; margin-top: 0; padding: 70px 0; }
   .hero-content { padding: 36px 40px; width: auto; max-width: 560px; height: auto; margin-right: auto; margin-left: 0; margin-top: 20px; }
   .trust-metrics { grid-template-columns: repeat(2, 1fr); }
-  .page-hero { padding: 112px 0 56px; }
+  .page-hero { padding: 141px 0 56px; }
   .page-hero .page-hero-desc { font-size: 17px; }
 }
 
@@ -2762,7 +2776,7 @@ button {
   .hero-desc { font-size: 15px; }
   .hero-slider-nav { bottom: 28px; }
   .stats-certs img { width: 90px; height: 90px; }
-  .page-hero { padding: 92px 0 44px; }
+  .page-hero { padding: 141px 0 44px; }
   .page-hero .page-hero-title { font-size: clamp(28px, 7.5vw, 40px); }
   .page-hero .page-hero-desc { font-size: 15.5px; }
   .page-hero .page-hero-eyebrow { font-size: 12px; padding: 7px 14px; }
@@ -2782,7 +2796,7 @@ button {
   .header.scrolled .logo img { height: 50px; }
   .tst-card { padding: 28px 18px; }
   .video-section { padding: 64px 0; }
-  .cs-section { padding: 56px 0; }
+  .cs-section { padding: 56px 0 15px; }
   .cs-marquee--justified .cs-item { width: 46vw; height: 100px; }
   .cs-marquee--masonry .cs-item { width: 38vw; height: 90px; }
   .hero-content { padding: 28px 20px; }
@@ -2795,6 +2809,7 @@ button {
   .about-media .float-card { left: 8px; bottom: 12px; padding: 14px 18px; min-width: 0; }
   .about-media .float-card .num { font-size: 28px; }
   .mobile-menu { padding: 84px 20px 32px; }
+  .page-hero { padding: 135px 0 40px; }
 }
 
 @media (max-width: 768px) {

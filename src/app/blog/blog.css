@@ -1,5 +1,5 @@
 .blog-page {
-  padding-top: 70px;
+  padding-top: 36px;
 }
 
 .blog-featured {
@@ -11,7 +11,7 @@
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 30px;
-  margin-bottom: 48px;
+  margin-bottom: 36px;
   box-shadow: var(--shadow-card);
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
@@ -81,7 +81,7 @@
   flex-wrap: wrap;
   gap: 12px;
   justify-content: center;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .blog-cat {
@@ -108,7 +108,7 @@
 }
 
 .blog-page-grid {
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .blog-pagination {
@@ -174,7 +174,7 @@
 
   .blog-cats {
     gap: 10px;
-    margin-bottom: 36px;
+    margin-bottom: 28px;
   }
 
   .blog-cat {

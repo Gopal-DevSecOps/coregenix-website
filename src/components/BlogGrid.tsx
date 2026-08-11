@@ -41,7 +41,7 @@ export default function BlogGrid() {
           center
           title={
             <>
-              Latest News & Announcement <span className="grad">from Our Experts</span>
+              Hear from Our <span className="grad">Expert</span>
             </>
           }
         />

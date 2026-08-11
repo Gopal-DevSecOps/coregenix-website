@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { ChevronDownIcon, PhoneIcon, MailIcon, MapPinIcon } from "./Icons";
 
 const menu: { label: string; href: string; children?: { label: string; href: string }[] }[] = [
@@ -26,6 +27,10 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openSub, setOpenSub] = useState<string | null>(null);
   const lastY = useRef(0);
+  const pathname = usePathname();
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href;
 
   useEffect(() => {
     const onScroll = () => {
@@ -106,12 +111,14 @@ export default function Header() {
             </a>
 
             <nav className="nav" aria-label="Main navigation">
-              {menu.map((item) => (
+              {menu.map((item) => {
+                const active = isActive(item.href);
+                return (
                 <div className="nav-item" key={item.label}>
                   <a
-                    className={`nav-link ${item.label === "Home" ? "active" : ""}`}
+                    className={`nav-link ${active ? "active" : ""}`}
                     href={item.href}
-                    aria-current={item.label === "Home" ? "page" : undefined}
+                    aria-current={active ? "page" : undefined}
                   >
                     <span className="nav-link-text">{item.label}</span>
                     {item.children && <ChevronDownIcon className="chevron" />}
@@ -126,7 +133,8 @@ export default function Header() {
                     </div>
                   )}
                 </div>
-              ))}
+                );
+              })}
             </nav>
 
             <div className="header-actions">
@@ -151,7 +159,7 @@ export default function Header() {
             {item.children ? (
               <>
                 <button
-                  className="m-menu-toggle"
+                  className={`m-menu-toggle ${isActive(item.href) ? "active" : ""}`}
                   onClick={() => setOpenSub(openSub === item.label ? null : item.label)}
                 >
                   {item.label}
@@ -166,7 +174,11 @@ export default function Header() {
                 </div>
               </>
             ) : (
-              <a className="m-menu-toggle" href={item.href} onClick={() => setMobileOpen(false)}>
+              <a
+                className={`m-menu-toggle ${isActive(item.href) ? "active" : ""}`}
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+              >
                 {item.label}
               </a>
             )}
