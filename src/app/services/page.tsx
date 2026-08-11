@@ -51,6 +51,8 @@ const services = [
     title: "IT & OT Cyber Security",
     desc: "Complete protection for your IT and operational technology with audit, hardening, SOC and incident response.",
     features: ["Security audits & hardening", "SOC & threat monitoring", "Incident response & recovery"],
+    link: "/solutions",
+    cta: "Explore Cyber Security Solutions",
   },
   {
     icon: DatabaseIcon,
@@ -118,8 +120,8 @@ export default function ServicesPage() {
                         <li key={feature}>{feature}</li>
                       ))}
                     </ul>
-                    <a href="/contact" className="service-link">
-                      Request This Service
+                    <a href={service.link ?? "/contact"} className="service-link">
+                      {service.cta ?? "Request This Service"}
                       <ArrowRightIcon />
                     </a>
                   </div>

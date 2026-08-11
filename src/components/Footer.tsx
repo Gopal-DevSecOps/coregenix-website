@@ -9,16 +9,19 @@ const companyLinks = [
   { label: "About Us", href: "/about" },
   { label: "Our Team", href: "/about#team" },
   { label: "Our Services", href: "/services" },
+  { label: "Our Solutions", href: "/solutions" },
   { label: "Contact Us", href: "/contact" },
   { label: "Blog", href: "/blog" },
   { label: "Career", href: "/career" },
 ];
 const serviceLinks = [
-  "Managed Support Services",
-  "Cloud Infrastructure",
-  "IT Infrastructure Solutions",
-  "IT & OT Cyber Security",
-  "Data Backup / DR / BCP",
+  { label: "Vulnerability & Cyber Security Assessment", href: "/solutions#vapt" },
+  { label: "Security Operation Center (SOC)", href: "/solutions#soc" },
+  { label: "Threat Operation Center (TOC)", href: "/solutions#toc" },
+  { label: "OT Security", href: "/solutions#ot-security" },
+  { label: "GRC & InfoSec Audits", href: "/solutions#grc" },
+  { label: "X-as-a-Service", href: "/solutions#xaas" },
+  { label: "IT Security Solutions", href: "/solutions#it-security" },
 ];
 
 export default function Footer() {
@@ -68,11 +71,11 @@ export default function Footer() {
           </Reveal>
 
           <Reveal delay={2}>
-            <h4>Our Services</h4>
+            <h4>Solutions</h4>
             <ul>
               {serviceLinks.map((link) => (
-                <li key={link}>
-                  <a href="#services">{link}</a>
+                <li key={link.label}>
+                  <a href={link.href}>{link.label}</a>
                 </li>
               ))}
             </ul>
@@ -110,7 +113,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <span>© 2026 All rights reserved by CoreGenix.</span>
+          <span>2025 © All rights reserved by CoreGenix.</span>
           <span>
             <a href="#home">Privacy Policy</a> &nbsp;·&nbsp;{" "}
             <a href="#home">Terms & Conditions</a>

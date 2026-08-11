@@ -7,15 +7,13 @@ import { ChevronDownIcon, PhoneIcon, MailIcon, MapPinIcon } from "./Icons";
 const menu: { label: string; href: string; children?: { label: string; href: string }[] }[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Solutions & Services", href: "/services", children: [
-    { label: "Managed Support Services", href: "/services#managed-support" },
+  { label: "Solutions & Services", href: "/solutions", children: [
+    { label: "Cyber Security Solutions & Services", href: "/solutions" },
+    { label: "IT Enterprise Solutions & Services", href: "/it-services" },
+    { label: "InfoSec GRC & Audits", href: "/solutions#grc" },
     { label: "Cloud Infrastructure", href: "/services#cloud-infrastructure" },
-    { label: "IT Infrastructure Solutions", href: "/services#it-infrastructure" },
-    { label: "IT & OT Cyber Security", href: "/services#cyber-security" },
-    { label: "Data Backup / DR / BCP", href: "/services#backup-dr-bcp" },
-    { label: "ITIL Automation", href: "/services#itil-automation" },
-    { label: "Staff Augmentation", href: "/services#staff-augmentation" },
-    { label: "InfoSec GRC", href: "/services#infosec-grc" },
+    { label: "Managed Support Services", href: "/services#managed-support" },
+    { label: "FMS & Staff Augmentation", href: "/services#staff-augmentation" },
   ]},
   { label: "Blog", href: "/blog" },
   { label: "Career", href: "/career" },

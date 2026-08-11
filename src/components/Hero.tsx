@@ -16,8 +16,8 @@ const slides: Slide[] = [
   {
     bg: "/images/coregenix/hero-1.png",
     line1: "A Strategy that",
-    line2: "Creates Solutions",
-    desc: "We are a strong team of professionals delivering IT Services.",
+    line2: "Creates Secure Solutions",
+    desc: "We are a team of Security professionals delivering IT & OT Security.",
   },
   {
     bg: "/images/coregenix/hero-2.png",

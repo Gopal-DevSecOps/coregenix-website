@@ -1,0 +1,404 @@
+/* ---------- IT Infrastructure Solutions ---------- */
+.its {
+  background: var(--bg-dark);
+}
+
+.its-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+  align-items: stretch;
+}
+
+.its-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 30px;
+  height: 100%;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.its-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card);
+  border-color: rgba(242, 107, 33, 0.5);
+}
+
+.its-card-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 15px;
+  background: var(--accent-grad);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  transition: transform 0.35s ease;
+}
+
+.its-card:hover .its-card-icon {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.its-card-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.its-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--navy);
+}
+
+.its-card p {
+  color: var(--text-soft);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.its-outro {
+  margin-top: 40px;
+}
+
+.its-outro p {
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* ---------- Highlight features ---------- */
+.its-features {
+  background: var(--bg-darker);
+  position: relative;
+}
+
+.its-features .container {
+  padding-top: 44px;
+  padding-bottom: 44px;
+}
+
+.its-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.its-feature-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 26px 24px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(27, 42, 56, 0.06);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.its-feature-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(242, 107, 33, 0.45);
+  box-shadow: 0 20px 44px rgba(27, 42, 56, 0.12);
+}
+
+.its-feature-icon {
+  flex: 0 0 auto;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--accent-grad-soft);
+  border: 1px solid var(--border);
+  color: var(--gold);
+  display: grid;
+  place-items: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.its-feature-item:hover .its-feature-icon {
+  background: var(--accent-grad);
+  color: #fff;
+}
+
+.its-feature-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.its-feature-item p {
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+/* ---------- Projects CTA ---------- */
+.its-projects {
+  background: var(--navy-dark);
+  padding: 0;
+}
+
+.its-projects .container {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.its-projects-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+  background: var(--accent-grad);
+  border-radius: var(--radius);
+  padding: 48px 52px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.its-projects-box::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.its-projects-text {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+}
+
+.its-projects-text h2 {
+  color: #fff;
+  font-size: clamp(24px, 3vw, 34px);
+}
+
+.its-projects-text p {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 16px;
+}
+
+.its-projects-box .btn {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- What can we provide ---------- */
+.its-provide {
+  background: var(--bg-band);
+}
+
+.its-provide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  align-items: stretch;
+}
+
+.its-provide-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px 30px 34px;
+  height: 100%;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.its-provide-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card);
+  border-color: rgba(242, 107, 33, 0.5);
+}
+
+.its-provide-icon {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 20px;
+  border-radius: 16px;
+  background: var(--accent-grad);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  transition: transform 0.35s ease;
+}
+
+.its-provide-card:hover .its-provide-icon {
+  transform: scale(1.08) rotate(-6deg);
+}
+
+.its-provide-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.its-provide-card h3 {
+  font-size: 19px;
+  margin-bottom: 12px;
+  color: var(--navy);
+}
+
+.its-provide-card p {
+  color: var(--text-muted);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* ---------- Whatever your need ---------- */
+.its-solve {
+  background: var(--navy-dark);
+}
+
+.its-solve-head {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 48px;
+}
+
+.its-solve-head .section-title {
+  margin-bottom: 18px;
+}
+
+.its-solve-desc {
+  color: #c6d0dc;
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0 auto;
+}
+
+.its-solve-sub {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: rgba(242, 107, 33, 0.12);
+  border: 1px solid rgba(242, 107, 33, 0.4);
+  color: #ffd9c4;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.its-solve-sub::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-grad);
+}
+
+.its-solve-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.its-solve-card {
+  display: flex;
+  flex-direction: column;
+  background: #16233a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  height: 100%;
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.its-solve-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(242, 107, 33, 0.5);
+}
+
+.its-solve-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: var(--accent-grad);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+}
+
+.its-solve-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.its-solve-card h3 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.its-solve-card p {
+  color: #aeb9c6;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .its-solve-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .its-grid,
+  .its-provide-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .its-features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .its-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .its-feature-item {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .its-solve-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .its-projects-box {
+    padding: 34px 24px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .its-projects-box .btn {
+    width: 100%;
+  }
+}
