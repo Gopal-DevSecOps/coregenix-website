@@ -65,9 +65,6 @@ export default function Testimonials() {
             {testimonials.map((t) => (
               <div className="tst-slide" key={t.name}>
                 <div className="tst-card">
-                  <span className="tst-card-deco" aria-hidden="true">
-                    &ldquo;
-                  </span>
                   <span className="tst-quote">
                     <QuoteIcon />
                   </span>

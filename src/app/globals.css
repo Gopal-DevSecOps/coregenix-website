@@ -2186,30 +2186,18 @@ button {
   overflow: hidden;
 }
 
-.tst-card-deco {
-  position: absolute;
-  top: -46px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 240px;
-  line-height: 1;
-  color: rgba(242, 107, 33, 0.07);
-  pointer-events: none;
-  user-select: none;
-}
-
 .tst-quote {
   position: relative;
   width: 54px;
   height: 54px;
-  margin: 0 auto 20px;
+  margin: 0 auto 24px;
   border-radius: 50%;
   background: var(--accent-grad-soft);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--gold);
+  flex-shrink: 0;
 }
 
 .tst-quote svg {

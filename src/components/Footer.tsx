@@ -110,7 +110,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <span>© 2025 All rights reserved by CoreGenix.</span>
+          <span>© 2026 All rights reserved by CoreGenix.</span>
           <span>
             <a href="#home">Privacy Policy</a> &nbsp;·&nbsp;{" "}
             <a href="#home">Terms & Conditions</a>
