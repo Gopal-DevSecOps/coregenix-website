@@ -808,9 +808,8 @@ button {
 }
 
 .mega-group--wide .mega-group-items a {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  min-width: 0;
+  line-height: 1.35;
 }
 
 .mega-foot {

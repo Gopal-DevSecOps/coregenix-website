@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { ChevronDownIcon, PhoneIcon, MailIcon, MapPinIcon } from "./Icons";
 
 interface MegaItem {
@@ -33,38 +34,38 @@ const menu: MenuItem[] = [
       {
         title: "IT Managed Services",
         items: [
-          { label: "NOC", href: "/services" },
-          { label: "AMC", href: "/services" },
-          { label: "PMC", href: "/services" },
+          { label: "Network Operations Center", href: "/network-operations-center" },
+          { label: "Annual Maintenance Contract", href: "/annual-maintenance-contract" },
+          { label: "Facility Maintenance Contract", href: "/facility-maintenance-contract" },
         ],
       },
       {
         title: "Cloud Managed Services",
         items: [
-          { label: "Cloud Strategy", href: "/services" },
-          { label: "Cloud Infrastructure Management", href: "/services" },
-          { label: "Backup & Recovery", href: "/services" },
+          { label: "Cloud Strategy", href: "/services/cloud-strategy" },
+          { label: "Cloud Infrastructure Management", href: "/services/cloud-infrastructure-management" },
+          { label: "Backup & Recovery", href: "/services/backup-recovery" },
         ],
       },
       {
         title: "Audit & Assessment",
         items: [
-          { label: "GRC & DPO", href: "/solutions#grc" },
-          { label: "VAPT", href: "/solutions#vapt" },
-          { label: "Red Teaming", href: "/solutions#vapt" },
-          { label: "Audit", href: "/solutions#grc" },
+          { label: "Governance, Risk & Compliance & Data Protection Officer", href: "/services/grc-dpo" },
+          { label: "Vulnerability Assessment & Penetration Testing", href: "/services/vapt" },
+          { label: "Red Teaming", href: "/services/red-teaming" },
+          { label: "Audit", href: "/services/audit" },
         ],
       },
       {
         title: "Managed Security Services",
         wide: true,
         items: [
-          { label: "Managed SOC", href: "/solutions#soc" },
-          { label: "Vulnerability Management-as-a-Service", href: "/solutions#xaas" },
-          { label: "WAF-as-a-Service", href: "/solutions#xaas" },
-          { label: "DLP-as-a-Service", href: "/solutions#xaas" },
-          { label: "Email Security", href: "/solutions#xaas" },
-          { label: "OT Security", href: "/solutions#ot-security" },
+          { label: "Managed Security Operations Center as a Service", href: "/services/soc-mss" },
+          { label: "Vulnerability Management as a Service", href: "/services/vulnerability-management" },
+          { label: "Web Application Firewall as a Service", href: "/services/waf-as-a-service" },
+          { label: "Data Loss Prevention as a Service", href: "/services/dlp-as-a-service" },
+          { label: "Email Security", href: "/services/email-security" },
+          { label: "Operational Technology Security", href: "/services/ot-security" },
         ],
       },
     ],
@@ -77,44 +78,44 @@ const menu: MenuItem[] = [
         title: "IT Infrastructure Solutions",
         items: [
           { label: "Network", href: "/it-services#infrastructure" },
-          { label: "DC", href: "/it-services#infrastructure" },
+          { label: "Data Center", href: "/it-services#infrastructure" },
           { label: "Data Backup", href: "/it-services#infrastructure" },
-          { label: "DR & BCP", href: "/it-services#infrastructure" },
+          { label: "Disaster Recovery & Business Continuity Planning", href: "/it-services#infrastructure" },
         ],
       },
       {
         title: "Cloud Infrastructure Solutions",
         items: [
-          { label: "Private Cloud", href: "/services" },
-          { label: "Public Cloud", href: "/services" },
-          { label: "Hybrid Cloud", href: "/services" },
+          { label: "Private Cloud", href: "/services/cloud-strategy" },
+          { label: "Public Cloud", href: "/services/cloud-strategy" },
+          { label: "Hybrid Cloud", href: "/services/cloud-strategy" },
         ],
       },
       {
         title: "Cyber Security Solutions",
         items: [
           { label: "Infrastructure Security", href: "/solutions#it-security" },
-          { label: "IAM", href: "/solutions#it-security" },
-          { label: "SSO", href: "/solutions#it-security" },
-          { label: "PAM", href: "/solutions#it-security" },
+          { label: "Identity & Access Management", href: "/solutions#it-security" },
+          { label: "Single Sign-On", href: "/solutions#it-security" },
+          { label: "Privileged Access Management", href: "/solutions#it-security" },
           { label: "Zero Trust", href: "/solutions#it-security" },
-          { label: "DLP", href: "/solutions#it-security" },
-          { label: "EDR / MDR / XDR", href: "/solutions#it-security" },
+          { label: "Data Loss Prevention", href: "/solutions#it-security" },
+          { label: "Endpoint / Managed / Extended Detection & Response", href: "/solutions#it-security" },
         ],
       },
       {
-        title: "GRC & DPO",
+        title: "Governance, Risk & Compliance & Data Protection Officer",
         wide: true,
         items: [
-          { label: "GRC & Cyber Audits", href: "/solutions#grc" },
+          { label: "Governance, Risk & Compliance & Cyber Audits", href: "/solutions#grc" },
           { label: "Risk Management", href: "/solutions#grc" },
           { label: "Compliance", href: "/solutions#grc" },
           { label: "Risk & Compliance Assessment", href: "/solutions#grc" },
-          { label: "NIST CSF", href: "/solutions#grc" },
+          { label: "NIST Cybersecurity Framework", href: "/solutions#grc" },
           { label: "IT Risk Assessment", href: "/solutions#grc" },
           { label: "IT Policy & Security Policy", href: "/solutions#grc" },
-          { label: "ISMS & Cyber Security", href: "/solutions#grc" },
-          { label: "BCP / DR", href: "/solutions#grc" },
+          { label: "Information Security Management System & Cyber Security", href: "/solutions#grc" },
+          { label: "Business Continuity Planning / Disaster Recovery", href: "/solutions#grc" },
         ],
       },
     ],
@@ -277,6 +278,9 @@ export default function Header() {
             </nav>
 
             <div className="header-actions">
+              <Link href="/contact" className="header-cta btn btn-grad btn-sm">
+                Get Free Consultation
+              </Link>
               <button
                 className={`hamburger ${mobileOpen ? "open" : ""}`}
                 aria-label="Toggle menu"
@@ -320,9 +324,9 @@ export default function Header() {
                   {f.label}
                 </a>
               ))}
-              <a href="/contact" className="btn btn-grad btn-sm mega-foot-cta">
+              <Link href="/contact" className="btn btn-grad btn-sm mega-foot-cta">
                 Get Free Consultation
-              </a>
+              </Link>
             </div>
           </div>
         )}

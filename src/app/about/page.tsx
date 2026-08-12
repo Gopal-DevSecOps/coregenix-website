@@ -1,18 +1,49 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
 import Reveal from "@/components/Reveal";
+import JsonLd from "@/components/JsonLd";
 import Leadership from "@/components/Leadership";
 import SectionHeading from "@/components/SectionHeading";
 import { CheckIcon, ArrowRightIcon } from "@/components/Icons";
+import { SITE } from "@/lib/site";
 import "./about.css";
 
 export const metadata: Metadata = {
   title: "About Us — CoreGenix",
   description:
     "CoreGenix is a trusted IT infrastructure and cyber security partner with 18+ years of experience delivering tailored technology solutions.",
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE.name,
+  url: SITE.url,
+  logo: `${SITE.url}/images/coregenix/logo.png`,
+  description: SITE.description,
+  telephone: SITE.phone,
+  email: SITE.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: SITE.address.street,
+    addressLocality: SITE.address.city,
+    addressRegion: SITE.address.state,
+    postalCode: SITE.address.postalCode,
+    addressCountry: SITE.address.country,
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+    { "@type": "ListItem", position: 2, name: "About Us", item: `${SITE.url}/about` },
+  ],
 };
 
 const pillars = [
@@ -47,6 +78,8 @@ const journey = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={organizationJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       <Header />
       <main>
         <section className="page-hero">
@@ -188,10 +221,10 @@ export default function AboutPage() {
                   <h2>Let&apos;s solve your next technology challenge together.</h2>
                   <p>Talk to our experts and get a free consultation for your business.</p>
                 </div>
-                <a href="/contact" className="btn btn-light">
+                <Link href="/contact" className="btn btn-light">
                   Get Free Consultation
                   <ArrowRightIcon />
-                </a>
+                </Link>
               </div>
             </Reveal>
           </div>

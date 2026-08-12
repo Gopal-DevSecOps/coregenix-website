@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type CSSProperties } from "react";
+import Link from "next/link";
 import { ArrowRightIcon } from "./Icons";
 
 interface Slide {
@@ -96,13 +97,13 @@ export default function Hero() {
                 </h1>
                 <p className="hero-desc">{slide.desc}</p>
                 <div className="hero-actions">
-                  <a href="/contact" className="btn btn-grad hero-cta-primary">
+                  <Link href="/contact" className="btn btn-grad hero-cta-primary">
                     Get Free Consultation
                     <ArrowRightIcon />
-                  </a>
-                  <a href="/services" className="btn btn-hero-secondary">
+                  </Link>
+                  <Link href="/services" className="btn btn-hero-secondary">
                     View Solutions
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

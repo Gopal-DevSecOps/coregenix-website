@@ -1,0 +1,128 @@
+.service-detail-body {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 860px;
+}
+
+.service-detail-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+}
+
+.service-detail-section h2 {
+  font-family: var(--font-heading), ui-serif, Georgia, serif;
+  font-size: 26px;
+  color: var(--navy);
+  margin: 0 0 14px;
+}
+
+.service-detail-section p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text-soft);
+  margin: 0 0 12px;
+}
+
+.service-detail-section p:last-child {
+  margin-bottom: 0;
+}
+
+.service-detail-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-detail-list li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--text-soft);
+}
+
+.service-detail-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent-grad);
+}
+
+.service-detail-faq {
+  margin-top: 44px;
+}
+
+.service-detail-faq h2 {
+  font-family: var(--font-heading), ui-serif, Georgia, serif;
+  font-size: 30px;
+  color: var(--navy);
+  margin: 0 0 20px;
+}
+
+.service-detail-faq-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px 22px;
+  margin-bottom: 14px;
+  background: var(--bg-card);
+}
+
+.service-detail-faq-item h3 {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 8px;
+}
+
+.service-detail-faq-item p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-soft);
+  margin: 0;
+}
+
+.service-detail-cta {
+  margin-top: 44px;
+  padding: 40px;
+  border-radius: var(--radius);
+  background: var(--navy-dark);
+  text-align: center;
+  color: #fff;
+}
+
+.service-detail-cta h2 {
+  font-family: var(--font-heading), ui-serif, Georgia, serif;
+  font-size: 26px;
+  margin: 0 auto 24px;
+  max-width: 640px;
+  line-height: 1.4;
+}
+
+.service-detail-cta-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .service-detail-section {
+    padding: 22px;
+  }
+  .service-detail-section h2 {
+    font-size: 23px;
+  }
+  .service-detail-cta {
+    padding: 30px 20px;
+  }
+}

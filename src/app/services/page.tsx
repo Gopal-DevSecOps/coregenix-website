@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
 import Reveal from "@/components/Reveal";
+import JsonLd from "@/components/JsonLd";
 import WhatWeProvide from "@/components/WhatWeProvide";
 import {
   MonitorIcon,
@@ -15,6 +17,7 @@ import {
   LockIcon,
   ArrowRightIcon,
 } from "@/components/Icons";
+import { SITE } from "@/lib/site";
 import "./services.css";
 
 export const metadata: Metadata = {
@@ -84,9 +87,36 @@ const services = [
   },
 ];
 
+const servicesJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "CoreGenix IT & Cyber Security Services",
+  provider: { "@type": "Organization", name: SITE.name, url: SITE.url, telephone: SITE.phone },
+  areaServed: "IN",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "IT & Cyber Security Services",
+    itemListElement: services.map((s) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name: s.title, description: s.desc },
+    })),
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+    { "@type": "ListItem", position: 2, name: "Services", item: `${SITE.url}/services` },
+  ],
+};
+
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd data={servicesJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       <Header />
       <main>
         <section className="page-hero">
@@ -141,10 +171,10 @@ export default function ServicesPage() {
                   <h2>Not sure which solution fits your business?</h2>
                   <p>Talk to our experts for a free consultation and a tailored technology plan.</p>
                 </div>
-                <a href="/contact" className="btn btn-light">
+                <Link href="/contact" className="btn btn-light">
                   Get Free Consultation
                   <ArrowRightIcon />
-                </a>
+                </Link>
               </div>
             </Reveal>
           </div>

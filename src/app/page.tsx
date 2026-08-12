@@ -16,10 +16,38 @@ import BlogGrid from "@/components/BlogGrid";
 import Cta from "@/components/Cta";
 import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
+import JsonLd from "@/components/JsonLd";
+import { SITE } from "@/lib/site";
+
+const professionalServiceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: SITE.name,
+  url: SITE.url,
+  description: SITE.description,
+  telephone: SITE.phone,
+  email: SITE.email,
+  image: `${SITE.url}/images/coregenix/logo.png`,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: SITE.address.street,
+    addressLocality: SITE.address.city,
+    addressRegion: SITE.address.state,
+    postalCode: SITE.address.postalCode,
+    addressCountry: SITE.address.country,
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: SITE.geo.latitude,
+    longitude: SITE.geo.longitude,
+  },
+  areaServed: "IN",
+};
 
 export default function Home() {
   return (
     <>
+      <JsonLd data={professionalServiceJsonLd} />
       <Preloader />
       <Header />
       <main>

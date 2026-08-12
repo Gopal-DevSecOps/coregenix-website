@@ -1,0 +1,147 @@
+.ranking-section .container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 880px;
+}
+
+.ranking-block {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+}
+
+.ranking-block h2 {
+  font-family: var(--font-heading), ui-serif, Georgia, serif;
+  font-size: 26px;
+  color: var(--navy);
+  margin: 0 0 14px;
+}
+
+.ranking-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ranking-list li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--text-soft);
+}
+
+.ranking-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent-grad);
+}
+
+.ranking-proof {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.ranking-proof-item {
+  padding: 22px;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+.ranking-proof-value {
+  display: block;
+  font-size: 34px;
+  font-weight: 800;
+  font-family: var(--font-heading), ui-serif, Georgia, serif;
+  color: var(--gold);
+  line-height: 1.1;
+}
+
+.ranking-proof-label {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+.ranking-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ranking-faq h2 {
+  font-family: var(--font-heading), ui-serif, Georgia, serif;
+  font-size: 30px;
+  color: var(--navy);
+  margin: 0;
+}
+
+.ranking-faq-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px 22px;
+  background: var(--bg-card);
+}
+
+.ranking-faq-item h3 {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 8px;
+}
+
+.ranking-faq-item p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-soft);
+  margin: 0;
+}
+
+.ranking-cta {
+  padding: 40px;
+  border-radius: var(--radius);
+  background: var(--navy-dark);
+  text-align: center;
+  color: #fff;
+}
+
+.ranking-cta h2 {
+  font-family: var(--font-heading), ui-serif, Georgia, serif;
+  font-size: 26px;
+  margin: 0 auto 24px;
+  max-width: 680px;
+  line-height: 1.4;
+}
+
+.ranking-cta-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .ranking-block {
+    padding: 22px;
+  }
+  .ranking-block h2 {
+    font-size: 23px;
+  }
+  .ranking-cta {
+    padding: 30px 20px;
+  }
+}

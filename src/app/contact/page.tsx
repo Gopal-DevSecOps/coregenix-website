@@ -3,14 +3,46 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
 import Reveal from "@/components/Reveal";
+import JsonLd from "@/components/JsonLd";
 import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon } from "@/components/Icons";
 import ContactForm from "./ContactForm";
+import { SITE } from "@/lib/site";
 import "./contact.css";
 
 export const metadata: Metadata = {
   title: "Contact Us — CoreGenix",
   description:
     "Get in touch with CoreGenix for IT infrastructure, cloud, cyber security and managed support services.",
+};
+
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: SITE.name,
+  url: SITE.url,
+  telephone: SITE.phone,
+  email: SITE.email,
+  image: `${SITE.url}/images/coregenix/logo.png`,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: SITE.address.street,
+    addressLocality: SITE.address.city,
+    addressRegion: SITE.address.state,
+    postalCode: SITE.address.postalCode,
+    addressCountry: SITE.address.country,
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: SITE.geo.latitude,
+    longitude: SITE.geo.longitude,
+  },
+  openingHoursSpecification: SITE.hours.map((h) => ({
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: h.dayOfWeek,
+    opens: h.opens,
+    closes: h.closes,
+  })),
+  hasMap: "https://www.google.com/maps?q=Kailash+Business+Park+Vikhroli+Mumbai+400059",
 };
 
 const contactDetails = [
@@ -45,6 +77,7 @@ const contactDetails = [
 export default function ContactPage() {
   return (
     <>
+      <JsonLd data={localBusinessJsonLd} />
       <Header />
       <main>
         <section className="page-hero">

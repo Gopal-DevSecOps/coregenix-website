@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
@@ -197,10 +198,10 @@ export default function ItServicesPage() {
                     enabling your Digital transformation journey.
                   </p>
                 </div>
-                <a href="/contact" className="btn btn-light">
+                <Link href="/contact" className="btn btn-light">
                   Request A Quote
                   <ArrowRightIcon />
-                </a>
+                </Link>
               </div>
             </Reveal>
           </div>

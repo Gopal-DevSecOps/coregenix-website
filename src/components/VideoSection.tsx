@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { PhoneIcon } from "./Icons";
 
 export default function VideoSection() {
@@ -92,10 +93,10 @@ export default function VideoSection() {
                 </>
               )}
             </button>
-            <a href="/contact" className="btn btn-light">
+            <Link href="/contact" className="btn btn-light">
               Get Free Consultation
               <PhoneIcon />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

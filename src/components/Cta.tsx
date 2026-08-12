@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Reveal from "./Reveal";
 import { ArrowRightIcon } from "./Icons";
 
@@ -14,10 +15,10 @@ export default function Cta() {
                 and cyber security secure and efficient.
               </p>
             </div>
-            <a href="/contact" className="btn btn-light">
+            <Link href="/contact" className="btn btn-light">
               Get Free Consultation
               <ArrowRightIcon />
-            </a>
+            </Link>
           </div>
         </Reveal>
       </div>

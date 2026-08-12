@@ -15,13 +15,13 @@ const companyLinks = [
   { label: "Career", href: "/career" },
 ];
 const serviceLinks = [
-  { label: "Vulnerability & Cyber Security Assessment", href: "/solutions#vapt" },
-  { label: "Security Operation Center (SOC)", href: "/solutions#soc" },
+  { label: "Vulnerability Assessment & Penetration Testing", href: "/services/vapt" },
+  { label: "Managed Security Operations Center as a Service", href: "/services/soc-mss" },
   { label: "Threat Operation Center (TOC)", href: "/solutions#toc" },
-  { label: "OT Security", href: "/solutions#ot-security" },
-  { label: "GRC & InfoSec Audits", href: "/solutions#grc" },
+  { label: "Operational Technology Security", href: "/services/ot-security" },
+  { label: "Governance, Risk & Compliance & Data Protection Officer", href: "/services/grc-dpo" },
   { label: "X-as-a-Service", href: "/solutions#xaas" },
-  { label: "IT Security Solutions", href: "/solutions#it-security" },
+  { label: "Cyber Security Solutions", href: "/solutions#it-security" },
 ];
 
 export default function Footer() {
@@ -113,7 +113,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <span>2025 © All rights reserved by CoreGenix.</span>
+          <span>2026 © All rights reserved by CoreGenix.</span>
           <span>
             <a href="#home">Privacy Policy</a> &nbsp;·&nbsp;{" "}
             <a href="#home">Terms & Conditions</a>

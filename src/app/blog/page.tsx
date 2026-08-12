@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
 import Reveal from "@/components/Reveal";
 import { ArrowRightIcon, CalendarIcon, UserIcon } from "@/components/Icons";
+import { posts } from "@/data/posts";
 import "./blog.css";
 
 export const metadata: Metadata = {
@@ -12,63 +13,6 @@ export const metadata: Metadata = {
   description:
     "Insights, guides and news on IT infrastructure, cloud, cyber security and business continuity from the CoreGenix team.",
 };
-
-const posts = [
-  {
-    tag: "Cyber Security",
-    title: "IT & OT Cyber Security: Why It Is Essential for Your Business",
-    excerpt:
-      "Cyber threats are growing every day. With CoreGenix, keep your IT and OT environments fully protected.",
-    image: "/images/coregenix/service-6.jpg",
-    date: "Jul 28, 2026",
-    author: "By CoreGenix Team",
-  },
-  {
-    tag: "Cloud",
-    title: "How Cloud Infrastructure Helps Scale Your Business",
-    excerpt:
-      "Secure cloud migration means lower cost, better performance, and a business that's always ready. Find out how cloud infrastructure can help you.",
-    image: "/images/coregenix/service-7.jpg",
-    date: "Jul 18, 2026",
-    author: "By CoreGenix Team",
-  },
-  {
-    tag: "Data Backup",
-    title: "Data Backup, DR & BCP: A Complete Guide to Business Continuity",
-    excerpt:
-      "Learn how essential backup, disaster recovery, and business continuity planning are to protect against data loss — read the full guide here.",
-    image: "/images/coregenix/service-1.jpg",
-    date: "Jul 06, 2026",
-    author: "By CoreGenix Team",
-  },
-  {
-    tag: "Managed Services",
-    title: "Why Managed IT Support Keeps Your Business Running 24/7",
-    excerpt:
-      "Proactive helpdesk and monitoring mean fewer surprises and more uptime. Discover what managed support really delivers.",
-    image: "/images/coregenix/service-2.jpg",
-    date: "Jun 22, 2026",
-    author: "By CoreGenix Team",
-  },
-  {
-    tag: "Infrastructure",
-    title: "Building a Future-Ready IT Infrastructure for Growth",
-    excerpt:
-      "Servers, networks and data centers that scale with you. A practical blueprint for modern enterprise infrastructure.",
-    image: "/images/coregenix/service-4.jpg",
-    date: "Jun 09, 2026",
-    author: "By CoreGenix Team",
-  },
-  {
-    tag: "Compliance",
-    title: "InfoSec GRC: Meeting ISO 27001 Standards with Confidence",
-    excerpt:
-      "Governance, risk and compliance don't have to be painful. Learn how GRC frameworks keep you audit-ready.",
-    image: "/images/coregenix/service-5.jpg",
-    date: "May 27, 2026",
-    author: "By CoreGenix Team",
-  },
-];
 
 const categories = ["All", "Cyber Security", "Cloud", "Data Backup", "Managed Services", "Infrastructure", "Compliance"];
 
@@ -96,7 +40,7 @@ export default function BlogPage() {
         <section className="section blog-page">
           <div className="container">
             <Reveal className="blog-featured">
-              <a href="#blog" className="blog-featured-media">
+              <a href={`/blog/${featured.slug}`} className="blog-featured-media">
                 <span className="post-tag">{featured.tag}</span>
                 <Image
                   src={featured.image}
@@ -122,7 +66,7 @@ export default function BlogPage() {
                   </span>
                 </div>
                 <p>{featured.excerpt}</p>
-                <a href="#blog" className="blog-featured-link">
+                <a href={`/blog/${featured.slug}`} className="blog-featured-link">
                   Read Full Article
                   <ArrowRightIcon />
                 </a>
@@ -141,7 +85,7 @@ export default function BlogPage() {
               {posts.map((post, i) => (
                 <Reveal key={post.title} delay={(i % 3) + 1}>
                   <article className="post-card">
-                    <a href="#blog" className="post-media">
+                    <a href={`/blog/${post.slug}`} className="post-media">
                       <span className="post-tag">{post.tag}</span>
                       <Image
                         src={post.image}
@@ -164,7 +108,7 @@ export default function BlogPage() {
                       </div>
                       <h3>{post.title}</h3>
                       <p>{post.excerpt}</p>
-                      <a href="#blog" className="post-more">
+                      <a href={`/blog/${post.slug}`} className="post-more">
                         Read More
                         <ArrowRightIcon />
                       </a>

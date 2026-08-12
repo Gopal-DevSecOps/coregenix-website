@@ -1,0 +1,348 @@
+/* ---------- FMC Landing (homepage-style) ---------- */
+
+.fmc-hero {
+  position: relative;
+  padding: 80px 0 64px;
+  background: var(--navy-dark);
+  overflow: hidden;
+}
+
+.fmc-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto -5% -40% -5%;
+  height: 55%;
+  background: radial-gradient(ellipse at center, rgba(242, 107, 33, 0.14) 0%, rgba(242, 107, 33, 0) 70%);
+  pointer-events: none;
+}
+
+.fmc-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.fmc-hero-title {
+  font-size: clamp(32px, 4.6vw, 54px);
+  line-height: 1.12;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.fmc-hero-title .grad {
+  font-style: italic;
+  color: #f47832;
+}
+
+.fmc-hero-desc {
+  color: #d6dee8;
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 28px;
+  max-width: 560px;
+}
+
+.fmc-hero .eyebrow {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.fmc-hero .eyebrow::before {
+  background: var(--accent-grad);
+}
+
+.fmc-hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.fmc-hero-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fmc-hero-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Stats band */
+.fmc-stats {
+  background: var(--navy-dark);
+  padding: 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fmc-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.fmc-stat {
+  text-align: center;
+}
+
+.fmc-stat-value {
+  display: block;
+  font-family: var(--font-heading), ui-serif, Georgia, serif;
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1.1;
+}
+
+.fmc-stat-label {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #c6d0dc;
+}
+
+/* Problem */
+.fmc-problem {
+  background: var(--bg-darker);
+}
+
+.fmc-problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.fmc-check-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.fmc-check-item .ce-check {
+  flex-shrink: 0;
+}
+
+.fmc-problem-outro {
+  max-width: 720px;
+  margin: 32px auto 0;
+  text-align: center;
+  color: var(--text-soft);
+  font-size: 17px;
+  line-height: 1.8;
+  font-weight: 600;
+}
+
+/* Offerings dark band */
+.fmc-offering-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.fmc-offering-card,
+.fmc-offering-card:hover {
+  background: #16233a;
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.fmc-offering-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.fmc-offering-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(242, 107, 33, 0.55);
+}
+
+.fmc-offering-card .icon-box {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  background: var(--accent-grad);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.fmc-offering-card .icon-box svg {
+  width: 28px;
+  height: 28px;
+}
+
+.fmc-offering-card h3 {
+  font-size: 19px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.fmc-offering-card p {
+  color: #c6d0dc;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* AMC + Industries (light wwp cards) */
+.fmc-amc .wwp-grid,
+.fmc-industries .wwp-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.fmc-amc-card,
+.fmc-amc-card:hover,
+.fmc-industry-card,
+.fmc-industry-card:hover {
+  background: var(--bg-card);
+  border-color: var(--border);
+}
+
+.fmc-amc-card:hover,
+.fmc-industry-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(242, 107, 33, 0.5);
+}
+
+.fmc-amc-card h3,
+.fmc-industry-card h3 {
+  color: var(--navy);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.fmc-amc-card p,
+.fmc-industry-card p {
+  color: var(--text-muted);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* Testimonials dark band */
+.fmc-testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.fmc-testimonial-card {
+  background: #16233a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 30px 28px;
+}
+
+.fmc-testimonial-card p {
+  color: #e6ecf5;
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+.fmc-testimonial-name {
+  display: block;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.fmc-testimonial-role {
+  display: block;
+  color: #9fb0c0;
+  font-size: 13.5px;
+  margin-top: 4px;
+}
+
+/* FAQ */
+.fmc-faq-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  align-items: start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.fmc-faq-item {
+  height: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px 22px;
+}
+
+.fmc-faq-item h3 {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 8px;
+}
+
+.fmc-faq-item p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-soft);
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .fmc-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .fmc-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .fmc-problem-grid,
+  .fmc-offering-grid,
+  .fmc-amc .wwp-grid,
+  .fmc-industries .wwp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fmc-testimonial-grid,
+  .fmc-faq-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .fmc-hero {
+    padding: 70px 0 44px;
+  }
+
+  .fmc-problem-grid,
+  .fmc-offering-grid,
+  .fmc-amc .wwp-grid,
+  .fmc-industries .wwp-grid,
+  .fmc-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

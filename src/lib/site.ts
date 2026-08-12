@@ -1,0 +1,47 @@
+export const SITE = {
+  name: "CoreGenix",
+  legalName: "CGCES Pvt Ltd",
+  url: "https://coregenix.com",
+  description:
+    "CoreGenix is an IT infrastructure and cyber security company in Mumbai providing NOC, AMC, FMC, cloud, VAPT, managed SOC, GRC and OT security services across India.",
+  keywords: [
+    "cyber security company",
+    "best cyber security company in Mumbai",
+    "top cyber security company in India",
+    "IT security services",
+    "managed security services",
+    "VAPT services",
+    "NOC AMC FMC services",
+    "cloud infrastructure management",
+    "OT security",
+    "GRC & DPO",
+  ],
+  phone: "+918355958119",
+  phoneDisplay: "+91 83559 58119",
+  email: "sales@cgcein.com",
+  address: {
+    street: "C 1405 Kailash Business Park, Park Side, Vikhroli (W)",
+    city: "Mumbai",
+    state: "Maharashtra",
+    postalCode: "400059",
+    country: "IN",
+    countryName: "India",
+  },
+  geo: {
+    latitude: 19.1083,
+    longitude: 72.9253,
+  },
+  hours: [
+    { dayOfWeek: "Monday", opens: "09:00", closes: "19:00" },
+    { dayOfWeek: "Tuesday", opens: "09:00", closes: "19:00" },
+    { dayOfWeek: "Wednesday", opens: "09:00", closes: "19:00" },
+    { dayOfWeek: "Thursday", opens: "09:00", closes: "19:00" },
+    { dayOfWeek: "Friday", opens: "09:00", closes: "19:00" },
+    { dayOfWeek: "Saturday", opens: "09:00", closes: "19:00" },
+  ],
+  socials: {
+    linkedin: "https://in.linkedin.com/company/cgces-pvt-ltd",
+    facebook: "https://www.facebook.com/people/CoreGenix/61583901786730/",
+  },
+  logo: "/images/coregenix/logo.png",
+};

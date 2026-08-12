@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
@@ -292,9 +293,9 @@ export default function SolutionsPage() {
                 Know More
                 <ArrowRightIcon />
               </a>
-              <a href="/contact" className="btn btn-outline btn-light">
+              <Link href="/contact" className="btn btn-outline btn-light">
                 Get Free Consultation
-              </a>
+              </Link>
             </Reveal>
           </div>
         </section>
@@ -668,10 +669,10 @@ export default function SolutionsPage() {
                     your IT & OT environment.
                   </p>
                 </div>
-                <a href="/contact" className="btn btn-light">
+                <Link href="/contact" className="btn btn-light">
                   Contact Us
                   <ArrowRightIcon />
-                </a>
+                </Link>
               </div>
             </Reveal>
           </div>
