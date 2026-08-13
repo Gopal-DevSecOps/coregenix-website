@@ -11,11 +11,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: base, lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
     { url: `${base}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/services/it-managed-services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/services/cloud-managed-services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/services/audit-assessment`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/services/managed-security-services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/solutions`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/solutions/it-infrastructure-solutions`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/solutions/cloud-infrastructure-solutions`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/solutions/cyber-security-solutions`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/solutions/grc-dpo`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/it-services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/contact`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.8 },
     { url: `${base}/career`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.5 },
     { url: `${base}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
+    { url: `${base}/unishield360`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
   ];
 
   const serviceRoutes: MetadataRoute.Sitemap = services.map((s) => ({

@@ -1,3 +1,18 @@
+.about-page-hero-title {
+  font-size: clamp(28px, 3.2vw, 40px);
+  line-height: 1.15;
+  max-width: 720px;
+}
+
+.about-page-hero-title .grad {
+  display: block;
+  font-style: italic;
+  background: var(--accent-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .about-stats {
   padding: 70px 0;
   background: var(--bg-band);
@@ -27,7 +42,6 @@
 
 .about-stat-num {
   display: block;
-  font-family: var(--font-heading), serif;
   font-size: 44px;
   font-weight: 800;
   line-height: 1.1;
@@ -73,6 +87,7 @@
 
 .pillar-card {
   position: relative;
+  height: 100%;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius);
@@ -122,6 +137,7 @@
 
 .journey-card {
   position: relative;
+  height: 100%;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);

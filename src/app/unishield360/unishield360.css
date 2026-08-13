@@ -1,0 +1,710 @@
+.uni-hero {
+  position: relative;
+  padding: 197px 0 90px;
+  background:
+    radial-gradient(ellipse at 80% 10%, rgba(242, 107, 33, 0.22) 0%, rgba(242, 107, 33, 0) 55%),
+    radial-gradient(ellipse at 10% 85%, rgba(242, 107, 33, 0.16) 0%, rgba(242, 107, 33, 0) 50%),
+    linear-gradient(160deg, #101d30 0%, #16233a 45%, #0d1727 100%);
+  overflow: hidden;
+}
+
+.uni-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 78%);
+  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 78%);
+  pointer-events: none;
+}
+
+.uni-hero .uni-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(242, 107, 33, 0.45);
+  color: #ffc29e;
+  font-family: var(--font-button), ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  backdrop-filter: blur(6px);
+}
+
+.uni-hero .uni-hero-badge svg {
+  width: 16px;
+  height: 16px;
+  color: var(--gold);
+}
+
+.uni-hero .page-hero-title {
+  color: #fff;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.08;
+  max-width: 900px;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+}
+
+.uni-hero .page-hero-title .grad {
+  display: block;
+  font-style: italic;
+  font-family: var(--font-heading), ui-serif, Georgia, serif;
+  background: linear-gradient(135deg, #ffb47e 0%, #ff8a4c 40%, #f26b21 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.uni-hero .page-hero-desc {
+  color: #c6d0dc;
+  font-size: 18px;
+  max-width: 660px;
+}
+
+.uni-hero .grad {
+  background: linear-gradient(135deg, #ff9a5c 0%, #f26b21 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.uni-hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.uni-hero-shield {
+  position: absolute;
+  top: 16%;
+  right: 5%;
+  width: 120px;
+  height: 120px;
+  display: grid;
+  place-items: center;
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(242, 107, 33, 0.35);
+  color: var(--gold);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  animation: floatY 8s ease-in-out infinite;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.uni-hero-shield svg {
+  width: 52px;
+  height: 52px;
+}
+
+.uni-hero-shield::after {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  border-radius: 40px;
+  background: radial-gradient(circle, rgba(242, 107, 33, 0.25) 0%, rgba(242, 107, 33, 0) 70%);
+  z-index: -1;
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+
+.uni-hero-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 42px;
+}
+
+.uni-hero-metric {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e8eef5;
+  font-family: var(--font-button), ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  backdrop-filter: blur(6px);
+}
+
+.uni-hero-metric strong {
+  font-family: var(--font-heading), ui-serif, Georgia, serif;
+  font-size: 20px;
+  font-weight: 800;
+  background: var(--accent-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.uni-strip {
+  background: #16233a;
+}
+
+.uni-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.uni-strip-item {
+  text-align: center;
+  padding: 22px 10px;
+}
+
+.uni-strip-num {
+  display: block;
+  font-size: clamp(30px, 3vw, 44px);
+  font-weight: 800;
+  line-height: 1.1;
+  background: var(--accent-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.uni-strip-label {
+  display: block;
+  margin-top: 6px;
+  color: #cfe0e1;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.uni-platform-grid,
+.uni-products-grid,
+.uni-solutions-grid,
+.uni-awards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.uni-platform-card,
+.uni-product-card,
+.uni-award-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  height: 100%;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.uni-platform-card:hover,
+.uni-product-card:hover,
+.uni-award-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--gold-2);
+}
+
+.uni-platform-card .icon-box,
+.uni-product-card .icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  background: var(--accent-grad);
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.uni-platform-card .icon-box svg,
+.uni-product-card .icon-box svg {
+  width: 27px;
+  height: 27px;
+}
+
+.uni-award-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  margin-bottom: 18px;
+  padding: 8px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid var(--border);
+}
+
+.uni-award-img {
+  object-fit: contain;
+  max-height: 54px;
+  width: auto;
+}
+
+.uni-platform-card h3,
+.uni-product-card h3,
+.uni-award-card h3 {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.uni-platform-card p,
+.uni-product-card p,
+.uni-award-card p {
+  color: var(--text-soft);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.uni-about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.uni-about-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  height: 100%;
+  transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+}
+
+.uni-about-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.uni-about-card .icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  background: var(--accent-grad);
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.uni-about-card h3 {
+  color: #fff;
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.uni-about-card p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.uni-about-text {
+  max-width: 860px;
+  margin: 40px auto 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.uni-solutions-grid {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.uni-solution-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  height: 100%;
+  transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+}
+
+.uni-solution-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.uni-solution-card .icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: var(--accent-grad);
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.uni-solution-card .icon-box svg {
+  width: 25px;
+  height: 25px;
+}
+
+.uni-solution-card h3 {
+  color: #fff;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.uni-solution-card p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13.5px;
+  line-height: 1.7;
+}
+
+.uni-faq-list {
+  display: grid;
+  gap: 16px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.uni-faq-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm);
+  padding: 22px 26px;
+  transition: border-color 0.3s ease;
+}
+
+.uni-faq-item:hover {
+  border-color: var(--gold);
+}
+
+.uni-faq-item h3 {
+  color: #fff;
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.uni-faq-item p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.uni-cta-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background: var(--accent-grad);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 46px 52px;
+  box-shadow: var(--shadow-card);
+  flex-wrap: wrap;
+}
+
+.uni-cta-box h2 {
+  color: #fff;
+  font-size: clamp(24px, 3vw, 34px);
+  max-width: 560px;
+}
+
+.uni-cta-box p {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.uni-product-card--link,
+.uni-solution-card--link {
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  text-decoration: none;
+}
+
+.uni-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 16px;
+  color: var(--gold);
+  font-family: var(--font-button), ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  transition: gap 0.3s ease;
+}
+
+.uni-card-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.uni-card-link:hover,
+.uni-product-card--link:hover .uni-card-link,
+.uni-solution-card--link:hover .uni-card-link {
+  gap: 12px;
+}
+
+.uni-about-link {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.uni-objectives-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.uni-objective-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  height: 100%;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.uni-objective-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--gold-2);
+}
+
+.uni-objective-card .icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  background: var(--accent-grad);
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.uni-objective-card h3 {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.uni-objective-card p {
+  color: var(--text-soft);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.uni-clients-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 18px;
+  align-items: center;
+}
+
+.uni-client-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 10px;
+  height: 80px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.uni-client-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.uni-client-img {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  filter: saturate(0.7);
+  transition: filter 0.3s ease;
+}
+
+.uni-client-badge:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-2);
+  box-shadow: var(--shadow-card);
+}
+
+.uni-client-badge:hover .uni-client-img {
+  filter: saturate(1);
+}
+
+.uni-compliance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.uni-compliance-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px 16px;
+  font-family: var(--font-button), ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.uni-compliance-badge:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+
+.uni-compliance-badge svg {
+  width: 20px;
+  height: 20px;
+  color: var(--gold);
+}
+
+.uni-links-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+
+.uni-links-col {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+}
+
+.uni-links-col h3 {
+  font-size: 17px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--gold);
+  font-family: var(--font-button), ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.uni-links-col ul {
+  list-style: none;
+  display: grid;
+  gap: 4px;
+}
+
+.uni-links-col a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 6px;
+  border-radius: 8px;
+  color: var(--text-soft);
+  font-size: 14px;
+  line-height: 1.5;
+  transition: background 0.25s ease, color 0.25s ease, padding-left 0.25s ease;
+}
+
+.uni-links-col a:hover {
+  background: #1b2a38;
+  color: #fff;
+  padding-left: 12px;
+}
+
+.uni-links-col a svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--gold);
+}
+
+@media (max-width: 992px) {
+  .uni-strip-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .uni-hero-shield {
+    display: none;
+  }
+
+  .uni-platform-grid,
+  .uni-products-grid,
+  .uni-about-grid,
+  .uni-awards-grid,
+  .uni-objectives-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .uni-solutions-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .uni-compliance-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .uni-clients-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .uni-links-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .uni-strip-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .uni-clients-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .uni-platform-grid,
+  .uni-products-grid,
+  .uni-about-grid,
+  .uni-awards-grid,
+  .uni-objectives-grid,
+  .uni-solutions-grid,
+  .uni-compliance-grid,
+  .uni-clients-grid,
+  .uni-links-grid {
+    grid-template-columns: 1fr;
+  }
+  .uni-cta-box {
+    padding: 34px 24px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .uni-cta-box .btn {
+    width: 100%;
+  }
+}

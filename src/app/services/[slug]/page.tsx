@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
-import Cta from "@/components/Cta";
 import JsonLd from "@/components/JsonLd";
 import CloudStrategyLanding from "@/components/CloudStrategyLanding";
 import ServiceLanding from "@/components/ServiceLanding";
@@ -89,12 +88,10 @@ export default async function ServicePage({ params }: Props) {
       {service.slug === "cloud-strategy" ? (
         <>
           <CloudStrategyLanding service={service} />
-          <Cta />
         </>
       ) : (
         <>
           <ServiceLanding service={service} />
-          <Cta />
         </>
       )}
       <Footer />

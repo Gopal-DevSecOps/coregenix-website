@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Wow from "./Wow";
 import { ArrowRightIcon, CheckIcon } from "./Icons";
 
@@ -59,10 +60,10 @@ export default function CyberExperts() {
               ))}
             </ul>
             <Wow delay={600} className="ce-actions">
-              <a href="#contact" className="btn btn-grad">
+              <Link href="/contact" className="btn btn-grad">
                 Request a Security Audit
                 <ArrowRightIcon />
-              </a>
+              </Link>
             </Wow>
           </div>
         </div>

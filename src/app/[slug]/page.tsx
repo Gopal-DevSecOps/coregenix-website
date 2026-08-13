@@ -145,18 +145,7 @@ export default async function LandingPage({ params }: Props) {
               </div>
             </Reveal>
 
-            <Reveal delay={2}>
-              <div className="landing-block">
-                <h2>What Our Clients Say</h2>
-                {page.testimonials.map((t) => (
-                  <p className="landing-testimonial" key={t}>
-                    {t}
-                  </p>
-                ))}
-              </div>
-            </Reveal>
-
-            <Reveal delay={3}>
+<Reveal delay={3}>
               <div className="landing-faq">
                 <h2>Frequently Asked Questions</h2>
                 {page.faq.map((f) => (

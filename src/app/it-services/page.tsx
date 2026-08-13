@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
 import Reveal from "@/components/Reveal";
-import Cta from "@/components/Cta";
 import JsonLd from "@/components/JsonLd";
 import { SITE } from "@/lib/site";
 import {
@@ -326,8 +325,6 @@ export default function ItServicesPage() {
             </div>
           </div>
         </section>
-
-        <Cta />
       </main>
       <Footer />
       <ScrollTop />

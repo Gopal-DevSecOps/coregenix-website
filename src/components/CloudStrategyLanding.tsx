@@ -104,7 +104,7 @@ export default function CloudStrategyLanding({ service }: Props) {
             eyebrow="The Challenge"
             title={
               <>
-                The <span className="grad">Problem</span> We Solve
+                The Problem <span className="grad">We Solve</span>
               </>
             }
           />
@@ -178,7 +178,7 @@ export default function CloudStrategyLanding({ service }: Props) {
             eyebrow="Why Choose CoreGenix"
             title={
               <>
-                The <span className="grad">CoreGenix</span> Difference
+                The CoreGenix <span className="grad">Difference</span>
               </>
             }
           />

@@ -45,10 +45,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "Enterprise network design — LAN, WAN, SD-WAN and data centre",
+          "Structured cabling with copper and fibre done right",
+          "Secure Wi-Fi, segmentation and access control built in",
+          "24x7 NOC monitoring after deployment",
           "18+ years designing and running enterprise networks",
-          "120+ projects delivered across industries",
-          "55+ happy clients with long-running network relationships",
-          "Combined network + security + NOC expertise under one roof",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -109,10 +110,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
-          "18+ years building and running data center environments",
-          "120+ projects delivered across industries",
-          "55+ happy clients with mission-critical workloads",
-          "Combined DC + cloud + security expertise",
+          "Data centre design and build — racks, cabling, UPS, cooling",
+          "Virtualization and storage engineered for uptime",
+          "Power and cooling redundancy planned, not patched",
+          "One partner for design, build and 24x7 operations",
+          "18+ years building and running data centre environments",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -173,10 +175,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "Backups that restore — we test them, not just schedule them",
+          "On-premise and cloud backup built to your RPO and RTO",
+          "Ransomware-resistant 3-2-1 strategy",
+          "Backup health reports you can prove to auditors",
           "18+ years protecting business-critical data",
-          "120+ projects delivered including backup for enterprises",
-          "55+ happy clients who trust us with their data",
-          "Combined backup + security + cloud expertise",
           "Mumbai office, Pan-India support",
         ],
       },
@@ -237,10 +240,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "RPO and RTO defined for your business, then delivered",
+          "Tested failover — regular DR drills, not just documents",
+          "Recovery architecture layered on reliable backups",
+          "Board-ready continuity documentation",
           "18+ years of infrastructure and recovery experience",
-          "120+ projects delivered including DR for enterprises",
-          "55+ happy clients with business-critical systems",
-          "Combined DR + backup + cloud + security expertise",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -301,10 +305,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
-          "18+ years across data centers, virtualization and cloud",
-          "120+ projects delivered including private clouds",
-          "55+ happy clients across regulated industries",
-          "Combined private + public + hybrid expertise",
+          "Dedicated infrastructure — no noisy neighbours",
+          "Compliance and data sovereignty by design",
+          "Enterprise virtualization with predictable performance",
+          "Private cloud that's actually managed, not just built",
+          "18+ years across data centres, virtualization and cloud",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -365,10 +370,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "Azure and AWS expertise without vendor bias",
+          "Phased migrations that protect production uptime",
+          "Cost optimization — no bill-shock surprises",
+          "Security and landing zones from day one",
           "18+ years across infrastructure and cloud",
-          "120+ projects delivered, including Azure & AWS migrations",
-          "55+ happy clients running production cloud workloads",
-          "Multi-cloud expertise — we recommend what's right",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -429,10 +435,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "Workloads placed where they belong — cost, control, compliance",
+          "Secure links between on-premise and cloud",
+          "One operating model across your whole estate",
+          "Consistent security policies everywhere",
           "18+ years across on-premise and cloud environments",
-          "120+ projects delivered including hybrid estates",
-          "55+ happy clients with mixed infrastructure",
-          "Combined DC + cloud + security + NOC expertise",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -493,10 +500,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "Hardening that closes the paths attackers actually use",
+          "Patch and vulnerability management that stays on top of CVE",
+          "Segmentation and access control built for zero-trust readiness",
+          "24x7 visibility backed by our SOC",
           "18+ years of security and infrastructure expertise",
-          "120+ projects delivered across industries",
-          "55+ happy clients who rely on our defense",
-          "Combined infra + SOC + VAPT expertise under one roof",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -557,10 +565,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "One source of truth for every user in your business",
+          "Least-privilege access by design, not afterthought",
+          "Joiners, movers and leavers managed automatically",
+          "Access governance that survives audits",
           "18+ years of IT and security expertise",
-          "120+ projects delivered including IAM programs",
-          "55+ happy clients across industries",
-          "Deep identity + security + compliance team",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -621,10 +630,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "One login for every cloud and on-premise application",
+          "SAML and OIDC federation done right",
+          "MFA enforced consistently at every sign-in",
+          "Fewer passwords, fewer resets, happier users",
           "18+ years of IT and security expertise",
-          "120+ projects delivered across industries",
-          "55+ happy clients with production applications",
-          "Deep identity + security + cloud expertise",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -685,10 +695,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "Admin and service account credentials vaulted, never shared",
+          "Sessions monitored and recorded for accountability",
+          "Least privilege granted only when needed",
+          "Audit evidence for every privileged action",
           "18+ years of security expertise",
-          "120+ projects delivered including PAM programs",
-          "55+ happy clients across industries",
-          "Deep identity + security + compliance team",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -749,10 +760,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "Every request verified — no implicit trust, anywhere",
+          "Device trust before access is granted",
+          "Micro-segmentation that contains breaches",
+          "A practical, phased roadmap, not a buzzword",
           "18+ years across network and security architecture",
-          "120+ projects delivered across industries",
-          "55+ happy clients with security-sensitive workloads",
-          "Combined IAM + network + SOC expertise",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -813,10 +825,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "Sensitive data discovered across endpoints, network and cloud",
+          "Risky transfers blocked automatically, not after the fact",
+          "Visibility into how your data actually flows",
+          "Evidence for compliance and audits",
           "18+ years of security and data protection expertise",
-          "120+ projects delivered across data-sensitive industries",
-          "55+ happy clients who trust us with their data",
-          "Combined DLP + SOC + GRC expertise",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -877,10 +890,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "Detection and response on every endpoint, not just antivirus",
+          "A managed team watching and responding for you",
+          "Threat hunting that finds attackers before they spread",
+          "Response within minutes, backed by our SOC",
           "18+ years of security operations experience",
-          "120+ projects delivered across industries",
-          "55+ happy clients with production environments",
-          "Combined EDR + SOC + incident response expertise",
           "Mumbai base, Pan-India coverage",
         ],
       },
@@ -941,10 +955,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "Independent GRC assessments you can take to your board",
+          "Gap analysis prioritized by real business risk",
+          "Remediation roadmaps your team can execute",
+          "Audit-ready evidence and documentation",
           "18+ years of IT and security expertise",
-          "120+ projects delivered including GRC and audits",
-          "55+ happy clients across regulated industries",
-          "Deep GRC + security + compliance team",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -1005,10 +1020,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "Risks scored by likelihood and impact — not gut feel",
+          "A living risk register your teams actually own",
+          "Treatment plans aligned to ISO 27001 and NIST CSF",
+          "Board-ready reporting management can act on",
           "18+ years of IT and security experience",
-          "120+ projects delivered including risk programs",
-          "55+ happy clients across industries",
-          "Deep risk + GRC + technical security team",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -1069,10 +1085,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "Clear assessment of where you stand against each framework",
+          "ISO 27001, NIST CSF, DPDP and GDPR programs",
+          "Policies and evidence that pass certification audits",
+          "Compliance that wins enterprise and government clients",
           "18+ years of IT and security expertise",
-          "120+ projects delivered including ISO 27001 programs",
-          "55+ happy clients across regulated industries",
-          "Deep compliance + security + GRC team",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -1133,10 +1150,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "Facts about your posture, not assumptions",
+          "Priorities backed by data, not gut feel",
+          "Technical and process review in one engagement",
+          "A roadmap you can actually execute",
           "18+ years of IT and security expertise",
-          "120+ projects delivered including assessments",
-          "55+ happy clients across industries",
-          "Combined risk + compliance + technical team",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -1197,10 +1215,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "Maturity measured across all five NIST functions",
+          "Practical, phased improvement roadmap",
+          "A framework clients and auditors recognize",
+          "Security language the board understands",
           "18+ years of security expertise",
-          "120+ projects delivered including NIST programs",
-          "55+ happy clients across industries",
-          "Deep framework + technical security team",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -1261,10 +1280,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "Asset discovery — you can't protect what you can't see",
+          "Threats and impacts scored for your business",
+          "Prioritized fixes your team can execute",
+          "Evidence for management and auditors",
           "18+ years of IT and security expertise",
-          "120+ projects delivered including risk assessments",
-          "55+ happy clients across industries",
-          "Combined risk + technical security team",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -1325,10 +1345,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "Policies auditors and clients actually accept",
+          "Tailored to your industry, not generic templates",
+          "A working control, not a document to file away",
+          "Foundation for ISO 27001 and other frameworks",
           "18+ years of IT and security expertise",
-          "120+ projects delivered including policy programs",
-          "55+ happy clients across regulated industries",
-          "Deep security + compliance + GRC team",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -1389,10 +1410,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "An ISMS that's real, not shelfware",
+          "Annex A controls prioritized and implemented",
+          "Documentation that survives certification audits",
+          "Security integrated with how you run the business",
           "18+ years of IT and security expertise",
-          "120+ projects delivered including ISO 27001 programs",
-          "55+ happy clients across regulated industries",
-          "Deep ISMS + GRC + technical security team",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -1453,10 +1475,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
+          "Business impact analysis that defines real priorities",
+          "Plans rehearsed through actual drills, not documents",
+          "Clear recovery timeframes your team can hit",
+          "One partner for BCP, DR, backup and cloud",
           "18+ years of infrastructure and recovery experience",
-          "120+ projects delivered including BCP/DR programs",
-          "55+ happy clients with business-critical systems",
-          "Combined BCP + DR + backup + cloud expertise",
           "Mumbai base, Pan-India delivery",
         ],
       },

@@ -60,8 +60,8 @@ export default function Home() {
         <CyberExperts />
         <VideoSection />
         <CustomerSuccess />
-        <Partners />
         <Testimonials />
+        <Partners />
         <Leadership />
         <BlogGrid />
         <Cta />

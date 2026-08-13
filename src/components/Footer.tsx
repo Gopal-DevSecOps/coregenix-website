@@ -89,31 +89,37 @@ export default function Footer() {
                   <MapPinIcon />
                 </span>
                 <span>
-                  C 1405 Kailash Business Park,
+                  India — Mumbai, Bengaluru, Jaipur
                   <br />
-                  Park Side, Vikhroli (W),
-                  <br />
-                  Mumbai - 400059
+                  Europe — Warsaw
                 </span>
               </li>
               <li>
                 <span className="icon">
                   <PhoneIcon />
                 </span>
-                <a href="tel:+918355958119">+91 83559 58119</a>
+                <span>
+                  <a href="tel:+918355958119">+91 83559 58119</a>
+                  <br />
+                  <a href="tel:+918369339809">+91 83693 39809</a>
+                </span>
               </li>
               <li>
                 <span className="icon">
                   <MailIcon />
                 </span>
-                <a href="mailto:sales@cgcein.com">sales@cgcein.com</a>
+                <span>
+                  <a href="mailto:sales@cgcein.com">sales@cgcein.com</a>
+                  <br />
+                  <a href="mailto:sales@coregenix.in">sales@coregenix.in</a>
+                </span>
               </li>
             </ul>
           </Reveal>
         </div>
 
         <div className="footer-bottom">
-          <span>2026 © All rights reserved by CoreGenix.</span>
+          <span>{new Date().getFullYear()} © All rights reserved by CoreGenix.</span>
           <span>
             <a href="#home">Privacy Policy</a> &nbsp;·&nbsp;{" "}
             <a href="#home">Terms & Conditions</a>

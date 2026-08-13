@@ -118,8 +118,8 @@ export default function RankingPageView({ slug }: { slug: string }) {
               </div>
             </Reveal>
 
-            <Reveal delay={5}>
-              <div className="ranking-cta">
+        <Reveal delay={5}>
+          <div className="ranking-cta">
                 <h2>{page.cta}</h2>
                 <div className="ranking-cta-actions">
                   <Link href="/contact" className="btn btn-grad">

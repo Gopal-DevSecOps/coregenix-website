@@ -65,28 +65,46 @@ const localBusinessJsonLd = {
     opens: h.opens,
     closes: h.closes,
   })),
+  areaServed: ["Mumbai", "Bengaluru", "Jaipur", "Warsaw", "India", "Europe"],
   hasMap: "https://www.google.com/maps?q=Kailash+Business+Park+Vikhroli+Mumbai+400059",
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: SITE.phoneDisplay,
+      contactType: "sales",
+      email: SITE.email,
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: SITE.phoneAltDisplay,
+      contactType: "sales",
+      email: SITE.emailAlt,
+    },
+  ],
 };
 
 const contactDetails = [
   {
     icon: MapPinIcon,
-    title: "Our Office",
-    lines: ["C 1405 Kailash Business Park,", "Park Side, Vikhroli (W),", "Mumbai - 400059"],
-    action: "Get Directions",
-    href: "https://www.google.com/maps?q=Kailash+Business+Park+Vikhroli+Mumbai+400059",
+    title: "Our Offices",
+    lines: [
+      "India — Mumbai, Bengaluru, Jaipur",
+      "Europe — Warsaw",
+    ],
+    action: "View Locations",
+    href: "#locations",
   },
   {
     icon: PhoneIcon,
     title: "Call Us",
-    lines: ["+91 83559 58119"],
+    lines: ["+91 83559 58119", "+91 83693 39809"],
     action: "Call Now",
     href: "tel:+918355958119",
   },
   {
     icon: MailIcon,
     title: "Email Us",
-    lines: ["sales@cgcein.com"],
+    lines: ["sales@cgcein.com", "sales@coregenix.in"],
     action: "Send Email",
     href: "mailto:sales@cgcein.com",
   },
@@ -109,7 +127,7 @@ export default function ContactPage() {
               Contact CoreGenix
             </Reveal>
             <h1 className="page-hero-title">
-              Let&apos;s Build Your <span className="grad">IT Strategy</span> Together
+              Let&apos;s Build Your <span className="grad">IT Strategy Together</span>
             </h1>
             <Reveal as="p" className="page-hero-desc" delay={1}>
               Tell us about your project and our experts will get back to you with a free
@@ -164,28 +182,47 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="contact-map-section">
+        <section id="locations" className="contact-map-section">
           <div className="container">
-            <div className="map-wrap">
-              <iframe
-                title="CoreGenix Office — Kailash Business Park, Vikhroli, Mumbai"
-                src="https://www.google.com/maps?q=Kailash%20Business%20Park%2C%20Park%20Site%2C%20Vikhroli%20(W)%2C%20Mumbai%20400059&z=15&output=embed"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-              />
-              <div className="map-card">
-                <span className="map-card-icon">
-                  <MapPinIcon />
-                </span>
-                <div>
-                  <h3>CoreGenix Office</h3>
-                  <p>C 1405 Kailash Business Park, Vikhroli (W), Mumbai — 400059</p>
-                  <a href="https://www.google.com/maps?q=Kailash+Business+Park+Vikhroli+Mumbai+400059">
-                    Get Directions
-                  </a>
-                </div>
-              </div>
+            <div className="locations-head">
+              <Reveal as="span" className="eyebrow">
+                Our Locations
+              </Reveal>
+              <Reveal as="h2" delay={1} className="locations-title">
+                Serving Clients Across <span className="grad">India &amp; Europe</span>
+              </Reveal>
+            </div>
+
+            <div className="locations-grid">
+              {SITE.locations.map((loc, i) => (
+                <Reveal key={loc.city} delay={(i % 2) + 1} className="location-card">
+                  <div className="map-wrap">
+                    <iframe
+                      title={`CoreGenix ${loc.city} Office`}
+                      src={loc.mapsUrl}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      allowFullScreen
+                    />
+                    <div className="map-card">
+                      <span className="map-card-icon">
+                        <MapPinIcon />
+                      </span>
+                      <div>
+                        <h3>
+                          {loc.city} <span className="map-card-region">{loc.region}</span>
+                        </h3>
+                        <p>{loc.address}</p>
+                        <a
+                          href={`https://www.google.com/maps?q=${encodeURIComponent(loc.mapsQuery)}`}
+                        >
+                          Get Directions
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
             </div>
           </div>
         </section>

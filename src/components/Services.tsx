@@ -17,41 +17,49 @@ const services = [
     icon: MonitorIcon,
     title: "Managed Support Services",
     desc: "24/7 proactive IT support and helpdesk that keeps your systems running smoothly without any downtime.",
+    href: "/services/it-managed-services",
   },
   {
     icon: CloudIcon,
     title: "Cloud Infrastructure",
     desc: "Secure cloud migration, deployment and management — scale your business on reliable public and private clouds.",
+    href: "/services/cloud-managed-services",
   },
   {
     icon: ServerIcon,
     title: "IT Infrastructure Solutions",
     desc: "Design, deployment and management of servers, networks and data centers built around your business needs.",
+    href: "/solutions/it-infrastructure-solutions",
   },
   {
     icon: ShieldIcon,
     title: "IT & OT Cyber Security",
     desc: "Complete protection for your IT and operational technology with audit, hardening, SOC and incident response.",
+    href: "/services/managed-security-services",
   },
   {
     icon: DatabaseIcon,
     title: "Data Backup / DR / BCP",
     desc: "Automated backup, disaster recovery and business continuity planning to protect your critical data always.",
+    href: "/solutions/disaster-recovery-bcp",
   },
   {
     icon: SettingsIcon,
     title: "ITIL Automation",
     desc: "Streamline IT service management with ITIL-aligned processes and smart automation for better efficiency.",
+    href: "/services/cloud-managed-services",
   },
   {
     icon: UserIcon,
     title: "Staff Augmentation",
     desc: "Skilled IT professionals on demand — extend your team with the right expertise, right when you need it.",
+    href: "/staffing-fms-facility-management",
   },
   {
     icon: LockIcon,
     title: "InfoSec GRC",
     desc: "Governance, risk and compliance management to meet ISO 27001 and industry standards with confidence.",
+    href: "/solutions/grc-dpo",
   },
 ];
 
@@ -65,7 +73,7 @@ export default function Services() {
           center
           title={
             <>
-              We provide <span className="grad">IT Infrastructure</span> & Cyber Security Services for your Business</>
+              We provide IT Infrastructure & <span className="grad">Cyber Security Services for your Business</span></>
           }
           desc="Complete range of technology services — from IT support and cloud to security and compliance — tailored to your business."
         />
@@ -78,7 +86,7 @@ export default function Services() {
                 </span>
                 <h3>{service.title}</h3>
                 <p>{service.desc}</p>
-                <a href="#contact" className="link">
+                <a href={service.href} className="link">
                   Learn More
                   <ArrowRightIcon />
                 </a>

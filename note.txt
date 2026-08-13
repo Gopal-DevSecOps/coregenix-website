@@ -15,11 +15,11 @@ CONTACT
 
 
 
-IT Managed Services
+IT Managed Services ek page banao or yah 
 Network Operations Center (NOC)
 Annual Maintenance Contract (AMC)
+staffing-fms-facility-management 
 
-Facility Maintenance Contract (FMC)
 Cloud Managed Services ek page
 Cloud Strategy ek page
 Cloud Infrastructure Management ek page
@@ -43,9 +43,9 @@ Get Free Consultation
 
 
 IT Infrastructure Solutions
-Network
-Data Center
-Data Backup
+Network  Solutions
+Data Center Solutions
+Data Backup Solutions
 Disaster Recovery & Business Continuity Planning
 Cloud Infrastructure Solutions
 Private Cloud

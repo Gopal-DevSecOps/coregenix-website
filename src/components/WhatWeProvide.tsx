@@ -14,31 +14,37 @@ const services = [
     icon: ShieldIcon,
     title: "Network Security",
     desc: "Deploying firewalls and intrusion detection systems to safeguard networks.",
+    href: "/services/managed-security-services",
   },
   {
     icon: LockIcon,
     title: "Data Encryption",
     desc: "Encrypting sensitive data at rest and in transit using advanced encryption.",
+    href: "/services/managed-security-services",
   },
   {
     icon: FingerprintIcon,
     title: "Identity & Access",
     desc: "Managing user identities and access with MFA and detailed role-based control.",
+    href: "/solutions/identity-access-management",
   },
   {
     icon: MonitorIcon,
     title: "Security Monitoring",
     desc: "24/7 monitoring with advanced SIEM systems for real-time detection.",
+    href: "/services/soc-mss",
   },
   {
     icon: DatabaseIcon,
     title: "Backup & Recovery",
     desc: "Protecting critical data with secure backups and rapid recovery plans.",
+    href: "/solutions/data-backup",
   },
   {
     icon: SettingsIcon,
     title: "Security Configuration",
     desc: "Hardening systems and applying secure configurations across all infrastructure.",
+    href: "/services/managed-security-services",
   },
 ];
 
@@ -74,7 +80,7 @@ export default function WhatWeProvide() {
                   </span>
                   <h3>{service.title}</h3>
                   <p>{service.desc}</p>
-                  <a href="#contact" className="wwp-link">
+                  <a href={service.href} className="wwp-link">
                     Learn More
                     <ArrowRightIcon />
                   </a>

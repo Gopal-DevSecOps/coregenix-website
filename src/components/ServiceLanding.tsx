@@ -217,7 +217,7 @@ export default function ServiceLanding({
               eyebrow="The Challenge"
               title={
                 <>
-                  The <span className="grad">Problem</span> We Solve
+                  The Problem <span className="grad">We Solve</span>
                 </>
               }
             />
@@ -299,7 +299,7 @@ export default function ServiceLanding({
               eyebrow="Why Choose CoreGenix"
               title={
                 <>
-                  The <span className="grad">CoreGenix</span> Difference
+                  The CoreGenix <span className="grad">Difference</span>
                 </>
               }
             />
@@ -379,7 +379,7 @@ export default function ServiceLanding({
         </div>
       </section>
 
-      <section className="section sl-cta">
+            <section className="section sl-cta">
         <div className="container">
           <Reveal>
             <div className="sl-cta-box">

@@ -12,6 +12,7 @@ interface MegaItem {
 
 interface MegaGroup {
   title: string;
+  href?: string;
   items: MegaItem[];
   wide?: boolean;
 }
@@ -33,14 +34,16 @@ const menu: MenuItem[] = [
     mega: [
       {
         title: "IT Managed Services",
+        href: "/services/it-managed-services",
         items: [
           { label: "Network Operations Center", href: "/network-operations-center" },
           { label: "Annual Maintenance Contract", href: "/annual-maintenance-contract" },
-          { label: "Facility Maintenance Contract", href: "/facility-maintenance-contract" },
+          { label: "Staffing & FMS Facility Management", href: "/staffing-fms-facility-management" },
         ],
       },
       {
         title: "Cloud Managed Services",
+        href: "/services/cloud-managed-services",
         items: [
           { label: "Cloud Strategy", href: "/services/cloud-strategy" },
           { label: "Cloud Infrastructure Management", href: "/services/cloud-infrastructure-management" },
@@ -49,6 +52,7 @@ const menu: MenuItem[] = [
       },
       {
         title: "Audit & Assessment",
+        href: "/services/audit-assessment",
         items: [
           { label: "Governance, Risk & Compliance & Data Protection Officer", href: "/services/grc-dpo" },
           { label: "Vulnerability Assessment & Penetration Testing", href: "/services/vapt" },
@@ -59,6 +63,7 @@ const menu: MenuItem[] = [
       {
         title: "Managed Security Services",
         wide: true,
+        href: "/services/managed-security-services",
         items: [
           { label: "Managed Security Operations Center as a Service", href: "/services/soc-mss" },
           { label: "Vulnerability Management as a Service", href: "/services/vulnerability-management" },
@@ -76,6 +81,7 @@ const menu: MenuItem[] = [
     mega: [
       {
         title: "IT Infrastructure Solutions",
+        href: "/solutions/it-infrastructure-solutions",
         items: [
           { label: "Network", href: "/solutions/network" },
           { label: "Data Center", href: "/solutions/data-center" },
@@ -85,6 +91,7 @@ const menu: MenuItem[] = [
       },
       {
         title: "Cloud Infrastructure Solutions",
+        href: "/solutions/cloud-infrastructure-solutions",
         items: [
           { label: "Private Cloud", href: "/solutions/private-cloud" },
           { label: "Public Cloud", href: "/solutions/public-cloud" },
@@ -93,6 +100,7 @@ const menu: MenuItem[] = [
       },
       {
         title: "Cyber Security Solutions",
+        href: "/solutions/cyber-security-solutions",
         items: [
           { label: "Infrastructure Security", href: "/solutions/infrastructure-security" },
           { label: "Identity & Access Management", href: "/solutions/identity-access-management" },
@@ -106,6 +114,7 @@ const menu: MenuItem[] = [
       {
         title: "Governance, Risk & Compliance & Data Protection Officer",
         wide: true,
+        href: "/solutions/grc-dpo",
         items: [
           { label: "Governance, Risk & Compliance & Cyber Audits", href: "/solutions/grc-cyber-audits" },
           { label: "Risk Management", href: "/solutions/risk-management" },
@@ -120,6 +129,7 @@ const menu: MenuItem[] = [
       },
     ],
   },
+  { label: "UniShield360", href: "/unishield360" },
   { label: "Blog", href: "/blog" },
   { label: "Career", href: "/career" },
   { label: "Contact", href: "/contact" },
@@ -304,7 +314,13 @@ export default function Header() {
             <div className={`mega-groups ${megaItem.cols2 ? "mega-groups--cols2" : ""}`}>
               {megaItem.mega.map((group) => (
                 <div className={`mega-group ${group.wide ? "mega-group--wide" : ""}`} key={group.title}>
-                  <h4 className="mega-group-title">{group.title}</h4>
+                  {group.href ? (
+                    <Link href={group.href} className="mega-group-title" onClick={() => setMegaOpen(null)}>
+                      {group.title}
+                    </Link>
+                  ) : (
+                    <h4 className="mega-group-title">{group.title}</h4>
+                  )}
                   <div className={group.wide ? "mega-group-items" : undefined}>
                     {group.items.map((sub) => (
                       <a key={sub.label} href={sub.href}>
@@ -351,6 +367,15 @@ export default function Header() {
                         {group.title}
                         <ChevronDownIcon />
                       </button>
+                      {group.href ? (
+                        <a
+                          href={group.href}
+                          onClick={() => setMobileOpen(false)}
+                          className="m-group-standalone"
+                        >
+                          {group.title} — View All
+                        </a>
+                      ) : null}
                       <div className={`m-group-items ${openGroup === group.title ? "open" : ""}`}>
                         {group.items.map((sub) => (
                           <a key={sub.label} href={sub.href} onClick={() => setMobileOpen(false)}>

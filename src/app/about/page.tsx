@@ -110,8 +110,8 @@ export default function AboutPage() {
             <Reveal as="span" className="page-hero-eyebrow">
               About CoreGenix
             </Reveal>
-            <h1 className="page-hero-title">
-              Engineering <span className="grad">Trusted IT Solutions</span> for Over 18 Years
+            <h1 className="page-hero-title about-page-hero-title">
+              Your Trusted Technology Partner <span className="grad">Since 2007</span>
             </h1>
             <Reveal as="p" className="page-hero-desc" delay={1}>
               We are a team of skilled experts dedicated to delivering tailored IT solutions that help
@@ -144,7 +144,7 @@ export default function AboutPage() {
               <SectionHeading
                 title={
                   <>
-                    18+ Years of <span className="grad">Your Trust</span> & Successful IT Services
+                    18+ Years of Your Trust & <span className="grad">Successful IT Services</span>
                   </>
                 }
                 lead="We provide IT Infrastructure & Cyber Security Services for your Business"

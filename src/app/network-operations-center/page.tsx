@@ -6,7 +6,6 @@ import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
-import Cta from "@/components/Cta";
 import JsonLd from "@/components/JsonLd";
 import {
   MonitorIcon,
@@ -102,19 +101,6 @@ const processSteps = [
   { step: "Step 3", title: "24x7 Monitoring & Management", desc: "Our engineers monitor your network continuously, proactively identifying and resolving issues." },
   { step: "Step 4", title: "Incident Response & Resolution", desc: "Detection under 2 minutes, triage under 10 minutes, resolution under 30 minutes and root cause analysis within 24 hours." },
   { step: "Step 5", title: "Continuous Improvement", desc: "We analyze incident data, optimize monitoring rules, and provide ongoing recommendations." },
-];
-
-const testimonials = [
-  {
-    text: "CoreGenix NOC has been a game-changer for our business. We went from frequent outages to 99.99% uptime. Their team is responsive, professional, and truly cares about our success.",
-    name: "Client",
-    role: "Leading E-commerce Brand",
-  },
-  {
-    text: "We tried multiple NOC providers, but CoreGenix stood out. Their proactive approach and deep expertise saved us from multiple potential disasters.",
-    name: "Client",
-    role: "Healthcare Chain",
-  },
 ];
 
 const faqs = [
@@ -320,31 +306,6 @@ export default function NocLandingPage() {
           </div>
         </section>
 
-        <section className="section noc-testimonials section-dark">
-          <div className="container">
-            <SectionHeading
-              center
-              eyebrow="Client Stories"
-              title={
-                <>
-                  What Our <span className="grad">Clients Say</span>
-                </>
-              }
-            />
-            <div className="noc-testimonial-grid">
-              {testimonials.map((t, i) => (
-                <Reveal key={t.name} delay={i + 1}>
-                  <div className="noc-testimonial-card">
-                    <p>{t.text}</p>
-                    <span className="noc-testimonial-name">{t.name}</span>
-                    <span className="noc-testimonial-role">{t.role}</span>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="section noc-faq">
           <div className="container">
             <SectionHeading
@@ -368,8 +329,6 @@ export default function NocLandingPage() {
             </div>
           </div>
         </section>
-
-        <Cta />
       </main>
       <Footer />
       <ScrollTop />

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import { CheckIcon, ArrowRightIcon } from "./Icons";
@@ -35,7 +36,7 @@ export default function WhyChooseUs() {
           <SectionHeading
             title={
               <>
-                18+ Years of <span className="grad">Your Trust</span> & Successful IT Services
+                18+ Years of Your Trust & <span className="grad">Successful IT Services</span>
               </>
             }
             lead="We provide IT Infrastructure & Cyber Security Services for your Business"
@@ -52,10 +53,10 @@ export default function WhyChooseUs() {
             ))}
           </ul>
           <Reveal delay={3}>
-            <a href="#contact" className="btn btn-grad">
+            <Link href="/contact" className="btn btn-grad">
               Request Consultation
               <ArrowRightIcon />
-            </a>
+            </Link>
           </Reveal>
         </div>
       </div>

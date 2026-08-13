@@ -6,7 +6,6 @@ import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
-import Cta from "@/components/Cta";
 import JsonLd from "@/components/JsonLd";
 import {
   MonitorIcon,
@@ -141,24 +140,6 @@ const industries = [
   { title: "Government / PSU", desc: "Comprehensive AMC and IT infrastructure maintenance." },
   { title: "Technology / IT", desc: "Complete IT infrastructure management." },
   { title: "Fintech", desc: "Secure, compliant and always-available IT operations." },
-];
-
-const testimonials = [
-  {
-    text: "Services at CGCE are excellent, and they perfectly aligned with us for Cloud and software licenses. The renewal process was smooth, and they always adhered to timelines. We had a hassle-free and pleasant experience. Highly recommend CGCE for all IT needs!",
-    name: "Yashwant",
-    role: "Head IT",
-  },
-  {
-    text: "CGCE is a game-changer! Their proactive response to challenges proved their commitment to customer satisfaction. Their service was truly outstanding — what impressed us most was their adherence to timelines.",
-    name: "Mahindra & Mahindra",
-    role: "Verified Client",
-  },
-  {
-    text: "Their service was truly outstanding and perfectly aligned with our needs. What impressed us most was their adherence to timelines and the quality of their technical team.",
-    name: "Manish Mehta",
-    role: "Head IT (India)",
-  },
 ];
 
 const faqs = [
@@ -428,31 +409,6 @@ export default function AmcLandingPage() {
           </div>
         </section>
 
-        <section className="section amc-testimonials section-dark">
-          <div className="container">
-            <SectionHeading
-              center
-              eyebrow="Client Stories"
-              title={
-                <>
-                  What Our <span className="grad">Clients Say</span>
-                </>
-              }
-            />
-            <div className="amc-testimonial-grid">
-              {testimonials.map((t, i) => (
-                <Reveal key={t.name} delay={i + 1}>
-                  <div className="amc-testimonial-card">
-                    <p>{t.text}</p>
-                    <span className="amc-testimonial-name">{t.name}</span>
-                    <span className="amc-testimonial-role">{t.role}</span>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="section amc-faq">
           <div className="container">
             <SectionHeading
@@ -476,8 +432,6 @@ export default function AmcLandingPage() {
             </div>
           </div>
         </section>
-
-        <Cta />
       </main>
       <Footer />
       <ScrollTop />

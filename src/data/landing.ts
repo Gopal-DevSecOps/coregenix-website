@@ -60,7 +60,7 @@ export const landingPages: LandingPage[] = services.map((s) => ({
 const landingSlugMap: Record<string, string> = {
   "network-operations-center": "noc",
   "annual-maintenance-contract": "amc",
-  "facility-maintenance-contract": "fmc",
+  "staffing-fms-facility-management": "staffing-fms",
   "cloud-strategy": "cloud-strategy",
   "cloud-infrastructure-management": "cloud-infrastructure-management",
   "backup-and-recovery": "backup-recovery",
