@@ -13,9 +13,32 @@ import { SITE } from "@/lib/site";
 import "./about.css";
 
 export const metadata: Metadata = {
-  title: "About Us — CoreGenix",
+  title: "About Us",
   description:
     "CoreGenix is a trusted IT infrastructure and cyber security partner with 18+ years of experience delivering tailored technology solutions.",
+  keywords: [
+    "about CoreGenix",
+    "IT company Mumbai",
+    "cyber security company India",
+    "IT infrastructure partner",
+    "managed IT services company",
+  ],
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Us — CoreGenix",
+    description:
+      "CoreGenix is a trusted IT infrastructure and cyber security partner with 18+ years of experience.",
+    url: `${SITE.url}/about`,
+    type: "website",
+    locale: "en_IN",
+    siteName: SITE.name,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us — CoreGenix",
+    description:
+      "CoreGenix is a trusted IT infrastructure and cyber security partner with 18+ years of experience.",
+  },
 };
 
 const organizationJsonLd = {

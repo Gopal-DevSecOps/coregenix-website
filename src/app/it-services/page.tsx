@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
 import Reveal from "@/components/Reveal";
 import Cta from "@/components/Cta";
+import JsonLd from "@/components/JsonLd";
+import { SITE } from "@/lib/site";
 import {
   NetworkIcon,
   ServerIcon,
@@ -23,9 +25,56 @@ import {
 import "./it-services.css";
 
 export const metadata: Metadata = {
-  title: "IT Enterprise Solutions & Services — CoreGenix",
+  title: "IT Enterprise Solutions & Services",
   description:
     "IT Infrastructure Solutions from CoreGenix: network infrastructure, datacenter & cloud solutions, cybersecurity for IT & OT, and data management with 24x7 managed support.",
+  keywords: [
+    "IT infrastructure services",
+    "IT enterprise solutions India",
+    "network infrastructure company Mumbai",
+    "datacenter solutions",
+    "IT services company",
+  ],
+  alternates: { canonical: "/it-services" },
+  openGraph: {
+    title: "IT Enterprise Solutions & Services — CoreGenix",
+    description:
+      "Network infrastructure, datacenter & cloud solutions, cybersecurity for IT & OT, and data management with 24x7 managed support.",
+    url: `${SITE.url}/it-services`,
+    type: "website",
+    locale: "en_IN",
+    siteName: SITE.name,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "IT Enterprise Solutions & Services — CoreGenix",
+    description:
+      "Network infrastructure, datacenter & cloud solutions, cybersecurity for IT & OT, and data management with 24x7 managed support.",
+  },
+};
+
+const itServicesJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "IT Enterprise Solutions & Services",
+  description: metadata.description ?? "",
+  provider: {
+    "@type": "Organization",
+    name: SITE.name,
+    url: SITE.url,
+    telephone: SITE.phone,
+  },
+  areaServed: ["IN"],
+  url: `${SITE.url}/it-services`,
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+    { "@type": "ListItem", position: 2, name: "IT Services", item: `${SITE.url}/it-services` },
+  ],
 };
 
 const infraSolutions = [
@@ -110,6 +159,8 @@ const problemSolvers = [
 export default function ItServicesPage() {
   return (
     <>
+      <JsonLd data={itServicesJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       <Header />
       <main>
         <section className="page-hero its-hero">

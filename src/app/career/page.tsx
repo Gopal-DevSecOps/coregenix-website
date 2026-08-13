@@ -3,13 +3,47 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
 import Reveal from "@/components/Reveal";
+import JsonLd from "@/components/JsonLd";
 import { ArrowRightIcon, MapPinIcon, ClockIcon } from "@/components/Icons";
+import { SITE } from "@/lib/site";
 import "./career.css";
 
 export const metadata: Metadata = {
-  title: "Careers — CoreGenix",
+  title: "Careers",
   description:
     "Join CoreGenix — a growing team of IT infrastructure, cloud and cyber security professionals. Explore open roles and build your career with us.",
+  keywords: [
+    "IT jobs Mumbai",
+    "cyber security jobs India",
+    "network engineer careers",
+    "IT company careers",
+    "CoreGenix jobs",
+  ],
+  alternates: { canonical: "/career" },
+  openGraph: {
+    title: "Careers — CoreGenix",
+    description:
+      "Join CoreGenix — a growing team of IT infrastructure, cloud and cyber security professionals.",
+    url: `${SITE.url}/career`,
+    type: "website",
+    locale: "en_IN",
+    siteName: SITE.name,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Careers — CoreGenix",
+    description:
+      "Join CoreGenix — a growing team of IT infrastructure, cloud and cyber security professionals.",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+    { "@type": "ListItem", position: 2, name: "Careers", item: `${SITE.url}/career` },
+  ],
 };
 
 const perks = [
@@ -64,6 +98,29 @@ const jobs = [
   },
 ];
 
+const jobPostingJsonLd = jobs.map((job, i) => ({
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  title: job.title,
+  description: job.desc,
+  employmentType: job.type,
+  datePosted: new Date().toISOString().split("T")[0],
+  hiringOrganization: {
+    "@type": "Organization",
+    name: SITE.name,
+    sameAs: SITE.url,
+  },
+  jobLocation: {
+    "@type": "Place",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: job.location,
+      addressCountry: "IN",
+    },
+  },
+  url: `${SITE.url}/career#job-${i}`,
+}));
+
 const steps = [
   { num: "01", title: "Apply", desc: "Send us your resume and tell us why you'd be a great fit for the role." },
   { num: "02", title: "Screening Call", desc: "A quick conversation with our HR team to understand your experience and goals." },
@@ -74,6 +131,10 @@ const steps = [
 export default function CareerPage() {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd} />
+      {jobPostingJsonLd.map((data, i) => (
+        <JsonLd key={i} data={data} />
+      ))}
       <Header />
       <main>
         <section className="page-hero">
@@ -124,7 +185,7 @@ export default function CareerPage() {
             <div className="jobs-grid">
               {jobs.map((job, i) => (
                 <Reveal key={job.title} delay={(i % 3) + 1}>
-                  <div className="job-card">
+                  <div className="job-card" id={`job-${i}`}>
                     <div className="job-top">
                       <span className="job-type">{job.type}</span>
                       <span className="job-location">

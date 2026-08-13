@@ -10,9 +10,32 @@ import { SITE } from "@/lib/site";
 import "./contact.css";
 
 export const metadata: Metadata = {
-  title: "Contact Us — CoreGenix",
+  title: "Contact Us",
   description:
-    "Get in touch with CoreGenix for IT infrastructure, cloud, cyber security and managed support services.",
+    "Get in touch with CoreGenix for IT infrastructure, cloud, cyber security and managed support services. Call +91 83559 58119 or email sales@cgcein.com.",
+  keywords: [
+    "contact CoreGenix",
+    "cyber security company contact",
+    "IT services Mumbai contact",
+    "cyber security consultation",
+    "IT security services quote",
+  ],
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact Us — CoreGenix",
+    description:
+      "Get in touch with CoreGenix for IT infrastructure, cloud, cyber security and managed support services.",
+    url: `${SITE.url}/contact`,
+    type: "website",
+    locale: "en_IN",
+    siteName: SITE.name,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us — CoreGenix",
+    description:
+      "Get in touch with CoreGenix for IT infrastructure, cloud, cyber security and managed support services.",
+  },
 };
 
 const localBusinessJsonLd = {

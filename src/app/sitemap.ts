@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/site";
 import { services } from "@/data/services";
 import { allLandingUrlSlugs } from "@/data/landing";
+import { solutionPages } from "@/data/solutionPages";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url;
@@ -43,5 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...landingRoutes, ...rankingRoutes];
+  const solutionRoutes: MetadataRoute.Sitemap = solutionPages.map((p) => ({
+    url: `${base}/solutions/${p.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...serviceRoutes, ...landingRoutes, ...rankingRoutes, ...solutionRoutes];
 }

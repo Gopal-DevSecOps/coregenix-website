@@ -1,13 +1,13 @@
-/* ---------- FMC Landing (homepage-style) ---------- */
+/* ---------- AMC Landing (homepage-style) ---------- */
 
-.fmc-hero {
+.amc-hero {
   position: relative;
   padding: 197px 0 64px;
   background: var(--navy-dark);
   overflow: hidden;
 }
 
-.fmc-hero::after {
+.amc-hero::after {
   content: "";
   position: absolute;
   inset: auto -5% -40% -5%;
@@ -16,7 +16,7 @@
   pointer-events: none;
 }
 
-.fmc-hero-grid {
+.amc-hero-grid {
   position: relative;
   z-index: 1;
   display: grid;
@@ -25,19 +25,19 @@
   align-items: center;
 }
 
-.fmc-hero-title {
+.amc-hero-title {
   font-size: clamp(32px, 4.6vw, 54px);
   line-height: 1.12;
   margin-bottom: 20px;
   color: #fff;
 }
 
-.fmc-hero-title .grad {
+.amc-hero-title .grad {
   font-style: italic;
   color: #f47832;
 }
 
-.fmc-hero-desc {
+.amc-hero-desc {
   color: #d6dee8;
   font-size: 17px;
   line-height: 1.8;
@@ -45,53 +45,53 @@
   max-width: 560px;
 }
 
-.fmc-hero .eyebrow {
+.amc-hero .eyebrow {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.15);
   color: #fff;
 }
 
-.fmc-hero .eyebrow::before {
+.amc-hero .eyebrow::before {
   background: var(--accent-grad);
 }
 
-.fmc-hero-actions {
+.amc-hero-actions {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
 }
 
-.fmc-hero-img {
+.amc-hero-img {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.fmc-hero-img img {
+.amc-hero-img img {
   width: 100%;
   height: auto;
   display: block;
 }
 
 /* Stats band */
-.fmc-stats {
+.amc-stats {
   background: var(--navy-dark);
   padding: 40px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.fmc-stats-grid {
+.amc-stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
 
-.fmc-stat {
+.amc-stat {
   text-align: center;
 }
 
-.fmc-stat-value {
+.amc-stat-value {
   display: block;
   font-family: var(--font-heading), ui-serif, Georgia, serif;
   font-size: 38px;
@@ -100,7 +100,7 @@
   line-height: 1.1;
 }
 
-.fmc-stat-label {
+.amc-stat-label {
   display: block;
   margin-top: 8px;
   font-size: 14px;
@@ -108,11 +108,11 @@
 }
 
 /* Problem */
-.fmc-problem {
+.amc-problem {
   background: var(--bg-darker);
 }
 
-.fmc-problem-grid {
+.amc-problem-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
@@ -120,7 +120,7 @@
   margin: 0 auto;
 }
 
-.fmc-check-item {
+.amc-check-item {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -133,11 +133,11 @@
   color: var(--navy);
 }
 
-.fmc-check-item .ce-check {
+.amc-check-item .ce-check {
   flex-shrink: 0;
 }
 
-.fmc-problem-outro {
+.amc-problem-outro {
   max-width: 720px;
   margin: 32px auto 0;
   text-align: center;
@@ -148,20 +148,20 @@
 }
 
 /* Offerings dark band */
-.fmc-offering-grid {
+.amc-offering-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
 
-.fmc-offering-card,
-.fmc-offering-card:hover {
+.amc-offering-card,
+.amc-offering-card:hover {
   background: #16233a;
   border-color: rgba(255, 255, 255, 0.12);
   color: #fff;
 }
 
-.fmc-offering-card {
+.amc-offering-card {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -172,12 +172,12 @@
   transition: transform 0.4s ease, border-color 0.4s ease;
 }
 
-.fmc-offering-card:hover {
+.amc-offering-card:hover {
   transform: translateY(-10px);
   border-color: rgba(242, 107, 33, 0.55);
 }
 
-.fmc-offering-card .icon-box {
+.amc-offering-card .icon-box {
   width: 58px;
   height: 58px;
   border-radius: 14px;
@@ -189,88 +189,223 @@
   margin-bottom: 18px;
 }
 
-.fmc-offering-card .icon-box svg {
+.amc-offering-card .icon-box svg {
   width: 28px;
   height: 28px;
 }
 
-.fmc-offering-card h3 {
+.amc-offering-card h3 {
   font-size: 19px;
   color: #fff;
   margin-bottom: 12px;
 }
 
-.fmc-offering-card p {
+.amc-offering-card p {
   color: #c6d0dc;
   font-size: 14.5px;
   line-height: 1.7;
 }
 
-/* AMC + Industries (light wwp cards) */
-.fmc-amc .wwp-grid,
-.fmc-industries .wwp-grid {
+/* AMC types (light wwp cards) */
+.amc-types .wwp-grid,
+.amc-industries .wwp-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.fmc-amc-card,
-.fmc-amc-card:hover,
-.fmc-industry-card,
-.fmc-industry-card:hover {
+.amc-type-card,
+.amc-type-card:hover,
+.amc-industry-card,
+.amc-industry-card:hover {
   background: var(--bg-card);
   border-color: var(--border);
 }
 
-.fmc-amc-card:hover,
-.fmc-industry-card:hover {
+.amc-type-card:hover,
+.amc-industry-card:hover {
   transform: translateY(-8px);
   border-color: rgba(242, 107, 33, 0.5);
 }
 
-.fmc-amc-card h3,
-.fmc-industry-card h3 {
+.amc-type-card h3,
+.amc-industry-card h3 {
   color: var(--navy);
   font-size: 18px;
   margin-bottom: 10px;
 }
 
-.fmc-amc-card p,
-.fmc-industry-card p {
+.amc-type-card p,
+.amc-industry-card p {
   color: var(--text-muted);
   font-size: 14.5px;
   line-height: 1.7;
 }
 
-/* Testimonials dark band */
-.fmc-testimonial-grid {
+/* Benefits band */
+.amc-benefits {
+  background: var(--bg-darker);
+}
+
+.amc-benefits-box {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 40px;
+  align-items: center;
+  background: var(--accent-grad);
+  border-radius: var(--radius);
+  padding: 46px 48px;
+  box-shadow: 0 30px 70px rgba(242, 107, 33, 0.35);
+  overflow: hidden;
+}
+
+.amc-benefits-box::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.amc-benefits-text,
+.amc-benefits-list {
+  position: relative;
+  z-index: 1;
+}
+
+.amc-benefits-text h2 {
+  color: #fff;
+  font-size: clamp(26px, 3vw, 36px);
+  margin-bottom: 12px;
+}
+
+.amc-benefits-text h2 .grad {
+  font-style: italic;
+  color: #fff;
+}
+
+.amc-benefits-text p {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.amc-benefits-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.amc-benefits-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-sm);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.amc-benefits-list .ce-check {
+  flex-shrink: 0;
+  background: #fff;
+  color: var(--gold-dark);
+}
+
+/* Why CoreGenix dark band */
+.amc-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.amc-why-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #16233a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.amc-why-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(242, 107, 33, 0.5);
+}
+
+.amc-why-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: var(--accent-grad);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.amc-why-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.amc-why-card h3 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.amc-why-card p {
+  color: #aeb9c6;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Testimonials dark band */
+.amc-testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-.fmc-testimonial-card {
+.amc-testimonial-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background: #16233a;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
   padding: 30px 28px;
 }
 
-.fmc-testimonial-card p {
+.amc-testimonial-card p {
   color: #e6ecf5;
   font-size: 16px;
   line-height: 1.75;
   margin-bottom: 18px;
+  flex: 1;
 }
 
-.fmc-testimonial-name {
+.amc-testimonial-name {
   display: block;
   color: var(--gold);
   font-weight: 700;
   font-size: 15px;
 }
 
-.fmc-testimonial-role {
+.amc-testimonial-role {
   display: block;
   color: #9fb0c0;
   font-size: 13.5px;
@@ -278,7 +413,7 @@
 }
 
 /* FAQ */
-.fmc-faq-list {
+.amc-faq-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
@@ -287,7 +422,7 @@
   margin: 0 auto;
 }
 
-.fmc-faq-item {
+.amc-faq-item {
   height: 100%;
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -295,14 +430,14 @@
   padding: 18px 22px;
 }
 
-.fmc-faq-item h3 {
+.amc-faq-item h3 {
   font-size: 16.5px;
   font-weight: 700;
   color: var(--navy);
   margin: 0 0 8px;
 }
 
-.fmc-faq-item p {
+.amc-faq-item p {
   font-size: 15px;
   line-height: 1.7;
   color: var(--text-soft);
@@ -310,43 +445,59 @@
 }
 
 @media (max-width: 992px) {
-  .fmc-hero {
+  .amc-hero {
     padding: 150px 0 56px;
   }
 
-  .fmc-hero-grid {
+  .amc-hero-grid {
     grid-template-columns: 1fr;
     gap: 32px;
   }
 
-  .fmc-stats-grid {
+  .amc-stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
 
-  .fmc-problem-grid,
-  .fmc-offering-grid,
-  .fmc-amc .wwp-grid,
-  .fmc-industries .wwp-grid {
+  .amc-problem-grid,
+  .amc-offering-grid,
+  .amc-why-grid,
+  .amc-types .wwp-grid,
+  .amc-industries .wwp-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .fmc-testimonial-grid,
-  .fmc-faq-list {
+  .amc-benefits-box {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .amc-testimonial-grid,
+  .amc-faq-list {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 640px) {
-  .fmc-hero {
+  .amc-hero {
     padding: 141px 0 44px;
   }
 
-  .fmc-problem-grid,
-  .fmc-offering-grid,
-  .fmc-amc .wwp-grid,
-  .fmc-industries .wwp-grid,
-  .fmc-stats-grid {
+  .amc-problem-grid,
+  .amc-offering-grid,
+  .amc-why-grid,
+  .amc-types .wwp-grid,
+  .amc-industries .wwp-grid,
+  .amc-stats-grid {
     grid-template-columns: 1fr;
+  }
+
+  .amc-benefits-box {
+    padding: 34px 24px;
+    text-align: center;
+  }
+
+  .amc-benefits-list li {
+    text-align: left;
   }
 }

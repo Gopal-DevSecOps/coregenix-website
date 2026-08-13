@@ -27,12 +27,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: page.title,
     description: page.description,
+    keywords: [
+      page.title,
+      "cyber security services Mumbai",
+      "IT infrastructure services India",
+      "managed security services",
+    ],
     alternates: { canonical: `/${page.landingSlug}` },
     openGraph: {
       title: page.title,
       description: page.description,
       url,
       type: "website",
+      locale: "en_IN",
+      siteName: SITE.name,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.title,
+      description: page.description,
     },
   };
 }

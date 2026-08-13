@@ -23,6 +23,13 @@ export const metadata: Metadata = {
   title: "Network Operations Center (NOC) Services | 24x7 Network Monitoring | India's No.1 NOC Company",
   description:
     "Get 24x7 network monitoring & management from India's top NOC service provider. Proactive threat detection, guaranteed uptime, and expert support. Free consultation!",
+  keywords: [
+    "NOC services India",
+    "network operations center Mumbai",
+    "24x7 network monitoring",
+    "NOC service provider",
+    "managed NOC services",
+  ],
   alternates: { canonical: "/network-operations-center" },
   openGraph: {
     title: "Network Operations Center (NOC) Services | 24x7 Network Monitoring | India's No.1 NOC Company",
@@ -30,6 +37,14 @@ export const metadata: Metadata = {
       "Get 24x7 network monitoring & management from India's top NOC service provider. Proactive threat detection, guaranteed uptime, and expert support. Free consultation!",
     url: `${SITE.url}/network-operations-center`,
     type: "website",
+    locale: "en_IN",
+    siteName: SITE.name,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Network Operations Center (NOC) Services | 24x7 Network Monitoring | India's No.1 NOC Company",
+    description:
+      "Get 24x7 network monitoring & management from India's top NOC service provider. Free consultation!",
   },
 };
 

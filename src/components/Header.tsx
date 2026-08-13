@@ -77,45 +77,45 @@ const menu: MenuItem[] = [
       {
         title: "IT Infrastructure Solutions",
         items: [
-          { label: "Network", href: "/it-services#infrastructure" },
-          { label: "Data Center", href: "/it-services#infrastructure" },
-          { label: "Data Backup", href: "/it-services#infrastructure" },
-          { label: "Disaster Recovery & Business Continuity Planning", href: "/it-services#infrastructure" },
+          { label: "Network", href: "/solutions/network" },
+          { label: "Data Center", href: "/solutions/data-center" },
+          { label: "Data Backup", href: "/solutions/data-backup" },
+          { label: "Disaster Recovery & Business Continuity Planning", href: "/solutions/disaster-recovery-bcp" },
         ],
       },
       {
         title: "Cloud Infrastructure Solutions",
         items: [
-          { label: "Private Cloud", href: "/services/cloud-strategy" },
-          { label: "Public Cloud", href: "/services/cloud-strategy" },
-          { label: "Hybrid Cloud", href: "/services/cloud-strategy" },
+          { label: "Private Cloud", href: "/solutions/private-cloud" },
+          { label: "Public Cloud", href: "/solutions/public-cloud" },
+          { label: "Hybrid Cloud", href: "/solutions/hybrid-cloud" },
         ],
       },
       {
         title: "Cyber Security Solutions",
         items: [
-          { label: "Infrastructure Security", href: "/solutions#it-security" },
-          { label: "Identity & Access Management", href: "/solutions#it-security" },
-          { label: "Single Sign-On", href: "/solutions#it-security" },
-          { label: "Privileged Access Management", href: "/solutions#it-security" },
-          { label: "Zero Trust", href: "/solutions#it-security" },
-          { label: "Data Loss Prevention", href: "/solutions#it-security" },
-          { label: "Endpoint / Managed / Extended Detection & Response", href: "/solutions#it-security" },
+          { label: "Infrastructure Security", href: "/solutions/infrastructure-security" },
+          { label: "Identity & Access Management", href: "/solutions/identity-access-management" },
+          { label: "Single Sign-On", href: "/solutions/single-sign-on" },
+          { label: "Privileged Access Management", href: "/solutions/privileged-access-management" },
+          { label: "Zero Trust", href: "/solutions/zero-trust" },
+          { label: "Data Loss Prevention", href: "/solutions/data-loss-prevention" },
+          { label: "Endpoint / Managed / Extended Detection & Response", href: "/solutions/edr-mdr-xdr" },
         ],
       },
       {
         title: "Governance, Risk & Compliance & Data Protection Officer",
         wide: true,
         items: [
-          { label: "Governance, Risk & Compliance & Cyber Audits", href: "/solutions#grc" },
-          { label: "Risk Management", href: "/solutions#grc" },
-          { label: "Compliance", href: "/solutions#grc" },
-          { label: "Risk & Compliance Assessment", href: "/solutions#grc" },
-          { label: "NIST Cybersecurity Framework", href: "/solutions#grc" },
-          { label: "IT Risk Assessment", href: "/solutions#grc" },
-          { label: "IT Policy & Security Policy", href: "/solutions#grc" },
-          { label: "Information Security Management System & Cyber Security", href: "/solutions#grc" },
-          { label: "Business Continuity Planning / Disaster Recovery", href: "/solutions#grc" },
+          { label: "Governance, Risk & Compliance & Cyber Audits", href: "/solutions/grc-cyber-audits" },
+          { label: "Risk Management", href: "/solutions/risk-management" },
+          { label: "Compliance", href: "/solutions/compliance" },
+          { label: "Risk & Compliance Assessment", href: "/solutions/risk-compliance-assessment" },
+          { label: "NIST Cybersecurity Framework", href: "/solutions/nist-cybersecurity-framework" },
+          { label: "IT Risk Assessment", href: "/solutions/it-risk-assessment" },
+          { label: "IT Policy & Security Policy", href: "/solutions/it-policy-security-policy" },
+          { label: "Information Security Management System & Cyber Security", href: "/solutions/isms-cyber-security" },
+          { label: "Business Continuity Planning / Disaster Recovery", href: "/solutions/bcp-dr" },
         ],
       },
     ],
@@ -278,9 +278,6 @@ export default function Header() {
             </nav>
 
             <div className="header-actions">
-              <Link href="/contact" className="header-cta btn btn-grad btn-sm">
-                Get Free Consultation
-              </Link>
               <button
                 className={`hamburger ${mobileOpen ? "open" : ""}`}
                 aria-label="Toggle menu"

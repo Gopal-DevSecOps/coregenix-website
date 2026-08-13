@@ -22,9 +22,16 @@ import { SITE } from "@/lib/site";
 import "./fmc-landing.css";
 
 export const metadata: Metadata = {
-  title: "Facility Maintenance Contract (FMC) Services — IT Infrastructure AMC & Support — CoreGenix",
+  title: "Facility Maintenance Contract (FMC) Services — IT Infrastructure AMC & Support",
   description:
     "Get comprehensive Facility Maintenance Contract (FMC) services for your IT infrastructure. Annual Maintenance Contracts, 24/7 support, and proactive monitoring. 18+ years experience. Get started!",
+  keywords: [
+    "facility maintenance contract",
+    "FMC services Mumbai",
+    "IT infrastructure AMC",
+    "facility management services India",
+    "IT maintenance contract",
+  ],
   alternates: { canonical: "/facility-maintenance-contract" },
   openGraph: {
     title: "Facility Maintenance Contract (FMC) Services — IT Infrastructure AMC & Support — CoreGenix",
@@ -32,6 +39,14 @@ export const metadata: Metadata = {
       "Get comprehensive Facility Maintenance Contract (FMC) services for your IT infrastructure. Annual Maintenance Contracts, 24/7 support, and proactive monitoring. 18+ years experience. Get started!",
     url: `${SITE.url}/facility-maintenance-contract`,
     type: "website",
+    locale: "en_IN",
+    siteName: SITE.name,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Facility Maintenance Contract (FMC) Services — IT Infrastructure AMC & Support — CoreGenix",
+    description:
+      "Comprehensive Facility Maintenance Contract (FMC) services for your IT infrastructure with 24/7 support.",
   },
 };
 

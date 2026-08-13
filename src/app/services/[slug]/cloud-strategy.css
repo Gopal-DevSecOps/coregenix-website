@@ -1,13 +1,13 @@
-/* ---------- NOC Landing (homepage-style) ---------- */
+/* ---------- Cloud Strategy Landing (homepage-style) ---------- */
 
-.noc-hero {
+.cs-hero {
   position: relative;
   padding: 197px 0 64px;
   background: var(--navy-dark);
   overflow: hidden;
 }
 
-.noc-hero::after {
+.cs-hero::after {
   content: "";
   position: absolute;
   inset: auto -5% -40% -5%;
@@ -16,7 +16,7 @@
   pointer-events: none;
 }
 
-.noc-hero-grid {
+.cs-hero-grid {
   position: relative;
   z-index: 1;
   display: grid;
@@ -25,19 +25,19 @@
   align-items: center;
 }
 
-.noc-hero-title {
+.cs-hero-title {
   font-size: clamp(32px, 4.6vw, 54px);
   line-height: 1.12;
   margin-bottom: 20px;
   color: #fff;
 }
 
-.noc-hero-title .grad {
+.cs-hero-title .grad {
   font-style: italic;
   color: #f47832;
 }
 
-.noc-hero-desc {
+.cs-hero-desc {
   color: #d6dee8;
   font-size: 17px;
   line-height: 1.8;
@@ -45,52 +45,52 @@
   max-width: 560px;
 }
 
-.noc-hero .eyebrow {
+.cs-hero .eyebrow {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.15);
   color: #fff;
 }
 
-.noc-hero .eyebrow::before {
+.cs-hero .eyebrow::before {
   background: var(--accent-grad);
 }
 
-.noc-hero-actions {
+.cs-hero-actions {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
 }
 
-.noc-hero-img {
+.cs-hero-img {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.noc-hero-img img {
+.cs-hero-img img {
   width: 100%;
   height: auto;
   display: block;
 }
 
 /* Stats band */
-.noc-stats {
+.cs-stats {
   background: var(--navy-dark);
   padding: 40px 0;
 }
 
-.noc-stats-grid {
+.cs-stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
 
-.noc-stat {
+.cs-stat {
   text-align: center;
 }
 
-.noc-stat-value {
+.cs-stat-value {
   display: block;
   font-family: var(--font-heading), ui-serif, Georgia, serif;
   font-size: 38px;
@@ -99,27 +99,92 @@
   line-height: 1.1;
 }
 
-.noc-stat-label {
+.cs-stat-label {
   display: block;
   margin-top: 8px;
   font-size: 14px;
   color: #c6d0dc;
 }
 
-/* What we monitor */
-.noc-what {
+/* The Problem */
+.cs-problem {
   background: var(--bg-darker);
 }
 
-.noc-check-grid {
+.cs-problem-body {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cs-problem-body p {
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--text-soft);
+  margin: 0 0 16px;
+}
+
+.cs-problem-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* What We Do — feature cards dark band */
+.cs-features {
+  background: var(--navy-dark);
+}
+
+.cs-features .eyebrow {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.cs-features .eyebrow::before {
+  background: var(--accent-grad);
+}
+
+.cs-features .section-title {
+  color: #fff;
+}
+
+.cs-features .section-desc {
+  color: #c6d0dc;
+}
+
+.cs-features .services-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cs-feature-card,
+.cs-feature-card:hover {
+  background: #16233a;
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.cs-feature-card:hover {
+  transform: translateY(-14px);
+  border-color: rgba(242, 107, 33, 0.55);
+}
+
+.cs-feature-card h3 {
+  color: #fff;
+}
+
+.cs-feature-card p {
+  color: #c6d0dc;
+}
+
+/* What You Get — check grid */
+.cs-check-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   max-width: 900px;
   margin: 0 auto;
 }
 
-.noc-check-item {
+.cs-check-item {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -132,71 +197,22 @@
   color: var(--navy);
 }
 
-.noc-check-item .ce-check {
+.cs-check-item .ce-check {
   flex-shrink: 0;
 }
 
-/* Features dark band */
-.noc-features .services-grid {
-  grid-template-columns: repeat(2, 1fr);
+/* Why Choose CoreGenix */
+.cs-choose {
+  background: var(--bg-darker);
 }
 
-.noc-feature-card,
-.noc-feature-card:hover {
-  background: #16233a;
-  border-color: rgba(255, 255, 255, 0.12);
-  color: #fff;
-}
-
-.noc-feature-card:hover {
-  transform: translateY(-14px);
-  border-color: rgba(242, 107, 33, 0.55);
-}
-
-.noc-feature-card h3 {
-  color: #fff;
-}
-
-.noc-feature-card p {
-  color: #c6d0dc;
-}
-
-/* Audience (wwp-style, light cards) */
-.noc-audience .wwp-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.noc-audience .wwp-card,
-.noc-audience .wwp-card:hover {
-  background: var(--bg-card);
-  border-color: var(--border);
-}
-
-.noc-audience .wwp-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(242, 107, 33, 0.5);
-}
-
-.noc-audience .wwp-card h3 {
-  color: var(--navy);
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.noc-audience .wwp-card p {
-  color: var(--text-muted);
-  font-size: 14.5px;
-  line-height: 1.7;
-}
-
-/* Process */
-.noc-process-grid {
+.cs-choose-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 22px;
 }
 
-.noc-process-card {
+.cs-choose-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -206,12 +222,12 @@
   transition: transform 0.4s ease, border-color 0.4s ease;
 }
 
-.noc-process-card:hover {
+.cs-choose-card:hover {
   transform: translateY(-8px);
   border-color: rgba(242, 107, 33, 0.5);
 }
 
-.noc-process-num {
+.cs-choose-num {
   display: inline-flex;
   font-family: var(--font-heading), ui-serif, Georgia, serif;
   font-size: 26px;
@@ -220,64 +236,27 @@
   margin-bottom: 14px;
 }
 
-.noc-process-card h3 {
+.cs-choose-card h3 {
   font-size: 18px;
   color: var(--navy);
   margin-bottom: 10px;
 }
 
-.noc-process-card p {
+.cs-choose-card p {
   font-size: 14.5px;
   color: var(--text-muted);
   line-height: 1.7;
 }
 
-/* Testimonials dark band */
-.noc-testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.noc-testimonial-card {
-  background: #16233a;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius);
-  padding: 30px 28px;
-}
-
-.noc-testimonial-card p {
-  color: #e6ecf5;
-  font-size: 16px;
-  line-height: 1.75;
-  margin-bottom: 18px;
-}
-
-.noc-testimonial-name {
-  display: block;
-  color: var(--gold);
-  font-weight: 700;
-  font-size: 15px;
-}
-
-.noc-testimonial-role {
-  display: block;
-  color: #9fb0c0;
-  font-size: 13.5px;
-  margin-top: 4px;
-}
-
 /* FAQ */
-.noc-faq-list {
+.cs-faq-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   align-items: start;
 }
 
-.noc-faq-item {
+.cs-faq-item {
   height: 100%;
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -285,14 +264,14 @@
   padding: 18px 22px;
 }
 
-.noc-faq-item h3 {
+.cs-faq-item h3 {
   font-size: 16.5px;
   font-weight: 700;
   color: var(--navy);
   margin: 0 0 8px;
 }
 
-.noc-faq-item p {
+.cs-faq-item p {
   font-size: 15px;
   line-height: 1.7;
   color: var(--text-soft);
@@ -300,41 +279,34 @@
 }
 
 @media (max-width: 992px) {
-  .noc-hero {
+  .cs-hero {
     padding: 150px 0 56px;
   }
 
-  .noc-hero-grid {
+  .cs-hero-grid {
     grid-template-columns: 1fr;
     gap: 32px;
   }
 
-  .noc-stats-grid {
+  .cs-stats-grid,
+  .cs-features .services-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
 
-  .noc-check-grid,
-  .noc-features .services-grid,
-  .noc-audience .wwp-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .noc-testimonial-grid,
-  .noc-faq-list {
+  .cs-faq-list {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 640px) {
-  .noc-hero {
+  .cs-hero {
     padding: 141px 0 44px;
   }
 
-  .noc-check-grid,
-  .noc-features .services-grid,
-  .noc-audience .wwp-grid,
-  .noc-stats-grid {
+  .cs-check-grid,
+  .cs-stats-grid,
+  .cs-features .services-grid {
     grid-template-columns: 1fr;
   }
 }

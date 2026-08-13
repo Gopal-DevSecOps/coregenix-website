@@ -1,5 +1,6 @@
 import { services } from "@/data/services";
 import { allLandingUrlSlugs } from "@/data/landing";
+import { solutionPages } from "@/data/solutionPages";
 
 export function GET() {
   const serviceList = services
@@ -35,6 +36,39 @@ ${serviceList}
 ## Service Landing Pages
 
 ${landingList}
+
+## Solutions
+
+- [Solutions Overview](https://coregenix.com/solutions): Cyber security, cloud and IT infrastructure solutions in detail
+- [IT Enterprise Solutions](https://coregenix.com/it-services): Infrastructure design and deployment
+
+### IT Infrastructure Solutions
+
+${solutionPages
+    .filter((p) => p.category === "IT Infrastructure Solutions")
+    .map((p) => `- [${p.title}](https://coregenix.com/solutions/${p.slug}): ${p.description}`)
+    .join("\n")}
+
+### Cloud Infrastructure Solutions
+
+${solutionPages
+    .filter((p) => p.category === "Cloud Infrastructure Solutions")
+    .map((p) => `- [${p.title}](https://coregenix.com/solutions/${p.slug}): ${p.description}`)
+    .join("\n")}
+
+### Cyber Security Solutions
+
+${solutionPages
+    .filter((p) => p.category === "Cyber Security Solutions")
+    .map((p) => `- [${p.title}](https://coregenix.com/solutions/${p.slug}): ${p.description}`)
+    .join("\n")}
+
+### Governance, Risk & Compliance & Data Protection Officer
+
+${solutionPages
+    .filter((p) => p.category === "Governance, Risk & Compliance & Data Protection Officer")
+    .map((p) => `- [${p.title}](https://coregenix.com/solutions/${p.slug}): ${p.description}`)
+    .join("\n")}
 
 ## Rankings
 
