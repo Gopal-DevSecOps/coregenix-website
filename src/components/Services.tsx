@@ -8,6 +8,7 @@ import {
   DatabaseIcon,
   UserIcon,
   LockIcon,
+  ScanIcon,
   ArrowRightIcon,
 } from "./Icons";
 
@@ -34,13 +35,13 @@ const services = [
     icon: ShieldIcon,
     title: "IT & OT Cyber Security",
     desc: "Complete protection for your IT and operational technology with audit, hardening, SOC and incident response.",
-    href: "/services/managed-security-services",
+    href: "/solutions/cyber-security-solutions",
   },
   {
     icon: DatabaseIcon,
     title: "Data Backup / DR / BCP",
     desc: "Automated backup, disaster recovery and business continuity planning to protect your critical data always.",
-    href: "/solutions/disaster-recovery-bcp",
+    href: "/solutions/it-infrastructure-solutions",
   },
   {
     icon: UserIcon,
@@ -53,6 +54,12 @@ const services = [
     title: "InfoSec GRC",
     desc: "Governance, risk and compliance management to meet ISO 27001 and industry standards with confidence.",
     href: "/solutions/grc-dpo",
+  },
+  {
+    icon: ScanIcon,
+    title: "Audit & Assessment",
+    desc: "Independent audits, penetration testing and risk assessments that reveal real exposure before attackers do.",
+    href: "/services/audit-assessment",
   },
 ];
 
