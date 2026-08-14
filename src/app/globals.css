@@ -3102,10 +3102,10 @@ a.mega-group-title:hover {
   .about-media .float-card { left: 12px; bottom: 16px; padding: 18px 22px; }
   .about-media .float-card .num { font-size: 32px; }
   .defense-media::before { inset: 24px -14px -14px 24px; }
-  .hero { min-height: 100vh; margin-top: 0; padding: 70px 0 60px; }
+  .hero { min-height: 100vh; margin-top: 0; padding: 100px 0 90px; }
   .hero-slide .bg { display: none; }
-  .hero-slider-nav { bottom: calc(28vh + 32px); }
-  .hero-content { padding: 32px 24px; width: auto; max-width: 480px; height: auto; margin: 28vh 20px 28vh; text-align: center; }
+  .hero-slider-nav { bottom: calc(12vh + 32px); }
+  .hero-content { padding: 32px 24px; width: auto; max-width: 480px; height: auto; margin: 12vh 20px 12vh; text-align: center; }
   .hero-actions { justify-content: center; }
   .hero-scroll { display: none; }
   .hero-desc { font-size: 16px; }
