@@ -6,7 +6,6 @@ import {
   ServerIcon,
   ShieldIcon,
   DatabaseIcon,
-  SettingsIcon,
   UserIcon,
   LockIcon,
   ArrowRightIcon,
@@ -42,12 +41,6 @@ const services = [
     title: "Data Backup / DR / BCP",
     desc: "Automated backup, disaster recovery and business continuity planning to protect your critical data always.",
     href: "/solutions/disaster-recovery-bcp",
-  },
-  {
-    icon: SettingsIcon,
-    title: "ITIL Automation",
-    desc: "Streamline IT service management with ITIL-aligned processes and smart automation for better efficiency.",
-    href: "/services/cloud-managed-services",
   },
   {
     icon: UserIcon,

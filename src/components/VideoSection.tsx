@@ -1,13 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import { PhoneIcon } from "./Icons";
+import { useEffect, useRef } from "react";
 
 export default function VideoSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
-  const [muted, setMuted] = useState(true);
 
   const videoUrl =
     "https://coregenix.in/wp-content/uploads/2024/01/Empowering-Your-Business-with-IT-Solutions-Routing-IT-Solutions-for-Innovative-Business-Results-and-Technology-Expertise-Applied-to-Diverse-Environments.mp4";
@@ -37,12 +34,8 @@ export default function VideoSection() {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    video.muted = muted;
-  }, [muted]);
-
-  const toggleMute = () => {
-    setMuted((m) => !m);
-  };
+    video.muted = true;
+  }, []);
 
   return (
     <section ref={sectionRef} className="section video-section">
@@ -69,35 +62,6 @@ export default function VideoSection() {
             />
           </div>
 
-          <div className="video-actions">
-            <button
-              className="btn btn-grad btn-sound"
-              onClick={toggleMute}
-              aria-label={muted ? "Unmute video" : "Mute video"}
-            >
-              {muted ? (
-                <>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M11 5 6 9H2v6h4l5 4V5z" />
-                    <path d="m23 9-6 6M17 9l6 6" />
-                  </svg>
-                  Unmute
-                </>
-              ) : (
-                <>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M11 5 6 9H2v6h4l5 4V5z" />
-                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14" />
-                  </svg>
-                  Mute
-                </>
-              )}
-            </button>
-            <Link href="/contact" className="btn btn-light">
-              Get Free Consultation
-              <PhoneIcon />
-            </Link>
-          </div>
         </div>
       </div>
     </section>

@@ -2713,8 +2713,9 @@ a.mega-group-title:hover {
 }
 
 .partner-item img {
-  width: 100%;
-  max-width: 160px;
+  width: auto;
+  max-width: 100%;
+  max-height: 56px;
   height: auto;
   object-fit: contain;
 }
