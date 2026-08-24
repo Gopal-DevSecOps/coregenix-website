@@ -19,9 +19,6 @@ export default function NotFound() {
       <main>
         <section className="page-hero">
           <div className="container">
-            <Reveal as="span" className="page-hero-eyebrow">
-              Error 404
-            </Reveal>
             <h1 className="page-hero-title">
               Page <span className="grad">Not Found</span>
             </h1>

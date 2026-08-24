@@ -8,9 +8,6 @@ export default function ServiceCategoryView({ category }: { category: ServiceCat
     <>
       <section className="page-hero">
         <div className="container">
-          <Reveal as="span" className="page-hero-eyebrow">
-            Our Services
-          </Reveal>
           <h1 className="page-hero-title">
             {category.title} <span className="grad">Solutions</span>
           </h1>

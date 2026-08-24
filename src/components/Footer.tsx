@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "./Reveal";
 import {
   PhoneIcon,
@@ -56,6 +57,20 @@ export default function Footer() {
                   <path d="M18.9 2.1h3.68l-8.04 9.19L24 23.4h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 2.1h7.59l5.24 6.93 6.07-6.93Zm-1.29 19.14h2.04L6.48 4.18H4.29l13.32 17.06Z" />
                 </svg>
               </a>
+            </div>
+            <div className="footer-certs">
+              <Image
+                src="/images/coregenix/cert-badge.png"
+                alt="CoreGenix certification badge"
+                width={72}
+                height={72}
+              />
+              <Image
+                src="/images/coregenix/cert-iso-27001.png"
+                alt="ISO 27001 certified"
+                width={72}
+                height={72}
+              />
             </div>
           </Reveal>
 

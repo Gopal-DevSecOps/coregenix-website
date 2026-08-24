@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 };
 
 const heroStats = [
-  { value: "18+", label: "Years of Experience" },
+  { value: "20+", label: "Years of Experience" },
   { value: "120+", label: "Projects Delivered" },
   { value: "55+", label: "Happy Clients" },
   { value: "24/7", label: "Support Availability" },

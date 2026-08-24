@@ -80,9 +80,6 @@ export default async function BlogPostPage({ params }: Props) {
       <main>
         <section className="page-hero blog-post-hero">
           <div className="container">
-            <Reveal as="span" className="page-hero-eyebrow">
-              Blog · {post.tag}
-            </Reveal>
             <h1 className="page-hero-title">{post.title}</h1>
             <div className="post-meta blog-post-meta">
               <span>

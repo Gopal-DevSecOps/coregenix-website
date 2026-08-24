@@ -166,9 +166,6 @@ export default function ItServicesPage() {
           <div className="float-shape float-shape-1" aria-hidden="true" />
           <div className="float-shape float-shape-3" aria-hidden="true" />
           <div className="container">
-            <Reveal as="span" className="page-hero-eyebrow">
-              Home · IT Enterprise Solutions & Services
-            </Reveal>
             <h1 className="page-hero-title">
               Infrastructure Solution <span className="grad">Design & Deployment</span>
             </h1>

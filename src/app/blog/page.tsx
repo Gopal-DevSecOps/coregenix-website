@@ -70,9 +70,6 @@ export default function BlogPage() {
       <main>
         <section className="page-hero">
           <div className="container">
-            <Reveal as="span" className="page-hero-eyebrow">
-              Blog & News
-            </Reveal>
             <h1 className="page-hero-title">
               Insights from Our <span className="grad">Tech Experts</span>
             </h1>

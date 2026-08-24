@@ -79,9 +79,6 @@ export default function ServicesPage() {
       <main>
         <section className="page-hero">
           <div className="container">
-            <Reveal as="span" className="page-hero-eyebrow">
-              Our Services
-            </Reveal>
             <h1 className="page-hero-title">
               Solutions & Services Built for <span className="grad">Your Business</span>
             </h1>

@@ -81,9 +81,6 @@ export default function SolutionsPage() {
           <div className="float-shape float-shape-1" aria-hidden="true" />
           <div className="float-shape float-shape-3" aria-hidden="true" />
           <div className="container">
-            <Reveal as="span" className="page-hero-eyebrow">
-              Our Solutions
-            </Reveal>
             <h1 className="page-hero-title">
               Solutions & Services Built for <span className="grad">Your Business</span>
             </h1>

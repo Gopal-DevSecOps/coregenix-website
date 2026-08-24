@@ -82,9 +82,6 @@ export default async function LandingPage({ params }: Props) {
       <main>
         <section className="page-hero landing-hero">
           <div className="container">
-            <Reveal as="span" className="page-hero-eyebrow">
-              Home · {page.title}
-            </Reveal>
             <h1 className="page-hero-title">
               {page.h1}
             </h1>

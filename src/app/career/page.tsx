@@ -139,9 +139,6 @@ export default function CareerPage() {
       <main>
         <section className="page-hero">
           <div className="container">
-            <Reveal as="span" className="page-hero-eyebrow">
-              Careers at CoreGenix
-            </Reveal>
             <h1 className="page-hero-title">
               Grow Your Career with a <span className="grad">Team That Cares</span>
             </h1>

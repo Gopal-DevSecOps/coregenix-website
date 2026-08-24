@@ -12,7 +12,7 @@ export default function Cta() {
               <h2>Ready to move your business forward with IT solutions?</h2>
               <p>
                 Get a free consultation and discover how CoreGenix can keep your IT infrastructure
-                and cyber security secure and efficient.
+                and secure and efficient.
               </p>
             </div>
             <Link href="/contact" className="btn btn-light">

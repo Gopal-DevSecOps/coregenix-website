@@ -70,3 +70,53 @@ IT Policy & Security Policy
 Information Security Management System & Cyber Security
 Business Continuity Planning / Disaster Recovery
 Get Free Consultation
+
+
+
+
+#	Title	Link
+1	Managed Support Services	/services/it-managed-services
+2	Cloud Infrastructure	/services/cloud-managed-services
+3	IT Infrastructure Solutions	/solutions/it-infrastructure-solutions
+4	IT & OT Cyber Security	http://localhost:3000/solutions/cyber-security-solutions
+5	Data Backup / DR / BCP	http://localhost:3000/solutions/it-infrastructure-solutions
+6	Staff Augmentation	/staffing-fms-facility-management
+7	InfoSec GRC	/solutions/grc-dpo
+add karo audit-assessment http://localhost:3000/services/audit-assessment
+
+#	Title	Link
+1	Network Security	/services/managed-security-services
+2	Data Encryption	/services/managed-security-services
+3	Identity & Access	/solutions/identity-access-management
+4	Security Monitoring	/services/soc-mss
+5	Backup & Recovery	/solutions/data-backup
+6	Security Configuration	/services/managed-security-services/se
+
+
+
+SSH:       192.168.1.117:10022 → himedia (100.73.95.45)   :22
+           192.168.1.117:10023 → jlmorison (100.97.164.23):22
+           192.168.1.117:10024 → dovetail (100.104.80.71) :22
+Wazuh API: 192.168.1.117:55001 → himedia   :55000
+           192.168.1.117:55002 → jlmorison :55000
+           192.168.1.117:55003 → dovetail  :55000
+Engineers use ssh -p 10022 <user>@192.168.1.117, and point their UI at https://192.168.1.117:55001 (et
+
+# ==================== CONFIGURATION himedia  ====================
+ES_URL="https://192.168.1.117:62006"
+ES_USER="admin"
+ES_PASS="vo*PsWtJi9hZqi4263CCbAak.RXrEGcB"
+INDEX_PATTERN="wazuh-alerts-4.x-*"
+
+
+jlmorison
+I = "https://192.168.1.117:6015"
+U = "admin"
+P = "bQ4Wvd7lpVJV6vFb5hAoX5U*PouvoC5j"
+
+
+# Dovetail Dev Credentials
+I = "https://192.168.1.117:49024"
+U = "admin"
+
+P = "vo*PsWtJi9hZqi4263CCbAak.RXrEGcB"

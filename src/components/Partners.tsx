@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
 const partnerLogos = [
@@ -46,19 +45,34 @@ export default function Partners() {
           }
           desc="Backed by world-class security and cloud technology partners to deliver best-in-class solutions."
         />
-        <Reveal className="partner-strip">
-          {partnerLogos.map((p) => (
-            <div className="partner-item" key={p.logo}>
-              <Image
-                src={p.logo}
-                alt={`${p.name} partner logo`}
-                width={p.width}
-                height={p.height}
-                sizes="(max-width: 1100px) 25vw, 16vw"
-              />
-            </div>
-          ))}
-        </Reveal>
+        <div className="cs-marquee partner-marquee">
+          <div className="cs-track" aria-hidden="true">
+            {partnerLogos.map((p) => (
+              <div className="cs-item" key={`pa-${p.logo}`}>
+                <Image
+                  src={p.logo}
+                  alt=""
+                  width={p.width}
+                  height={p.height}
+                  className="cs-img"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="cs-track">
+            {partnerLogos.map((p) => (
+              <div className="cs-item" key={`pb-${p.logo}`}>
+                <Image
+                  src={p.logo}
+                  alt={`${p.name} partner logo`}
+                  width={p.width}
+                  height={p.height}
+                  className="cs-img"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

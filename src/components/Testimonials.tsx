@@ -15,7 +15,8 @@ const testimonials = [
   {
     text: "CGCE is a game-changer! Their digital transformation services exceeded our expectations with impeccable service, adhering to timelines without any hassle. Their proactive response to challenges proved their commitment to customer satisfaction. From start to finish, CGCE proved to be the ultimate one-stop shop for all our IT needs. We're thrilled with the results and highly recommend their services to all businesses seeking reliable IT solutions.",
     name: "Mahindra & Mahindra",
-    role: "Verified Client",
+    
+    
     avatar: "/images/coregenix/mahindra.png",
     isLogo: true,
   },

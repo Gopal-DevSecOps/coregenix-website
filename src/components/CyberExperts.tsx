@@ -16,9 +16,6 @@ export default function CyberExperts() {
       <div className="float-shape float-shape-1" aria-hidden="true" />
       <div className="container">
         <div className="ce-head">
-          <Wow delay={200} as="span" className="eyebrow">
-            Cyber Security Experts
-          </Wow>
           <Wow delay={350} as="h2" className="ce-title">
             Cybersecurity Solutions for <span className="grad">Modern Threat</span>
           </Wow>

@@ -42,3 +42,8 @@ next-env.d.ts
 
 # dev logs
 *.log
+
+# server notes / credentials (never commit)
+himedai-new.txt
+himedia2.txt
+himiedai.txt

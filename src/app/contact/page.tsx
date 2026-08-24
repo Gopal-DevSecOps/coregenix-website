@@ -123,9 +123,6 @@ export default function ContactPage() {
       <main>
         <section className="page-hero">
           <div className="container">
-            <Reveal as="span" className="page-hero-eyebrow">
-              Contact CoreGenix
-            </Reveal>
             <h1 className="page-hero-title">
               Let&apos;s Build Your <span className="grad">IT Strategy Together</span>
             </h1>
@@ -189,7 +186,7 @@ export default function ContactPage() {
                 Our Locations
               </Reveal>
               <Reveal as="h2" delay={1} className="locations-title">
-                Serving Clients Across <span className="grad">India &amp; Europe</span>
+                Other Locations <span className="grad">India &amp; Europe</span>
               </Reveal>
             </div>
 

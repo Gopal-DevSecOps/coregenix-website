@@ -8,9 +8,6 @@ export default function SolutionCategoryView({ category }: { category: SolutionC
     <>
       <section className="page-hero">
         <div className="container">
-          <Reveal as="span" className="page-hero-eyebrow">
-            Our Solutions
-          </Reveal>
           <h1 className="page-hero-title">
             {category.title}
             {category.title.toLowerCase().includes("solutions") ? null : (

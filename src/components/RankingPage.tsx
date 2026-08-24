@@ -48,9 +48,6 @@ export default function RankingPageView({ slug }: { slug: string }) {
       <main>
         <section className="page-hero ranking-hero">
           <div className="container">
-            <Reveal as="span" className="page-hero-eyebrow">
-              Home · {page.title}
-            </Reveal>
             <h1 className="page-hero-title">
               {page.h1}
             </h1>

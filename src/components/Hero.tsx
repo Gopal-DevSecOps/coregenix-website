@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import Link from "next/link";
 import { ArrowRightIcon } from "./Icons";
 
@@ -9,9 +9,12 @@ interface Slide {
   line1: string;
   line2: string;
   desc: string;
+  actionLabel: string;
+  actionHref: string;
 }
 
 const SLIDE_DURATION = 7000;
+const SLIDE_TRANSITION = 1900;
 
 const slides: Slide[] = [
   {
@@ -19,24 +22,44 @@ const slides: Slide[] = [
     line1: "A Strategy that",
     line2: "Creates Secure Solutions",
     desc: "We are a team of Security professionals delivering IT & OT Security.",
+    actionLabel: "View Solutions",
+    actionHref: "/solutions",
   },
   {
     bg: "/images/coregenix/hero-2.png",
     line1: "Your vision will",
     line2: "become a reality!",
     desc: "Let's have a perfect game plan",
+    actionLabel: "View Services",
+    actionHref: "/services",
   },
 ];
 
 export default function Hero() {
   const [active, setActive] = useState(0);
+  const [prev, setPrev] = useState<number | null>(null);
+  const activeRef = useRef(0);
+
+  const goTo = useCallback((next: number) => {
+    const target = ((next % slides.length) + slides.length) % slides.length;
+    if (target === activeRef.current) return;
+    setPrev(activeRef.current);
+    activeRef.current = target;
+    setActive(target);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setActive((prev) => (prev + 1) % slides.length);
+      goTo(activeRef.current + 1);
     }, SLIDE_DURATION);
     return () => clearInterval(timer);
-  }, []);
+  }, [goTo]);
+
+  useEffect(() => {
+    if (prev === null) return;
+    const timer = setTimeout(() => setPrev(null), SLIDE_TRANSITION);
+    return () => clearTimeout(timer);
+  }, [prev]);
 
   const viewportRef = useRef<HTMLDivElement | null>(null);
 
@@ -77,7 +100,7 @@ export default function Hero() {
         {slides.map((slide, i) => (
           <div
             key={slide.bg}
-            className={`hero-slide ${i === active ? "active" : ""}`}
+            className={`hero-slide ${i === active ? "active" : ""} ${i === prev ? "prev" : ""}`}
             role="group"
             aria-roledescription="slide"
             aria-label={`Slide ${i + 1} of ${slides.length}`}
@@ -93,16 +116,23 @@ export default function Hero() {
             <div className="container">
               <div className="hero-content">
                 <h1 className="hero-title">
-                  {slide.line1} <span className="grad">{slide.line2}</span>
+                  <span className="hero-mask m1">
+                    <span className="hero-line">{slide.line1}</span>
+                  </span>
+                  <span className="hero-mask m2">
+                    <span className="hero-line grad">{slide.line2}</span>
+                  </span>
                 </h1>
-                <p className="hero-desc">{slide.desc}</p>
+                <div className="hero-mask m3">
+                  <p className="hero-desc">{slide.desc}</p>
+                </div>
                 <div className="hero-actions">
                   <Link href="/contact" className="btn btn-grad hero-cta-primary">
                     Get Free Consultation
                     <ArrowRightIcon />
                   </Link>
-                  <Link href="/services" className="btn btn-hero-secondary">
-                    View Solutions
+                  <Link href={slide.actionHref} className="btn btn-hero-secondary">
+                    {slide.actionLabel}
                   </Link>
                 </div>
               </div>
@@ -112,32 +142,13 @@ export default function Hero() {
       </div>
 
       <div
-        className="hero-slider-nav"
-        role="tablist"
-        aria-label="Hero slides"
+        className="hero-progress"
+        aria-hidden="true"
         style={{ "--hero-duration": `${SLIDE_DURATION}ms` } as CSSProperties}
       >
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            className={`hero-bar ${i === active ? "active" : ""}`}
-            aria-label={`Go to slide ${i + 1}`}
-            aria-current={i === active ? "true" : undefined}
-            role="tab"
-            aria-selected={i === active}
-            onClick={() => setActive(i)}
-          >
-            <span className="hero-bar-fill" aria-hidden="true" />
-          </button>
-        ))}
+        <span key={active} className="hero-progress-fill" />
       </div>
 
-      <a href="#services" className="hero-scroll" aria-label="Scroll down to explore">
-        <span className="mouse" aria-hidden="true">
-          <span className="mouse-wheel" />
-        </span>
-        <span className="hero-scroll-label">Scroll</span>
-      </a>
     </section>
   );
 }

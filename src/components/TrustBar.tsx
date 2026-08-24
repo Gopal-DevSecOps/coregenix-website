@@ -12,7 +12,7 @@ interface Metric {
 const metrics: Metric[] = [
   { value: 55, suffix: "+", label: "Client Satisfaction" },
   { value: 120, suffix: "+", label: "Projects" },
-  { value: 18, suffix: "+", label: "Yrs of Experience" },
+  { value: 20, suffix: "+", label: "Yrs of Experience" },
 ];
 
 function useCountUp(target: number, start: boolean, duration = 1600) {
