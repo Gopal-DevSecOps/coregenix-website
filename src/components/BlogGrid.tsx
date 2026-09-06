@@ -12,7 +12,7 @@ export default function BlogGrid() {
           center
           title={
             <>
-              Hear from Our <span className="grad">Expert</span>
+              Hear from Our <span className="grad">Experts</span>
             </>
           }
         />
