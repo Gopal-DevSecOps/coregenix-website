@@ -12,7 +12,6 @@ import SectionHeading from "@/components/SectionHeading";
 import {
   CheckIcon,
   ArrowRightIcon,
-  QuoteIcon,
   RouteIcon,
   EyeIcon,
   HeartIcon,
@@ -81,9 +80,6 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const introDesc =
-  "At CoreGenix we believe that technology should work for you, not the other way around. We pride ourselves on delivering personalized, high-quality services that meet the unique needs of each of our clients. Our team of experts has years of experience in the IT industry, and we are always up-to-date on the latest trends and technologies. We use this knowledge to create tailor-made solutions that help our clients achieve their goals and stay ahead of the competition. CG Consultancy and Engineering Services (CoreGenix) located in Mumbai, commenced its engineering and consulting operations in 2004. With more than a decade of experience and dedicated workforce, CoreGenix has achieved service excellence in the field of information technology, focusing explicitly on IT & OT infrastructure Solutions & Services.";
-
 const features = [
   {
     title: "Distinctive Consultation Approach",
@@ -100,16 +96,12 @@ const features = [
 ];
 
 const whyChoose = [
-  "Advanced Analytics",
-  "Great Solutions",
-  "Best Cyber Security",
-  "Proactive Support",
-  "Timely IT support 24x7",
-  "Appropriate consulting and advisory to new hardware/software",
-  "Hybrid Comprehensive IT support & services",
-  "Quality support and collaboration",
-  "IT Management",
-  "Finest Quality",
+  "24×7 proactive IT support and monitoring",
+  "Advanced analytics-driven infrastructure management",
+  "Best-in-class cyber security, backed by ISO 27001 certification",
+  "Expert consulting on new hardware and software investments",
+  "Hybrid, end-to-end IT support and services",
+  "Dedicated account management and transparent collaboration",
 ];
 
 const pillars = [
@@ -162,86 +154,86 @@ export default function AboutPage() {
       <main>
         <section className="page-hero about-hero">
           <div className="container">
-            <h1 className="page-hero-title about-page-hero-title">
-              Your Trusted Technology Partner <span className="grad">Since 2004</span>
-            </h1>
-            <Reveal as="p" className="page-hero-desc" delay={1}>
-              We are a team of skilled experts dedicated to delivering tailored IT solutions that help
-              our clients meet their business goals — from IT infrastructure and cloud to cyber security.
-            </Reveal>
+            <div className="about-hero-grid">
+              <div className="about-hero-text">
+                <span className="page-hero-eyebrow">Mumbai · Bengaluru · Jaipur</span>
+                <h1 className="page-hero-title about-page-hero-title">
+                  Your trusted IT infrastructure &amp; cyber security partner <span className="grad">since 2004</span>
+                </h1>
+                <Reveal as="p" className="page-hero-desc" delay={1}>
+                  CoreGenix helps businesses across India build secure, resilient, and future-ready
+                  technology — from IT infrastructure and cloud to managed cyber security. 18+ years
+                  of turning complex technology challenges into simple, reliable solutions.
+                </Reveal>
+              </div>
+              
+            </div>
+            <div className="about-hero-media">
+                <Image
+                  src="/images/coregenix/about.jpg"
+                  alt="CoreGenix trusted technology partner"
+                  width={1376}
+                  height={768}
+                  className="about-hero-img"
+                />
+              </div>
+          </div>
+        </section>
+
+        <section className="answer-block" id="who">
+          <div className="container answer-grid">
+            <h2>Who is CoreGenix?</h2>
+            <div className="answer-copy">
+              <p>
+                CoreGenix, operated by CG Consultancy and Engineering Services (CGCES) Pvt. Ltd., is
+                an IT infrastructure and cyber security company headquartered in Mumbai, India, with a
+                presence in Bengaluru and Jaipur. Founded in 2004, CoreGenix has spent 18+ years helping
+                businesses design, manage, and secure their IT and OT (Operational Technology)
+                environments. The company is ISO 27001 certified and provides managed IT services,
+                cloud infrastructure management, and managed cyber security services — including
+                SOC-as-a-Service, VAPT, GRC &amp; DPDPA compliance, and Zero Trust security solutions.
+              </p>
+            </div>
           </div>
         </section>
 
         <section id="about" className="section about">
           <div className="container">
-            <Reveal className="about-media">
-              <Image
-                src="/images/coregenix/Solving Business Problems With Technical Solutions.png"
-                alt="Solving business problems with technical solutions"
-                width={2752}
-                height={1536}
-                className="main-img"
-              />
-              <div className="float-card">
-                <span className="num">18+</span>
-                <span className="txt">
-                  Years of
-                  <br />
-                  your trust
-                </span>
-              </div>
-            </Reveal>
+            <SectionHeading
+              center
+              title="Two decades of building trust through technology"
+              desc="CoreGenix began its journey in 2004 as CG Consultancy and Engineering Services, with a simple goal: make enterprise-grade IT and security accessible to businesses that needed a partner, not just a vendor. Today, we cover IT infrastructure, cloud computing, and IT & OT cyber security — serving clients across industries and geographies. Every engagement starts with a consultation, not a sales pitch, and every solution is tailored rather than templated."
+            />
+            <div className="about-lower-grid">
+              <Reveal className="about-media">
+                <Image
+                  src="/images/coregenix/Solving Business Problems With Technical Solutions.png"
+                  alt="Solving business problems with technical solutions"
+                  width={2752}
+                  height={1536}
+                  className="main-img"
+                />
+                <div className="float-card">
+                  <span className="txt">Two decades of building trust through technology</span>
+                </div>
+              </Reveal>
 
-            <div>
-              <SectionHeading
-                title="18+ Years of Your Trust"
-              />
-              <div className="about-features">
-                {features.map((feature, i) => (
-                  <Reveal key={feature.title} delay={i + 1}>
-                    <div className="about-feature">
-                      <span className="feature-num">{String(i + 1).padStart(2, "0")}</span>
-                      <div>
-                        <h3>{feature.title}</h3>
-                        <p>{feature.desc}</p>
+              <div>
+                <div className="about-features">
+                  {features.map((feature, i) => (
+                    <Reveal key={feature.title} delay={i + 1}>
+                      <div className="about-feature">
+                        <span className="feature-num">{String(i + 1).padStart(2, "0")}</span>
+                        <div>
+                          <h3>{feature.title}</h3>
+                          <p>{feature.desc}</p>
+                        </div>
                       </div>
-                    </div>
-                  </Reveal>
-                ))}
+                    </Reveal>
+                  ))}
+                </div>
               </div>
-              
             </div>
-          </div>
-        </section>
-
-        <section className="section about-quote">
-          <div className="container">
-            <Reveal>
-              <div className="about-quote-box">
-                <div className="about-quote-mark">
-                  <QuoteIcon />
-                </div>
-
-                <p className="about-quote-text">Save money &amp; time – we help protect expenses.</p>
-                <div className="about-quote-author">
-                  <strong>MD &amp; CFO</strong>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        <section className="section about-intro">
-          <div className="container">
-            <Reveal as="p" className="about-intro-tag" delay={1}>
-              We are establish IT consulting &amp; digital solutions company
-            </Reveal>
-            <Reveal as="h2" className="section-title" delay={2}>
-              IT Infrastructure, IT &amp; OT Cyber Security, Cloud Computing &amp; Beyond
-            </Reveal>
-            <Reveal as="p" className="section-desc" delay={3}>
-              {introDesc}
-            </Reveal>
           </div>
         </section>
 
@@ -316,6 +308,42 @@ export default function AboutPage() {
         </section>
 
         <Leadership />
+
+        <section className="section faq">
+          <div className="container">
+            <div className="section-head">
+              <h2>Frequently asked questions</h2>
+              <p className="sub">Straight answers about who we are, what we do, and how we work.</p>
+            </div>
+
+            <div className="faq-list">
+              <details className="faq-item" open>
+                <summary>What does CoreGenix do?<span className="plus" /></summary>
+                <div className="answer">CoreGenix is an IT infrastructure and cyber security company that provides managed IT services, cloud infrastructure management, and managed security services — including SOC-as-a-Service, VAPT, GRC &amp; DPDPA compliance, and OT security — to businesses across India.</div>
+              </details>
+              <details className="faq-item">
+                <summary>When was CoreGenix founded?<span className="plus" /></summary>
+                <div className="answer">CoreGenix was founded in 2004 as CG Consultancy and Engineering Services (CGCES) and has over 18 years of experience in IT and cyber security.</div>
+              </details>
+              <details className="faq-item">
+                <summary>Where is CoreGenix located?<span className="plus" /></summary>
+                <div className="answer">CoreGenix is headquartered in Mumbai, India, with additional operations in Bengaluru and Jaipur.</div>
+              </details>
+              <details className="faq-item">
+                <summary>Is CoreGenix ISO certified?<span className="plus" /></summary>
+                <div className="answer">Yes, CoreGenix is ISO 27001 certified, reflecting its adherence to international information security management standards.</div>
+              </details>
+              <details className="faq-item">
+                <summary>What industries does CoreGenix serve?<span className="plus" /></summary>
+                <div className="answer">CoreGenix serves businesses across IT and OT (Operational Technology) environments, providing tailored infrastructure, cloud, and cyber security solutions regardless of industry size or sector.</div>
+              </details>
+              <details className="faq-item">
+                <summary>Does CoreGenix offer 24/7 support?<span className="plus" /></summary>
+                <div className="answer">Yes, CoreGenix provides 24x7 proactive IT support and monitoring as part of its managed IT and security services.</div>
+              </details>
+            </div>
+          </div>
+        </section>
 
         <section className="section about-cta">
           <div className="container">

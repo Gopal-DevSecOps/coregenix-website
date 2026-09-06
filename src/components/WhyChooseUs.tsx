@@ -23,12 +23,7 @@ export default function WhyChooseUs() {
             className="main-img"
           />
           <div className="float-card">
-            <span className="num">18+</span>
-            <span className="txt">
-              Years of
-              <br />
-              your trust
-            </span>
+            <span className="txt">Two decades of building trust through technology</span>
           </div>
         </Reveal>
 
@@ -36,7 +31,7 @@ export default function WhyChooseUs() {
           <SectionHeading
             title={
               <>
-                18+ Years of Your Trust & <span className="grad">Successful IT Services</span>
+                Two decades of building trust through technology & <span className="grad">Successful IT Services</span>
               </>
             }
             lead="We provide IT Infrastructure & Cyber Security Services for your Business"

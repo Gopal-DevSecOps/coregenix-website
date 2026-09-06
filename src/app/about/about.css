@@ -17,12 +17,68 @@
   max-width: 100%;
 }
 
+.page-hero.about-hero .container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+  text-align: left;
+}
+
+.about-hero .page-hero-eyebrow {
+  justify-content: flex-start;
+}
+
+.about-hero-text {
+  max-width: 640px;
+}
+
+.about-hero-media {
+  position: relative;
+}
+
+.about-hero-img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
 .about-page-hero-title .grad {
   font-style: italic;
   background: var(--accent-grad);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* ---------- Answer block (Who is CoreGenix?) ---------- */
+.answer-block {
+  padding: 70px 0;
+  background: var(--bg-darker);
+  border-bottom: 1px solid var(--border);
+}
+
+.answer-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.answer-grid h2 {
+  font-size: clamp(28px, 3.2vw, 40px);
+  color: var(--navy);
+  line-height: 1.15;
+  text-align: left !important;
+}
+
+.answer-copy p {
+  color: var(--text-soft);
+  font-size: 16px;
+  line-height: 1.85;
+  text-align: left !important;
 }
 
 /* Justified paragraph content */
@@ -516,6 +572,13 @@
 /* ---------- CTA ---------- */
 .about-cta {
   padding-top: 0;
+}
+
+/* ---------- FAQ ---------- */
+.faq {
+  background: var(--bg-darker);
+  border-bottom: 1px solid var(--border);
+  padding: 60px 0 110px;
 }
 
 .about-cta-box {

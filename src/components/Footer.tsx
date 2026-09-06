@@ -16,12 +16,10 @@ const companyLinks = [
   { label: "Career", href: "/career" },
 ];
 const serviceLinks = [
-  { label: "Vulnerability Assessment & Penetration Testing", href: "/services/vapt" },
-  { label: "Managed Security Operations Center as a Service", href: "/services/soc-mss" },
-  { label: "Threat Operation Center (TOC)", href: "/solutions#toc" },
-  { label: "Operational Technology Security", href: "/services/ot-security" },
+  { label: "VAPT", href: "/services/vapt" },
+  { label: "Managed SOC", href: "/services/soc-mss" },
+  { label: "OT Security", href: "/services/ot-security" },
   { label: "GRC & DPDPA", href: "/services/grc-dpdpa" },
-  { label: "X-as-a-Service", href: "/solutions#xaas" },
   { label: "Cyber Security Solutions", href: "/solutions#it-security" },
 ];
 
