@@ -55,46 +55,36 @@ const perks = [
 
 const jobs = [
   {
-    title: "Senior Network Engineer",
+    title: "Enterprise Account Manager",
     type: "Full Time",
     location: "Mumbai (Hybrid)",
-    desc: "Design, deploy and maintain enterprise networks, routing and switching, and data center infrastructure.",
-    tags: ["CCNP", "SD-WAN", "Firewall"],
+    openings: "2",
+    desc: "Own and grow relationships with enterprise clients, driving revenue across CoreGenix's IT infrastructure, cloud, and cyber security portfolio. Manage the full account lifecycle — from renewals to upsells — working closely with our technical team to design solutions that match client needs.",
+    tags: ["Enterprise Sales", "Account Management", "Client Relationships"],
   },
   {
-    title: "Cloud Infrastructure Engineer",
-    type: "Full Time",
-    location: "Mumbai (Hybrid)",
-    desc: "Architect and manage Azure / AWS cloud environments, migrations and automation for enterprise clients.",
-    tags: ["Azure", "AWS", "Terraform"],
-  },
-  {
-    title: "Cyber Security Analyst",
-    type: "Full Time",
-    location: "Remote",
-    desc: "Monitor, detect and respond to security threats across IT and OT environments with SIEM and SOC tools.",
-    tags: ["SIEM", "SOC", "Incident Response"],
-  },
-  {
-    title: "IT Support / Helpdesk Engineer",
+    title: "Business Development Executive",
     type: "Full Time",
     location: "Mumbai",
-    desc: "Provide 24/7 managed support and helpdesk services, resolving issues quickly with great service.",
-    tags: ["Windows", "Active Directory", "Troubleshooting"],
+    openings: "2",
+    desc: "Identify and pursue new business opportunities for CoreGenix's IT infrastructure and cyber security services. Generate qualified leads, build a pipeline through outreach and networking, and work with the sales team to convert prospects into long-term clients.",
+    tags: ["Lead Generation", "B2B Sales", "Client Outreach"],
   },
   {
-    title: "Data Backup & DR Specialist",
+    title: "Inside Sales Representative",
     type: "Full Time",
     location: "Mumbai",
-    desc: "Implement and maintain backup, disaster recovery and business continuity solutions for clients.",
-    tags: ["Veeam", "Backup", "DR"],
+    openings: "4",
+    desc: "Handle inbound and outbound sales conversations for CoreGenix's IT and cyber security services. Qualify leads, schedule demos and consultations, and maintain accurate CRM records to keep the sales pipeline moving efficiently.",
+    tags: ["Inside Sales", "CRM", "Lead Qualification"],
   },
   {
-    title: "Project Manager — IT Services",
-    type: "Full Time",
-    location: "Mumbai (Hybrid)",
-    desc: "Lead IT infrastructure and security projects end-to-end — planning, delivery and stakeholder management.",
-    tags: ["Project Delivery", "ITIL", "Client Facing"],
+    title: "Technical / Cyber Security / IT Sales Intern",
+    type: "Internship",
+    location: "Mumbai",
+    openings: "Multiple",
+    desc: "Learn the fundamentals of technical sales in IT infrastructure and cyber security. Support the sales team with prospect research, client meeting preparation, and proposal support — with hands-on exposure to how enterprise IT deals are won, guided by experienced mentors.",
+    tags: ["Sales Training", "Cyber Security Basics", "Mentorship"],
   },
 ];
 
@@ -179,6 +169,10 @@ export default function CareerPage() {
             <Reveal as="h2" className="career-section-title" delay={2}>
               Find Your Next <span className="grad">Role</span>
             </Reveal>
+            <Reveal as="p" className="career-section-desc" delay={3}>
+              We&apos;re growing our sales team. Explore current openings in enterprise sales, business
+              development, and inside sales — plus internship opportunities for those starting out.
+            </Reveal>
             <div className="jobs-grid">
               {jobs.map((job, i) => (
                 <Reveal key={job.title} delay={(i % 3) + 1}>
@@ -190,6 +184,7 @@ export default function CareerPage() {
                         {job.location}
                       </span>
                     </div>
+                    <span className="job-openings">{job.openings} Openings</span>
                     <h3>{job.title}</h3>
                     <p>{job.desc}</p>
                     <div className="job-tags">

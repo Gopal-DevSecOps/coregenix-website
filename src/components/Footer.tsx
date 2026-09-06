@@ -69,6 +69,18 @@ export default function Footer() {
                 width={72}
                 height={72}
               />
+              <Image
+                src="/images/coregenix/cert-logo-9.png"
+                alt="CoreGenix partner logo"
+                width={72}
+                height={72}
+              />
+              <Image
+                src="/images/coregenix/cert-logo-3.png"
+                alt="CoreGenix partner logo"
+                width={72}
+                height={72}
+              />
             </div>
           </Reveal>
 

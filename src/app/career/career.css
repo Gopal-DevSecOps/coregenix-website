@@ -13,6 +13,24 @@
   color: #fff;
 }
 
+.career-section-desc {
+  margin: -28px 0 48px;
+  max-width: 720px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 16px;
+  line-height: 1.75;
+  text-align: left !important;
+}
+
+.job-openings {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
 .career-perks .eyebrow,
 .career-jobs .eyebrow,
 .career-process .eyebrow {
