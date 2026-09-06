@@ -56,13 +56,6 @@ export const SITE = {
       mapsQuery: "Malviya nagar jaipur",
       mapsUrl: "https://maps.google.com/maps?q=Malviya%20nagar%20jaipur&t=m&z=10&output=embed",
     },
-    {
-      region: "Europe",
-      city: "Warsaw",
-      address: "Warsaw, Poland",
-      mapsQuery: "warsaw",
-      mapsUrl: "https://maps.google.com/maps?q=warsaw&t=m&z=10&output=embed",
-    },
   ],
   hours: [
     { dayOfWeek: "Monday", opens: "09:00", closes: "19:00" },

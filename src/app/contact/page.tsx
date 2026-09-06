@@ -65,7 +65,7 @@ const localBusinessJsonLd = {
     opens: h.opens,
     closes: h.closes,
   })),
-  areaServed: ["Mumbai", "Bengaluru", "Jaipur", "Warsaw", "India", "Europe"],
+  areaServed: ["Mumbai", "Bengaluru", "Jaipur", "India"],
   hasMap: "https://www.google.com/maps?q=Kailash+Business+Park+Vikhroli+Mumbai+400059",
   contactPoint: [
     {
@@ -89,7 +89,6 @@ const contactDetails = [
     title: "Our Offices",
     lines: [
       "India — Mumbai, Bengaluru, Jaipur",
-      "Europe — Warsaw",
     ],
     action: "View Locations",
     href: "#locations",
