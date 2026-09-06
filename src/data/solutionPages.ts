@@ -917,7 +917,7 @@ export const solutionPages: SolutionPage[] = [
   },
   {
     slug: "grc-cyber-audits",
-    category: "Governance, Risk & Compliance & Data Protection Officer",
+    category: "GRC & DPDPA",
     title: "GRC & Cyber Audits India | Governance, Risk & Compliance",
     description:
       "GRC & cyber audits in India — governance, risk management and compliance audits. ISO 27001, NIST CSF, DPDP Act readiness.",
@@ -982,7 +982,7 @@ export const solutionPages: SolutionPage[] = [
   },
   {
     slug: "risk-management",
-    category: "Governance, Risk & Compliance & Data Protection Officer",
+    category: "GRC & DPDPA",
     title: "IT Risk Management Services India | Identify, Assess & Treat Risk",
     description:
       "IT risk management services in India — identify, assess and treat business and cyber risk. Structured risk frameworks and registers.",
@@ -1047,7 +1047,7 @@ export const solutionPages: SolutionPage[] = [
   },
   {
     slug: "compliance",
-    category: "Governance, Risk & Compliance & Data Protection Officer",
+    category: "GRC & DPDPA",
     title: "IT Compliance Services India | ISO 27001, NIST CSF & More",
     description:
       "IT compliance services in India — ISO 27001, NIST CSF, GDPR, DPDP Act and industry frameworks. Achieve and maintain compliance.",
@@ -1112,7 +1112,7 @@ export const solutionPages: SolutionPage[] = [
   },
   {
     slug: "risk-compliance-assessment",
-    category: "Governance, Risk & Compliance & Data Protection Officer",
+    category: "GRC & DPDPA",
     title: "Risk & Compliance Assessment India | Comprehensive Gap Analysis",
     description:
       "Risk & compliance assessments in India — evaluate security posture, identify gaps and prioritize fixes against leading frameworks.",
@@ -1177,7 +1177,7 @@ export const solutionPages: SolutionPage[] = [
   },
   {
     slug: "nist-cybersecurity-framework",
-    category: "Governance, Risk & Compliance & Data Protection Officer",
+    category: "GRC & DPDPA",
     title: "NIST Cybersecurity Framework Services India",
     description:
       "NIST Cybersecurity Framework (CSF) services in India — assess, implement and manage against the NIST CSF. Identify, Protect, Detect, Respond, Recover.",
@@ -1242,7 +1242,7 @@ export const solutionPages: SolutionPage[] = [
   },
   {
     slug: "it-risk-assessment",
-    category: "Governance, Risk & Compliance & Data Protection Officer",
+    category: "GRC & DPDPA",
     title: "IT Risk Assessment Services Mumbai | Security Risk Evaluation",
     description:
       "IT risk assessment services in Mumbai & India — identify threats, vulnerabilities and impacts across your IT environment. Prioritized findings.",
@@ -1307,7 +1307,7 @@ export const solutionPages: SolutionPage[] = [
   },
   {
     slug: "it-policy-security-policy",
-    category: "Governance, Risk & Compliance & Data Protection Officer",
+    category: "GRC & DPDPA",
     title: "IT Policy & Security Policy Services India",
     description:
       "IT policy and security policy services in India — write, implement and maintain the policies your compliance and audits demand.",
@@ -1372,7 +1372,7 @@ export const solutionPages: SolutionPage[] = [
   },
   {
     slug: "isms-cyber-security",
-    category: "Governance, Risk & Compliance & Data Protection Officer",
+    category: "GRC & DPDPA",
     title: "ISMS & Cyber Security Services India | ISO 27001 Information Security",
     description:
       "Information Security Management System (ISMS) services in India — design, implement and maintain an ISO 27001-aligned ISMS.",
@@ -1437,7 +1437,7 @@ export const solutionPages: SolutionPage[] = [
   },
   {
     slug: "bcp-dr",
-    category: "Governance, Risk & Compliance & Data Protection Officer",
+    category: "GRC & DPDPA",
     title: "Business Continuity Planning & Disaster Recovery Services India",
     description:
       "Business continuity planning (BCP) and disaster recovery (DR) services in India — plan, test and recover. Keep business running through disruption.",

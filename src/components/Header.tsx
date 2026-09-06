@@ -54,7 +54,7 @@ const menu: MenuItem[] = [
         title: "Audit & Assessment",
         href: "/services/audit-assessment",
         items: [
-          { label: "Governance, Risk & Compliance & Data Protection Officer", href: "/services/grc-dpo" },
+          { label: "GRC & DPDPA", href: "/services/grc-dpdpa" },
           { label: "Vulnerability Assessment & Penetration Testing", href: "/services/vapt" },
           { label: "Red Teaming", href: "/services/red-teaming" },
           { label: "Audit", href: "/services/audit" },
@@ -112,9 +112,9 @@ const menu: MenuItem[] = [
         ],
       },
       {
-        title: "Governance, Risk & Compliance & Data Protection Officer",
+        title: "GRC & DPDPA",
         wide: true,
-        href: "/solutions/grc-dpo",
+        href: "/solutions/grc-dpdpa",
         items: [
           { label: "Governance, Risk & Compliance & Cyber Audits", href: "/solutions/grc-cyber-audits" },
           { label: "Risk Management", href: "/solutions/risk-management" },

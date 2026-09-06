@@ -53,7 +53,7 @@ const services = [
     icon: LockIcon,
     title: "InfoSec GRC",
     desc: "Governance, risk and compliance management to meet ISO 27001 and industry standards with confidence.",
-    href: "/solutions/grc-dpo",
+    href: "/solutions/grc-dpdpa",
   },
   {
     icon: ScanIcon,

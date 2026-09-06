@@ -72,8 +72,8 @@ const categoryMeta: {
     icon: ShieldIcon,
   },
   {
-    slug: "grc-dpo",
-    title: "Governance, Risk & Compliance & Data Protection Officer",
+    slug: "grc-dpdpa",
+    title: "GRC & DPDPA",
     subtitle: "Governance you can prove",
     desc: "GRC & cyber audits, risk management, compliance and DPO services that keep you audit-ready and trusted.",
     icon: ClipboardCheckIcon,

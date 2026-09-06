@@ -19,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/solutions/it-infrastructure-solutions`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/solutions/cloud-infrastructure-solutions`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/solutions/cyber-security-solutions`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/solutions/grc-dpo`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/solutions/grc-dpdpa`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/it-services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/contact`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.8 },
     { url: `${base}/career`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.5 },

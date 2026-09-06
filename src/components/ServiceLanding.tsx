@@ -29,7 +29,7 @@ interface Props {
 const stats = [
   { value: "18+", label: "Years of Experience" },
   { value: "120+", label: "Projects Delivered" },
-  { value: "55+", label: "Happy Clients" },
+  { value: "75+", label: "Happy Clients" },
   { value: "24x7", label: "Pan-India Support" },
 ];
 
@@ -51,7 +51,7 @@ const featureIcons = [
 const heroImages: Record<string, string> = {
   "cloud-infrastructure-management": "/images/coregenix/service-7.jpg",
   "backup-recovery": "/images/coregenix/service-1.jpg",
-  "grc-dpo": "/images/coregenix/service-5.jpg",
+  "grc-dpdpa": "/images/coregenix/service-5.jpg",
   vapt: "/images/coregenix/service-6.jpg",
   "red-teaming": "/images/coregenix/service-6.jpg",
   audit: "/images/coregenix/service-4.jpg",
@@ -66,7 +66,7 @@ const heroImages: Record<string, string> = {
 const eyebrowLabels: Record<string, string> = {
   "cloud-infrastructure-management": "Cloud Infrastructure Management",
   "backup-recovery": "Data Backup & Recovery",
-  "grc-dpo": "GRC & DPO",
+  "grc-dpdpa": "GRC & DPO",
   vapt: "Vulnerability Assessment & Penetration Testing",
   "red-teaming": "Red Teaming",
   audit: "Cyber Security Audit",

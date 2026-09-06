@@ -20,7 +20,7 @@ const serviceLinks = [
   { label: "Managed Security Operations Center as a Service", href: "/services/soc-mss" },
   { label: "Threat Operation Center (TOC)", href: "/solutions#toc" },
   { label: "Operational Technology Security", href: "/services/ot-security" },
-  { label: "Governance, Risk & Compliance & Data Protection Officer", href: "/services/grc-dpo" },
+  { label: "GRC & DPDPA", href: "/services/grc-dpdpa" },
   { label: "X-as-a-Service", href: "/solutions#xaas" },
   { label: "Cyber Security Solutions", href: "/solutions#it-security" },
 ];

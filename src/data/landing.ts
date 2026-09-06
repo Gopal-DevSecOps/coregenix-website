@@ -23,7 +23,7 @@ export interface LandingPage {
 const sharedNumbers = [
   { value: "18+", label: "Years of Experience" },
   { value: "120+", label: "Projects Delivered" },
-  { value: "55+", label: "Happy Clients" },
+  { value: "75+", label: "Happy Clients" },
   { value: "24/7", label: "Support Availability" },
 ];
 
@@ -64,7 +64,7 @@ const landingSlugMap: Record<string, string> = {
   "cloud-strategy": "cloud-strategy",
   "cloud-infrastructure-management": "cloud-infrastructure-management",
   "backup-and-recovery": "backup-recovery",
-  "grc-and-dpo": "grc-dpo",
+  "grc-and-dpo": "grc-dpdpa",
   "vapt": "vapt",
   "red-teaming": "red-teaming",
   "audit": "audit",

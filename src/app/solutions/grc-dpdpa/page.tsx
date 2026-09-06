@@ -8,8 +8,8 @@ import { getSolutionCategory } from "@/data/solutionCategories";
 import { SITE } from "@/lib/site";
 import "../../services/services.css";
 
-const category = getSolutionCategory("grc-dpo");
-const path = "/solutions/grc-dpo";
+const category = getSolutionCategory("grc-dpdpa");
+const path = "/solutions/grc-dpdpa";
 
 export const metadata: Metadata = {
   title: "GRC & DPO Solutions",

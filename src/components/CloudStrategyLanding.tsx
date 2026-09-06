@@ -26,7 +26,7 @@ interface Props {
 const stats = [
   { value: "18+", label: "Years of Experience" },
   { value: "120+", label: "Projects Delivered" },
-  { value: "55+", label: "Happy Clients" },
+  { value: "75+", label: "Happy Clients" },
   { value: "24x7", label: "Pan-India Support" },
 ];
 

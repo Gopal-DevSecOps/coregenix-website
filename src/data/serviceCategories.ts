@@ -111,7 +111,7 @@ export const categories: ServiceCategory[] = [
         title: "GRC & Data Protection Officer",
         desc: "Governance, risk and compliance advisory plus DPO services to meet data protection and regulatory obligations.",
         features: ["Compliance gap assessment", "Policy & framework implementation", "DPO-as-a-service"],
-        href: "/services/grc-dpo",
+        href: "/services/grc-dpdpa",
       },
       {
         icon: BugIcon,

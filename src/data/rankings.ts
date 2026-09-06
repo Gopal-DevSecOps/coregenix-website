@@ -29,7 +29,7 @@ export const rankingPages: RankingPage[] = [
     proof: [
       { label: "Years of Experience", value: "18+" },
       { label: "Projects Delivered", value: "120+" },
-      { label: "Happy Clients", value: "55+" },
+      { label: "Happy Clients", value: "75+" },
       { label: "Support Availability", value: "24/7" },
     ],
     services: [
@@ -81,7 +81,7 @@ export const rankingPages: RankingPage[] = [
     proof: [
       { label: "Years of Experience", value: "18+" },
       { label: "Projects Delivered", value: "120+" },
-      { label: "Happy Clients", value: "55+" },
+      { label: "Happy Clients", value: "75+" },
       { label: "Support Availability", value: "24/7" },
     ],
     services: [
@@ -131,7 +131,7 @@ export const rankingPages: RankingPage[] = [
     proof: [
       { label: "Years of Experience", value: "18+" },
       { label: "Projects Delivered", value: "120+" },
-      { label: "Happy Clients", value: "55+" },
+      { label: "Happy Clients", value: "75+" },
       { label: "Support Availability", value: "24/7" },
     ],
     services: [
@@ -180,7 +180,7 @@ export const rankingPages: RankingPage[] = [
     proof: [
       { label: "Years of Experience", value: "18+" },
       { label: "Projects Delivered", value: "120+" },
-      { label: "Happy Clients", value: "55+" },
+      { label: "Happy Clients", value: "75+" },
       { label: "VAPT Scan Capabilities", value: "30+" },
     ],
     services: [

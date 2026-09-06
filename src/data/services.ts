@@ -497,7 +497,7 @@ export const services: ServicePage[] = [
     cta: "Test your backups before disaster tests you. Get a free backup assessment today.",
   },
   {
-    slug: "grc-dpo",
+    slug: "grc-dpdpa",
     title: "GRC & DPO Services Mumbai — Governance Risk Compliance",
     description:
       "GRC consulting and Data Protection Officer (DPO) services in Mumbai & India. Governance, risk management, compliance and privacy.",

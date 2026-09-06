@@ -11,7 +11,7 @@ interface Stat {
 const stats: Stat[] = [
   { value: 120, label: "Customers" },
   { value: 10, label: "Awards & Certifications" },
-  { value: 55, label: "Trusted Clients" },
+  { value: 75, label: "Trusted Clients" },
   { value: 18, label: "Years Of Experience" },
 ];
 
