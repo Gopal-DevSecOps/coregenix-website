@@ -1205,6 +1205,7 @@ a.mega-group-title:hover {
   font-size: 1em;
   display: block;
   margin-top: 2px;
+  text-align: center;
 }
 
 .hero-desc {
@@ -3291,7 +3292,7 @@ h6 {
 .cs-heading,
 .trust-title,
 .video-content {
-  text-align: center;
+  text-align: center !important;
 }
 
 .section-title,
@@ -3301,5 +3302,5 @@ h6 {
 .video-content h2,
 .video-content p,
 .cs-heading h2 {
-  text-align: center;
+  text-align: center !important;
 }
