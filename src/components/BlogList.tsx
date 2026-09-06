@@ -14,6 +14,8 @@ function categoryFrom(post: BlogPost) {
 
 export default function BlogList({ posts }: { posts: BlogPost[] }) {
   const [active, setActive] = useState(ALL);
+  const [page, setPage] = useState(1);
+  const PER_PAGE = 9;
 
   const categories = useMemo(() => {
     const seen = new Set<string>();
@@ -24,6 +26,15 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
   const featured = posts[0];
   const filtered = active === ALL ? posts.slice(1) : posts.filter((p) => p.tag === active);
   const showFeatured = active === ALL ? Boolean(featured) : false;
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
+  const current = Math.min(page, totalPages);
+  const pageItems = filtered.slice((current - 1) * PER_PAGE, current * PER_PAGE);
+
+  const changeCategory = (cat: string) => {
+    setActive(cat);
+    setPage(1);
+  };
 
   return (
     <>
@@ -68,7 +79,7 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
             type="button"
             className={`blog-cat ${cat === active ? "active" : ""}`}
             aria-pressed={cat === active}
-            onClick={() => setActive(cat)}
+            onClick={() => changeCategory(cat)}
           >
             {cat}
           </button>
@@ -76,7 +87,7 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
       </div>
 
       <div className="blog-grid blog-page-grid">
-        {filtered.map((post, i) => (
+        {pageItems.map((post, i) => (
           <Reveal key={post.title} delay={(i % 3) + 1}>
             <article className="post-card">
               <a href={`/blog/${post.slug}`} className="post-media">
@@ -111,6 +122,38 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
           </Reveal>
         ))}
       </div>
+
+      {totalPages > 1 && (
+        <nav className="blog-pagination" aria-label="Blog pagination">
+          <button
+            type="button"
+            className="blog-page-btn"
+            disabled={current === 1}
+            onClick={() => setPage(current - 1)}
+          >
+            ‹ Prev
+          </button>
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+            <button
+              key={p}
+              type="button"
+              className={`blog-page-btn ${p === current ? "active" : ""}`}
+              aria-current={p === current ? "page" : undefined}
+              onClick={() => setPage(p)}
+            >
+              {p}
+            </button>
+          ))}
+          <button
+            type="button"
+            className="blog-page-btn"
+            disabled={current === totalPages}
+            onClick={() => setPage(current + 1)}
+          >
+            Next ›
+          </button>
+        </nav>
+      )}
     </>
   );
 }

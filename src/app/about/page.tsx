@@ -201,7 +201,7 @@ export default function AboutPage() {
           <div className="container">
             <SectionHeading
               center
-              title="Two decades of building trust through technology"
+              title="22+ Years of Your Trust"
               desc="CoreGenix began its journey in 2004 as CG Consultancy and Engineering Services, with a simple goal: make enterprise-grade IT and security accessible to businesses that needed a partner, not just a vendor. Today, we cover IT infrastructure, cloud computing, and IT & OT cyber security — serving clients across industries and geographies. Every engagement starts with a consultation, not a sales pitch, and every solution is tailored rather than templated."
             />
             <div className="about-lower-grid">
@@ -214,7 +214,7 @@ export default function AboutPage() {
                   className="main-img"
                 />
                 <div className="float-card">
-                  <span className="txt">Two decades of building trust through technology</span>
+                  <span className="txt">22+ Years of Your Trust</span>
                 </div>
               </Reveal>
 

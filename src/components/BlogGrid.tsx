@@ -17,7 +17,7 @@ export default function BlogGrid() {
           }
         />
         <div className="blog-grid">
-          {posts.map((post, i) => (
+          {posts.slice(0, 6).map((post, i) => (
             <Reveal key={post.title} delay={(i % 3) + 1}>
               <article className="post-card">
                 <a href={`/blog/${post.slug}`} className="post-media">
