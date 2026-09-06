@@ -2950,7 +2950,7 @@ a.mega-group-title:focus-visible {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  grid-template-columns: 0.9fr 1fr 1.8fr 1.6fr;
   gap: 48px;
   padding-bottom: 60px;
 }
@@ -2975,7 +2975,7 @@ a.mega-group-title:focus-visible {
 .footer ul {
   list-style: none;
   display: grid;
-  gap: 12px;
+  gap: 8px;
 }
 
 .footer ul a {
