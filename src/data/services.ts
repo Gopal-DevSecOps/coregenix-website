@@ -12,7 +12,7 @@
 export const services: ServicePage[] = [
   {
     slug: "noc",
-    title: "Network Operations Center (NOC) Services | 24x7 Network Monitoring | India's No.1 NOC Company",
+    title: "Network Operations Center (NOC) Services | 24x7 Network Monitoring | India's Top IT Managed Service Provider",
     description:
       "Get 24x7 network monitoring & management from India's top NOC service provider. Proactive threat detection, guaranteed uptime, and expert support. Free consultation!",
     h1: "Network Operations Center (NOC) Services — 24x7 Network Monitoring & Management",

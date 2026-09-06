@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -19,7 +19,7 @@ import { SITE } from "@/lib/site";
 import "./noc-landing.css";
 
 export const metadata: Metadata = {
-  title: "Network Operations Center (NOC) Services | 24x7 Network Monitoring | India's No.1 NOC Company",
+  title: "Network Operations Center (NOC) Services | 24x7 Network Monitoring | India's Top IT Managed Service Provider",
   description:
     "Get 24x7 network monitoring & management from India's top NOC service provider. Proactive threat detection, guaranteed uptime, and expert support. Free consultation!",
   keywords: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/network-operations-center" },
   openGraph: {
-    title: "Network Operations Center (NOC) Services | 24x7 Network Monitoring | India's No.1 NOC Company",
+    title: "Network Operations Center (NOC) Services | 24x7 Network Monitoring | India's Top IT Managed Service Provider",
     description:
       "Get 24x7 network monitoring & management from India's top NOC service provider. Proactive threat detection, guaranteed uptime, and expert support. Free consultation!",
     url: `${SITE.url}/network-operations-center`,
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Network Operations Center (NOC) Services | 24x7 Network Monitoring | India's No.1 NOC Company",
+    title: "Network Operations Center (NOC) Services | 24x7 Network Monitoring | India's Top IT Managed Service Provider",
     description:
       "Get 24x7 network monitoring & management from India's top NOC service provider. Free consultation!",
   },
@@ -51,7 +51,7 @@ const heroStats = [
   { value: "99.99%", label: "Uptime Guarantee" },
   { value: "24x7x365", label: "Monitoring" },
   { value: "60%", label: "Cost Savings" },
-  { value: "500+", label: "Enterprise Clients" },
+  { value: "51+", label: "Enterprise Clients" },
 ];
 
 const features = [
@@ -120,7 +120,7 @@ const serviceJsonLd = {
   "@type": "Service",
   name: "Network Operations Center (NOC) Services",
   description:
-    "24x7 network monitoring and management services by India's top NOC company. Proactive threat detection, performance optimization, and guaranteed uptime.",
+    "24x7 network monitoring and management services by India's top IT managed service provider. Proactive threat detection, performance optimization, and guaranteed uptime.",
   provider: { "@type": "Organization", name: SITE.name, url: SITE.url, logo: `${SITE.url}/images/coregenix/logo.png` },
   areaServed: { "@type": "Place", address: { "@type": "PostalAddress", addressLocality: "Mumbai, Delhi, Bangalore", addressCountry: "India" } },
   url: `${SITE.url}/network-operations-center`,
@@ -152,7 +152,7 @@ export default function NocLandingPage() {
               </Reveal>
               <Reveal delay={2}>
                 <h1 className="section-title noc-hero-title">
-                  24x7 Network Monitoring &amp; Management by India&apos;s <span className="grad">No. 1 NOC Company</span>
+                  24x7 Network Monitoring &amp; Management by India&apos;s <span className="grad">Top IT Managed Service Provider</span>
                 </h1>
               </Reveal>
               <Reveal as="p" className="noc-hero-desc" delay={3}>

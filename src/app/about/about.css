@@ -78,7 +78,9 @@
   color: var(--text-soft);
   font-size: 16px;
   line-height: 1.85;
-  text-align: left !important;
+  text-align: justify !important;
+  text-align-last: center;
+  margin: 0 auto;
 }
 
 /* Justified paragraph content */
@@ -360,6 +362,11 @@
   margin-bottom: 0;
 }
 
+.about-why-left .section-heading .section-desc {
+  text-align: justify !important;
+  text-align-last: center;
+}
+
 .why-grid {
   list-style: none;
   display: grid;
@@ -428,7 +435,7 @@
   font-size: clamp(28px, 3.6vw, 42px);
   max-width: 620px;
   margin: 16px auto 48px;
-  color: #fff;
+  text-align: center !important;
 }
 
 .about-pillars-grid.pillars-two {
