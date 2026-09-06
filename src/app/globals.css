@@ -632,14 +632,14 @@ button {
 .nav-link.active,
 .nav-link.hover,
 .nav-item:hover > .nav-link {
-  color: var(--gold);
+  color: #1b2a38;
 }
 
 .nav-link:hover::after,
 .nav-link.active::after,
 .nav-link.hover::after,
 .nav-item:hover > .nav-link::after {
-  transform: scaleX(1);
+  transform: scaleX(0);
 }
 
 .nav-link .chevron {
@@ -770,22 +770,27 @@ button {
 
 .mega-group-title {
   margin: 0 0 6px;
-  padding: 0 14px 10px;
+  padding: 10px 14px;
   border-bottom: 1px solid var(--border);
+  border-radius: 8px;
   font-family: var(--font-button), ui-sans-serif, system-ui, sans-serif;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #fff !important;
+  background: #0f1c2e;
   display: block;
   text-decoration: none;
   text-align: left !important;
   transition: color 0.25s ease;
 }
 
-a.mega-group-title:hover {
-  color: var(--gold-dark);
+a.mega-group-title:hover,
+a.mega-group-title:focus-visible {
+  color: #fff;
+  background: #0f1c2e;
+  padding-left: 14px;
 }
 
 .mega-group a {
@@ -802,8 +807,8 @@ a.mega-group-title:hover {
 
 .mega-group--wide .mega-group-title {
   margin: 0 0 12px;
-  padding: 0 0 10px;
-  border-bottom: 1px solid var(--border);
+  padding: 10px 14px;
+  border-bottom: none;
 }
 
 .mega-group--wide .mega-group-items {
