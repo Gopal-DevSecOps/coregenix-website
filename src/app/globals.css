@@ -688,6 +688,7 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.03em;
   line-height: 1.6;
+  text-align: left !important;
   transition: background 0.3s ease, color 0.3s ease, padding-left 0.3s ease;
 }
 
@@ -779,6 +780,7 @@ button {
   color: var(--gold);
   display: block;
   text-decoration: none;
+  text-align: left !important;
   transition: color 0.25s ease;
 }
 
