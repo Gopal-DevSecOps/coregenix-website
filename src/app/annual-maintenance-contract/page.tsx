@@ -113,17 +113,17 @@ const whyUs = [
   },
   {
     icon: DatabaseIcon,
-    title: "119+ Projects Delivered",
+    title: "Projects Delivered",
     desc: "A strong track record spanning banking, manufacturing, healthcare and more.",
   },
   {
     icon: ServerIcon,
-    title: "75+ Long-Running AMCs",
+    title: "Long-Running AMCs",
     desc: "Happy clients with long-running AMC relationships — trust that lasts.",
   },
   {
     icon: MonitorIcon,
-    title: "Mumbai Team, Pan-India Reach",
+    title: "Pan-India Reach",
     desc: "Mumbai-based support team with coverage across India for on-site visits.",
   },
   {
@@ -133,14 +133,7 @@ const whyUs = [
   },
 ];
 
-const industries = [
-  { title: "Banking & Finance", desc: "Server administration, network security and compliance support." },
-  { title: "Manufacturing", desc: "End-user computing, network management and disaster recovery." },
-  { title: "Healthcare", desc: "Data backup, disaster recovery and compliance support." },
-  { title: "Government / PSU", desc: "Comprehensive AMC and IT infrastructure maintenance." },
-  { title: "Technology / IT", desc: "Complete IT infrastructure management." },
-  { title: "Fintech", desc: "Secure, compliant and always-available IT operations." },
-];
+const industries = ["Banking & Finance", "Manufacturing", "Healthcare", "Government / PSU", "Technology / IT", "Fintech"];
 
 const faqs = [
   { q: "What is an AMC?", a: "An Annual Maintenance Contract (AMC) is an agreement where a provider maintains your IT equipment for a year — covering preventive and corrective maintenance at a fixed cost." },
@@ -396,11 +389,10 @@ export default function AmcLandingPage() {
             />
             <div className="wwp-grid amc-industries-grid">
               {industries.map((ind, i) => (
-                <Reveal key={ind.title} delay={(i % 3) + 1} className="wwp-wrap">
+                <Reveal key={ind} delay={(i % 3) + 1} className="wwp-wrap">
                   <article className="wwp-card amc-industry-card">
                     <div className="wwp-card-inner">
-                      <h3>{ind.title}</h3>
-                      <p>{ind.desc}</p>
+                      <h3>{ind}</h3>
                     </div>
                   </article>
                 </Reveal>
