@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
 };
 
 const heroStats = [
-  { value: "18+", label: "Years of Experience" },
+  { value: "22+", label: "Years of Experience" },
   { value: "120+", label: "Engineers Deployed" },
   { value: "75+", label: "Clients Served" },
   { value: "99.9%", label: "Uptime Guarantee" },

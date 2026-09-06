@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
@@ -24,7 +24,7 @@ interface Props {
 }
 
 const stats = [
-  { value: "18+", label: "Years of Experience" },
+  { value: "22+", label: "Years of Experience" },
   { value: "120+", label: "Projects Delivered" },
   { value: "75+", label: "Happy Clients" },
   { value: "24x7", label: "Pan-India Support" },

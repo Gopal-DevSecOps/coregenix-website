@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -26,7 +26,7 @@ import "./about.css";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "CoreGenix is a trusted IT infrastructure and cyber security partner with 18+ years of experience delivering tailored technology solutions.",
+    "CoreGenix is a trusted IT infrastructure and cyber security partner with 22+ years of experience delivering tailored technology solutions.",
   keywords: [
     "about CoreGenix",
     "IT company Mumbai",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Us — CoreGenix",
     description:
-      "CoreGenix is a trusted IT infrastructure and cyber security partner with 18+ years of experience.",
+      "CoreGenix is a trusted IT infrastructure and cyber security partner with 22+ years of experience.",
     url: `${SITE.url}/about`,
     type: "website",
     locale: "en_IN",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About Us — CoreGenix",
     description:
-      "CoreGenix is a trusted IT infrastructure and cyber security partner with 18+ years of experience.",
+      "CoreGenix is a trusted IT infrastructure and cyber security partner with 22+ years of experience.",
   },
 };
 
@@ -162,7 +162,7 @@ export default function AboutPage() {
                 </h1>
                 <Reveal as="p" className="page-hero-desc" delay={1}>
                   CoreGenix helps businesses across India build secure, resilient, and future-ready
-                  technology — from IT infrastructure and cloud to managed cyber security. 18+ years
+                  technology — from IT infrastructure and cloud to managed cyber security. 22+ years
                   of turning complex technology challenges into simple, reliable solutions.
                 </Reveal>
               </div>
@@ -187,7 +187,7 @@ export default function AboutPage() {
               <p>
                 CoreGenix, operated by CG Consultancy and Engineering Services (CGCES) Pvt. Ltd., is
                 an IT infrastructure and cyber security company headquartered in Mumbai, India, with a
-                presence in Bengaluru and Jaipur. Founded in 2004, CoreGenix has spent 18+ years helping
+                presence in Bengaluru and Jaipur. Founded in 2004, CoreGenix has spent 22+ years helping
                 businesses design, manage, and secure their IT and OT (Operational Technology)
                 environments. The company is ISO 27001 certified and provides managed IT services,
                 cloud infrastructure management, and managed cyber security services — including

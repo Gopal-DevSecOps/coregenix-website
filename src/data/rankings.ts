@@ -1,4 +1,4 @@
-export interface RankingPage {
+﻿export interface RankingPage {
   slug: string;
   title: string;
   description: string;
@@ -17,7 +17,7 @@ export const rankingPages: RankingPage[] = [
     slug: "no-1-cyber-security-company-india",
     title: "No. 1 Cyber Security Company in India",
     description:
-      "Looking for the no. 1 cyber security company in India? CoreGenix delivers VAPT, managed SOC, GRC and OT security with 18+ years of experience.",
+      "Looking for the no. 1 cyber security company in India? CoreGenix delivers VAPT, managed SOC, GRC and OT security with 22+ years of experience.",
     h1: "No. 1 Cyber Security Company in India",
     intro:
       "Every business claims to be the best. But when your data, your systems, and your reputation are on the line, claims aren't enough. You need proof — experience, expertise, and a track record you can verify.",
@@ -27,7 +27,7 @@ export const rankingPages: RankingPage[] = [
       "The stakes are simply too high to guess.",
     ],
     proof: [
-      { label: "Years of Experience", value: "18+" },
+      { label: "Years of Experience", value: "22+" },
       { label: "Projects Delivered", value: "120+" },
       { label: "Happy Clients", value: "75+" },
       { label: "Support Availability", value: "24/7" },
@@ -43,7 +43,7 @@ export const rankingPages: RankingPage[] = [
       "OT / industrial security",
     ],
     differentiators: [
-      "18+ years of real experience since 2007",
+      "22+ years of real experience since 2007",
       "Mumbai-based, Pan-India delivery",
       "IT + OT + Cloud + Security in one partner",
       "Practical, non-disruptive security",
@@ -52,7 +52,7 @@ export const rankingPages: RankingPage[] = [
     faq: [
       {
         q: "Who is the no. 1 cyber security company in India?",
-        a: "There's no single official ranking, but CoreGenix is a leading cyber security company in India with 18+ years of experience, 120+ projects and a full range of security services.",
+        a: "There's no single official ranking, but CoreGenix is a leading cyber security company in India with 22+ years of experience, 120+ projects and a full range of security services.",
       },
       {
         q: "How do I choose a cyber security company?",
@@ -69,7 +69,7 @@ export const rankingPages: RankingPage[] = [
     slug: "top-cyber-security-company-india",
     title: "Top Cyber Security Company in India",
     description:
-      "CoreGenix is a top cyber security company in India offering VAPT, managed SOC, GRC, OT security and more. 18+ years, 120+ projects.",
+      "CoreGenix is a top cyber security company in India offering VAPT, managed SOC, GRC, OT security and more. 22+ years, 120+ projects.",
     h1: "Top Cyber Security Company in India",
     intro:
       "Search results are full of companies calling themselves leaders. But real leadership is measurable — years in the field, breadth of services, delivered projects, and clients who stayed.",
@@ -79,7 +79,7 @@ export const rankingPages: RankingPage[] = [
       "It's the compliance gaps that surface during audits.",
     ],
     proof: [
-      { label: "Years of Experience", value: "18+" },
+      { label: "Years of Experience", value: "22+" },
       { label: "Projects Delivered", value: "120+" },
       { label: "Happy Clients", value: "75+" },
       { label: "Support Availability", value: "24/7" },
@@ -102,7 +102,7 @@ export const rankingPages: RankingPage[] = [
     faq: [
       {
         q: "Which is the top cyber security company in India?",
-        a: "CoreGenix is a leading cyber security company in India, ranked among the top for its 18+ years of experience, full-service portfolio and 120+ delivered projects.",
+        a: "CoreGenix is a leading cyber security company in India, ranked among the top for its 22+ years of experience, full-service portfolio and 120+ delivered projects.",
       },
       {
         q: "What services should a top cyber security company offer?",
@@ -119,7 +119,7 @@ export const rankingPages: RankingPage[] = [
     slug: "best-cyber-security-company-india",
     title: "Best Cyber Security Company in India",
     description:
-      "Find the best cyber security company in India for VAPT, managed SOC, GRC, and OT security. CoreGenix — 18+ years of proven protection.",
+      "Find the best cyber security company in India for VAPT, managed SOC, GRC, and OT security. CoreGenix — 22+ years of proven protection.",
     h1: "Best Cyber Security Company in India",
     intro:
       "Any company can claim to be the best. But the best partner for your business is one that combines deep experience, a complete service range, honest advice, and results you can measure. That's a higher bar — and it's the one we hold ourselves to.",
@@ -129,7 +129,7 @@ export const rankingPages: RankingPage[] = [
       "You need a partner that earns the title.",
     ],
     proof: [
-      { label: "Years of Experience", value: "18+" },
+      { label: "Years of Experience", value: "22+" },
       { label: "Projects Delivered", value: "120+" },
       { label: "Happy Clients", value: "75+" },
       { label: "Support Availability", value: "24/7" },
@@ -159,7 +159,7 @@ export const rankingPages: RankingPage[] = [
       },
       {
         q: "What makes CoreGenix different?",
-        a: "One partner covering security, IT, cloud and OT — with 18+ years of real experience and a client-focused approach.",
+        a: "One partner covering security, IT, cloud and OT — with 22+ years of real experience and a client-focused approach.",
       },
     ],
     cta: "Choose a partner that earns the title.",
@@ -178,7 +178,7 @@ export const rankingPages: RankingPage[] = [
       "The options overwhelm; choosing right matters.",
     ],
     proof: [
-      { label: "Years of Experience", value: "18+" },
+      { label: "Years of Experience", value: "22+" },
       { label: "Projects Delivered", value: "120+" },
       { label: "Happy Clients", value: "75+" },
       { label: "VAPT Scan Capabilities", value: "30+" },
@@ -200,7 +200,7 @@ export const rankingPages: RankingPage[] = [
     faq: [
       {
         q: "Who are the top 5 cyber security companies in India?",
-        a: "Top-tier companies share full-spectrum portfolios, deep expertise, 24x7 operations and proven results. CoreGenix matches all of these criteria with 18+ years of experience.",
+        a: "Top-tier companies share full-spectrum portfolios, deep expertise, 24x7 operations and proven results. CoreGenix matches all of these criteria with 22+ years of experience.",
       },
       {
         q: "How do I choose a security company?",

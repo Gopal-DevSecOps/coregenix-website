@@ -50,6 +50,8 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getPost(slug);
   if (!post) notFound();
 
+  const otherPosts = posts.filter((p) => p.slug !== post.slug).slice(0, 5);
+
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -119,6 +121,35 @@ export default async function BlogPostPage({ params }: Props) {
               </article>
 
               <aside className="blog-post-aside">
+                <div className="blog-post-widget blog-post-preview">
+                  <span className="blog-widget-label">Article Overview</span>
+                  <p>{post.excerpt}</p>
+                  <div className="blog-post-meta">
+                    <span>
+                      <CalendarIcon />
+                      {post.date}
+                    </span>
+                    <span>
+                      <UserIcon />
+                      {post.author}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="blog-post-widget blog-more">
+                  <h2>More Articles</h2>
+                  <ul className="blog-more-list">
+                    {otherPosts.map((p) => (
+                      <li key={p.slug}>
+                        <Link href={`/blog/${p.slug}`} className="blog-more-item">
+                          <span className="blog-more-title">{p.title}</span>
+                          <span className="blog-more-date">{p.date}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
                 <div className="blog-post-widget">
                   <h2>Need expert help?</h2>
                   <p>Talk to our IT and cyber security experts for a free consultation.</p>

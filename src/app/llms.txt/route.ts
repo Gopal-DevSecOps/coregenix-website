@@ -1,6 +1,7 @@
-import { services } from "@/data/services";
+﻿import { services } from "@/data/services";
 import { allLandingUrlSlugs } from "@/data/landing";
 import { solutionPages } from "@/data/solutionPages";
+import { posts } from "@/data/posts";
 
 export function GET() {
   const serviceList = services
@@ -11,11 +12,15 @@ export function GET() {
     .map((s) => `- [Service Landing Page](https://coregenix.com/${s})`)
     .join("\n");
 
+  const blogList = posts
+    .map((p) => `- [${p.title}](https://coregenix.com/blog/${p.slug}): ${p.excerpt}`)
+    .join("\n");
+
   const content = `# CoreGenix
 
 > CoreGenix (CGCES Pvt Ltd) is an IT Infrastructure & Cyber Security company based in Mumbai, India. It provides managed services, cloud management, cyber security (VAPT, managed SOC, GRC, OT security) and compliance services to businesses across India.
 
-CoreGenix has 18+ years of experience and has delivered 120+ projects for 55+ clients. Services are delivered 24x7 from its Mumbai office with Pan-India reach. Contact: +91 83559 58119, sales@cgcein.com.
+CoreGenix has 22+ years of experience and has delivered 120+ projects for 55+ clients. Services are delivered 24x7 from its Mumbai office with Pan-India reach. Contact: +91 83559 58119, sales@cgcein.com.
 
 ## Company
 
@@ -80,6 +85,10 @@ ${solutionPages
 ## Knowledge
 
 - [Blog](https://coregenix.com/blog): Insights on cyber security, cloud, backup, managed services and compliance
+
+### Blog Articles
+
+${blogList}
 `;
 
   return new Response(content, {

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -108,7 +108,7 @@ const benefits = [
 const whyUs = [
   {
     icon: ShieldIcon,
-    title: "18+ Years of Experience",
+    title: "22+ Years of Experience",
     desc: "Deep, proven expertise in IT infrastructure maintenance across industries.",
   },
   {
@@ -365,7 +365,7 @@ export default function AmcLandingPage() {
                   The Partner Your Infrastructure <span className="grad">Can Rely On</span>
                 </>
               }
-              desc="18+ years of IT infrastructure maintenance experience, delivered by a Mumbai-based team with Pan-India reach."
+              desc="22+ years of IT infrastructure maintenance experience, delivered by a Mumbai-based team with Pan-India reach."
             />
             <div className="amc-why-grid">
               {whyUs.map((item, i) => (

@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
@@ -7,7 +7,7 @@ import { CheckIcon, ArrowRightIcon } from "./Icons";
 const features = [
   "Dedicated consultation to understand your business needs",
   "We turn challenges into opportunities",
-  "Expert team with 18+ years of industry experience",
+  "Expert team with 22+ years of industry experience",
 ];
 
 export default function WhyChooseUs() {

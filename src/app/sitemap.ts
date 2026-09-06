@@ -3,6 +3,7 @@ import { SITE } from "@/lib/site";
 import { services } from "@/data/services";
 import { allLandingUrlSlugs } from "@/data/landing";
 import { solutionPages } from "@/data/solutionPages";
+import { posts } from "@/data/posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url;
@@ -60,5 +61,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...landingRoutes, ...rankingRoutes, ...solutionRoutes];
+  const blogRoutes: MetadataRoute.Sitemap = posts.map((p) => ({
+    url: `${base}/blog/${p.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...serviceRoutes, ...landingRoutes, ...rankingRoutes, ...solutionRoutes, ...blogRoutes];
 }

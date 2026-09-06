@@ -12,7 +12,7 @@ const stats: Stat[] = [
   { value: 119, label: "Projects" },
   { value: 9, label: "Awards & Certifications" },
   { value: 75, label: "Trusted Clients" },
-  { value: 18, label: "Years Of Experience" },
+  { value: 22, label: "Years Of Experience" },
 ];
 
 function useCountUp(target: number, active: boolean, duration = 1800) {

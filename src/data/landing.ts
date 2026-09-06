@@ -1,4 +1,4 @@
-import { services } from "./services";
+﻿import { services } from "./services";
 
 export interface LandingSection {
   heading: string;
@@ -21,7 +21,7 @@ export interface LandingPage {
 }
 
 const sharedNumbers = [
-  { value: "18+", label: "Years of Experience" },
+  { value: "22+", label: "Years of Experience" },
   { value: "120+", label: "Projects Delivered" },
   { value: "75+", label: "Happy Clients" },
   { value: "24/7", label: "Support Availability" },

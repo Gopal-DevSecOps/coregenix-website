@@ -1,4 +1,4 @@
-import { ImageResponse } from "next/og";
+﻿import { ImageResponse } from "next/og";
 
 export const alt = "CoreGenix — IT Infrastructure & Cyber Security Company in Mumbai";
 export const size = { width: 1200, height: 630 };
@@ -47,7 +47,7 @@ export default function OpengraphImage() {
             IT Infrastructure & Cyber Security
           </div>
           <div style={{ color: "#f2a25c", fontSize: 32, fontWeight: 600, fontFamily: "sans-serif" }}>
-            Trusted IT partner for 18+ years · Mumbai · Pan-India
+            Trusted IT partner for 22+ years · Mumbai · Pan-India
           </div>
         </div>
 
