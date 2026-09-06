@@ -1887,10 +1887,7 @@ a.mega-group-title:hover {
   font-size: 40px;
   font-weight: 800;
   line-height: 1;
-  background: var(--accent-grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #fff;
 }
 
 .ce-stat-label {

@@ -10,7 +10,7 @@ interface Metric {
 }
 
 const metrics: Metric[] = [
-  { value: 55, suffix: "+", label: "Client Satisfaction" },
+  { value: 75, suffix: "+", label: "Client Satisfaction" },
   { value: 120, suffix: "+", label: "Projects" },
   { value: 20, suffix: "+", label: "Yrs of Experience" },
 ];

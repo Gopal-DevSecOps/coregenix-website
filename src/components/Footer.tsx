@@ -106,7 +106,7 @@ export default function Footer() {
                 <span>
                   India — Mumbai, Bengaluru, Jaipur
                   <br />
-                  Europe — Warsaw
+                 
                 </span>
               </li>
               <li>
