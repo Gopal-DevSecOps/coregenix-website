@@ -28,7 +28,7 @@ export const rankingPages: RankingPage[] = [
     ],
     proof: [
       { label: "Years of Experience", value: "22+" },
-      { label: "Projects Delivered", value: "120+" },
+      { label: "Projects Delivered", value: "119+" },
       { label: "Happy Clients", value: "75+" },
       { label: "Support Availability", value: "24/7" },
     ],
@@ -52,7 +52,7 @@ export const rankingPages: RankingPage[] = [
     faq: [
       {
         q: "Who is the no. 1 cyber security company in India?",
-        a: "There's no single official ranking, but CoreGenix is a leading cyber security company in India with 22+ years of experience, 120+ projects and a full range of security services.",
+        a: "There's no single official ranking, but CoreGenix is a leading cyber security company in India with 22+ years of experience, 119+ projects and a full range of security services.",
       },
       {
         q: "How do I choose a cyber security company?",
@@ -69,7 +69,7 @@ export const rankingPages: RankingPage[] = [
     slug: "top-cyber-security-company-india",
     title: "Top Cyber Security Company in India",
     description:
-      "CoreGenix is a top cyber security company in India offering VAPT, managed SOC, GRC, OT security and more. 22+ years, 120+ projects.",
+      "CoreGenix is a top cyber security company in India offering VAPT, managed SOC, GRC, OT security and more. 22+ years, 119+ projects.",
     h1: "Top Cyber Security Company in India",
     intro:
       "Search results are full of companies calling themselves leaders. But real leadership is measurable — years in the field, breadth of services, delivered projects, and clients who stayed.",
@@ -80,7 +80,7 @@ export const rankingPages: RankingPage[] = [
     ],
     proof: [
       { label: "Years of Experience", value: "22+" },
-      { label: "Projects Delivered", value: "120+" },
+      { label: "Projects Delivered", value: "119+" },
       { label: "Happy Clients", value: "75+" },
       { label: "Support Availability", value: "24/7" },
     ],
@@ -102,7 +102,7 @@ export const rankingPages: RankingPage[] = [
     faq: [
       {
         q: "Which is the top cyber security company in India?",
-        a: "CoreGenix is a leading cyber security company in India, ranked among the top for its 22+ years of experience, full-service portfolio and 120+ delivered projects.",
+        a: "CoreGenix is a leading cyber security company in India, ranked among the top for its 22+ years of experience, full-service portfolio and 119+ delivered projects.",
       },
       {
         q: "What services should a top cyber security company offer?",
@@ -130,7 +130,7 @@ export const rankingPages: RankingPage[] = [
     ],
     proof: [
       { label: "Years of Experience", value: "22+" },
-      { label: "Projects Delivered", value: "120+" },
+      { label: "Projects Delivered", value: "119+" },
       { label: "Happy Clients", value: "75+" },
       { label: "Support Availability", value: "24/7" },
     ],
@@ -151,7 +151,7 @@ export const rankingPages: RankingPage[] = [
     faq: [
       {
         q: "What is the best cyber security company in India?",
-        a: "Best depends on your needs, but CoreGenix ranks among the best for its experience, full service range, and proven results across 120+ projects.",
+        a: "Best depends on your needs, but CoreGenix ranks among the best for its experience, full service range, and proven results across 119+ projects.",
       },
       {
         q: "How do I compare cyber security companies?",
@@ -179,7 +179,7 @@ export const rankingPages: RankingPage[] = [
     ],
     proof: [
       { label: "Years of Experience", value: "22+" },
-      { label: "Projects Delivered", value: "120+" },
+      { label: "Projects Delivered", value: "119+" },
       { label: "Happy Clients", value: "75+" },
       { label: "VAPT Scan Capabilities", value: "30+" },
     ],

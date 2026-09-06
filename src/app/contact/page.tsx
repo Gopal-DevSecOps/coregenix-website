@@ -171,9 +171,9 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              <Reveal delay={2} animation="zoom">
+              <div className="contact-form-col">
                 <ContactForm />
-              </Reveal>
+              </div>
             </div>
           </div>
         </section>

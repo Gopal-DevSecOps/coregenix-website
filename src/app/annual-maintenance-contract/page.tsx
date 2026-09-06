@@ -53,7 +53,7 @@ export const metadata: Metadata = {
 
 const heroStats = [
   { value: "20+", label: "Years of Experience" },
-  { value: "120+", label: "Projects Delivered" },
+  { value: "119+", label: "Projects Delivered" },
   { value: "75+", label: "Happy Clients" },
   { value: "24/7", label: "Support Availability" },
 ];
@@ -113,12 +113,12 @@ const whyUs = [
   },
   {
     icon: DatabaseIcon,
-    title: "120+ Projects Delivered",
+    title: "119+ Projects Delivered",
     desc: "A strong track record spanning banking, manufacturing, healthcare and more.",
   },
   {
     icon: ServerIcon,
-    title: "55+ Long-Running AMCs",
+    title: "75+ Long-Running AMCs",
     desc: "Happy clients with long-running AMC relationships — trust that lasts.",
   },
   {

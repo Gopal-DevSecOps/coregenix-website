@@ -22,7 +22,7 @@ export interface LandingPage {
 
 const sharedNumbers = [
   { value: "22+", label: "Years of Experience" },
-  { value: "120+", label: "Projects Delivered" },
+  { value: "119+", label: "Projects Delivered" },
   { value: "75+", label: "Happy Clients" },
   { value: "24/7", label: "Support Availability" },
 ];

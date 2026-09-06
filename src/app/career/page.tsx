@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
@@ -134,7 +134,7 @@ export default function CareerPage() {
             </h1>
             <Reveal as="p" className="page-hero-desc" delay={1}>
               Join a team of passionate IT and security professionals solving real business problems for
-              55+ clients — with learning, growth and ownership at every step.
+              75+ clients — with learning, growth and ownership at every step.
             </Reveal>
           </div>
         </section>
