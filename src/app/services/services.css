@@ -2,6 +2,19 @@
   padding-top: 70px;
 }
 
+.mss-intro {
+  padding: 90px 0 20px;
+}
+
+.mss-intro-text {
+  max-width: 880px;
+  margin: 0 auto;
+  color: var(--text-soft);
+  font-size: 18px;
+  line-height: 1.85;
+  text-align: center !important;
+}
+
 .services-cat {
   display: flex;
   flex-direction: column;

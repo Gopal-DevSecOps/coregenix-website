@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
 import JsonLd from "@/components/JsonLd";
+import Reveal from "@/components/Reveal";
 import ServiceCategoryView from "@/components/ServiceCategoryView";
 import { getCategory } from "@/data/serviceCategories";
 import { SITE } from "@/lib/site";
@@ -48,6 +49,16 @@ export default function ManagedSecurityServicesPage() {
       <JsonLd data={breadcrumbJsonLd} />
       <Header />
       <main>
+        <section className="section mss-intro">
+          <div className="container">
+            <Reveal as="p" className="mss-intro-text" delay={1}>
+              For over 22 years, we have safeguarded organizations from evolving cyber threats. Our team provides
+              end-to-end security solutions — from proactive threat detection and vulnerability assessments to rapid
+              incident response — ensuring your data, systems, and reputation stay fully protected in an ever-changing
+              digital landscape.
+            </Reveal>
+          </div>
+        </section>
         {category ? <ServiceCategoryView category={category} /> : null}
       </main>
       <Footer />
