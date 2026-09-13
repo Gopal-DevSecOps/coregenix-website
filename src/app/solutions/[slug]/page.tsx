@@ -4,9 +4,17 @@ import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
 import JsonLd from "@/components/JsonLd";
 import ServiceLanding from "@/components/ServiceLanding";
+import NetworkLanding from "@/components/NetworkLanding";
+import DataCenterLanding from "@/components/DataCenterLanding";
+import DataBackupLanding from "@/components/DataBackupLanding";
+import DisasterRecoveryLanding from "@/components/DisasterRecoveryLanding";
+import PrivateCloudLanding from "@/components/PrivateCloudLanding";
+import PublicCloudLanding from "@/components/PublicCloudLanding";
+import HybridCloudLanding from "@/components/HybridCloudLanding";
 import { getSolutionPage, solutionPages } from "@/data/solutionPages";
 import { SITE } from "@/lib/site";
 import "../../services/[slug]/service-landing.css";
+import "../../services/[slug]/cloud-infra-mgmt.css";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -84,11 +92,27 @@ export default async function SolutionPage({ params }: Props) {
       <JsonLd data={serviceJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
       <Header />
-      <ServiceLanding
-        service={page}
-        viewAllLabel="View All Solutions"
-        viewAllHref="/solutions"
-      />
+      {page.slug === "network" ? (
+        <NetworkLanding service={page} />
+      ) : page.slug === "data-center" ? (
+        <DataCenterLanding service={page} />
+      ) : page.slug === "data-backup" ? (
+        <DataBackupLanding service={page} />
+      ) : page.slug === "disaster-recovery-bcp" ? (
+        <DisasterRecoveryLanding service={page} />
+      ) : page.slug === "private-cloud" ? (
+        <PrivateCloudLanding service={page} />
+      ) : page.slug === "public-cloud" ? (
+        <PublicCloudLanding service={page} />
+      ) : page.slug === "hybrid-cloud" ? (
+        <HybridCloudLanding service={page} />
+      ) : (
+        <ServiceLanding
+          service={page}
+          viewAllLabel="View All Solutions"
+          viewAllHref="/solutions"
+        />
+      )}
       <Footer />
       <ScrollTop />
     </>

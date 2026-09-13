@@ -3,18 +3,23 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
 import JsonLd from "@/components/JsonLd";
-import SolutionCategoryView from "@/components/SolutionCategoryView";
-import { getSolutionCategory } from "@/data/solutionCategories";
+import ItInfraSolutionsLanding from "@/components/ItInfraSolutionsLanding";
 import { SITE } from "@/lib/site";
-import "../../services/services.css";
+import "../../services/[slug]/cloud-infra-mgmt.css";
 
-const category = getSolutionCategory("it-infrastructure-solutions");
 const path = "/solutions/it-infrastructure-solutions";
 
 export const metadata: Metadata = {
-  title: "IT Infrastructure Solutions",
+  title: "IT Infrastructure Solutions — Network, Data Center, Backup & DR | CoreGenix",
   description:
-    "Networks, data centers, data backup and disaster recovery solutions from CoreGenix — designed, built and managed for uptime and growth.",
+    "Networks, data centers, data backup, and disaster recovery solutions from CoreGenix — designed, built, and managed for uptime and growth.",
+  keywords: [
+    "IT infrastructure solutions India",
+    "network infrastructure Mumbai",
+    "data center solutions",
+    "data backup solutions",
+    "disaster recovery BCP",
+  ],
   alternates: { canonical: path },
   openGraph: {
     title: "IT Infrastructure Solutions — CoreGenix",
@@ -47,9 +52,7 @@ export default function ItInfrastructureSolutionsPage() {
     <>
       <JsonLd data={breadcrumbJsonLd} />
       <Header />
-      <main>
-        {category ? <SolutionCategoryView category={category} /> : null}
-      </main>
+      <ItInfraSolutionsLanding />
       <Footer />
       <ScrollTop />
     </>

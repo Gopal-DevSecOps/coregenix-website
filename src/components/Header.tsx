@@ -38,7 +38,7 @@ const menu: MenuItem[] = [
         items: [
           { label: "Network Operations Center", href: "/network-operations-center" },
           { label: "Annual Maintenance Contract", href: "/annual-maintenance-contract" },
-          { label: "Staffing & FMS Facility Management", href: "/staffing-fms-facility-management" },
+          { label: "Cyber Security Services", href: "/staffing-fms-facility-management" },
         ],
       },
       {

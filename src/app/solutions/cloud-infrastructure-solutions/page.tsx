@@ -3,18 +3,22 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
 import JsonLd from "@/components/JsonLd";
-import SolutionCategoryView from "@/components/SolutionCategoryView";
-import { getSolutionCategory } from "@/data/solutionCategories";
+import CloudInfraSolutionsLanding from "@/components/CloudInfraSolutionsLanding";
 import { SITE } from "@/lib/site";
-import "../../services/services.css";
+import "../../services/[slug]/cloud-infra-mgmt.css";
 
-const category = getSolutionCategory("cloud-infrastructure-solutions");
 const path = "/solutions/cloud-infrastructure-solutions";
 
 export const metadata: Metadata = {
-  title: "Cloud Infrastructure Solutions",
+  title: "Cloud Infrastructure Solutions — Private, Public & Hybrid | CoreGenix",
   description:
     "Private, public and hybrid cloud solutions from CoreGenix — architecture, migration, security and ongoing management, done right.",
+  keywords: [
+    "cloud infrastructure solutions India",
+    "private cloud solutions",
+    "public cloud Azure AWS",
+    "hybrid cloud solutions Mumbai",
+  ],
   alternates: { canonical: path },
   openGraph: {
     title: "Cloud Infrastructure Solutions — CoreGenix",
@@ -47,9 +51,7 @@ export default function CloudInfrastructureSolutionsPage() {
     <>
       <JsonLd data={breadcrumbJsonLd} />
       <Header />
-      <main>
-        {category ? <SolutionCategoryView category={category} /> : null}
-      </main>
+      <CloudInfraSolutionsLanding />
       <Footer />
       <ScrollTop />
     </>

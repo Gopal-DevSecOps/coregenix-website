@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Data Center Solutions Mumbai | Design, Build & Management | CoreGenix</title>
+<meta name="description" content="CoreGenix designs, builds, and manages data centers and server rooms — power, cooling, virtualization, storage, and 24x7 monitoring — engineered for uptime, from a single rack to a full enterprise facility.">
+<meta name="keywords" content="data center solutions Mumbai, data center design and build India, data center tier classification, server room build out, SAN NAS storage, N+1 redundancy, colocation vs cloud vs in-house">
+<link rel="canonical" href="https://coregenix.com/solutions/data-center">
+
+<meta property="og:title" content="Data Center Solutions Mumbai | CoreGenix">
+<meta property="og:description" content="Data center design, build, and management — server rooms, virtualization, storage, cooling, and power. Reliable enterprise infrastructure.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://coregenix.com/solutions/data-center">
+<meta property="og:locale" content="en_IN">
+<meta property="og:site_name" content="CoreGenix">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Data Center Solutions Mumbai | CoreGenix">
+<meta name="twitter:description" content="Data center design, build, and management — server rooms, virtualization, storage, cooling, and power.">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#0B1420">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Data Center Solutions",
+  "name": "Data Center Solutions",
+  "provider": { "@type": "Organization", "name": "CoreGenix", "url": "https://coregenix.com" },
+  "areaServed": { "@type": "Country", "name": "India" },
+  "description": "CoreGenix designs, builds, and manages data centers and server rooms — capacity planning, power, cooling, virtualization, storage, and 24x7 monitoring.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Data Center Deliverables",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Data Center Design & Planning" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Server Room Build-Out" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Server & Virtualization" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Storage Solutions" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Power & Cooling" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "DC Monitoring & Management" } }
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What are data center solutions?", "acceptedAnswer": { "@type": "Answer", "text": "Data center solutions cover the design, construction, and management of the facilities that host servers and critical applications — including power, cooling, racks, storage, and virtualization." } },
+    { "@type": "Question", "name": "Should we build our own data center or use colocation?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on budget, control needs, and scale. In-house data centers offer maximum control but require capital investment; colocation provides facility infrastructure without the capital cost; cloud eliminates physical infrastructure entirely. CoreGenix advises objectively on all three." } },
+    { "@type": "Question", "name": "How much does a data center setup cost in India?", "acceptedAnswer": { "@type": "Answer", "text": "Data center costs vary widely with size, redundancy level, and whether it's a server room or full facility. CoreGenix offers a free data center assessment to scope requirements before providing a fixed quote." } },
+    { "@type": "Question", "name": "What are data center tier ratings?", "acceptedAnswer": { "@type": "Answer", "text": "Data center tier ratings, defined by the Uptime Institute, classify facilities from Tier I to Tier IV based on redundancy and expected uptime. Tier I offers basic infrastructure with no redundancy, while Tier IV provides fully fault-tolerant infrastructure with 99.995% or higher expected uptime." } },
+    { "@type": "Question", "name": "What is N+1 redundancy in a data center?", "acceptedAnswer": { "@type": "Answer", "text": "N+1 redundancy means having one more component than the minimum required to run the facility — for example, if three cooling units are needed, a fourth is added so any single unit can fail without affecting operations. 2N redundancy doubles the entire system for even higher resilience." } },
+    { "@type": "Question", "name": "What is the difference between SAN, NAS, and software-defined storage?", "acceptedAnswer": { "@type": "Answer", "text": "SAN (Storage Area Network) provides block-level storage over a dedicated high-speed network, typically for databases and virtualization. NAS (Network Attached Storage) provides file-level storage accessible over standard networks, suited to file sharing. Software-defined storage abstracts storage management from the underlying hardware, offering flexibility across both models." } },
+    { "@type": "Question", "name": "How long does a data center or server room build take?", "acceptedAnswer": { "@type": "Answer", "text": "A server room build-out typically takes a few weeks to a couple of months, while a full enterprise data center facility can take several months depending on scale, redundancy level, and civil work required." } }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#0B1420;
+    --ink-soft:#16232F;
+    --paper:#F5F6F3;
+    --paper-dim:#ECEEEA;
+    --slate:#4C5A66;
+    --slate-light:#8A96A0;
+    --brass:#B0813D;
+    --brass-soft:#DDBB86;
+    --line:#DADFDC;
+    --line-dark:#2A3844;
+    --radius:2px;
+    --max:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:600;line-height:1.15;margin:0;color:var(--ink);letter-spacing:-0.01em;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{margin:0;padding:0;list-style:none;}
+  p{margin:0;}
+  table{border-collapse:collapse;width:100%;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+  @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important;}}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(245,246,243,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
+  .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;display:flex;align-items:center;gap:8px;}
+  .logo-mark{width:22px;height:22px;border-radius:50%;background:conic-gradient(from 210deg, var(--ink) 0deg 270deg, var(--brass) 270deg 360deg);}
+  nav.primary{display:flex;gap:34px;}
+  nav.primary a{font-size:14px;font-weight:500;color:var(--slate);padding:6px 0;border-bottom:1px solid transparent;}
+  nav.primary a:hover, nav.primary a.active{color:var(--ink);border-bottom-color:var(--brass);}
+  .nav-cta{font-size:14px;font-weight:600;color:var(--ink);border:1px solid var(--ink);padding:10px 20px;border-radius:var(--radius);white-space:nowrap;}
+  .nav-cta:hover{background:var(--ink);color:var(--paper);}
+  @media (max-width:880px){nav.primary{display:none;}.nav-cta{display:none;}}
+
+  .breadcrumb{padding:16px 0;font-size:13px;color:var(--slate);border-bottom:1px solid var(--line);}
+  .breadcrumb a:hover{color:var(--ink);}
+  .breadcrumb .sep{margin:0 8px;color:var(--line-dark);}
+
+  .hero{padding:72px 0 0;}
+  .eyebrow-line{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--slate);margin-bottom:22px;}
+  .eyebrow-line span.dot{width:6px;height:6px;border-radius:50%;background:var(--brass);}
+  .hero h1{font-size:clamp(32px,4.2vw,50px);max-width:22ch;}
+  .hero p.lede{margin-top:22px;font-size:18px;color:var(--slate);max-width:62ch;}
+  .hero-actions{margin-top:34px;display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{background:var(--ink);color:var(--paper);padding:14px 26px;font-weight:600;font-size:15px;border-radius:var(--radius);display:inline-block;}
+  .btn-primary:hover{background:var(--brass);}
+  .btn-ghost{font-size:15px;font-weight:600;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:2px;}
+
+  .stat-bar{margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .stat{padding:28px 24px 28px 0;border-right:1px solid var(--line);}
+  .stat:last-child{border-right:none;}
+  .stat .num{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:var(--ink);}
+  .stat .label{font-size:13px;color:var(--slate);margin-top:6px;}
+  @media (max-width:800px){.stat-bar{grid-template-columns:1fr 1fr;}.stat{border-right:none;border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:20px;}}
+
+  .answer-block{padding:64px 0;border-bottom:1px solid var(--line);background:var(--paper-dim);}
+  .answer-grid{display:grid;grid-template-columns:0.32fr 0.68fr;gap:48px;}
+  .answer-grid h2{font-size:26px;max-width:13ch;}
+  .answer-grid .answer-copy p{font-size:17px;color:var(--ink-soft);max-width:66ch;}
+  @media (max-width:800px){.answer-grid{grid-template-columns:1fr;gap:20px;}}
+
+  .section-head{display:grid;grid-template-columns:0.32fr 0.68fr;gap:48px;margin-bottom:48px;}
+  .section-head h2{font-size:30px;max-width:16ch;}
+  .section-head .sub{color:var(--slate);font-size:16px;max-width:58ch;}
+  @media (max-width:800px){.section-head{grid-template-columns:1fr;gap:16px;}}
+
+  .challenge{padding:88px 0;background:var(--ink);color:var(--paper);}
+  .challenge .section-head h2{color:var(--paper);}
+  .challenge .section-head .sub{color:var(--slate-light);}
+  .challenge-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line-dark);}
+  .challenge-item{padding:18px 24px 18px 0;border-bottom:1px solid var(--line-dark);display:flex;gap:14px;align-items:flex-start;}
+  .challenge-item:nth-child(odd){border-right:1px solid var(--line-dark);padding-right:24px;}
+  .challenge-item svg{flex-shrink:0;margin-top:4px;}
+  .challenge-item p{font-size:15px;color:var(--slate-light);}
+  @media (max-width:800px){.challenge-grid{grid-template-columns:1fr;}.challenge-item:nth-child(odd){border-right:none;padding-right:0;}}
+  .challenge-note{margin-top:40px;padding-top:32px;border-top:1px solid var(--line-dark);font-size:17px;color:var(--paper);max-width:72ch;}
+  .challenge-note strong{color:var(--brass-soft);}
+
+  .deliver{padding:88px 0;}
+  .phase{border-top:1px solid var(--line);padding:28px 0;display:grid;grid-template-columns:0.1fr 0.3fr 0.6fr;gap:24px;align-items:start;}
+  .phase:last-of-type{border-bottom:1px solid var(--line);}
+  .phase .num{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:var(--brass);}
+  .phase h3{font-size:18px;margin-bottom:6px;}
+  .phase p.tag{font-size:13.5px;color:var(--slate);}
+  .phase ul{margin-top:0;}
+  .phase ul li{position:relative;padding-left:18px;font-size:14.5px;color:var(--ink-soft);margin-bottom:8px;}
+  .phase ul li::before{content:"—";position:absolute;left:0;color:var(--brass);}
+  @media (max-width:860px){.phase{grid-template-columns:1fr;gap:8px;}}
+
+  /* Tier table */
+  .tiers{padding:88px 0;background:var(--paper-dim);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .tiers-scroll{overflow-x:auto;border-top:1px solid var(--line);}
+  .tiers-table{min-width:640px;}
+  .tiers-table th,.tiers-table td{text-align:left;padding:16px 18px;border-bottom:1px solid var(--line);font-size:14.5px;}
+  .tiers-table th{font-family:'Space Grotesk',sans-serif;font-size:13px;color:var(--slate);font-weight:600;border-bottom:1px solid var(--ink);}
+  .tiers-table td:first-child, .tiers-table th:first-child{padding-left:0;}
+  .tiers-table tr td:first-child{font-weight:600;color:var(--brass);}
+  .tiers-note{margin-top:20px;font-size:13.5px;color:var(--slate);}
+
+  /* In-house vs colo vs cloud */
+  .compare{padding:88px 0;}
+  .compare-table th,.compare-table td{text-align:left;padding:16px 18px;border-bottom:1px solid var(--line);font-size:14.5px;}
+  .compare-table th{font-family:'Space Grotesk',sans-serif;font-size:13px;color:var(--slate);font-weight:600;border-bottom:1px solid var(--ink);}
+  .compare-table td:first-child, .compare-table th:first-child{padding-left:0;}
+  .compare-table tr td:first-child{font-weight:600;color:var(--ink);}
+  .compare-scroll{overflow-x:auto;border-top:1px solid var(--line);}
+  .compare-table{min-width:640px;}
+
+  /* Redundancy + storage quick blocks */
+  .quickblocks{padding:88px 0;background:var(--paper-dim);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .qb-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);}
+  .qb-cell{padding:36px;}
+  .qb-cell:first-child{border-right:1px solid var(--line);}
+  .qb-cell h3{font-size:17px;color:var(--brass);margin-bottom:14px;}
+  .qb-cell p{font-size:15.5px;color:var(--ink-soft);margin-bottom:12px;}
+  .qb-cell ul li{position:relative;padding-left:18px;font-size:14.5px;color:var(--ink-soft);margin-bottom:8px;}
+  .qb-cell ul li::before{content:"—";position:absolute;left:0;color:var(--brass);}
+  @media (max-width:800px){.qb-grid{grid-template-columns:1fr;}.qb-cell:first-child{border-right:none;border-bottom:1px solid var(--line);}}
+
+  /* Industries */
+  .industries{padding:88px 0;}
+  .ind-grid{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);}
+  .ind-cell{padding:22px 18px 22px 0;border-right:1px solid var(--line);}
+  .ind-cell:last-child{border-right:none;}
+  .ind-cell h4{font-size:15px;margin-bottom:8px;}
+  .ind-cell p{font-size:13px;color:var(--slate);}
+  @media (max-width:900px){.ind-grid{grid-template-columns:1fr 1fr;}.ind-cell{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px;}}
+  @media (max-width:520px){.ind-grid{grid-template-columns:1fr;}}
+
+  /* Outcomes */
+  .outcomes{padding:88px 0;background:var(--ink);color:var(--paper);}
+  .outcomes .section-head h2{color:var(--paper);}
+  .outcomes .section-head .sub{color:var(--slate-light);}
+  .outcome-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-dark);}
+  .outcome-item{padding:24px 20px 24px 0;border-bottom:1px solid var(--line-dark);}
+  .outcome-item:not(:last-child){border-right:1px solid var(--line-dark);padding-right:20px;}
+  .outcome-item p{font-size:15px;color:var(--paper);}
+  @media (max-width:900px){.outcome-grid{grid-template-columns:1fr 1fr;}.outcome-item:nth-child(2n){border-right:none !important;}}
+  @media (max-width:560px){.outcome-grid{grid-template-columns:1fr;}.outcome-item{border-right:none !important;padding:20px 0 !important;}}
+
+  /* Why choose */
+  .why{padding:88px 0;}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);}
+  .why-cell{padding:26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .why-cell .num{font-family:'Space Grotesk',sans-serif;font-size:13px;color:var(--brass);font-weight:600;display:block;margin-bottom:12px;}
+  .why-cell h3{font-size:16px;}
+  @media (max-width:860px){.why-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.why-grid{grid-template-columns:1fr;}}
+
+  /* FAQ */
+  .faq{padding:88px 0;}
+  .faq-list{margin-top:0;border-top:1px solid var(--line);}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 0;font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:500;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item .plus{flex-shrink:0;width:22px;height:22px;position:relative;}
+  .faq-item .plus::before,.faq-item .plus::after{content:"";position:absolute;background:var(--ink);}
+  .faq-item .plus::before{width:14px;height:1.5px;top:50%;left:50%;transform:translate(-50%,-50%);}
+  .faq-item .plus::after{width:1.5px;height:14px;top:50%;left:50%;transform:translate(-50%,-50%);transition:transform .2s ease;}
+  .faq-item[open] .plus::after{transform:translate(-50%,-50%) rotate(90deg);}
+  .faq-item .answer{padding:0 0 26px;max-width:70ch;color:var(--ink-soft);font-size:15.5px;}
+
+  /* Closing */
+  .closing{padding:100px 0;background:var(--paper-dim);border-top:1px solid var(--line);}
+  .closing-inner{border-top:1px solid var(--line);padding-top:48px;}
+  .closing h2{font-size:clamp(26px,3.4vw,40px);max-width:22ch;}
+  .closing .sub{margin-top:14px;color:var(--slate);font-size:16px;max-width:60ch;}
+  .closing-meta{margin-top:28px;display:flex;gap:28px;flex-wrap:wrap;font-size:14px;color:var(--ink-soft);}
+  .closing-meta a{font-weight:600;color:var(--ink);}
+  .closing .btn-primary{margin-top:32px;}
+
+  footer.site{background:var(--ink);color:var(--slate-light);padding:64px 0 32px;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;}
+  .footer-grid h4{color:var(--paper);font-size:14px;margin-bottom:18px;}
+  .footer-grid ul li{margin-bottom:10px;font-size:14px;}
+  .footer-grid ul li a:hover{color:var(--paper);}
+  .footer-brand p{font-size:14px;max-width:34ch;margin-top:14px;}
+  .footer-bottom{margin-top:56px;padding-top:24px;border-top:1px solid var(--line-dark);display:flex;justify-content:space-between;font-size:13px;flex-wrap:wrap;gap:12px;}
+  @media (max-width:800px){.footer-grid{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a href="/" class="logo"><span class="logo-mark"></span>CoreGenix</a>
+    <nav class="primary">
+      <a href="/">Home</a>
+      <a href="/about">About Us</a>
+      <a href="/services">Services</a>
+      <a href="/solutions" class="active">Solutions</a>
+      <a href="/blog">Blog</a>
+      <a href="/career">Career</a>
+    </nav>
+    <a href="/contact" class="nav-cta">Get Free Consultation</a>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="wrap">
+    <a href="/">Home</a><span class="sep">/</span><a href="/solutions">Solutions</a><span class="sep">/</span><a href="/solutions/it-infrastructure-solutions">IT Infrastructure Solutions</a><span class="sep">/</span>Data Center
+  </div>
+</div>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow-line"><span class="dot"></span>IT Infrastructure Solutions</div>
+      <h1>Data center solutions — design, build & management for uptime</h1>
+      <p class="lede">CoreGenix plans, builds, and manages data centers and server rooms — power, cooling, virtualization, storage, and 24x7 monitoring — from a single rack to a full enterprise facility.</p>
+      <div class="hero-actions">
+        <a href="/contact" class="btn-primary">Get free consultation</a>
+        <a href="/solutions">View all solutions</a>
+      </div>
+
+      <div class="stat-bar">
+        <div class="stat"><div class="num">22+</div><div class="label">Years of experience</div></div>
+        <div class="stat"><div class="num">119+</div><div class="label">Projects delivered</div></div>
+        <div class="stat"><div class="num">75+</div><div class="label">Happy clients</div></div>
+        <div class="stat"><div class="num">24×7</div><div class="label">Pan-India support</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="answer-block">
+    <div class="wrap answer-grid">
+      <h2>What are data center solutions?</h2>
+      <div class="answer-copy">
+        <p>Data center solutions cover the design, construction, and management of the facilities that host servers and critical applications — including capacity planning, power and cooling, racks and cabling, storage, virtualization, and ongoing 24x7 monitoring. CoreGenix delivers this from a single server room to a full enterprise facility, for businesses across India.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="challenge">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>The problem we solve</h2>
+        <p class="sub">Business-critical applications need an environment that stays up — power, cooling, redundancy, and physical security. Most server rooms are pieced together over years: messy cabling, uneven cooling, no capacity planning.</p>
+      </div>
+      <div class="challenge-grid">
+        <div class="challenge-item">
+          <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="none" stroke="#DDBB86" stroke-width="1.3"/><path d="M8 4v5M8 11.5v.1" stroke="#DDBB86" stroke-width="1.3"/></svg>
+          <p>No redundancy — a single power or cooling failure takes everything down</p>
+        </div>
+        <div class="challenge-item">
+          <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="none" stroke="#DDBB86" stroke-width="1.3"/><path d="M8 4v5M8 11.5v.1" stroke="#DDBB86" stroke-width="1.3"/></svg>
+          <p>Uneven cooling causing hot spots that shorten hardware lifespan</p>
+        </div>
+        <div class="challenge-item">
+          <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="none" stroke="#DDBB86" stroke-width="1.3"/><path d="M8 4v5M8 11.5v.1" stroke="#DDBB86" stroke-width="1.3"/></svg>
+          <p>No capacity planning — running out of power or rack space mid-growth</p>
+        </div>
+        <div class="challenge-item">
+          <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="none" stroke="#DDBB86" stroke-width="1.3"/><path d="M8 4v5M8 11.5v.1" stroke="#DDBB86" stroke-width="1.3"/></svg>
+          <p>Messy, undocumented cabling that turns troubleshooting into guesswork</p>
+        </div>
+        <div class="challenge-item">
+          <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="none" stroke="#DDBB86" stroke-width="1.3"/><path d="M8 4v5M8 11.5v.1" stroke="#DDBB86" stroke-width="1.3"/></svg>
+          <p>Weak physical security — no access control on a room full of critical data</p>
+        </div>
+        <div class="challenge-item">
+          <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="none" stroke="#DDBB86" stroke-width="1.3"/><path d="M8 4v5M8 11.5v.1" stroke="#DDBB86" stroke-width="1.3"/></svg>
+          <p>No fire suppression appropriate for an equipment-dense environment</p>
+        </div>
+      </div>
+      <p class="challenge-note">When the infrastructure under your applications is fragile, <strong>every small failure becomes an outage — and an outage means lost business.</strong></p>
+    </div>
+  </section>
+
+  <section class="deliver">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What we deliver</h2>
+        <p class="sub">A complete data center engagement — design, build, storage, power, and ongoing management, under one accountable team.</p>
+      </div>
+
+      <div class="phase">
+        <span class="num">01</span>
+        <div>
+          <h3>Data Center Design & Planning</h3>
+          <p class="tag">Capacity, cooling, power, layout</p>
+        </div>
+        <ul>
+          <li>Capacity planning for 3–5 year growth, not just today</li>
+          <li>Layout design for airflow, access, and cable management</li>
+          <li>Redundancy level defined against business criticality</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <span class="num">02</span>
+        <div>
+          <h3>Server Room Build-Out</h3>
+          <p class="tag">Racks, cabling, UPS, cooling, fire safety</p>
+        </div>
+        <ul>
+          <li>Rack installation and structured cabling</li>
+          <li>UPS sizing and battery backup installation</li>
+          <li>Precision cooling and fire suppression systems</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <span class="num">03</span>
+        <div>
+          <h3>Server & Virtualization</h3>
+          <p class="tag">Physical and virtual compute platforms</p>
+        </div>
+        <ul>
+          <li>Server sizing matched to workload requirements</li>
+          <li>Hypervisor deployment (VMware, Hyper-V, or equivalent)</li>
+          <li>Consolidation to reduce physical footprint and cost</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <span class="num">04</span>
+        <div>
+          <h3>Storage Solutions</h3>
+          <p class="tag">SAN, NAS and software-defined storage</p>
+        </div>
+        <ul>
+          <li>SAN for high-performance, block-level workloads</li>
+          <li>NAS for shared file storage across teams</li>
+          <li>Software-defined storage for flexibility at scale</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <span class="num">05</span>
+        <div>
+          <h3>Power & Cooling</h3>
+          <p class="tag">UPS, battery backup, precision cooling</p>
+        </div>
+        <ul>
+          <li>N+1 or 2N redundancy based on criticality</li>
+          <li>Precision cooling sized to actual heat load</li>
+          <li>Generator and battery backup for extended outages</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <span class="num">06</span>
+        <div>
+          <h3>DC Monitoring & Management</h3>
+          <p class="tag">24x7 operations support</p>
+        </div>
+        <ul>
+          <li>Environmental monitoring — temperature, humidity, power</li>
+          <li>24x7 remote hands and on-site support</li>
+          <li>Proactive alerting before issues become outages</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIER RATINGS -->
+  <section class="tiers">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Data center tier ratings, explained</h2>
+        <p class="sub">The Uptime Institute's four-tier classification defines how much redundancy a data center has, and how much downtime to expect.</p>
+      </div>
+      <div class="tiers-scroll">
+        <table class="tiers-table">
+          <thead>
+            <tr>
+              <th>Tier</th>
+              <th>Redundancy</th>
+              <th>Expected Uptime</th>
+              <th>Typical Use</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tier I</td>
+              <td>No redundancy</td>
+              <td>99.671%</td>
+              <td>Small business, non-critical workloads</td>
+            </tr>
+            <tr>
+              <td>Tier II</td>
+              <td>Partial redundancy (N+1)</td>
+              <td>99.741%</td>
+              <td>Growing businesses with some criticality</td>
+            </tr>
+            <tr>
+              <td>Tier III</td>
+              <td>Concurrently maintainable</td>
+              <td>99.982%</td>
+              <td>Enterprise workloads requiring high availability</td>
+            </tr>
+            <tr>
+              <td>Tier IV</td>
+              <td>Fully fault-tolerant (2N)</td>
+              <td>99.995%</td>
+              <td>Mission-critical systems, no acceptable downtime</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tiers-note">CoreGenix designs to the tier level that matches your actual business risk — not the highest tier by default, which often isn't cost-justified for every workload.</p>
+    </div>
+  </section>
+
+  <!-- IN-HOUSE VS COLO VS CLOUD -->
+  <section class="compare">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>In-house vs. colocation vs. cloud</h2>
+        <p class="sub">Three ways to host your infrastructure — each with a different balance of control, cost, and responsibility.</p>
+      </div>
+      <div class="compare-scroll">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Factor</th>
+              <th>In-House Data Center</th>
+              <th>Colocation</th>
+              <th>Cloud</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Capital cost</td>
+              <td>High — build and own the facility</td>
+              <td>Moderate — rent space and power</td>
+              <td>None — pay for usage only</td>
+            </tr>
+            <tr>
+              <td>Control</td>
+              <td>Full physical and operational control</td>
+              <td>Full control over your own equipment</td>
+              <td>Shared responsibility with provider</td>
+            </tr>
+            <tr>
+              <td>Scalability</td>
+              <td>Limited by physical facility</td>
+              <td>Limited by contracted space</td>
+              <td>Near-instant, elastic scaling</td>
+            </tr>
+            <tr>
+              <td>Best for</td>
+              <td>Strict data sovereignty needs</td>
+              <td>Predictable workloads, wanting to avoid capex</td>
+              <td>Variable workloads, fast-growing businesses</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- REDUNDANCY + STORAGE QUICK BLOCKS -->
+  <section class="quickblocks">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Two concepts worth understanding</h2>
+        <p class="sub">Redundancy levels and storage types come up in every data center conversation — here's the short version of each.</p>
+      </div>
+      <div class="qb-grid">
+        <div class="qb-cell">
+          <h3>N, N+1, and 2N Redundancy</h3>
+          <p><strong>N</strong> is the minimum capacity needed to run the facility, with no spare. <strong>N+1</strong> adds one extra component beyond what's needed, so a single failure doesn't cause an outage. <strong>2N</strong> fully duplicates the entire system for maximum resilience — the standard for Tier IV facilities.</p>
+        </div>
+        <div class="qb-cell">
+          <h3>SAN vs. NAS vs. Software-Defined Storage</h3>
+          <ul>
+            <li><strong>SAN</strong> — block-level storage over a dedicated network, for databases and virtualization</li>
+            <li><strong>NAS</strong> — file-level storage over standard networks, for shared file access</li>
+            <li><strong>Software-Defined Storage</strong> — flexible storage management independent of hardware</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="industries">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Data center solutions for every sector</h2>
+        <p class="sub">Facility design tuned to the uptime and compliance needs of your industry.</p>
+      </div>
+      <div class="ind-grid">
+        <div class="ind-cell"><h4>BFSI</h4><p>High-tier facilities with strict physical security and audit trails.</p></div>
+        <div class="ind-cell"><h4>Manufacturing</h4><p>Server rooms supporting plant systems and ERP with minimal downtime.</p></div>
+        <div class="ind-cell"><h4>Healthcare</h4><p>Secure, compliant facilities for clinical systems and patient data.</p></div>
+        <div class="ind-cell"><h4>IT / Technology</h4><p>Scalable infrastructure that grows with product and customer base.</p></div>
+        <div class="ind-cell"><h4>Government / PSU</h4><p>On-premise facilities aligned to data sovereignty mandates.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="outcomes">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Outcomes that move your business</h2>
+        <p class="sub">What you get once your data center is properly designed and managed.</p>
+      </div>
+      <div class="outcome-grid">
+        <div class="outcome-item"><p>A data center engineered for uptime and growth</p></div>
+        <div class="outcome-item"><p>Clean power and cooling that protect your hardware</p></div>
+        <div class="outcome-item"><p>Virtualization that lowers cost and improves agility</p></div>
+        <div class="outcome-item"><p>One partner for design, build, and ongoing management</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>The CoreGenix difference</h2>
+        <p class="sub">What sets our data center delivery apart.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-cell"><span class="num">01</span><h3>Data center design and build — racks, cabling, UPS, cooling</h3></div>
+        <div class="why-cell"><span class="num">02</span><h3>Virtualization and storage engineered for uptime</h3></div>
+        <div class="why-cell"><span class="num">03</span><h3>Power and cooling redundancy planned, not patched</h3></div>
+        <div class="why-cell"><span class="num">04</span><h3>One partner for design, build, and 24x7 operations</h3></div>
+        <div class="why-cell"><span class="num">05</span><h3>22+ years building and running data center environments</h3></div>
+        <div class="why-cell"><span class="num">06</span><h3>Mumbai base, Pan-India delivery</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Frequently asked questions</h2>
+        <p class="sub">Straight answers about data center design, tiers, and hosting models.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>What are data center solutions?<span class="plus"></span></summary>
+          <div class="answer">Data center solutions cover the design, construction, and management of the facilities that host servers and critical applications — including power, cooling, racks, storage, and virtualization.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Should we build our own data center or use colocation?<span class="plus"></span></summary>
+          <div class="answer">It depends on budget, control needs, and scale. In-house data centers offer maximum control but require capital investment; colocation provides facility infrastructure without the capital cost; cloud eliminates physical infrastructure entirely. CoreGenix advises objectively on all three.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How much does a data center setup cost in India?<span class="plus"></span></summary>
+          <div class="answer">Data center costs vary widely with size, redundancy level, and whether it's a server room or full facility. CoreGenix offers a free data center assessment to scope requirements before providing a fixed quote.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What are data center tier ratings?<span class="plus"></span></summary>
+          <div class="answer">Data center tier ratings, defined by the Uptime Institute, classify facilities from Tier I to Tier IV based on redundancy and expected uptime. Tier I offers basic infrastructure with no redundancy, while Tier IV provides fully fault-tolerant infrastructure with 99.995% or higher expected uptime.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What is N+1 redundancy in a data center?<span class="plus"></span></summary>
+          <div class="answer">N+1 redundancy means having one more component than the minimum required to run the facility — for example, if three cooling units are needed, a fourth is added so any single unit can fail without affecting operations. 2N redundancy doubles the entire system for even higher resilience.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What is the difference between SAN, NAS, and software-defined storage?<span class="plus"></span></summary>
+          <div class="answer">SAN (Storage Area Network) provides block-level storage over a dedicated high-speed network, typically for databases and virtualization. NAS (Network Attached Storage) provides file-level storage accessible over standard networks, suited to file sharing. Software-defined storage abstracts storage management from the underlying hardware, offering flexibility across both models.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How long does a data center or server room build take?<span class="plus"></span></summary>
+          <div class="answer">A server room build-out typically takes a few weeks to a couple of months, while a full enterprise data center facility can take several months depending on scale, redundancy level, and civil work required.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap closing-inner">
+      <h2>Give your critical applications a foundation they can rely on</h2>
+      <p class="sub">Get a free data center assessment and a clear plan for the facility your business actually needs.</p>
+      <div class="closing-meta">
+        <span>Call <a href="tel:+918355958119">+91 83559 58119</a></span>
+        <span>Email <a href="mailto:sales@cgcein.com">sales@cgcein.com</a></span>
+        <span>C 1405 Kailash Business Park, Vikhroli (W), Mumbai</span>
+      </div>
+      <a href="/contact" class="btn-primary">Get free consultation</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="logo" style="color:#F5F6F3;"><span class="logo-mark"></span>CoreGenix</a>
+      <p>CoreGenix provides IT infrastructure & cyber security services — a trusted technology partner for your business growth and safety.</p>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/about#team">Our Team</a></li>
+        <li><a href="/services">Our Services</a></li>
+        <li><a href="/solutions">Our Solutions</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/career">Career</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Solutions</h4>
+      <ul>
+        <li><a href="/services/vapt">VAPT</a></li>
+        <li><a href="/services/soc-mss">Managed SOC</a></li>
+        <li><a href="/services/ot-security">OT Security</a></li>
+        <li><a href="/services/grc-dpdpa">GRC & DPDPA</a></li>
+        <li><a href="/solutions#it-security">Cyber Security Solutions</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact Us</h4>
+      <ul>
+        <li>India — Mumbai, Bengaluru, Jaipur</li>
+        <li><a href="tel:+918355958119">+91 83559 58119</a></li>
+        <li><a href="tel:+918369339809">+91 83693 39809</a></li>
+        <li><a href="mailto:sales@coregenix.in">sales@coregenix.in</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>2026 © All rights reserved by CoreGenix.</span>
+    <span><a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

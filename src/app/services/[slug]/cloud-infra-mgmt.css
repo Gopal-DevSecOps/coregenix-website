@@ -1,0 +1,478 @@
+/* Backup-recovery & Cloud-strategy shared layout + Branded sections
+   Uses .br- prefixed classes. Imported by [slug]/page.tsx. */
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.br-hero {
+  background: linear-gradient(168deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+  padding: 160px 0 0 0;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+.br-hero .container {
+  max-width: 960px;
+}
+.br-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  font-family: var(--font-body);
+}
+.br-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: inline-block;
+}
+.br-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 1.15;
+  color: var(--navy);
+  margin: 0 0 20px;
+}
+.br-hero-title .grad {
+  background: var(--accent-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.br-hero-desc {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-soft);
+  max-width: 700px;
+  margin: 0 auto 28px;
+}
+.br-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+.br-hero-secondary {
+  background: transparent;
+  color: var(--text-soft);
+  border: 1px solid var(--border);
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.br-hero-secondary:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.br-stat-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--border);
+}
+.br-stat {
+  padding: 24px 16px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+.br-stat:last-child {
+  border-right: none;
+}
+.br-stat-num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1.2;
+}
+.br-stat-label {
+  display: block;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* ============================================================
+   ANSWER BLOCK
+   ============================================================ */
+.br-answer {
+  padding: 80px 0;
+  background: var(--bg-light);
+  border-bottom: 1px solid var(--border);
+}
+.br-answer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 48px;
+  align-items: start;
+}
+.br-answer h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.2;
+  color: var(--navy);
+}
+.br-answer-copy {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text-soft);
+}
+.br-answer-copy p {
+  margin: 0 0 16px;
+}
+
+/* ============================================================
+   CHALLENGE
+   ============================================================ */
+.br-challenge {
+  padding: 80px 0;
+  background: var(--bg-light);
+  border-bottom: 1px solid var(--border);
+}
+.br-challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.br-challenge-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+.br-challenge-icon {
+  flex-shrink: 0;
+  color: var(--gold);
+  margin-top: 2px;
+}
+.br-challenge-item p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-soft);
+  margin: 0;
+}
+.br-challenge-note {
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 28px;
+}
+.br-challenge-note p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-soft);
+  margin: 0;
+}
+.br-challenge-note strong {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ============================================================
+   DELIVER (What we deliver / What we do)
+   ============================================================ */
+.br-deliver {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+.br-phase {
+  display: grid;
+  grid-template-columns: 48px 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+}
+.br-phase:last-child {
+  border-bottom: none;
+}
+.br-phase-num {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+}
+.br-phase h3 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 4px;
+}
+.br-phase-tag {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+.br-phase-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.br-phase-list li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-soft);
+  padding: 4px 0;
+  padding-left: 16px;
+  position: relative;
+}
+.br-phase-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+/* ============================================================
+   OUTCOMES (dark section)
+   ============================================================ */
+.br-outcomes {
+  background: var(--bg-dark);
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+.br-section-head-light h2 {
+  color: var(--navy-light);
+}
+.br-section-head-light .br-sub {
+  color: var(--text-muted);
+}
+.br-outcome-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.br-outcome-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: var(--bg-darker);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+.br-outcome-check {
+  flex-shrink: 0;
+  color: var(--gold);
+  margin-top: 2px;
+}
+.br-outcome-item p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--navy-light);
+  margin: 0;
+}
+
+/* ============================================================
+   WHY CHOOSE (6-cell grid)
+   ============================================================ */
+.br-why {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+.br-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.br-why-cell {
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+}
+.br-why-num {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 12px;
+}
+.br-why-cell h3 {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   INDUSTRIES
+   ============================================================ */
+.br-industries {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.br-faq {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+.br-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.br-faq-item {
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.br-faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  cursor: pointer;
+  list-style: none;
+}
+.br-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.br-plus {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  flex-shrink: 0;
+}
+.br-plus::before,
+.br-plus::after {
+  content: "";
+  position: absolute;
+  background: var(--gold);
+  border-radius: 1px;
+}
+.br-plus::before {
+  width: 14px;
+  height: 2px;
+  top: 9px;
+  left: 3px;
+}
+.br-plus::after {
+  width: 2px;
+  height: 14px;
+  top: 3px;
+  left: 9px;
+}
+.br-faq-item[open] .br-plus::after {
+  display: none;
+}
+.br-faq-answer {
+  padding: 0 24px 20px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-soft);
+}
+
+/* ============================================================
+   CLOSING CTA
+   ============================================================ */
+.br-closing {
+  background: var(--bg-dark);
+  padding: 80px 0;
+  text-align: center;
+}
+.br-closing-inner h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 3vw, 36px);
+  color: var(--navy);
+  margin: 0 0 12px;
+}
+.br-closing-sub {
+  font-size: 16px;
+  color: var(--text-soft);
+  margin: 0 0 24px;
+}
+.br-closing-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+.br-closing-meta a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .br-challenge-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .br-phase {
+    grid-template-columns: 48px 1fr;
+  }
+  .br-phase-list {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+  }
+  .br-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .br-hero {
+    padding: 130px 0 0 0;
+  }
+  .br-stat-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .br-stat {
+    border-bottom: 1px solid var(--border);
+  }
+  .br-answer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .br-challenge-grid {
+    grid-template-columns: 1fr;
+  }
+  .br-outcome-grid {
+    grid-template-columns: 1fr;
+  }
+  .br-why-grid {
+    grid-template-columns: 1fr;
+  }
+  .br-phase {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .br-phase-num {
+    font-size: 22px;
+  }
+}

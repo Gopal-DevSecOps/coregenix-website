@@ -11,15 +11,21 @@ export const solutionPages: SolutionPage[] = [
     title: "Network Infrastructure Solutions Mumbai | Network Design, Setup & Security",
     description:
       "Enterprise network infrastructure solutions in Mumbai & India — network design, deployment, security, Wi-Fi and managed monitoring. Reliable, scalable and secure.",
-    h1: "Network Infrastructure Solutions in Mumbai",
+    h1: "Network infrastructure solutions — designed, built & secured right",
     intro:
-      "CoreGenix designs, builds and manages network infrastructure that is reliable, scalable and secure — so your business stays connected, fast and protected.",
+      "CoreGenix designs, builds, and manages network infrastructure that is reliable, scalable, and secure — so your business stays connected, fast, and protected. Enterprise network design, structured cabling, and 24x7 monitoring.",
     sections: [
       {
         heading: "The Problem",
         body: [
-          "An outdated or poorly designed network slows every application, frustrates every employee and exposes the whole business to risk. But most businesses don't have the in-house expertise to plan and run enterprise-grade networks.",
-          "Downtime, slow performance and security gaps all trace back to network design. The right network is invisible — it just works. Getting there takes specialists.",
+          "An outdated or poorly designed network slows every application, frustrates every employee, and exposes the whole business to risk. But most businesses don't have the in-house expertise to plan and run enterprise-grade networks.",
+          "Downtime, slow performance, and security gaps all trace back to network design. **The right network is invisible — it just works.** Getting there takes specialists.",
+          "Slow performance across applications and sites",
+          "Ad hoc cabling that's impossible to trace or manage",
+          "Flat networks with no segmentation — one breach exposes everything",
+          "Frequent outages with no root cause identified",
+          "Multi-site connectivity that doesn't scale",
+          "No documentation, no asset inventory, no baseline to improve from",
         ],
       },
       {
@@ -45,8 +51,8 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
-          "Enterprise network design — LAN, WAN, SD-WAN and data centre",
-          "Structured cabling with copper and fibre done right",
+          "Enterprise network design — LAN, WAN, SD-WAN and data center",
+          "Structured cabling with copper and fiber done right",
           "Secure Wi-Fi, segmentation and access control built in",
           "24x7 NOC monitoring after deployment",
           "22+ years designing and running enterprise networks",
@@ -57,15 +63,31 @@ export const solutionPages: SolutionPage[] = [
     faq: [
       {
         q: "What are network infrastructure services?",
-        a: "Network infrastructure services cover the design, deployment, security and management of the networks your business runs on — switching, routing, Wi-Fi, cabling and connectivity.",
+        a: "Network infrastructure services cover the design, deployment, security, and management of the networks your business runs on — switching, routing, Wi-Fi, cabling, and connectivity. CoreGenix provides end-to-end network solutions from initial design through to 24x7 monitoring and ongoing support.",
       },
       {
         q: "How much does network infrastructure setup cost in India?",
-        a: "It depends on site size, users and requirements. CoreGenix provides a free site assessment and a transparent quote.",
+        a: "Network infrastructure costs depend on site size, number of users, and specific requirements such as security, redundancy, or compliance. CoreGenix provides a free site assessment and a transparent quote before any work begins.",
       },
       {
         q: "Why does my business need structured cabling?",
-        a: "Structured cabling provides a clean, organized, high-performance foundation for your network — making it faster, more reliable and far easier to maintain.",
+        a: "Structured cabling provides a clean, organized, high-performance foundation for your network — making it faster, more reliable, and far easier to maintain. Without it, troubleshooting becomes guesswork and upgrades become expensive.",
+      },
+      {
+        q: "What is the difference between LAN, WAN, and SD-WAN?",
+        a: "A LAN connects devices within a single office or campus. A WAN connects multiple sites across cities or regions. SD-WAN is a software-defined approach that intelligently routes traffic across multiple WAN links for better performance and lower cost.",
+      },
+      {
+        q: "How does CoreGenix approach network security?",
+        a: "CoreGenix builds security into the network design from the start — firewalls, segmentation, access control, and monitoring — rather than bolting it on afterward. This reduces attack surface and ensures compliance from day one.",
+      },
+      {
+        q: "Can CoreGenix manage networks across multiple office locations?",
+        a: "Yes, CoreGenix provides multi-site network design, deployment, and 24x7 monitoring across India, with centralized management and consistent security policies across all locations.",
+      },
+      {
+        q: "How often should network infrastructure be upgraded?",
+        a: "Network infrastructure typically has a 5-7 year lifecycle, but the right upgrade cadence depends on growth, technology changes, and performance demands. CoreGenix provides ongoing assessments to plan upgrades proactively rather than reactively.",
       },
     ],
     cta: "Build a network that never holds your business back. Get a free network assessment today.",
@@ -76,15 +98,21 @@ export const solutionPages: SolutionPage[] = [
     title: "Data Center Solutions Mumbai | Design, Build & Management",
     description:
       "Data center design, build and management in Mumbai & India — server rooms, virtualization, storage, cooling and power. Reliable enterprise infrastructure.",
-    h1: "Data Center Solutions in Mumbai",
+    h1: "Data center solutions — design, build & management for uptime",
     intro:
-      "CoreGenix plans, builds and manages data centers and server rooms — from a single rack to a full enterprise facility.",
+      "CoreGenix plans, builds, and manages data centers and server rooms — power, cooling, virtualization, storage, and 24x7 monitoring — from a single rack to a full enterprise facility.",
     sections: [
       {
         heading: "The Problem",
         body: [
-          "Business-critical applications need an environment that stays up — power, cooling, redundancy and physical security. Most server rooms are pieced together over years: messy cabling, uneven cooling, no capacity planning.",
-          "When the infrastructure under your applications is fragile, every small failure becomes an outage. And outage means lost business.",
+          "Business-critical applications need an environment that stays up — power, cooling, redundancy, and physical security. Most server rooms are pieced together over years: messy cabling, uneven cooling, no capacity planning.",
+          "When the infrastructure under your applications is fragile, **every small failure becomes an outage — and an outage means lost business.**",
+          "No capacity planning — racks full, power maxed, cooling uneven",
+          "Messy cabling that makes troubleshooting and upgrades painful",
+          "Single points of failure in power or cooling",
+          "No environmental monitoring — temperature, humidity, water leaks go unnoticed",
+          "Server rooms that were never designed for the workload they carry",
+          "No documented asset inventory or refresh plan",
         ],
       },
       {
@@ -110,11 +138,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
-          "Data centre design and build — racks, cabling, UPS, cooling",
+          "Data center design and build — racks, cabling, UPS, cooling",
           "Virtualization and storage engineered for uptime",
           "Power and cooling redundancy planned, not patched",
           "One partner for design, build and 24x7 operations",
-          "22+ years building and running data centre environments",
+          "22+ years building and running data center environments",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -122,18 +150,34 @@ export const solutionPages: SolutionPage[] = [
     faq: [
       {
         q: "What are data center solutions?",
-        a: "Data center solutions cover the design, construction and management of the facilities that host your servers and critical applications — including power, cooling, racks and virtualization.",
+        a: "Data center solutions cover the design, construction, and management of the facilities that host your servers and critical applications — including power, cooling, racks, and virtualization. CoreGenix handles everything from a single server room to a full enterprise facility.",
       },
       {
         q: "Should we build our own data center or use colocation?",
-        a: "It depends on your needs. CoreGenix advises objectively on in-house vs colocation vs cloud, then delivers whichever fits best.",
+        a: "It depends on your scale, compliance requirements, and budget. CoreGenix advises objectively on in-house vs colocation vs cloud, then delivers whichever fits best — including hybrid approaches.",
       },
       {
-        q: "How much does a data center setup cost in India?",
-        a: "Costs vary widely with size and redundancy level. Contact CoreGenix for a free data center assessment.",
+        q: "How much does data center design and build cost in India?",
+        a: "Costs depend on facility size, power requirements, redundancy level, and compliance needs. CoreGenix provides a free assessment and detailed proposal before any commitment.",
+      },
+      {
+        q: "What is the difference between a server room and a data center?",
+        a: "A server room is a smaller, often basic room housing IT equipment. A data center is a purpose-built facility with redundant power, cooling, fire suppression, and physical security designed for high availability.",
+      },
+      {
+        q: "How does CoreGenix approach data center power and cooling?",
+        a: "CoreGenix designs power and cooling infrastructure with redundancy at every critical point — UPS, battery backup, precision cooling, and environmental monitoring — matched to your availability requirements.",
+      },
+      {
+        q: "Can CoreGenix upgrade an existing server room?",
+        a: "Yes, CoreGenix assesses existing server rooms and performs targeted upgrades — cabling, power, cooling, racks, and monitoring — without requiring a full rebuild.",
+      },
+      {
+        q: "What tier rating should my data center aim for?",
+        a: "Tier ratings range from basic capacity (Tier I) to fully redundant with fault tolerance (Tier IV). The right level depends on your uptime requirements and budget. CoreGenix helps design to the tier that matches your business needs.",
       },
     ],
-    cta: "Give your critical applications a foundation they can rely on. Get a free data center assessment today.",
+    cta: "Get a free data center assessment and a clear plan for the facility your business actually needs.",
   },
   {
     slug: "data-backup",
@@ -141,15 +185,21 @@ export const solutionPages: SolutionPage[] = [
     title: "Data Backup Solutions Mumbai | Automated Backup & Restore",
     description:
       "Automated data backup solutions in Mumbai & India — on-premise and cloud backup for servers, databases and applications. Restore when you need it.",
-    h1: "Data Backup Solutions in Mumbai",
+    h1: "Data backup solutions — automated, tested, actually restorable",
     intro:
-      "CoreGenix builds automated backup solutions that protect your data and restore it quickly when disaster strikes.",
+      "CoreGenix builds automated on-premise and cloud backup solutions for servers, databases, and applications — protected by a 3-2-1 strategy, and verified through regular restore testing, not just a completed backup job.",
     sections: [
       {
         heading: "The Problem",
         body: [
           "Most businesses discover their backup was never working — the day they need it. Failed jobs, untested restores, and data spread across systems with no single plan.",
-          "Data loss isn't an 'if'. It's a 'when'. Ransomware, hardware failure or human error — your data will be tested. Backups that actually restore are the only answer.",
+          "Data loss isn't an \"if.\" It's a \"when.\" **Backups that actually restore are the only answer** — and the only way to know is to test them.",
+          "Backup jobs that run but never get verified",
+          "No offsite or cloud copy — local failure means total loss",
+          "Retention policies that don't match compliance requirements",
+          "Ransomware that encrypts backups along with production data",
+          "No one owns backup — it falls between IT, ops, and the vendor",
+          "Restore takes days when the business needs hours",
         ],
       },
       {
@@ -187,18 +237,34 @@ export const solutionPages: SolutionPage[] = [
     faq: [
       {
         q: "What is the best backup strategy?",
-        a: "A 3-2-1 strategy is the industry standard — at least three copies of your data, on two different media, with one copy offsite. CoreGenix implements this for you.",
+        a: "A 3-2-1 strategy is the industry standard — at least three copies of your data, on two different media, with one copy offsite. CoreGenix designs, implements, and manages this for you, including regular restore testing.",
       },
       {
         q: "How often should data be backed up?",
-        a: "As often as your business can afford to lose changes. CoreGenix helps you define frequency based on your data and risk.",
+        a: "Backup frequency depends on how much data change your business can afford to lose. CoreGenix helps define the right schedule for each workload — daily, hourly, or real-time — based on your RPO requirements.",
       },
       {
         q: "How much does a backup solution cost in India?",
-        a: "Costs depend on data volume and retention. Contact CoreGenix for a free backup assessment.",
+        a: "Backup costs depend on data volume, retention period, and whether backup is on-premise, cloud, or both. CoreGenix provides a free backup assessment with a fixed-price proposal.",
+      },
+      {
+        q: "What is the difference between backup and disaster recovery?",
+        a: "Backup copies your data so it can be restored after loss. Disaster recovery restores entire systems and operations — including servers, applications, and network — so the business can continue running after a major disruption.",
+      },
+      {
+        q: "How do I know if my backups would actually restore?",
+        a: "The only way to know is to test them regularly. CoreGenix includes restore testing as part of every backup engagement, with documented proof that your backups work — not just that they ran.",
+      },
+      {
+        q: "Can ransomware encrypt my backups?",
+        a: "Yes, if backups are on the same network or use the same credentials. CoreGenix implements immutable backups, air-gapped copies, and separate access controls to protect backup data from ransomware.",
+      },
+      {
+        q: "Should I use on-premise or cloud backup?",
+        a: "Most businesses benefit from a combination — on-premise for fast local restore, cloud for offsite protection. CoreGenix designs the right mix based on your data volume, recovery time needs, and compliance requirements.",
       },
     ],
-    cta: "Test your backups before disaster tests you. Get a free backup assessment today.",
+    cta: "Get a free backup assessment and find out whether your current backups would actually restore.",
   },
   {
     slug: "disaster-recovery-bcp",
@@ -208,13 +274,19 @@ export const solutionPages: SolutionPage[] = [
       "Disaster recovery (DR) and business continuity planning (BCP) in India — recover systems fast and keep operations running through any disruption.",
     h1: "Disaster Recovery & Business Continuity Planning in India",
     intro:
-      "CoreGenix builds disaster recovery and business continuity plans that keep your business running — through outages, disasters and ransomware.",
+      "CoreGenix builds disaster recovery and business continuity plans that keep your business running through outages, disasters, and ransomware — with defined RPO/RTO, tested failover, and clear incident playbooks.",
     sections: [
       {
         heading: "The Problem",
         body: [
           "When disaster hits — fire, flood, cyber attack, power failure — most businesses are caught unprepared. Systems go down, data is at risk, and nobody has a tested plan to recover.",
-          "Every hour of downtime costs money and reputation. The businesses that survive disruption are the ones that planned for it before it happened.",
+          "Every hour of downtime costs money and reputation. **The businesses that survive disruption are the ones that planned for it before it happened.**",
+          "No defined RPO or RTO — recovery time is a guess",
+          "DR plans that exist on paper but were never tested",
+          "Backup without failover — data is safe, but systems aren't",
+          "No incident playbooks — staff don't know what to do first",
+          "Business continuity planning that ignores non-IT operations",
+          "Compliance gaps — auditors asking for DR evidence you don't have",
         ],
       },
       {
@@ -252,18 +324,30 @@ export const solutionPages: SolutionPage[] = [
     faq: [
       {
         q: "What is the difference between DR and BCP?",
-        a: "Disaster recovery restores IT systems after disruption. Business continuity keeps the wider business operating. Most businesses need both.",
+        a: "Disaster recovery (DR) restores IT systems after disruption — servers, applications, and data. Business continuity planning (BCP) covers how the wider business keeps operating during disruption — including alternate processes, staff communication, and critical function continuity beyond just IT.",
       },
       {
         q: "What are RPO and RTO?",
-        a: "RPO is how much data you can afford to lose; RTO is how fast you need systems back. CoreGenix helps you define both.",
+        a: "RPO (Recovery Point Objective) is how much data you can afford to lose — measured in time. RTO (Recovery Time Objective) is how fast you need systems back. CoreGenix helps you define both based on your business requirements, then builds recovery architecture to match.",
       },
       {
         q: "How often should we test our DR plan?",
-        a: "At least annually, and after major changes. Regular testing is the only way to know your DR actually works.",
+        a: "At least annually, and after any major infrastructure or application change. Regular testing — including full failover drills — is the only way to know your DR actually works under real conditions.",
+      },
+      {
+        q: "What is the difference between hot, warm, and cold DR sites?",
+        a: "A hot site is fully operational and can take over immediately. A warm site has infrastructure ready but needs configuration. A cold site is basic space with power and connectivity but no pre-installed systems. The right choice depends on your RTO and budget.",
+      },
+      {
+        q: "Does my business need both DR and BCP?",
+        a: "Yes. DR restores your IT systems. BCP ensures the wider business keeps operating — people, processes, and communication. Most regulatory frameworks require both.",
+      },
+      {
+        q: "How does CoreGenix approach DR for cloud environments?",
+        a: "CoreGenix designs DR across public and private cloud using native replication, cross-region failover, and tested recovery procedures — ensuring cloud workloads have the same recovery confidence as on-premise systems.",
       },
     ],
-    cta: "Don't plan for disaster during a disaster. Get a free DR & BCP assessment today.",
+    cta: "Get a free DR & BCP assessment and a tested plan for what happens when something goes wrong.",
   },
   {
     slug: "private-cloud",
@@ -271,15 +355,21 @@ export const solutionPages: SolutionPage[] = [
     title: "Private Cloud Solutions Mumbai | Dedicated Cloud Infrastructure",
     description:
       "Private cloud solutions in Mumbai & India — dedicated, secure cloud infrastructure for compliance, control and performance.",
-    h1: "Private Cloud Solutions in Mumbai",
+    h1: "Private cloud solutions — dedicated infrastructure, built for compliance",
     intro:
-      "CoreGenix builds and manages private cloud environments that give you dedicated, secure and compliant cloud infrastructure.",
+      "CoreGenix designs, builds, and manages private cloud environments that give you dedicated, secure, and compliant infrastructure — on-premise or hosted, fully managed 24x7, with no noisy neighbors.",
     sections: [
       {
         heading: "The Problem",
         body: [
-          "Public cloud isn't always the right answer. Compliance, data sovereignty and performance requirements can demand dedicated infrastructure that nobody else shares.",
-          "But building a private cloud requires serious expertise in virtualization, storage, networking and security — and running it well takes even more.",
+          "Public cloud isn't always the right answer. Compliance, data sovereignty, and performance requirements can demand dedicated infrastructure that nobody else shares.",
+          "But building a private cloud requires serious expertise in virtualization, storage, networking, and security — and running it well takes even more. **CoreGenix builds and manages private cloud environments end to end** — architecture, virtualization, storage, security, and ongoing operations — so dedicated infrastructure doesn't mean doing it all yourself.",
+          "Compliance mandates that prohibit shared infrastructure",
+          "Performance requirements that public cloud can't consistently deliver",
+          "Data sovereignty rules that keep data within specific boundaries",
+          "Security policies that demand full environmental control",
+          "Predictable costs that pay-as-you-go models can't guarantee",
+          "Legacy applications that need dedicated compute and storage",
         ],
       },
       {
@@ -305,11 +395,11 @@ export const solutionPages: SolutionPage[] = [
       {
         heading: "Why Choose CoreGenix",
         body: [
-          "Dedicated infrastructure — no noisy neighbours",
+          "Dedicated infrastructure, no noisy neighbors",
           "Compliance and data sovereignty by design",
           "Enterprise virtualization with predictable performance",
           "Private cloud that's actually managed, not just built",
-          "22+ years across data centres, virtualization and cloud",
+          "22+ years across data centers, virtualization and cloud",
           "Mumbai base, Pan-India delivery",
         ],
       },
@@ -317,18 +407,30 @@ export const solutionPages: SolutionPage[] = [
     faq: [
       {
         q: "What is a private cloud?",
-        a: "A private cloud is cloud infrastructure dedicated to a single organization — with the self-service, scalability and management of cloud, but full isolation and control.",
+        a: "A private cloud is cloud infrastructure dedicated to a single organization — with the self-service, scalability, and management benefits of cloud, but full isolation and control over the environment.",
       },
       {
         q: "When should a business choose private cloud?",
-        a: "When compliance, data sovereignty, performance or security demand dedicated infrastructure that isn't shared with other tenants.",
+        a: "When compliance, data sovereignty, performance, or security requirements demand dedicated infrastructure that isn't shared with other tenants. Common in BFSI, government, and healthcare.",
       },
       {
         q: "How much does a private cloud cost in India?",
-        a: "It depends on compute, storage and isolation requirements. Contact CoreGenix for a free private cloud assessment.",
+        a: "Private cloud costs depend on compute, storage, networking, and isolation requirements. CoreGenix provides a free assessment with a detailed cost comparison vs public cloud alternatives.",
+      },
+      {
+        q: "What is the difference between on-premise and hosted private cloud?",
+        a: "On-premise private cloud runs in your own facility with your own hardware. Hosted private cloud is in a provider's data center with dedicated infrastructure. CoreGenix offers both and helps choose based on your requirements.",
+      },
+      {
+        q: "Can private cloud integrate with public cloud?",
+        a: "Yes, many businesses run hybrid environments where sensitive workloads stay on private cloud while others scale on public cloud. CoreGenix designs and manages hybrid architectures that combine both.",
+      },
+      {
+        q: "Is private cloud more secure than public cloud?",
+        a: "Private cloud provides full environmental isolation, which simplifies certain compliance and security requirements. Public cloud can be equally secure with the right configuration, but private cloud gives you direct control over every layer.",
       },
     ],
-    cta: "Get dedicated cloud infrastructure that meets your compliance and performance needs. Get a free assessment today.",
+    cta: "Get a free private cloud assessment and a clear view of what dedicated infrastructure would look like for your business.",
   },
   {
     slug: "public-cloud",
@@ -336,15 +438,21 @@ export const solutionPages: SolutionPage[] = [
     title: "Public Cloud Solutions India | Azure & AWS Migration & Management",
     description:
       "Public cloud solutions in India — Azure and AWS migration, architecture, security and cost optimization. Scale on the cloud that fits.",
-    h1: "Public Cloud Solutions in India",
+    h1: "Public cloud solutions — Azure & AWS, designed, migrated & managed right",
     intro:
-      "CoreGenix helps you adopt Azure and AWS public cloud — the right architecture, migration and ongoing management.",
+      "CoreGenix helps you adopt Azure and AWS public cloud — the right architecture, phased migration, security, and ongoing management. Scale on the cloud that fits, without the bill-shock surprises.",
     sections: [
       {
         heading: "The Problem",
         body: [
-          "Public cloud offers scale and flexibility — but only if it's designed right. Poorly planned cloud estates lead to bill shock, security gaps and workloads that perform worse than on-premise.",
-          "Moving to cloud isn't a destination. It's an ongoing operation. Without the right partner, you get the worst of both worlds.",
+          "Public cloud offers scale and flexibility — but only if it's designed right. Poorly planned cloud estates lead to bill shock, security gaps, and workloads that perform worse than on-premise.",
+          "Moving to cloud isn't a destination — **it's an ongoing operation.** Without the right partner, you get the worst of both worlds: cloud complexity without cloud benefits.",
+          "Unplanned migration leading to bill shock",
+          "Security misconfigurations that expose data",
+          "Workloads running in the wrong tier at the wrong cost",
+          "No landing zone — governance and security from day one missing",
+          "Multi-account sprawl with no tagging or cost allocation",
+          "No one managing optimization — costs creep monthly",
         ],
       },
       {
@@ -382,18 +490,30 @@ export const solutionPages: SolutionPage[] = [
     faq: [
       {
         q: "Should we choose Azure or AWS?",
-        a: "Both are excellent platforms, but the right choice depends on your workloads, integrations and team skills. CoreGenix advises objectively on both.",
+        a: "Both are excellent platforms, but the right choice depends on your workloads, existing integrations, team skills, and licensing. CoreGenix advises objectively on both and recommends the platform that fits each workload.",
       },
       {
         q: "How long does a public cloud migration take?",
-        a: "Simple workloads can move in weeks; complex estates take longer. Your migration roadmap defines realistic, phased timelines.",
+        a: "Simple workloads can migrate in weeks; complex estates with multiple applications and dependencies take longer. CoreGenix defines a phased migration roadmap with realistic timelines and minimal disruption.",
       },
       {
         q: "How much does public cloud cost in India?",
-        a: "Cloud costs depend on usage. CoreGenix optimizes your architecture to keep costs controlled and predictable.",
+        a: "Public cloud costs depend on usage, instance types, and optimization. CoreGenix designs cost-efficient architectures, implements reserved instances and savings plans, and provides ongoing cost optimization.",
+      },
+      {
+        q: "What is a cloud landing zone?",
+        a: "A landing zone is a pre-configured, secure cloud foundation — accounts, networking, identity, logging, and governance — set up before workloads migrate. It ensures security and cost control from day one.",
+      },
+      {
+        q: "Can CoreGenix manage both Azure and AWS for us?",
+        a: "Yes, CoreGenix provides multi-cloud management across both Azure and AWS, with consistent monitoring, security, and cost optimization regardless of platform.",
+      },
+      {
+        q: "How do I avoid bill shock on public cloud?",
+        a: "Bill shock happens without cost governance. CoreGenix implements tagging, budgets, alerts, right-sizing, and reserved instance strategies to keep costs predictable and controlled.",
       },
     ],
-    cta: "Adopt public cloud the right way. Get a free cloud assessment today.",
+    cta: "Get a free cloud assessment and a clear view of what Azure or AWS would look like for your business.",
   },
   {
     slug: "hybrid-cloud",
@@ -401,15 +521,21 @@ export const solutionPages: SolutionPage[] = [
     title: "Hybrid Cloud Solutions India | Unified On-Premise & Cloud",
     description:
       "Hybrid cloud solutions in India — unify your on-premise and cloud environments with a consistent, secure operating model.",
-    h1: "Hybrid Cloud Solutions in India",
+    h1: "Hybrid cloud solutions — on-premise control, cloud scale, one operating model",
     intro:
-      "CoreGenix builds hybrid cloud environments that combine the control of on-premise with the scale of cloud — managed as one.",
+      "CoreGenix builds deliberate hybrid cloud environments that combine the control of on-premise with the scale of cloud — connected, secured, and managed as one, instead of running by accident.",
     sections: [
       {
         heading: "The Problem",
         body: [
           "Most businesses already run a hybrid environment — by accident. Some workloads on-premise, some in cloud, different teams, different tools, no single strategy. That's not hybrid cloud, that's chaos.",
-          "The result is security blind spots, duplicated effort and workloads in the wrong place. Hybrid cloud done right is deliberate and managed.",
+          "The result is security blind spots, duplicated effort, and workloads in the wrong place. **Hybrid cloud done right is deliberate and managed** — not something that happens to you.",
+          "Workloads scattered across on-premise and cloud with no strategy",
+          "Security policies that don't apply consistently across environments",
+          "Two teams, two tools, two budgets — no single owner",
+          "Data that must stay on-premise but needs cloud-scale analytics",
+          "Mid-migration with no clear end state defined",
+          "Cost complexity from maintaining two environments without optimization",
         ],
       },
       {
@@ -447,18 +573,30 @@ export const solutionPages: SolutionPage[] = [
     faq: [
       {
         q: "What is a hybrid cloud?",
-        a: "A hybrid cloud combines on-premise infrastructure with public or private cloud, connected and managed as a single environment.",
+        a: "A hybrid cloud combines on-premise infrastructure with public or private cloud, connected and managed as a single environment. Workloads run where they're most effective — some on-premise for control, some on cloud for scale.",
       },
       {
-        q: "Why choose hybrid over pure public cloud?",
-        a: "Hybrid gives you control and compliance for sensitive workloads, plus the scale and flexibility of cloud for others.",
+        q: "Why choose hybrid cloud over pure public cloud?",
+        a: "Hybrid gives you control and compliance for sensitive workloads, plus the scale and flexibility of cloud for others. It's ideal when some data must stay on-premise while other workloads need elastic scaling.",
       },
       {
         q: "How much does a hybrid cloud setup cost in India?",
-        a: "It depends on existing infrastructure and cloud usage. Contact CoreGenix for a free hybrid cloud assessment.",
+        a: "Hybrid cloud costs depend on existing infrastructure, cloud usage, and connectivity requirements. CoreGenix provides a free assessment with a clear cost model for the hybrid approach.",
+      },
+      {
+        q: "What connectivity do I need for hybrid cloud?",
+        a: "Hybrid cloud requires secure, reliable connectivity between on-premise and cloud — typically VPN, dedicated interconnect, or SD-WAN. CoreGenix designs the connectivity architecture matched to your performance and security needs.",
+      },
+      {
+        q: "Is hybrid cloud more complex to manage?",
+        a: "Hybrid cloud adds complexity if managed with separate tools and teams. CoreGenix provides unified management across both environments — one team, one set of policies, one dashboard.",
+      },
+      {
+        q: "Can I start with public cloud and move to hybrid later?",
+        a: "Yes, many businesses start with public cloud and evolve to hybrid as compliance, data sovereignty, or performance requirements change. CoreGenix designs architectures that support this evolution.",
       },
     ],
-    cta: "Stop running your infrastructure by accident. Get a free hybrid cloud assessment today.",
+    cta: "Get a free hybrid cloud assessment and a deliberate plan for what runs where.",
   },
   {
     slug: "infrastructure-security",

@@ -321,3 +321,99 @@ Also manually verify in the browser:
 - [ ] Typecheck + lint pass.
 - [ ] No secrets, no fabricated data, no unrequested comments.
 - [ ] Reported to user: what changed, how to verify.
+
+---
+
+## 10. Prompt Templates — How to Give Tasks to AI Agent
+
+> Copy-paste these prompts when you need similar work done. Adjust the bracketed parts.
+
+### 10.1 Content Sync — HTML file → Next.js page
+
+**Scenario:** You have a standalone HTML page (design reference) and want the Next.js page to match its exact content, styled with the project's design system.
+
+```
+Read [HTML_FILE_PATH].
+
+Compare it with [NEXT_JS_COMPONENT_PATH] and [DATA_FILE_PATH].
+
+Find ALL content differences (text, casing, punctuation, structure, missing/extra sections).
+
+Then:
+1. Update [DATA_FILE_PATH] to match the HTML content exactly.
+2. Update [NEXT_JS_COMPONENT_PATH] to match the HTML layout/structure exactly.
+3. Use the project's design system (globals.css tokens, Reveal, SectionHeading, Icons.tsx).
+4. Do NOT add comments unless asked.
+5. Run typecheck and lint after changes.
+
+Report what changed.
+```
+
+### 10.2 Section Add/Remove — Modify page structure
+
+**Scenario:** You want to add or remove specific sections from a page.
+
+```
+On [PAGE_URL], I want to:
+REMOVE: [describe section to remove]
+ADD: [describe section to add with exact content]
+KEEP: [describe sections that should NOT change]
+
+Update [COMPONENT_PATH] and [CSS_PATH].
+Use the project's design system. Run typecheck and lint.
+```
+
+### 10.3 Full Page Rebuild — From scratch using HTML reference
+
+**Scenario:** Completely rebuild a page from an HTML reference file.
+
+```
+Delete the contents of [COMPONENT_PATH] and [CSS_PATH].
+
+Read [HTML_FILE_PATH] — this is the CORRECT version.
+
+Rebuild [COMPONENT_PATH] from scratch matching the HTML exactly:
+- Same sections, same content, same structure
+- Use project's design tokens from globals.css
+- Use Reveal for animations, SectionHeading for section headers
+- Import icons from Icons.tsx (do NOT add new icon libraries)
+- CSS classes should use [PREFIX]- prefix (e.g., br-, cs-, sl-)
+
+Also update [DATA_FILE_PATH] if any data comes from there.
+
+Run typecheck, lint, and build. Report what changed.
+```
+
+### 10.4 Quick Content Fix — Single text change
+
+**Scenario:** Fix one piece of text on a page.
+
+```
+On [PAGE_URL], change:
+FROM: "[exact current text]"
+TO: "[exact new text]"
+
+Update [FILE_PATH]. Run typecheck.
+```
+
+### 10.5 Verification Prompt — Check if page matches reference
+
+**Scenario:** Verify current page content matches an HTML reference.
+
+```
+Compare [HTML_FILE_PATH] with [COMPONENT_PATH] and [DATA_FILE_PATH].
+
+List every difference — text, casing, punctuation, structure, missing sections.
+Do NOT make changes, just report differences.
+```
+
+### General Tips for Prompts
+
+| Do | Don't |
+|---|---|
+| "Read [file] and compare with [file]" | "Fix the page" (too vague) |
+| "Change FROM X TO Y" | "Make it look better" |
+| "Remove [specific thing]" | "Clean it up" |
+| "Add [exact content]" | "Add some content" |
+| "Match the HTML file exactly" | "Make it similar" |
+| "Run typecheck and lint" | "Make sure it works" |

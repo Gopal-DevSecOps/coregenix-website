@@ -4,10 +4,14 @@ import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
 import JsonLd from "@/components/JsonLd";
 import CloudStrategyLanding from "@/components/CloudStrategyLanding";
+import BackupRecoveryLanding from "@/components/BackupRecoveryLanding";
 import ServiceLanding from "@/components/ServiceLanding";
+import CloudInfrastructureLanding from "@/components/CloudInfrastructureLanding";
 import { getService, services } from "@/data/services";
 import { SITE } from "@/lib/site";
 import "./cloud-strategy.css";
+import "./backup-recovery.css";
+import "./cloud-infra-mgmt.css";
 import "./service-landing.css";
 
 interface Props {
@@ -85,9 +89,15 @@ export default async function ServicePage({ params }: Props) {
       <JsonLd data={serviceJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
       <Header />
-      {service.slug === "cloud-strategy" ? (
+      {service.slug === "backup-recovery" ? (
+        <BackupRecoveryLanding service={service} />
+      ) : service.slug === "cloud-strategy" ? (
         <>
           <CloudStrategyLanding service={service} />
+        </>
+      ) : service.slug === "cloud-infrastructure-management" ? (
+        <>
+          <CloudInfrastructureLanding service={service} />
         </>
       ) : (
         <>

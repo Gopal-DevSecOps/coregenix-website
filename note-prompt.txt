@@ -1,0 +1,17 @@
+Aapke Is Kaam Ke Liye Best Prompt Yeh Hota:
+Read D:\cgcein-website\CLAUDE\Services\Services\backup-recovery.html
+
+Compare it with:
+- src/components/BackupRecoveryLanding.tsx
+- src/data/services.ts
+
+Find ALL content differences (text, casing, punctuation, structure, missing sections).
+
+Then:
+1. Update services.ts to match the HTML content exactly.
+2. Update BackupRecoveryLanding.tsx to match the HTML layout/structure exactly.
+3. Use the project's design system (globals.css tokens, Reveal, SectionHeading, Icons.tsx).
+4. Do NOT add comments unless asked.
+5. Run typecheck and lint after changes.
+
+Report what changed.

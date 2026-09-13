@@ -242,12 +242,12 @@ export const services: ServicePage[] = [
   },
   {
     slug: "staffing-fms",
-    title: "Staffing & FMS Facility Management Services India",
+    title: "IT Staffing Services | Data Center & Cyber Security Staffing | CoreGenix",
     description:
-      "IT staffing and Facility Management Services (FMS) in India — skilled engineers, helpdesk and managed facility upkeep for offices, data centers and enterprises.",
-    h1: "Staffing & FMS Facility Management Services in India",
+      "CoreGenix provides skilled IT staffing for network, data center, and cyber security roles — on-site, remote, or project-based engineers deployed across India with 22+ years of experience.",
+    h1: "Skilled IT, data center & cyber security staffing — on demand",
     intro:
-      "CoreGenix delivers IT staffing and Facility Management Services (FMS) that keep your people productive and your infrastructure running — one accountable partner for both.",
+      "CoreGenix deploys skilled engineers for IT infrastructure, data center operations, and cyber security — on-site, remote, or project-based — so your technical teams are never short-staffed. 22+ years of experience placing the right people, fast.",
     sections: [
       {
         heading: "The Problem",
@@ -257,14 +257,14 @@ export const services: ServicePage[] = [
         ],
       },
       {
-        heading: "What's Covered",
+        heading: "What We Provide",
         body: [
-          "IT staffing — on-site engineers, remote support and project-based teams",
-          "Facility management — power, cooling, cabling and infrastructure upkeep",
-          "Helpdesk & end-user support as a single point of contact",
-          "Asset and vendor management with SLA tracking",
-          "Backup, DR and business continuity planning",
-          "Compliance-ready documentation of staffing and maintenance records",
+          "IT infrastructure staffing — network engineer, system administrator, L1/L2/L3 support, NOC engineer",
+          "Data center support staffing — DC operations engineer, remote/smart hands, rack & cabling technician, DCIM monitoring specialist",
+          "Cyber security staffing — SOC analyst (L1/L2/L3), security engineer, VAPT analyst, GRC/compliance analyst",
+          "Helpdesk & end-user IT support — helpdesk executive, desktop support engineer, service desk analyst",
+          "Managed IT asset & vendor coordination — IT asset coordinator, vendor management executive",
+          "Compliance & audit-ready IT documentation — documentation specialist, IT audit support",
         ],
       },
       {
@@ -290,34 +290,53 @@ export const services: ServicePage[] = [
     ],
     faq: [
       {
-        q: "What is Staffing & FMS Facility Management?",
-        a: "It combines IT and facility staffing — on-site engineers, helpdesk and support staff — with Facility Management Services (FMS) covering power, cooling, cabling and infrastructure upkeep on a managed schedule.",
+        q: "What does CoreGenix's IT staffing service include?",
+        a: "CoreGenix provides skilled staffing across three areas: IT infrastructure (network and systems engineers), data center operations (DC support and remote hands), and cyber security (SOC analysts and compliance staff) — deployed on-site, remote, or project-based.",
       },
       {
-        q: "What is the difference between staffing and FMS?",
-        a: "Staffing provides the skilled people you need, while FMS manages the facility itself — maintenance, health checks and infrastructure operations. CoreGenix delivers both as one managed engagement.",
+        q: "Does CoreGenix provide data center staffing?",
+        a: "Yes, CoreGenix provides data center support staffing including DC operations engineers, remote/smart hands support, and infrastructure monitoring staff for server rooms and data center environments.",
       },
       {
-        q: "How much do staffing and FMS services cost in India?",
-        a: "Costs depend on the number of staff and the facility scope. Contact CoreGenix for a free staffing and facility assessment.",
+        q: "Can CoreGenix staff cyber security roles like SOC analysts?",
+        a: "Yes, CoreGenix provides cyber security staffing including SOC analysts, security engineers, and GRC/compliance professionals to support security operations and audit requirements.",
+      },
+      {
+        q: "Can you staff for short-term IT projects?",
+        a: "Yes. CoreGenix scales IT, data center, and security engineering teams up or down for migrations, rollouts, audits, and other time-bound technical initiatives.",
+      },
+      {
+        q: "Do you provide IT staffing services across India?",
+        a: "Yes, CoreGenix delivers IT, data center, and cyber security staffing in Mumbai, Bengaluru, Jaipur, and across India with PAN-India operations.",
+      },
+      {
+        q: "What is the difference between on-site and remote IT staffing?",
+        a: "On-site staffing places dedicated engineers at your premises during working hours, while remote/hybrid staffing combines remote support with periodic on-site visits — CoreGenix offers both models depending on your operational needs.",
+      },
+      {
+        q: "Are your engineers certified?",
+        a: "Yes, depending on the role, engineers are screened for relevant certifications such as CCNA/CCNP for networking, CompTIA Server+/Linux+ for systems, and CEH, CISSP, or ISO 27001 Lead Auditor for security and compliance roles.",
+      },
+      {
+        q: "How quickly can CoreGenix deploy IT or security staff?",
+        a: "Typical deployment timelines range from a few days for pre-vetted roles to 2–3 weeks for specialized security or niche technical positions, depending on the skill set and engagement model required.",
       },
     ],
-    cta: "Keep your people productive and your facilities healthy — with one partner. Get a free assessment today.",
+    cta: "Need skilled IT, DC, or security talent — fast? Talk to us about your technical staffing needs and get a tailored deployment plan.",
   },
   {
     slug: "cloud-strategy",
-    title: "Cloud Strategy Consulting India",
+    title: "Cloud Strategy Consulting India | Azure, AWS & Hybrid Cloud Roadmap | CoreGenix",
     description:
-      "Cloud strategy consulting for Indian businesses — assess, plan and migrate to the right cloud with confidence. Azure, AWS, private & hybrid cloud.",
-    h1: "Cloud Strategy Consulting India",
+      "CoreGenix's cloud strategy consulting helps Indian businesses assess readiness, choose the right cloud (Azure, AWS, private or hybrid), and build a phased migration roadmap with honest cost modeling and governance built in.",
+    h1: "Cloud strategy consulting — the right cloud, the right way",
     intro:
-      "CoreGenix helps you build a cloud strategy that fits your business — not a one-size-fits-all pitch.",
+      "CoreGenix helps Indian businesses assess readiness, choose the right cloud platform — Azure, AWS, private or hybrid — and build a phased migration roadmap with honest cost modeling and governance built in from day one.",
     sections: [
       {
         heading: "The Problem",
         body: [
           "The cloud promise is real — flexibility, scale, lower cost. But moving without a plan is how businesses end up with orphaned workloads, bill shock, and security gaps.",
-          "Wrong choices at the start are expensive later. Which workloads move? Which stay? Public, private or hybrid? How much will it actually cost?",
         ],
       },
       {
@@ -327,7 +346,7 @@ export const services: ServicePage[] = [
           "Cloud readiness analysis — what can move, what should stay",
           "Cloud selection — Azure, AWS, private or hybrid, matched to your needs",
           "Migration roadmap — phased, low-risk plan with clear priorities",
-          "Cost modelling — honest estimates, no bill-shock surprises",
+          "Cost modeling — honest estimates, no bill-shock surprises",
           "Governance & security — policies, access controls and compliance from day one",
         ],
       },
@@ -335,64 +354,79 @@ export const services: ServicePage[] = [
         heading: "What You Get",
         body: [
           "A clear, actionable roadmap instead of confusion",
-          "The right cloud for each workload",
-          "Predictable costs and controlled risk",
-          "A partner who walks the journey with you",
+          "The right cloud for each individual workload",
+          "Predictable costs and controlled migration risk",
+          "A partner who walks the entire journey with you",
         ],
       },
       {
         heading: "Why Choose CoreGenix",
         body: [
-          "Vendor-neutral advice — we recommend what's right, not what's easy",
-          "Practical cloud readiness assessments and migration roadmaps",
-          "Cost and risk modeling before you commit a single rupee",
-          "22+ years across data centers, virtualization and cloud",
-          "Multi-cloud & hybrid expertise across Azure, AWS and private cloud",
-          "Mumbai office with Pan-India delivery",
+          "Vendor-neutral advice — we recommend what's right for you, not what's easiest to sell",
+          "Practical cloud readiness assessments and migration roadmaps, not generic slideware",
+          "Cost and risk modeling before you commit a single rupee to migration",
+          "22+ years of experience across data centers, virtualization, and cloud",
+          "Multi-cloud and hybrid expertise across Azure, AWS, and private cloud",
+          "Mumbai headquarters with Pan-India delivery capability",
         ],
       },
     ],
     faq: [
       {
         q: "What is a cloud strategy?",
-        a: "A cloud strategy is a plan that defines which workloads go to cloud, where (public, private, hybrid), how, and at what cost and risk.",
+        a: "A cloud strategy is a plan that defines which workloads move to the cloud, where they go (public, private, or hybrid), how they get there, and at what cost and risk. It aligns technology decisions with business goals before any migration begins.",
       },
       {
         q: "How long does cloud migration take?",
-        a: "It depends on complexity. Simple workloads can move in weeks; full estates take longer. Your roadmap defines realistic phases.",
+        a: "Timelines depend on complexity. Simple, self-contained workloads can migrate in a few weeks, while full data center estates with dependencies typically take several months across phased waves defined in the migration roadmap.",
       },
       {
         q: "How much does cloud consulting cost in India?",
-        a: "Costs depend on scope. Contact CoreGenix for a free cloud readiness assessment.",
+        a: "Cloud consulting costs vary by scope, workload count, and complexity. CoreGenix offers a free cloud readiness assessment to scope the engagement before providing a fixed quote.",
+      },
+      {
+        q: "What are the 6 Rs of cloud migration?",
+        a: "The 6 Rs of cloud migration are Rehost (lift-and-shift), Replatform (minor optimization), Repurchase (move to SaaS), Refactor (re-architect for cloud-native), Retain (keep on-premises), and Retire (decommission unused systems).",
+      },
+      {
+        q: "Is Azure or AWS better for my business?",
+        a: "Neither is universally better — the right choice depends on your existing tech stack, compliance needs, team skills, and cost structure. CoreGenix provides vendor-neutral assessments to recommend the platform that fits your specific workloads.",
+      },
+      {
+        q: "What is a hybrid cloud strategy?",
+        a: "A hybrid cloud strategy combines public cloud and private/on-premises infrastructure, allowing sensitive or latency-critical workloads to stay on-premises while other workloads scale on public cloud, connected through a unified management layer.",
+      },
+      {
+        q: "Can CoreGenix help with cloud migration for regulated industries?",
+        a: "Yes, CoreGenix builds cloud strategies with governance and compliance mapped in from day one, including alignment to ISO 27001 and India's DPDPA, for regulated sectors like BFSI, healthcare, and government.",
       },
     ],
-    cta: "Turn cloud confusion into a clear roadmap. Get a free cloud readiness assessment today.",
+    cta: "Ready to build a cloud strategy that actually fits? Get a free cloud readiness assessment and a clear, honest view of what migration would look like for your business.",
   },
   {
     slug: "cloud-infrastructure-management",
-    title: "Cloud Infrastructure Management Services Mumbai",
+    title: "Cloud Infrastructure Management Services Mumbai | 24x7 Managed Cloud | CoreGenix",
     description:
-      "Managed cloud infrastructure services — 24x7 monitoring, security, optimization and support for Azure, AWS, private & hybrid cloud.",
-    h1: "Cloud Infrastructure Management Services in Mumbai",
+      "CoreGenix manages your Azure, AWS, private, or hybrid cloud infrastructure — 24x7 monitoring, security patching, cost optimization, backup, and change management, delivered by our own NOC from Mumbai with Pan-India support.",
+    h1: "Cloud infrastructure management — cloud that runs itself, without the surprises",
     intro:
-      "CoreGenix manages your cloud infrastructure so it stays secure, performant and cost-efficient — around the clock.",
+      "CoreGenix manages your Azure, AWS, private, or hybrid cloud infrastructure so it stays secure, performant, and cost-efficient — around the clock. One accountable team for monitoring, security, cost, and backup, run out of our own NOC.",
     sections: [
       {
         heading: "The Problem",
         body: [
-          "Migrating to the cloud is the easy part. Running it well is the hard part. Environments drift, security gets sloppy, costs creep up, and nobody notices until something breaks or the bill surprises you.",
-          "Without dedicated cloud management, you pay more, risk more, and spend your team's time on babysitting instead of business.",
+          "Migrating to the cloud is the easy part. Running it well is the hard part. Environments drift, security gets sloppy, and costs creep up until something breaks or the bill surprises you.",
         ],
       },
       {
-        heading: "What We Manage",
+        heading: "What We Provide",
         body: [
-          "24x7 monitoring of workloads, uptime and performance",
+          "24x7 monitoring — workloads, uptime & performance",
           "Security management — patching, access control, vulnerability checks",
           "Cost optimization — right-sizing, savings recommendations",
-          "Backup & disaster recovery for your cloud workloads",
-          "Change management & releases done safely",
-          "Azure & AWS expertise across public, private and hybrid estates",
+          "Backup & disaster recovery — for your cloud workloads",
+          "Change & release management — done safely, every time",
+          "Multi-cloud expertise — Azure & AWS, public, private & hybrid",
         ],
       },
       {
@@ -410,7 +444,7 @@ export const services: ServicePage[] = [
           "24/7 cloud operations backed by our own NOC",
           "Proactive patch, configuration and performance management",
           "Cost optimization that cuts waste without cutting capability",
-          "22+ years of infrastructure and cloud operations",
+          "22+ years of infrastructure and cloud operations experience",
           "One team for cloud, security and backup — no handoffs",
           "Mumbai base with Pan-India delivery",
         ],
@@ -419,51 +453,55 @@ export const services: ServicePage[] = [
     faq: [
       {
         q: "What is cloud infrastructure management?",
-        a: "It's the day-to-day operation, monitoring, security, and optimization of your cloud environment — usually delivered as a managed service.",
+        a: "Cloud infrastructure management is the day-to-day operation, monitoring, security, and optimization of a cloud environment — including patching, access control, cost control, and backup — usually delivered as a managed service so an in-house team doesn't have to run it alone.",
       },
       {
-        q: "Should I outsource cloud management?",
-        a: "If you lack 24x7 in-house cloud expertise, outsourcing gives you reliability and cost control without hiring a large team.",
+        q: "Should I outsource cloud infrastructure management?",
+        a: "If you lack 24x7 in-house cloud expertise across monitoring, security, and cost control, outsourcing to a managed provider gives you reliability and predictable spend without hiring and retaining a large specialized team.",
       },
       {
-        q: "How much does managed cloud cost in India?",
-        a: "It depends on workload size and scope. Contact CoreGenix for a free cloud assessment.",
+        q: "How much does managed cloud infrastructure cost in India?",
+        a: "Managed cloud costs depend on workload size, cloud provider, and scope of services required. CoreGenix offers a free cloud infrastructure assessment to scope requirements before providing a fixed quote.",
+      },
+      {
+        q: "What is included in a cloud managed services SLA?",
+        a: "A typical cloud managed services SLA defines uptime guarantees, incident response times by severity level, monitoring coverage, and reporting cadence. CoreGenix backs its cloud management with defined response times across P1 to P4 severity levels.",
+      },
+      {
+        q: "Does CoreGenix manage both Azure and AWS?",
+        a: "Yes, CoreGenix provides managed services across Azure, AWS, private cloud, and hybrid cloud environments, with the same monitoring, security, and cost optimization approach regardless of platform.",
+      },
+      {
+        q: "How does cloud cost optimization work?",
+        a: "Cloud cost optimization involves right-sizing over-provisioned resources, identifying idle or unused workloads, recommending reserved instances or savings plans, and setting up cost alerts and governance to prevent future overspend.",
+      },
+      {
+        q: "What is the difference between cloud monitoring and cloud management?",
+        a: "Cloud monitoring tracks the health, performance, and availability of cloud resources and alerts on issues. Cloud management goes further, actively acting on those signals through patching, optimization, incident response, and change control.",
       },
     ],
-    cta: "Let your cloud work for you. Get a free cloud infrastructure assessment today.",
+    cta: "Let your cloud work for you. Get a free cloud infrastructure assessment and a clear view of where your environment stands today.",
   },
   {
     slug: "backup-recovery",
-    title: "Data Backup & Recovery Services India",
+    title: "Data Backup & Disaster Recovery Services India | RPO/RTO, 3-2-1 Backup | CoreGenix",
     description:
-      "Automated data backup, disaster recovery and business continuity services in India. Protect your critical data — always.",
-    h1: "Data Backup & Recovery Services in India",
+      "CoreGenix builds and manages data backup, disaster recovery, and business continuity solutions that actually restore when you need them — automated backup, offsite/cloud copies, defined RPO/RTO, and regular restore testing, Pan-India.",
+    h1: "Data backup & disaster recovery — backups that actually restore",
     intro:
-      "CoreGenix builds and manages backup and recovery solutions that actually work when you need them.",
+      "CoreGenix builds and manages backup, disaster recovery, and business continuity solutions that work when you actually need them — automated backup, offsite and cloud copies, defined RPO/RTO, and regular restore testing.",
     sections: [
       {
         heading: "The Problem",
         body: [
-          "Ransomware. Hard drive failure. Human error. A fire in the server room. Data loss happens to businesses that 'thought they were covered' — because the backup was never tested, or nobody noticed it had been failing for weeks.",
-          "Recovering from data loss is slow, expensive, and sometimes impossible. For most businesses, losing critical data isn't an inconvenience. It's an existential risk.",
-        ],
-      },
-      {
-        heading: "What We Provide",
-        body: [
-          "Automated backup — servers, databases, applications, endpoints",
-          "Offsite & cloud backup — protection even if your office is lost",
-          "Disaster recovery planning — defined RPO/RTO with a clear recovery path",
-          "Business continuity plans — keep operations running through disruption",
-          "Regular restore testing — we verify your backups actually restore",
-          "24x7 monitoring of backup jobs with alerting",
+          "Recovering from data loss is slow, expensive, and sometimes impossible. For most businesses, losing critical data isn't an inconvenience — it's an existential risk.",
         ],
       },
       {
         heading: "What You Get",
         body: [
           "Real confidence that your data is recoverable",
-          "Defined recovery time objectives — you know when you'll be back",
+          "Defined recovery time — you know when you'll be back",
           "Protection against ransomware and physical disasters",
           "A partner who tests backups, not just takes them",
         ],
@@ -483,18 +521,34 @@ export const services: ServicePage[] = [
     faq: [
       {
         q: "What is data backup and recovery?",
-        a: "Backup is copying your data to a safe location; recovery is restoring it after loss. Together they protect you from downtime and data loss.",
+        a: "Backup is the process of copying data to a safe, separate location. Recovery is restoring that data after loss, whether from ransomware, hardware failure, human error, or physical disaster. Together they protect a business from downtime and permanent data loss.",
       },
       {
-        q: "How often should I back up?",
-        a: "As often as your business can afford to lose changes. CoreGenix helps you define the right backup frequency and retention.",
+        q: "How often should I back up my data?",
+        a: "Backup frequency should match how much data a business can afford to lose, known as its Recovery Point Objective (RPO). Critical systems may need continuous or hourly backups, while less critical data may only need daily or weekly backups.",
       },
       {
-        q: "What is the difference between backup and DR?",
-        a: "Backup restores data; disaster recovery restores whole systems and operations at scale. Most businesses need both.",
+        q: "What is the difference between backup and disaster recovery?",
+        a: "Backup restores individual files or datasets. Disaster recovery restores entire systems, applications, and operations at scale after a major disruption, following a defined recovery plan. Most businesses need both working together.",
+      },
+      {
+        q: "What are RPO and RTO?",
+        a: "RPO (Recovery Point Objective) is the maximum acceptable amount of data loss, measured in time — how far back your last good backup can be. RTO (Recovery Time Objective) is the maximum acceptable downtime before systems must be restored and operational again.",
+      },
+      {
+        q: "What is the 3-2-1 backup rule?",
+        a: "The 3-2-1 backup rule means keeping 3 copies of your data, on 2 different types of storage media, with 1 copy stored offsite. This strategy protects against hardware failure, ransomware, and physical disasters affecting a single location.",
+      },
+      {
+        q: "How does backup protect against ransomware?",
+        a: "Ransomware-resilient backup relies on immutable or air-gapped copies that attackers cannot encrypt or delete, combined with offsite storage and regular restore testing to confirm recovery actually works when needed.",
+      },
+      {
+        q: "What is the difference between full, incremental, and differential backup?",
+        a: "A full backup copies all data every time. An incremental backup copies only data changed since the last backup of any type, making it fastest but slower to restore. A differential backup copies all changes since the last full backup, balancing speed and restore simplicity.",
       },
     ],
-    cta: "Test your backups before disaster tests you. Get a free backup assessment today.",
+    cta: "Test your backups before disaster tests you. Get a free backup assessment and find out whether your current backups would actually restore.",
   },
   {
     slug: "grc-dpdpa",
