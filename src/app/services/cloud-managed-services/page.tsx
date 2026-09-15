@@ -6,10 +6,12 @@ import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
+import CtaSection from "@/components/CtaSection";
 import JsonLd from "@/components/JsonLd";
 import { CheckIcon, ArrowRightIcon } from "@/components/Icons";
 import { SITE } from "@/lib/site";
 import "../[slug]/backup-recovery.css";
+import "../[slug]/service-landing.css";
 
 export const metadata: Metadata = {
   title: "Cloud Managed Services India | Strategy, Migration & Management | CoreGenix",
@@ -370,23 +372,7 @@ export default function CloudManagedServicesPage() {
         </section>
 
         {/* CTA */}
-        <section className="brr-closing">
-          <div className="container brr-closing-inner">
-            <Reveal>
-              <h2 className="section-title">Not sure which solution <span className="grad">fits your business?</span></h2>
-              <p className="brr-closing-sub">Talk to our experts for a free consultation and a tailored technology plan.</p>
-              <div className="brr-closing-meta">
-                <span>Call <a href="tel:+918355958119">+91 83559 58119</a></span>
-                <span>Email <a href="mailto:sales@cgcein.com">sales@cgcein.com</a></span>
-                <span>C 1405 Kailash Business Park, Vikhroli (W), Mumbai</span>
-              </div>
-              <Link href="/contact" className="btn btn-grad">
-                Get free consultation
-                <ArrowRightIcon />
-              </Link>
-            </Reveal>
-          </div>
-        </section>
+        <CtaSection title="Not sure which solution fits your business?" />
       </main>
       <Footer />
       <ScrollTop />

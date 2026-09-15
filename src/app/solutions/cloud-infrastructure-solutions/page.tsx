@@ -6,6 +6,7 @@ import JsonLd from "@/components/JsonLd";
 import CloudInfraSolutionsLanding from "@/components/CloudInfraSolutionsLanding";
 import { SITE } from "@/lib/site";
 import "../../services/[slug]/backup-recovery.css";
+import "../../services/[slug]/service-landing.css";
 
 const path = "/solutions/cloud-infrastructure-solutions";
 

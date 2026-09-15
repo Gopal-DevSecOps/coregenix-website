@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
+import CtaSection from "./CtaSection";
 import { CheckIcon, ArrowRightIcon } from "./Icons";
 
 const stats = [
@@ -330,23 +331,7 @@ export default function ItInfraSolutionsLanding() {
       </section>
 
       {/* CTA */}
-      <section className="brr-closing">
-        <div className="container brr-closing-inner">
-          <Reveal>
-            <h2 className="section-title">Not sure which solution <span className="grad">fits your business?</span></h2>
-            <p className="brr-closing-sub">Talk to our experts for a free consultation and a tailored technology plan.</p>
-            <div className="brr-closing-meta">
-              <span>Call <a href="tel:+918355958119">+91 83559 58119</a></span>
-              <span>Email <a href="mailto:sales@cgcein.com">sales@cgcein.com</a></span>
-              <span>C 1405 Kailash Business Park, Vikhroli (W), Mumbai</span>
-            </div>
-            <Link href="/contact" className="btn btn-grad">
-              Get free consultation
-              <ArrowRightIcon />
-            </Link>
-          </Reveal>
-        </div>
-      </section>
+      <CtaSection title="Not sure which solution fits your business?" />
     </>
   );
 }

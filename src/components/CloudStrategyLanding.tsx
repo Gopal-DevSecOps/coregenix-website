@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
+import CtaSection from "./CtaSection";
 import { CheckIcon, ArrowRightIcon } from "./Icons";
 import type { ServicePage } from "@/data/services";
 
@@ -425,23 +426,7 @@ export default function CloudStrategyLanding({ service }: Props) {
       </section>
 
       {/* CTA */}
-      <section className="brr-closing">
-        <div className="container brr-closing-inner">
-          <Reveal>
-            <h2 className="section-title">Ready to build a cloud strategy that <span className="grad">actually fits?</span></h2>
-            <p className="brr-closing-sub">{service.cta}</p>
-            <div className="brr-closing-meta">
-              <span>Call <a href="tel:+918355958119">+91 83559 58119</a></span>
-              <span>Email <a href="mailto:sales@cgcein.com">sales@cgcein.com</a></span>
-              <span>C 1405 Kailash Business Park, Vikhroli (W), Mumbai</span>
-            </div>
-            <Link href="/contact" className="btn btn-grad">
-              Get Free Consultation
-              <ArrowRightIcon />
-            </Link>
-          </Reveal>
-        </div>
-      </section>
+      <CtaSection title="Ready to build a cloud strategy that actually fits?" />
     </>
   );
 }

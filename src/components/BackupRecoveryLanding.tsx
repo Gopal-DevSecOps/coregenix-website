@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
+import CtaSection from "./CtaSection";
 import {
   RefreshIcon,
   ClockIcon,
@@ -205,8 +206,12 @@ export default function BackupRecoveryLanding({ service }: Props) {
             center
             light
             eyebrow="The Problem We Solve"
-            
-            desc=" Ransomware, hardware failure, human error, or a fire in the server room — data loss happens to businesses that hought they were covered."
+            title={
+              <>
+                Data loss happens to businesses that <span className="grad">thought they were covered</span>
+              </>
+            }
+            desc="Ransomware, hardware failure, human error, or a fire in the server room — data loss happens to businesses that thought they were covered."
           />
           <div className="brr-challenge-grid">
             {challenges.map((item, i) => (
@@ -233,7 +238,11 @@ export default function BackupRecoveryLanding({ service }: Props) {
           <SectionHeading
             center
             eyebrow="What We Deliver"
-           
+            title={
+              <>
+                Complete Backup &amp; Recovery <span className="grad">Solutions</span>
+              </>
+            }
             desc="A complete backup and recovery engagement — from daily backup jobs to a tested disaster recovery plan."
           />
           <div className="brr-deliver-grid">
@@ -288,7 +297,11 @@ export default function BackupRecoveryLanding({ service }: Props) {
           <SectionHeading
             center
             eyebrow="The 3-2-1 Backup Rule"
-           
+            title={
+              <>
+                Built to survive <span className="grad">ransomware &amp; disaster</span>
+              </>
+            }
             desc="The industry-standard approach CoreGenix builds every backup strategy around."
           />
           <div className="brr-rule-grid">
@@ -499,23 +512,7 @@ export default function BackupRecoveryLanding({ service }: Props) {
       </section>
 
       {/* CTA */}
-      <section className="brr-closing">
-        <div className="container brr-closing-inner">
-          <Reveal>
-            <h2 className="section-title">Test your backups before <span className="grad">disaster tests you</span></h2>
-            <p className="brr-closing-sub">{service.cta}</p>
-            <div className="brr-closing-meta">
-              <span>Call <a href="tel:+918355958119">+91 83559 58119</a></span>
-              <span>Email <a href="mailto:sales@cgcein.com">sales@cgcein.com</a></span>
-              <span>C 1405 Kailash Business Park, Vikhroli (W), Mumbai</span>
-            </div>
-            <Link href="/contact" className="btn btn-grad">
-              Get Free Consultation
-              <ArrowRightIcon />
-            </Link>
-          </Reveal>
-        </div>
-      </section>
+      <CtaSection title="Test your backups before disaster tests you" />
     </>
   );
 }
