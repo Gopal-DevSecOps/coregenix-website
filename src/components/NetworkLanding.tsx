@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
+import SectionHeading from "./SectionHeading";
 import { CheckIcon, ArrowRightIcon } from "./Icons";
 import type { SolutionPage } from "@/data/solutionPages";
 
@@ -8,10 +10,10 @@ interface Props {
 }
 
 const stats = [
-  { value: "22+", label: "Years of experience" },
-  { value: "119+", label: "Projects delivered" },
-  { value: "75+", label: "Happy clients" },
-  { value: "24×7", label: "Pan-India support" },
+  { value: "22+", label: "Years of Experience" },
+  { value: "119+", label: "Projects Delivered" },
+  { value: "75+", label: "Happy Clients" },
+  { value: "24×7", label: "Pan-India Support" },
 ];
 
 const challenges = [
@@ -55,47 +57,64 @@ const industries = [
   { title: "Education", desc: "Enterprise Wi-Fi built for high-density campus environments." },
 ];
 
-const faqs = [
-  { q: "What are network infrastructure services?", a: "Network infrastructure services cover the design, deployment, security, and management of the networks a business runs on — including switching, routing, Wi-Fi, structured cabling, and ongoing connectivity monitoring." },
-  { q: "How much does network infrastructure setup cost in India?", a: "Network infrastructure costs depend on site size, number of users, and requirements such as redundancy and security. CoreGenix provides a free site assessment and a transparent quote before work begins." },
-  { q: "Why does my business need structured cabling?", a: "Structured cabling provides a clean, organized, high-performance foundation for a network, making it faster, more reliable, and far easier to troubleshoot and maintain than ad hoc cabling." },
-  { q: "What is the difference between LAN, WAN, and SD-WAN?", a: "A LAN (Local Area Network) connects devices within a single site. A WAN (Wide Area Network) connects multiple sites over long distances, often via leased lines or the internet. SD-WAN (Software-Defined WAN) manages WAN connections intelligently across multiple links, improving performance and reducing cost compared to traditional WAN." },
-  { q: "What is network segmentation and why does it matter?", a: "Network segmentation divides a network into isolated zones so that a security breach in one segment cannot easily spread to others. It limits the blast radius of an attack and is a core part of modern network security design." },
-  { q: "Does CoreGenix design enterprise Wi-Fi networks?", a: "Yes, CoreGenix designs and deploys enterprise Wi-Fi with secure access controls, including site surveys for coverage planning, guest network isolation, and integration with existing network security policies." },
-  { q: "What is included in network monitoring?", a: "Network monitoring includes 24x7 visibility into uptime, bandwidth utilization, and device health, with automated alerting on outages or performance degradation, backed by a Network Operations Center for rapid response." },
-];
-
 export default function NetworkLanding({ service }: Props) {
+  const whatYouGet = service.sections.find((s) => s.heading === "What You Get");
+  const whyChoose = service.sections.find((s) => s.heading === "Why Choose CoreGenix");
+
   return (
-    <main>
+    <>
       {/* Hero */}
-      <section className="br-hero">
+      <section className="brr-hero">
+        <div className="float-shape float-shape-1" aria-hidden="true" />
+        <div className="float-shape float-shape-2" aria-hidden="true" />
+        <div className="container brr-hero-grid">
+          <div className="brr-hero-content">
+            <Reveal as="span" className="eyebrow" delay={1}>
+              IT Infrastructure Solutions
+            </Reveal>
+            <Reveal delay={2}>
+              <h1 className="section-title brr-hero-title">
+                {service.h1.split("—").map((part, i) =>
+                  i === 0 ? part : <span key={i} className="grad"> — {part}</span>
+                )}
+              </h1>
+            </Reveal>
+            <Reveal as="p" className="brr-hero-desc" delay={3}>
+              {service.intro}
+            </Reveal>
+            <Reveal as="div" className="brr-hero-actions" delay={4}>
+              <Link href="/contact" className="btn btn-grad">
+                Get Free Consultation
+                <ArrowRightIcon />
+              </Link>
+              <Link href="/solutions" className="btn btn-hero-secondary">
+                View All Solutions
+              </Link>
+            </Reveal>
+          </div>
+          <Reveal className="brr-hero-media" delay={3}>
+            <div className="brr-hero-img">
+              <Image
+                src="/images/coregenix/service-7.jpg"
+                alt="Enterprise network infrastructure"
+                width={900}
+                height={600}
+                className="main-img"
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="brr-stats" aria-label="Network solutions by the numbers">
         <div className="container">
-          <Reveal as="span" className="br-eyebrow" delay={1}>
-            <span className="br-dot" />
-            IT Infrastructure Solutions
-          </Reveal>
-          <Reveal delay={2}>
-            <h1 className="br-hero-title">{service.h1}</h1>
-          </Reveal>
-          <Reveal as="p" className="br-hero-desc" delay={3}>
-            {service.intro}
-          </Reveal>
-          <Reveal as="div" className="br-hero-actions" delay={4}>
-            <Link href="/contact" className="btn btn-grad">
-              Get free consultation
-              <ArrowRightIcon />
-            </Link>
-            <Link href="/solutions" className="btn btn-hero-secondary">
-              View all solutions
-            </Link>
-          </Reveal>
-          <div className="br-stat-bar">
+          <div className="brr-stats-grid">
             {stats.map((stat, i) => (
               <Reveal key={stat.label} delay={(i % 4) + 1}>
-                <div className="br-stat">
-                  <span className="br-stat-num">{stat.value}</span>
-                  <span className="br-stat-label">{stat.label}</span>
+                <div className="brr-stat">
+                  <span className="brr-stat-value">{stat.value}</span>
+                  <span className="brr-stat-label">{stat.label}</span>
                 </div>
               </Reveal>
             ))}
@@ -103,164 +122,191 @@ export default function NetworkLanding({ service }: Props) {
         </div>
       </section>
 
-      {/* Answer Block */}
-      <section className="br-answer">
-        <div className="container br-answer-grid">
-          <Reveal delay={1}>
-            <h2>What are network infrastructure services?</h2>
-          </Reveal>
-          <Reveal as="div" className="br-answer-copy" delay={2}>
-            <p>Network infrastructure services cover the design, deployment, security, and management of the networks a business runs on — including LAN, WAN, and SD-WAN architecture, structured cabling, enterprise Wi-Fi, network security, and 24x7 monitoring. CoreGenix delivers all of this as a single, accountable engagement for businesses across India.</p>
-          </Reveal>
+      {/* What is */}
+      <section className="section brr-what">
+        <div className="container">
+          <SectionHeading
+            center
+            eyebrow="Network Infrastructure"
+            title={
+              <>
+                What are <span className="grad">network infrastructure services?</span>
+              </>
+            }
+            desc="The design, deployment, security, and management of the networks a business runs on — including LAN, WAN, and SD-WAN architecture, structured cabling, enterprise Wi-Fi, network security, and 24x7 monitoring."
+          />
+          <div className="brr-check-grid">
+            {[
+              "Network design & architecture",
+              "Structured cabling",
+              "Wired & wireless",
+              "Network security",
+              "24x7 NOC monitoring",
+              "Performance optimization",
+            ].map((item, i) => (
+              <Reveal key={item} delay={(i % 3) + 1}>
+                <div className="brr-check-item">
+                  <span className="ce-check">
+                    <CheckIcon />
+                  </span>
+                  {item}
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Challenge */}
-      <section className="br-challenge">
+      <section className="section brr-challenge section-dark">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>The problem we solve</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              An outdated or poorly designed network slows every application, frustrates every employee, and exposes the whole business to risk — but most businesses don&apos;t have the in-house expertise to plan and run enterprise-grade networks.
-            </Reveal>
-          </div>
-          <div className="br-challenge-grid">
+          <SectionHeading
+            center
+            light
+            eyebrow="The Problem We Solve"
+            title={
+              <>
+                An outdated network slows <span className="grad">everything down</span>
+              </>
+            }
+            desc="An outdated or poorly designed network slows every application, frustrates every employee, and exposes the whole business to risk."
+          />
+          <div className="brr-challenge-grid">
             {challenges.map((item, i) => (
               <Reveal key={item} delay={(i % 3) + 1}>
-                <div className="br-challenge-item">
-                  <span className="br-challenge-icon">
-                    <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" strokeWidth="1.3"/><path d="M8 4v5M8 11.5v.1" stroke="currentColor" strokeWidth="1.3"/></svg>
-                  </span>
+                <div className="brr-challenge-card">
                   <p>{item}</p>
                 </div>
               </Reveal>
             ))}
           </div>
-          <Reveal as="div" className="br-challenge-note" delay={3}>
-            <p>Downtime, slow performance, and security gaps all trace back to network design. <strong>The right network is invisible — it just works.</strong> Getting there takes specialists.</p>
+          <Reveal as="div" className="brr-challenge-note" delay={3}>
+            <p>Downtime, slow performance, and security gaps all trace back to network design. <strong>The right network is invisible — it just works.</strong></p>
           </Reveal>
         </div>
       </section>
 
       {/* Deliver */}
-      <section className="br-deliver">
+      <section className="section brr-deliver">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>What we deliver</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              A complete network engagement — design, cabling, wireless, security, monitoring, and optimization, under one accountable team.
-            </Reveal>
-          </div>
-          {deliverables.map((d) => (
-            <Reveal key={d.num} delay={1}>
-              <div className="br-phase">
-                <span className="br-phase-num">{d.num}</span>
-                <div>
+          <SectionHeading
+            center
+            eyebrow="What We Deliver"
+            title={
+              <>
+                Complete Network <span className="grad">Engagements</span>
+              </>
+            }
+            desc="Design, cabling, wireless, security, monitoring, and optimization — under one accountable team."
+          />
+          <div className="brr-deliver-grid">
+            {deliverables.map((d, i) => (
+              <Reveal key={d.num} delay={(i % 3) + 1}>
+                <div className="brr-deliver-card">
+                  <span className="brr-deliver-num">{d.num}</span>
                   <h3>{d.title}</h3>
-                  <p className="br-phase-tag">{d.tag}</p>
+                  <p className="brr-deliver-tag">{d.tag}</p>
+                  <ul className="brr-deliver-list">
+                    {d.items.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
                 </div>
-                <ul className="br-phase-list">
-                  {d.items.map((item) => <li key={item}>{item}</li>)}
-                </ul>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* LAN vs WAN vs SD-WAN */}
-      <section className="br-rpo-rto">
+      <section className="section brr-table-sec">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>LAN vs. WAN vs. SD-WAN</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              Three terms that come up in every network conversation — here&apos;s what each actually means.
-            </Reveal>
-          </div>
-          <Reveal delay={3}>
-            <div className="br-table-wrap">
-              <table className="br-table">
-                <thead>
-                  <tr>
-                    <th>Term</th>
-                    <th>What it connects</th>
-                    <th>Typical use case</th>
+          <SectionHeading
+            center
+            eyebrow="Networking Basics"
+            title={
+              <>
+                LAN vs. WAN <span className="grad">vs. SD-WAN</span>
+              </>
+            }
+            desc="Three terms that come up in every network conversation — here's what each actually means."
+          />
+          <div className="brr-table-wrap">
+            <table className="brr-table">
+              <thead>
+                <tr>
+                  <th>Term</th>
+                  <th>What it connects</th>
+                  <th>Typical use case</th>
+                </tr>
+              </thead>
+              <tbody>
+                {lanWanData.map((row) => (
+                  <tr key={row.term}>
+                    <td><strong>{row.term}</strong></td>
+                    <td>{row.connects}</td>
+                    <td>{row.use}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {lanWanData.map((row) => (
-                    <tr key={row.term}>
-                      <td>{row.term}</td>
-                      <td>{row.connects}</td>
-                      <td>{row.use}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </Reveal>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
       {/* Cabling Table */}
-      <section className="br-rpo-rto">
+      <section className="section brr-table-sec">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>Structured cabling standards, compared</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              The cabling category determines your network&apos;s ceiling — CoreGenix specifies the right one for your actual needs, not the cheapest one.
-            </Reveal>
-          </div>
-          <Reveal delay={3}>
-            <div className="br-table-wrap">
-              <table className="br-table">
-                <thead>
-                  <tr>
-                    <th>Standard</th>
-                    <th>Max speed</th>
-                    <th>Typical distance</th>
-                    <th>Best for</th>
+          <SectionHeading
+            center
+            eyebrow="Cabling Standards"
+            title={
+              <>
+                Structured cabling <span className="grad">standards, compared</span>
+              </>
+            }
+            desc="The cabling category determines your network's ceiling — CoreGenix specifies the right one for your actual needs."
+          />
+          <div className="brr-table-wrap">
+            <table className="brr-table">
+              <thead>
+                <tr>
+                  <th>Standard</th>
+                  <th>Max speed</th>
+                  <th>Typical distance</th>
+                  <th>Best for</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cablingData.map((row) => (
+                  <tr key={row.standard}>
+                    <td><strong>{row.standard}</strong></td>
+                    <td>{row.speed}</td>
+                    <td>{row.distance}</td>
+                    <td>{row.best}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {cablingData.map((row) => (
-                    <tr key={row.standard}>
-                      <td>{row.standard}</td>
-                      <td>{row.speed}</td>
-                      <td>{row.distance}</td>
-                      <td>{row.best}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </Reveal>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
-      {/* Security Chips */}
-      <section className="br-industries">
+      {/* Security chips */}
+      <section className="section brr-deliver">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>Network security controls we implement</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              Security built into the network design, not bolted on as an afterthought.
-            </Reveal>
-          </div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 8 }}>
-            {securityChips.map((chip) => (
-              <Reveal key={chip} delay={1}>
-                <span style={{ background: "var(--bg-darker)", border: "1px solid var(--border)", borderRadius: 100, padding: "8px 20px", fontSize: 14, fontWeight: 500, color: "var(--navy)" }}>{chip}</span>
+          <SectionHeading
+            center
+            eyebrow="Security Built In"
+            title={
+              <>
+                Network security <span className="grad">controls we implement</span>
+              </>
+            }
+            desc="Security built into the network design, not bolted on as an afterthought."
+          />
+          <div className="brr-tags">
+            {securityChips.map((chip, i) => (
+              <Reveal key={chip} delay={(i % 4) + 1}>
+                <span className="brr-tag">{chip}</span>
               </Reveal>
             ))}
           </div>
@@ -268,23 +314,27 @@ export default function NetworkLanding({ service }: Props) {
       </section>
 
       {/* Industries */}
-      <section className="br-industries">
+      <section className="section brr-audience">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>Network infrastructure for every sector</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              Design and security tuned to the connectivity needs of your industry.
-            </Reveal>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginTop: 8 }}>
+          <SectionHeading
+            center
+            eyebrow="Who Needs It"
+            title={
+              <>
+                Network infrastructure <span className="grad">for every sector</span>
+              </>
+            }
+            desc="Design and security tuned to the connectivity needs of your industry."
+          />
+          <div className="wwp-grid">
             {industries.map((ind, i) => (
-              <Reveal key={ind.title} delay={(i % 3) + 1}>
-                <div style={{ background: "var(--bg-dark)", border: "1px solid var(--border)", borderRadius: 12, padding: 24 }}>
-                  <h3 style={{ fontFamily: "var(--font-heading)", fontSize: 16, fontWeight: 700, color: "var(--navy)", margin: "0 0 8px" }}>{ind.title}</h3>
-                  <p style={{ fontSize: 14, color: "var(--text-soft)", margin: 0 }}>{ind.desc}</p>
-                </div>
+              <Reveal key={ind.title} delay={(i % 3) + 1} className="wwp-wrap">
+                <article className="wwp-card brr-audience-card">
+                  <div className="wwp-card-inner">
+                    <h3>{ind.title}</h3>
+                    <p>{ind.desc}</p>
+                  </div>
+                </article>
               </Reveal>
             ))}
           </div>
@@ -292,74 +342,84 @@ export default function NetworkLanding({ service }: Props) {
       </section>
 
       {/* Outcomes */}
-      <section className="br-outcomes">
-        <div className="container">
-          <div className="br-section-head br-section-head-light">
-            <Reveal delay={1}>
-              <h2>Outcomes that move your business</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              What you get once your network is properly designed and managed.
-            </Reveal>
+      {whatYouGet && (
+        <section className="section brr-outcomes section-dark">
+          <div className="container">
+            <SectionHeading
+              center
+              light
+              eyebrow="Outcomes"
+              title={
+                <>
+                  Outcomes that <span className="grad">move your business</span>
+                </>
+              }
+              desc="What you get once your network is properly designed and managed."
+            />
+            <div className="brr-outcome-grid">
+              {whatYouGet.body.map((item, i) => (
+                <Reveal key={item} delay={(i % 4) + 1}>
+                  <div className="brr-outcome-item">
+                    <span className="ce-check">
+                      <CheckIcon />
+                    </span>
+                    <p>{item}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
-          <div className="br-outcome-grid">
-            {service.sections.find((s) => s.heading === "What You Get")?.body.map((item, i) => (
-              <Reveal key={item} delay={(i % 4) + 1}>
-                <div className="br-outcome-item">
-                  <CheckIcon className="br-outcome-check" />
-                  <p>{item}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* Why Choose */}
-      <section className="br-why">
-        <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>The CoreGenix difference</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              What sets our network delivery apart.
-            </Reveal>
+      {/* Why choose */}
+      {whyChoose && (
+        <section className="section brr-why">
+          <div className="container">
+            <SectionHeading
+              center
+              eyebrow="The CoreGenix Difference"
+              title={
+                <>
+                  Why teams choose <span className="grad">CoreGenix</span>
+                </>
+              }
+              desc="What sets our network delivery apart."
+            />
+            <div className="brr-why-grid">
+              {whyChoose.body.map((item, i) => (
+                <Reveal key={item} delay={(i % 3) + 1}>
+                  <div className="brr-why-card">
+                    <span className="brr-why-num">{String(i + 1).padStart(2, "0")}</span>
+                    <h3>{item}</h3>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
-          <div className="br-why-grid">
-            {service.sections.find((s) => s.heading === "Why Choose CoreGenix")?.body.map((item, i) => (
-              <Reveal key={item} delay={(i % 3) + 1}>
-                <div className="br-why-cell">
-                  <span className="br-why-num">{String(i + 1).padStart(2, "0")}</span>
-                  <h3>{item}</h3>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* FAQ */}
-      <section className="br-faq">
+      <section className="section brr-faq">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>Frequently asked questions</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              Straight answers about network design, cabling, and security.
-            </Reveal>
-          </div>
-          <div className="br-faq-list">
-            {faqs.map((f, i) => (
-              <Reveal key={f.q} delay={(i % 3) + 1}>
-                <details className="br-faq-item" open={i === 0}>
-                  <summary>
-                    {f.q}
-                    <span className="br-plus" />
-                  </summary>
-                  <div className="br-faq-answer">{f.a}</div>
-                </details>
+          <SectionHeading
+            center
+            eyebrow="FAQ"
+            title={
+              <>
+                Frequently asked <span className="grad">questions</span>
+              </>
+            }
+            desc="Straight answers about network design, cabling, and security."
+          />
+          <div className="brr-faq-list">
+            {service.faq.map((f) => (
+              <Reveal key={f.q}>
+                <div className="brr-faq-item">
+                  <h3>{f.q}</h3>
+                  <p>{f.a}</p>
+                </div>
               </Reveal>
             ))}
           </div>
@@ -367,25 +427,23 @@ export default function NetworkLanding({ service }: Props) {
       </section>
 
       {/* CTA */}
-      <section className="br-closing">
-        <div className="container">
+      <section className="brr-closing">
+        <div className="container brr-closing-inner">
           <Reveal>
-            <div className="br-closing-inner">
-              <h2>Build a network that never holds your business back</h2>
-              <p className="br-closing-sub">Get a free network assessment and a clear view of what your infrastructure needs.</p>
-              <div className="br-closing-meta">
-                <span>Call <a href="tel:+918355958119">+91 83559 58119</a></span>
-                <span>Email <a href="mailto:sales@cgcein.com">sales@cgcein.com</a></span>
-                <span>C 1405 Kailash Business Park, Vikhroli (W), Mumbai</span>
-              </div>
-              <Link href="/contact" className="btn btn-grad">
-                Get free consultation
-                <ArrowRightIcon />
-              </Link>
+            <h2 className="section-title">Build a network that <span className="grad">never holds you back</span></h2>
+            <p className="brr-closing-sub">{service.cta}</p>
+            <div className="brr-closing-meta">
+              <span>Call <a href="tel:+918355958119">+91 83559 58119</a></span>
+              <span>Email <a href="mailto:sales@cgcein.com">sales@cgcein.com</a></span>
+              <span>C 1405 Kailash Business Park, Vikhroli (W), Mumbai</span>
             </div>
+            <Link href="/contact" className="btn btn-grad">
+              Get Free Consultation
+              <ArrowRightIcon />
+            </Link>
           </Reveal>
         </div>
       </section>
-    </main>
+    </>
   );
 }

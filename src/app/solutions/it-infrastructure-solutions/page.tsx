@@ -5,7 +5,7 @@ import ScrollTop from "@/components/ScrollTop";
 import JsonLd from "@/components/JsonLd";
 import ItInfraSolutionsLanding from "@/components/ItInfraSolutionsLanding";
 import { SITE } from "@/lib/site";
-import "../../services/[slug]/cloud-infra-mgmt.css";
+import "../../services/[slug]/backup-recovery.css";
 
 const path = "/solutions/it-infrastructure-solutions";
 

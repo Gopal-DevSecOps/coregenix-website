@@ -1,5 +1,7 @@
-﻿import Link from "next/link";
+﻿import Image from "next/image";
+import Link from "next/link";
 import Reveal from "./Reveal";
+import SectionHeading from "./SectionHeading";
 import { CheckIcon, ArrowRightIcon } from "./Icons";
 import type { ServicePage } from "@/data/services";
 
@@ -8,10 +10,10 @@ interface Props {
 }
 
 const stats = [
-  { value: "22+", label: "Years of experience" },
-  { value: "119+", label: "Projects delivered" },
-  { value: "75+", label: "Happy clients" },
-  { value: "24×7", label: "Pan-India support" },
+  { value: "22+", label: "Years of Experience" },
+  { value: "119+", label: "Projects Delivered" },
+  { value: "75+", label: "Happy Clients" },
+  { value: "24×7", label: "Pan-India Support" },
 ];
 
 const challenges = [
@@ -92,35 +94,59 @@ export default function CloudStrategyLanding({ service }: Props) {
   const whyChoose = service.sections.find((s) => s.heading === "Why Choose CoreGenix");
 
   return (
-    <main>
+    <>
       {/* Hero */}
-      <section className="br-hero">
+      <section className="brr-hero">
+        <div className="float-shape float-shape-1" aria-hidden="true" />
+        <div className="float-shape float-shape-2" aria-hidden="true" />
+        <div className="container brr-hero-grid">
+          <div className="brr-hero-content">
+            <Reveal as="span" className="eyebrow" delay={1}>
+              Cloud Managed Services
+            </Reveal>
+            <Reveal delay={2}>
+              <h1 className="section-title brr-hero-title">
+                {service.h1.split("—").map((part, i) =>
+                  i === 0 ? part : <span key={i} className="grad"> — {part}</span>
+                )}
+              </h1>
+            </Reveal>
+            <Reveal as="p" className="brr-hero-desc" delay={3}>
+              {service.intro}
+            </Reveal>
+            <Reveal as="div" className="brr-hero-actions" delay={4}>
+              <Link href="/contact" className="btn btn-grad">
+                Get Free Consultation
+                <ArrowRightIcon />
+              </Link>
+              <Link href="/services" className="btn btn-hero-secondary">
+                View All Services
+              </Link>
+            </Reveal>
+          </div>
+          <Reveal className="brr-hero-media" delay={3}>
+            <div className="brr-hero-img">
+              <Image
+                src="/images/coregenix/hero-2.png"
+                alt="Cloud strategy consulting"
+                width={900}
+                height={600}
+                className="main-img"
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="brr-stats" aria-label="Cloud strategy by the numbers">
         <div className="container">
-          <Reveal as="span" className="br-eyebrow" delay={1}>
-            <span className="br-dot" />
-            Cloud Managed Services
-          </Reveal>
-          <Reveal delay={2}>
-            <h1 className="br-hero-title">{service.h1}</h1>
-          </Reveal>
-          <Reveal as="p" className="br-hero-desc" delay={3}>
-            {service.intro}
-          </Reveal>
-          <Reveal as="div" className="br-hero-actions" delay={4}>
-            <Link href="/contact" className="btn btn-grad">
-              Get free consultation
-              <ArrowRightIcon />
-            </Link>
-            <Link href="/services" className="btn btn-hero-secondary">
-              View all services
-            </Link>
-          </Reveal>
-          <div className="br-stat-bar">
+          <div className="brr-stats-grid">
             {stats.map((stat, i) => (
               <Reveal key={stat.label} delay={(i % 4) + 1}>
-                <div className="br-stat">
-                  <span className="br-stat-num">{stat.value}</span>
-                  <span className="br-stat-label">{stat.label}</span>
+                <div className="brr-stat">
+                  <span className="brr-stat-value">{stat.value}</span>
+                  <span className="brr-stat-label">{stat.label}</span>
                 </div>
               </Reveal>
             ))}
@@ -128,90 +154,118 @@ export default function CloudStrategyLanding({ service }: Props) {
         </div>
       </section>
 
-      {/* Answer Block */}
-      <section className="br-answer">
-        <div className="container br-answer-grid">
-          <Reveal delay={1}>
-            <h2>What is cloud strategy consulting?</h2>
-          </Reveal>
-          <Reveal as="div" className="br-answer-copy" delay={2}>
-            <p>Cloud strategy consulting is the process of assessing an organization&apos;s current IT environment, determining which workloads are ready to move to the cloud, selecting the right cloud model — public (Azure, AWS), private, or hybrid — and building a phased migration roadmap with cost modeling and governance planned in advance. CoreGenix delivers this as a structured, vendor-neutral engagement for businesses across India.</p>
-          </Reveal>
+      {/* What is */}
+      <section className="section brr-what">
+        <div className="container">
+          <SectionHeading
+            center
+            eyebrow="Cloud Strategy Consulting"
+            title={
+              <>
+                What is <span className="grad">cloud strategy consulting?</span>
+              </>
+            }
+            desc="Assessing your current IT environment, determining which workloads are ready to move, selecting the right cloud model, and building a phased migration roadmap with cost modeling and governance planned in advance."
+          />
+          <div className="brr-check-grid">
+            {[
+              "Current-state assessment",
+              "Cloud readiness analysis",
+              "Vendor-neutral platform selection",
+              "Phased migration roadmap",
+              "Honest TCO & cost modeling",
+              "Governance & security from day one",
+            ].map((item, i) => (
+              <Reveal key={item} delay={(i % 3) + 1}>
+                <div className="brr-check-item">
+                  <span className="ce-check">
+                    <CheckIcon />
+                  </span>
+                  {item}
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Challenge */}
-      <section className="br-challenge">
+      <section className="section brr-challenge section-dark">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>The problem we solve</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              The cloud promise is real — flexibility, scale, lower cost. But moving without a plan is how businesses end up with orphaned workloads, bill shock, and security gaps.
-            </Reveal>
-          </div>
-          <div className="br-challenge-grid">
+          <SectionHeading
+            center
+            light
+            eyebrow="The Problem We Solve"
+            title={
+              <>
+                The cloud promise is real — <span className="grad">but only with a plan</span>
+              </>
+            }
+            desc="Moving without a plan is how businesses end up with orphaned workloads, bill shock, and security gaps."
+          />
+          <div className="brr-challenge-grid">
             {challenges.map((item, i) => (
               <Reveal key={item} delay={(i % 3) + 1}>
-                <div className="br-challenge-item">
-                  <span className="br-challenge-icon">
-                    <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" strokeWidth="1.3"/><path d="M8 4v5M8 11.5v.1" stroke="currentColor" strokeWidth="1.3"/></svg>
-                  </span>
+                <div className="brr-challenge-card">
                   <p>{item}</p>
                 </div>
               </Reveal>
             ))}
           </div>
-          <Reveal as="div" className="br-challenge-note" delay={3}>
-            <p>Wrong choices at the start are expensive later. <strong>CoreGenix answers the hard questions first</strong> — which workloads move, public or private or hybrid, and what it will actually cost — before a single workload is touched.</p>
+          <Reveal as="div" className="brr-challenge-note" delay={3}>
+            <p>Wrong choices at the start are expensive later. <strong>CoreGenix answers the hard questions first</strong> — which workloads move, public or private or hybrid, and what it will actually cost.</p>
           </Reveal>
         </div>
       </section>
 
-      {/* What We Do — Phases */}
-      <section className="br-deliver">
+      {/* Phases */}
+      <section className="section brr-deliver">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>End-to-end cloud strategy, in six phases</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              A structured engagement that takes you from current state to a confident, low-risk cloud roadmap — with a concrete deliverable at every stage.
-            </Reveal>
-          </div>
-          {phases.map((d) => (
-            <Reveal key={d.num} delay={1}>
-              <div className="br-phase">
-                <span className="br-phase-num">{d.num}</span>
-                <div>
+          <SectionHeading
+            center
+            eyebrow="How We Work"
+            title={
+              <>
+                End-to-end cloud strategy, <span className="grad">in six phases</span>
+              </>
+            }
+            desc="A structured engagement that takes you from current state to a confident, low-risk cloud roadmap — with a concrete deliverable at every stage."
+          />
+          <div className="brr-deliver-grid">
+            {phases.map((d, i) => (
+              <Reveal key={d.num} delay={(i % 3) + 1}>
+                <div className="brr-deliver-card">
+                  <span className="brr-deliver-num">{d.num}</span>
                   <h3>{d.title}</h3>
-                  <p className="br-phase-tag">{d.tag}</p>
+                  <p className="brr-deliver-tag">{d.tag}</p>
+                  <ul className="brr-deliver-list">
+                    {d.items.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
                 </div>
-                <ul className="br-phase-list">
-                  {d.items.map((item) => <li key={item}>{item}</li>)}
-                </ul>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* 6 Rs */}
-      <section className="br-rpo-rto">
+      <section className="section brr-rpo section-dark">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>The 6 Rs of cloud migration</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              Every workload gets classified into one of six migration strategies during the readiness analysis phase — this determines effort, cost, and timeline.
-            </Reveal>
-          </div>
-          <div className="br-rpo-rto-grid">
+          <SectionHeading
+            center
+            light
+            eyebrow="The 6 Rs"
+            title={
+              <>
+                The 6 Rs of <span className="grad">cloud migration</span>
+              </>
+            }
+            desc="Every workload gets classified into one of six migration strategies during the readiness analysis phase."
+          />
+          <div className="brr-rpo-grid">
             {sixRs.map((r, i) => (
-              <Reveal key={r.name} className="br-rpo-cell" delay={(i % 2) + 1}>
-                <h3>{r.name} <span style={{ fontWeight: 400, fontSize: "14px", color: "var(--text-muted)" }}>— {r.sub}</span></h3>
+              <Reveal key={r.name} className="brr-rpo-cell" delay={(i % 2) + 1}>
+                <h3>{r.name} <span className="brr-rpo-sub">— {r.sub}</span></h3>
                 <p>{r.desc}</p>
               </Reveal>
             ))}
@@ -219,61 +273,66 @@ export default function CloudStrategyLanding({ service }: Props) {
         </div>
       </section>
 
-      {/* Cloud Comparison Table */}
-      <section className="br-compare">
+      {/* Comparison table */}
+      <section className="section brr-table-sec">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>Which cloud model fits your business?</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              Public, private, and hybrid cloud each solve different problems — the right fit depends on workload, compliance, and cost.
-            </Reveal>
-          </div>
-          <Reveal delay={3}>
-            <div className="br-table-wrap">
-              <table className="br-table">
-                <thead>
-                  <tr>
-                    <th>Factor</th>
-                    <th>Public Cloud (Azure / AWS)</th>
-                    <th>Private Cloud</th>
-                    <th>Hybrid Cloud</th>
+          <SectionHeading
+            center
+            eyebrow="Compare"
+            title={
+              <>
+                Which cloud model <span className="grad">fits your business?</span>
+              </>
+            }
+            desc="Public, private, and hybrid cloud each solve different problems — the right fit depends on workload, compliance, and cost."
+          />
+          <div className="brr-table-wrap">
+            <table className="brr-table">
+              <thead>
+                <tr>
+                  <th>Factor</th>
+                  <th>Public Cloud (Azure / AWS)</th>
+                  <th>Private Cloud</th>
+                  <th>Hybrid Cloud</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cloudComparison.map((row) => (
+                  <tr key={row.factor}>
+                    <td><strong>{row.factor}</strong></td>
+                    <td>{row.public}</td>
+                    <td>{row.private}</td>
+                    <td>{row.hybrid}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {cloudComparison.map((row) => (
-                    <tr key={row.factor}>
-                      <td>{row.factor}</td>
-                      <td>{row.public}</td>
-                      <td>{row.private}</td>
-                      <td>{row.hybrid}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </Reveal>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
       {/* Outcomes */}
       {whatYouGet && (
-        <section className="br-outcomes">
+        <section className="section brr-outcomes section-dark">
           <div className="container">
-            <div className="br-section-head br-section-head-light">
-              <Reveal delay={1}>
-                <h2>Outcomes that move your business</h2>
-              </Reveal>
-              <Reveal as="p" className="br-sub" delay={2}>
-                What you walk away with at the end of the engagement.
-              </Reveal>
-            </div>
-            <div className="br-outcome-grid">
+            <SectionHeading
+              center
+              light
+              eyebrow="Outcomes"
+              title={
+                <>
+                  Outcomes that <span className="grad">move your business</span>
+                </>
+              }
+              desc="What you walk away with at the end of the engagement."
+            />
+            <div className="brr-outcome-grid">
               {whatYouGet.body.map((item, i) => (
                 <Reveal key={item} delay={(i % 4) + 1}>
-                  <div className="br-outcome-item">
-                    <CheckIcon className="br-outcome-check" />
+                  <div className="brr-outcome-item">
+                    <span className="ce-check">
+                      <CheckIcon />
+                    </span>
                     <p>{item}</p>
                   </div>
                 </Reveal>
@@ -283,23 +342,25 @@ export default function CloudStrategyLanding({ service }: Props) {
         </section>
       )}
 
-      {/* Why Choose */}
+      {/* Why choose */}
       {whyChoose && (
-        <section className="br-why">
+        <section className="section brr-why">
           <div className="container">
-            <div className="br-section-head">
-              <Reveal delay={1}>
-                <h2>The CoreGenix difference</h2>
-              </Reveal>
-              <Reveal as="p" className="br-sub" delay={2}>
-                What sets our cloud strategy consulting apart from a typical reseller pitch.
-              </Reveal>
-            </div>
-            <div className="br-why-grid">
+            <SectionHeading
+              center
+              eyebrow="The CoreGenix Difference"
+              title={
+                <>
+                  Why teams choose <span className="grad">CoreGenix</span>
+                </>
+              }
+              desc="What sets our cloud strategy consulting apart from a typical reseller pitch."
+            />
+            <div className="brr-why-grid">
               {whyChoose.body.map((item, i) => (
                 <Reveal key={item} delay={(i % 3) + 1}>
-                  <div className="br-why-cell">
-                    <span className="br-why-num">{String(i + 1).padStart(2, "0")}</span>
+                  <div className="brr-why-card">
+                    <span className="brr-why-num">{String(i + 1).padStart(2, "0")}</span>
                     <h3>{item}</h3>
                   </div>
                 </Reveal>
@@ -310,23 +371,27 @@ export default function CloudStrategyLanding({ service }: Props) {
       )}
 
       {/* Industries */}
-      <section className="br-industries">
+      <section className="section brr-audience">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>Cloud strategy for regulated &amp; growth-stage sectors</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              Migration plans built around the compliance and uptime needs of your industry.
-            </Reveal>
-          </div>
-          <div className="br-ind-grid">
+          <SectionHeading
+            center
+            eyebrow="Who Needs It"
+            title={
+              <>
+                Cloud strategy for <span className="grad">regulated sectors</span>
+              </>
+            }
+            desc="Migration plans built around the compliance and uptime needs of your industry."
+          />
+          <div className="wwp-grid">
             {industries.map((ind, i) => (
-              <Reveal key={ind.title} delay={(i % 3) + 1}>
-                <div className="br-ind-cell">
-                  <h4>{ind.title}</h4>
-                  <p>{ind.desc}</p>
-                </div>
+              <Reveal key={ind.title} delay={(i % 3) + 1} className="wwp-wrap">
+                <article className="wwp-card brr-audience-card">
+                  <div className="wwp-card-inner">
+                    <h3>{ind.title}</h3>
+                    <p>{ind.desc}</p>
+                  </div>
+                </article>
               </Reveal>
             ))}
           </div>
@@ -334,26 +399,25 @@ export default function CloudStrategyLanding({ service }: Props) {
       </section>
 
       {/* FAQ */}
-      <section className="br-faq">
+      <section className="section brr-faq">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>Frequently asked questions</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              Straight answers about cloud strategy, migration, and cost.
-            </Reveal>
-          </div>
-          <div className="br-faq-list">
-            {service.faq.map((f, i) => (
-              <Reveal key={f.q} delay={(i % 3) + 1}>
-                <details className="br-faq-item" open={i === 0}>
-                  <summary>
-                    {f.q}
-                    <span className="br-plus" />
-                  </summary>
-                  <div className="br-faq-answer">{f.a}</div>
-                </details>
+          <SectionHeading
+            center
+            eyebrow="FAQ"
+            title={
+              <>
+                Frequently asked <span className="grad">questions</span>
+              </>
+            }
+            desc="Straight answers about cloud strategy, migration, and cost."
+          />
+          <div className="brr-faq-list">
+            {service.faq.map((f) => (
+              <Reveal key={f.q}>
+                <div className="brr-faq-item">
+                  <h3>{f.q}</h3>
+                  <p>{f.a}</p>
+                </div>
               </Reveal>
             ))}
           </div>
@@ -361,20 +425,23 @@ export default function CloudStrategyLanding({ service }: Props) {
       </section>
 
       {/* CTA */}
-      <section className="br-closing">
-        <div className="container">
+      <section className="brr-closing">
+        <div className="container brr-closing-inner">
           <Reveal>
-            <div className="br-closing-inner">
-              <h2>Ready to build a cloud strategy that actually fits?</h2>
-              <p className="br-closing-sub">Get a free cloud readiness assessment and a clear, honest view of what migration would look like for your business.</p>
-              <Link href="/contact" className="btn btn-grad">
-                Get free consultation
-                <ArrowRightIcon />
-              </Link>
+            <h2 className="section-title">Ready to build a cloud strategy that <span className="grad">actually fits?</span></h2>
+            <p className="brr-closing-sub">{service.cta}</p>
+            <div className="brr-closing-meta">
+              <span>Call <a href="tel:+918355958119">+91 83559 58119</a></span>
+              <span>Email <a href="mailto:sales@cgcein.com">sales@cgcein.com</a></span>
+              <span>C 1405 Kailash Business Park, Vikhroli (W), Mumbai</span>
             </div>
+            <Link href="/contact" className="btn btn-grad">
+              Get Free Consultation
+              <ArrowRightIcon />
+            </Link>
           </Reveal>
         </div>
       </section>
-    </main>
+    </>
   );
 }

@@ -9,9 +9,7 @@ import ServiceLanding from "@/components/ServiceLanding";
 import CloudInfrastructureLanding from "@/components/CloudInfrastructureLanding";
 import { getService, services } from "@/data/services";
 import { SITE } from "@/lib/site";
-import "./cloud-strategy.css";
 import "./backup-recovery.css";
-import "./cloud-infra-mgmt.css";
 import "./service-landing.css";
 
 interface Props {

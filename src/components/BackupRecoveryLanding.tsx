@@ -3,17 +3,9 @@ import Link from "next/link";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import {
-  ServerIcon,
-  DatabaseIcon,
-  CloudIcon,
-  ShieldIcon,
   RefreshIcon,
-  MonitorIcon,
   ClockIcon,
   CheckIcon,
-  AwardIcon,
-  LayersIcon,
-  FactoryIcon,
   ArrowRightIcon,
 } from "./Icons";
 import type { ServicePage } from "@/data/services";
@@ -22,7 +14,7 @@ interface Props {
   service: ServicePage;
 }
 
-const stats = [
+const heroStats = [
   { value: "22+", label: "Years of experience" },
   { value: "119+", label: "Projects delivered" },
   { value: "75+", label: "Happy clients" },
@@ -48,7 +40,6 @@ const deliverables = [
       "Application-consistent backups for databases",
       "Endpoint backup for laptops and workstations",
     ],
-    Icon: ServerIcon,
   },
   {
     num: "02",
@@ -59,7 +50,6 @@ const deliverables = [
       "Cloud storage tiers matched to retention needs",
       "Encrypted transfer and storage at rest",
     ],
-    Icon: CloudIcon,
   },
   {
     num: "03",
@@ -70,7 +60,6 @@ const deliverables = [
       "Documented, step-by-step recovery runbooks",
       "Failover and failback procedures",
     ],
-    Icon: RefreshIcon,
   },
   {
     num: "04",
@@ -81,7 +70,6 @@ const deliverables = [
       "Alternate operating procedures during downtime",
       "Communication plans for staff and customers",
     ],
-    Icon: ShieldIcon,
   },
   {
     num: "05",
@@ -92,7 +80,6 @@ const deliverables = [
       "Full and partial recovery drills",
       "Written proof of recoverability for audits",
     ],
-    Icon: RefreshIcon,
   },
   {
     num: "06",
@@ -103,7 +90,6 @@ const deliverables = [
       "Immediate alerting on failed or missed backups",
       "Monthly backup health and compliance reports",
     ],
-    Icon: MonitorIcon,
   },
 ];
 
@@ -134,35 +120,59 @@ export default function BackupRecoveryLanding({ service }: Props) {
   const whyChoose = service.sections.find((s) => s.heading === "Why Choose CoreGenix");
 
   return (
-    <main>
+    <>
       {/* Hero */}
-      <section className="br-hero">
+      <section className="brr-hero">
+        <div className="float-shape float-shape-1" aria-hidden="true" />
+        <div className="float-shape float-shape-2" aria-hidden="true" />
+        <div className="container brr-hero-grid">
+          <div className="brr-hero-content">
+            <Reveal as="span" className="eyebrow" delay={1}>
+              Cloud Managed Services
+            </Reveal>
+            <Reveal delay={2}>
+              <h1 className="section-title brr-hero-title">
+                {service.h1.split("—").map((part, i) =>
+                  i === 0 ? part : <span key={i} className="grad"> — {part}</span>
+                )}
+              </h1>
+            </Reveal>
+            <Reveal as="p" className="brr-hero-desc" delay={3}>
+              {service.intro}
+            </Reveal>
+            <Reveal as="div" className="brr-hero-actions" delay={4}>
+              <Link href="/contact" className="btn btn-grad">
+                Get Free Consultation
+                <ArrowRightIcon />
+              </Link>
+              <Link href="/services" className="btn btn-hero-secondary">
+                View All Services
+              </Link>
+            </Reveal>
+          </div>
+          <Reveal className="brr-hero-media" delay={3}>
+            <div className="brr-hero-img">
+              <Image
+                src="/images/coregenix/hero-1.png"
+                alt="Data backup and disaster recovery"
+                width={900}
+                height={600}
+                className="main-img"
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="brr-stats" aria-label="Backup & recovery by the numbers">
         <div className="container">
-          <Reveal as="span" className="br-eyebrow" delay={1}>
-            <span className="br-dot" />
-            Cloud Managed Services
-          </Reveal>
-          <Reveal delay={2}>
-            <h1 className="br-hero-title">{service.h1}</h1>
-          </Reveal>
-          <Reveal as="p" className="br-hero-desc" delay={3}>
-            {service.intro}
-          </Reveal>
-          <Reveal as="div" className="br-hero-actions" delay={4}>
-            <Link href="/contact" className="btn btn-grad">
-              Get free consultation
-              <ArrowRightIcon />
-            </Link>
-            <Link href="/services" className="btn btn-hero-secondary">
-              View all services
-            </Link>
-          </Reveal>
-          <div className="br-stat-bar">
-            {stats.map((stat, i) => (
+          <div className="brr-stats-grid">
+            {heroStats.map((stat, i) => (
               <Reveal key={stat.label} delay={(i % 4) + 1}>
-                <div className="br-stat">
-                  <span className="br-stat-num">{stat.value}</span>
-                  <span className="br-stat-label">{stat.label}</span>
+                <div className="brr-stat">
+                  <span className="brr-stat-value">{stat.value}</span>
+                  <span className="brr-stat-label">{stat.label}</span>
                 </div>
               </Reveal>
             ))}
@@ -170,134 +180,126 @@ export default function BackupRecoveryLanding({ service }: Props) {
         </div>
       </section>
 
-      {/* Answer Block */}
-      <section className="br-answer">
-        <div className="container br-answer-grid">
-          <Reveal delay={1}>
-            <h2>What is data backup and recovery?</h2>
-          </Reveal>
-          <Reveal as="div" className="br-answer-copy" delay={2}>
-            <p>Data backup and recovery is the practice of copying business data to a safe, separate location and restoring it after loss — whether from ransomware, hardware failure, human error, or physical disaster. CoreGenix delivers this as a managed service across automated backup, offsite and cloud storage, disaster recovery planning with defined RPO/RTO, and regular restore testing, so recovery is proven, not assumed.</p>
-          </Reveal>
+      {/* What is backup & recovery */}
+      <section className="section brr-what">
+        <div className="container">
+          <SectionHeading
+            center
+            
+            title={
+              <>
+                What is <span className="grad">data backup and recovery?</span>
+              </>
+            }
+            desc="Data backup and recovery is the practice of copying business data to a safe, separate location and restoring it after loss — whether from ransomware, hardware failure, human error, or physical disaster.
+            CoreGenix delivers this as a managed service across automated backup, offsite and cloud storage, disaster recovery planning with defined RPO/RTO, and regular restore testing, so recovery is proven, not assumed."
+          />
+        
         </div>
       </section>
 
-      {/* Challenge */}
-      <section className="br-challenge">
+      {/* Challenge - dark band */}
+      <section className="section brr-challenge section-dark">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>The problem we solve</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              Ransomware, hardware failure, human error, or a fire in the server room — data loss happens to businesses that &quot;thought they were covered.&quot;
-            </Reveal>
-          </div>
-          <div className="br-challenge-grid">
+          <SectionHeading
+            center
+            light
+            eyebrow="The Problem We Solve"
+            
+            desc=" Ransomware, hardware failure, human error, or a fire in the server room — data loss happens to businesses that hought they were covered."
+          />
+          <div className="brr-challenge-grid">
             {challenges.map((item, i) => (
               <Reveal key={item} delay={(i % 3) + 1}>
-                <div className="br-challenge-item">
-                  <span className="br-challenge-icon">
-                    <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" strokeWidth="1.3"/><path d="M8 4v5M8 11.5v.1" stroke="currentColor" strokeWidth="1.3"/></svg>
-                  </span>
+                <div className="brr-challenge-card">
                   <p>{item}</p>
                 </div>
               </Reveal>
             ))}
           </div>
           {problem && (
-            <Reveal as="div" className="br-challenge-note" delay={3}>
-              {problem.body.map((line) => {
-                const parts = line.split(". ");
-                if (parts.length > 1) {
-                  const first = parts[0] + ".";
-                  const rest = parts.slice(1).join(". ");
-                  return <p key={line}>{first} <strong>{rest}</strong></p>;
-                }
-                return <p key={line}>{line}</p>;
-              })}
+            <Reveal as="div" className="brr-challenge-note" delay={3}>
+              {problem.body.map((line) => (
+                <p key={line}>{line}</p>
+              ))}
             </Reveal>
           )}
         </div>
       </section>
 
-      {/* What We Deliver */}
-      <section className="br-deliver">
+      {/* Deliver - What we deliver */}
+      <section className="section brr-deliver">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>What we deliver</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              A complete backup and recovery engagement — from daily backup jobs to a tested disaster recovery plan.
-            </Reveal>
-          </div>
-          {deliverables.map((d) => (
-            <Reveal key={d.num} delay={1}>
-              <div className="br-phase">
-                <span className="br-phase-num">{d.num}</span>
-                <div className="br-phase-header">
-                  <d.Icon className="br-phase-icon" />
-                  <div>
-                    <h3>{d.title}</h3>
-                    <p className="br-phase-tag">{d.tag}</p>
-                  </div>
+          <SectionHeading
+            center
+            eyebrow="What We Deliver"
+           
+            desc="A complete backup and recovery engagement — from daily backup jobs to a tested disaster recovery plan."
+          />
+          <div className="brr-deliver-grid">
+            {deliverables.map((d, i) => (
+              <Reveal key={d.num} delay={(i % 3) + 1}>
+                <div className="brr-deliver-card">
+                  <span className="brr-deliver-num">{d.num}</span>
+                  <h3>{d.title}</h3>
+                  <p className="brr-deliver-tag">{d.tag}</p>
+                  <ul className="brr-deliver-list">
+                    {d.items.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
                 </div>
-                <ul className="br-phase-list">
-                  {d.items.map((item) => <li key={item}>{item}</li>)}
-                </ul>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* RPO vs RTO */}
-      <section className="br-rpo-rto">
+      <section className="section brr-rpo section-dark">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>RPO vs. RTO, explained</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              The two numbers that actually define your recovery plan — and what &quot;acceptable loss&quot; and &quot;acceptable downtime&quot; mean for your business.
-            </Reveal>
-          </div>
-          <div className="br-rpo-rto-grid">
-            <Reveal className="br-rpo-cell" delay={1}>
-              <h3><ClockIcon className="br-rpo-icon" /> RPO — Recovery Point Objective</h3>
+          <SectionHeading
+            center
+            light
+            eyebrow="RPO vs. RTO"
+            title={
+              <>
+                The two numbers that define <span className="grad">your recovery plan</span>
+              </>
+            }
+            desc="What 'acceptable loss' and 'acceptable downtime' actually mean for your business."
+          />
+          <div className="brr-rpo-grid">
+            <Reveal className="brr-rpo-cell" delay={1}>
+              <h3><ClockIcon className="brr-rpo-icon" /> RPO — Recovery Point Objective</h3>
               <p>The maximum acceptable amount of data loss, measured in time. If your RPO is 4 hours, your last good backup can be no more than 4 hours old when disaster strikes.</p>
-              <p className="br-rpo-axis">Answers: &quot;How much data can we afford to lose?&quot;</p>
+              <p className="brr-rpo-axis">Answers: &quot;How much data can we afford to lose?&quot;</p>
             </Reveal>
-            <Reveal className="br-rpo-cell" delay={2}>
-              <h3><RefreshIcon className="br-rpo-icon" /> RTO — Recovery Time Objective</h3>
+            <Reveal className="brr-rpo-cell" delay={2}>
+              <h3><RefreshIcon className="brr-rpo-icon" /> RTO — Recovery Time Objective</h3>
               <p>The maximum acceptable downtime before systems must be restored and operational again. If your RTO is 2 hours, operations must resume within 2 hours of an outage.</p>
-              <p className="br-rpo-axis">Answers: &quot;How long can we afford to be down?&quot;</p>
+              <p className="brr-rpo-axis">Answers: &quot;How long can we afford to be down?&quot;</p>
             </Reveal>
           </div>
         </div>
       </section>
 
       {/* 3-2-1 Rule */}
-      <section className="br-rule">
+      <section className="section brr-rule">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>The 3-2-1 backup rule</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              The industry-standard approach CoreGenix builds every backup strategy around — designed specifically to survive ransomware and physical disasters.
-            </Reveal>
-          </div>
-          <div className="br-rule-grid">
+          <SectionHeading
+            center
+            eyebrow="The 3-2-1 Backup Rule"
+           
+            desc="The industry-standard approach CoreGenix builds every backup strategy around."
+          />
+          <div className="brr-rule-grid">
             {[
               { num: "3", title: "Copies of your data", desc: "The original plus two backup copies — one failure never means total data loss." },
               { num: "2", title: "Different storage media", desc: "Spread across two different media types (e.g., disk and cloud) so one technology failure can't wipe out everything." },
               { num: "1", title: "Copy stored offsite", desc: "At least one copy geographically separate, protecting against fire, flood, theft, or site-wide ransomware." },
             ].map((item, i) => (
               <Reveal key={item.num} delay={(i % 3) + 1}>
-                <div className="br-rule-item">
-                  <span className="br-rule-big">{item.num}</span>
+                <div className="brr-rule-item">
+                  <span className="brr-rule-big">{item.num}</span>
                   <h3>{item.title}</h3>
                   <p>{item.desc}</p>
                 </div>
@@ -307,101 +309,104 @@ export default function BackupRecoveryLanding({ service }: Props) {
         </div>
       </section>
 
-      {/* Backup Types Table */}
-      <section className="br-compare">
+      {/* Backup types table */}
+      <section className="section brr-table-sec">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>Full vs. incremental vs. differential backup</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              The three core backup methods, and the trade-off each one makes between backup speed and restore speed.
-            </Reveal>
-          </div>
-          <Reveal delay={3}>
-            <div className="br-table-wrap">
-              <table className="br-table">
-                <thead>
-                  <tr>
-                    <th>Type</th>
-                    <th>What it copies</th>
-                    <th>Backup speed</th>
-                    <th>Restore speed</th>
+          <SectionHeading
+            center
+            eyebrow="Backup Methods"
+            title={
+              <>
+                Full vs. incremental vs. <span className="grad">differential</span>
+              </>
+            }
+            desc="The three core backup methods, and the trade-off each one makes between backup speed and restore speed."
+          />
+          <div className="brr-table-wrap">
+            <table className="brr-table">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>What it copies</th>
+                  <th>Backup speed</th>
+                  <th>Restore speed</th>
+                </tr>
+              </thead>
+              <tbody>
+                {backupTypes.map((b) => (
+                  <tr key={b.type}>
+                    <td><strong>{b.type}</strong></td>
+                    <td>{b.copies}</td>
+                    <td>{b.backupSpeed}</td>
+                    <td>{b.restoreSpeed}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {backupTypes.map((b) => (
-                    <tr key={b.type}>
-                      <td>{b.type}</td>
-                      <td>{b.copies}</td>
-                      <td>{b.backupSpeed}</td>
-                      <td>{b.restoreSpeed}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </Reveal>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
-      {/* DR Tiers Table */}
-      <section className="br-tiers">
+      {/* DR Tiers table */}
+      <section className="section brr-table-sec">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>Disaster recovery tiers</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              Not every system needs the same recovery speed. CoreGenix tiers systems by criticality to control cost without compromising what matters most.
-            </Reveal>
-          </div>
-          <Reveal delay={3}>
-            <div className="br-table-wrap">
-              <table className="br-table br-table-tiers">
-                <thead>
-                  <tr>
-                    <th>Tier</th>
-                    <th>Criticality</th>
-                    <th>Typical RTO</th>
-                    <th>Typical RPO</th>
+          <SectionHeading
+            center
+            eyebrow="Disaster Recovery Tiers"
+            title={
+              <>
+                Not every system needs <span className="grad">the same speed</span>
+              </>
+            }
+            desc="CoreGenix tiers systems by criticality to control cost without compromising what matters most."
+          />
+          <div className="brr-table-wrap">
+            <table className="brr-table">
+              <thead>
+                <tr>
+                  <th>Tier</th>
+                  <th>Criticality</th>
+                  <th>Typical RTO</th>
+                  <th>Typical RPO</th>
+                </tr>
+              </thead>
+              <tbody>
+                {drTiers.map((t) => (
+                  <tr key={t.tier}>
+                    <td><strong className="brr-tier">{t.tier}</strong></td>
+                    <td>{t.criticality}</td>
+                    <td>{t.rto}</td>
+                    <td>{t.rpo}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {drTiers.map((t) => (
-                    <tr key={t.tier}>
-                      <td className="br-tier-label">{t.tier}</td>
-                      <td>{t.criticality}</td>
-                      <td>{t.rto}</td>
-                      <td>{t.rpo}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </Reveal>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
       {/* Industries */}
-      <section className="br-industries">
+      <section className="section brr-audience">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>Backup & DR for every sector</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              Recovery plans tuned to the compliance and continuity needs of your industry.
-            </Reveal>
-          </div>
-          <div className="br-ind-grid">
+          <SectionHeading
+            center
+            eyebrow="Who Needs It"
+            title={
+              <>
+                Backup &amp; DR for <span className="grad">every sector</span>
+              </>
+            }
+            desc="Recovery plans tuned to the compliance and continuity needs of your industry."
+          />
+          <div className="wwp-grid">
             {industries.map((ind, i) => (
-              <Reveal key={ind.title} delay={(i % 3) + 1}>
-                <div className="br-ind-cell">
-                  <FactoryIcon className="br-ind-icon" />
-                  <h4>{ind.title}</h4>
-                  <p>{ind.desc}</p>
-                </div>
+              <Reveal key={ind.title} delay={(i % 3) + 1} className="wwp-wrap">
+                <article className="wwp-card brr-audience-card">
+                  <div className="wwp-card-inner">
+                    <h3>{ind.title}</h3>
+                    <p>{ind.desc}</p>
+                  </div>
+                </article>
               </Reveal>
             ))}
           </div>
@@ -410,21 +415,26 @@ export default function BackupRecoveryLanding({ service }: Props) {
 
       {/* Outcomes */}
       {whatYouGet && (
-        <section className="br-outcomes">
+        <section className="section brr-outcomes section-dark">
           <div className="container">
-            <div className="br-section-head br-section-head-light">
-              <Reveal delay={1}>
-                <h2>Outcomes that move your business</h2>
-              </Reveal>
-              <Reveal as="p" className="br-sub" delay={2}>
-                What you get once backup and recovery are actually managed, not just scheduled.
-              </Reveal>
-            </div>
-            <div className="br-outcome-grid">
+            <SectionHeading
+              center
+              light
+              eyebrow="Outcomes"
+              title={
+                <>
+                  Outcomes that <span className="grad">move your business</span>
+                </>
+              }
+              desc="What you get once backup and recovery are actually managed, not just scheduled."
+            />
+            <div className="brr-outcome-grid">
               {whatYouGet.body.map((item, i) => (
                 <Reveal key={item} delay={(i % 4) + 1}>
-                  <div className="br-outcome-item">
-                    <CheckIcon className="br-outcome-check" />
+                  <div className="brr-outcome-item">
+                    <span className="ce-check">
+                      <CheckIcon />
+                    </span>
                     <p>{item}</p>
                   </div>
                 </Reveal>
@@ -434,23 +444,25 @@ export default function BackupRecoveryLanding({ service }: Props) {
         </section>
       )}
 
-      {/* Why Choose */}
+      {/* Why choose */}
       {whyChoose && (
-        <section className="br-why">
+        <section className="section brr-why">
           <div className="container">
-            <div className="br-section-head">
-              <Reveal delay={1}>
-                <h2>The CoreGenix difference</h2>
-              </Reveal>
-              <Reveal as="p" className="br-sub" delay={2}>
-                What sets our backup and recovery delivery apart from &quot;set it and forget it.&quot;
-              </Reveal>
-            </div>
-            <div className="br-why-grid">
+            <SectionHeading
+              center
+              eyebrow="The CoreGenix Difference"
+              title={
+                <>
+                  Why teams choose <span className="grad">CoreGenix</span>
+                </>
+              }
+              desc="What sets our backup and recovery delivery apart from 'set it and forget it.'"
+            />
+            <div className="brr-why-grid">
               {whyChoose.body.map((item, i) => (
                 <Reveal key={item} delay={(i % 3) + 1}>
-                  <div className="br-why-cell">
-                    <span className="br-why-num">{String(i + 1).padStart(2, "0")}</span>
+                  <div className="brr-why-card">
+                    <span className="brr-why-num">{String(i + 1).padStart(2, "0")}</span>
                     <h3>{item}</h3>
                   </div>
                 </Reveal>
@@ -461,26 +473,25 @@ export default function BackupRecoveryLanding({ service }: Props) {
       )}
 
       {/* FAQ */}
-      <section className="br-faq">
+      <section className="section brr-faq">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>Frequently asked questions</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              Straight answers about backup, disaster recovery, and RPO/RTO.
-            </Reveal>
-          </div>
-          <div className="br-faq-list">
-            {service.faq.map((f, i) => (
-              <Reveal key={f.q} delay={(i % 3) + 1}>
-                <details className="br-faq-item" open={i === 0}>
-                  <summary>
-                    {f.q}
-                    <span className="br-plus" />
-                  </summary>
-                  <div className="br-faq-answer">{f.a}</div>
-                </details>
+          <SectionHeading
+            center
+            eyebrow="FAQ"
+            title={
+              <>
+                Frequently asked <span className="grad">questions</span>
+              </>
+            }
+            desc="Straight answers about backup, disaster recovery, and RPO/RTO."
+          />
+          <div className="brr-faq-list">
+            {service.faq.map((f) => (
+              <Reveal key={f.q}>
+                <div className="brr-faq-item">
+                  <h3>{f.q}</h3>
+                  <p>{f.a}</p>
+                </div>
               </Reveal>
             ))}
           </div>
@@ -488,25 +499,23 @@ export default function BackupRecoveryLanding({ service }: Props) {
       </section>
 
       {/* CTA */}
-      <section className="br-closing">
-        <div className="container">
+      <section className="brr-closing">
+        <div className="container brr-closing-inner">
           <Reveal>
-            <div className="br-closing-inner">
-              <h2>Test your backups before disaster tests you</h2>
-              <p className="br-closing-sub">Get a free backup assessment and find out whether your current backups would actually restore.</p>
-              <div className="br-closing-meta">
-                <span>Call <a href="tel:+918355958119">+91 83559 58119</a></span>
-                <span>Email <a href="mailto:sales@cgcein.com">sales@cgcein.com</a></span>
-                <span>C 1405 Kailash Business Park, Vikhroli (W), Mumbai</span>
-              </div>
-              <Link href="/contact" className="btn btn-grad">
-                Get free consultation
-                <ArrowRightIcon />
-              </Link>
+            <h2 className="section-title">Test your backups before <span className="grad">disaster tests you</span></h2>
+            <p className="brr-closing-sub">{service.cta}</p>
+            <div className="brr-closing-meta">
+              <span>Call <a href="tel:+918355958119">+91 83559 58119</a></span>
+              <span>Email <a href="mailto:sales@cgcein.com">sales@cgcein.com</a></span>
+              <span>C 1405 Kailash Business Park, Vikhroli (W), Mumbai</span>
             </div>
+            <Link href="/contact" className="btn btn-grad">
+              Get Free Consultation
+              <ArrowRightIcon />
+            </Link>
           </Reveal>
         </div>
       </section>
-    </main>
+    </>
   );
 }

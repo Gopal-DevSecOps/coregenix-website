@@ -1,15 +1,19 @@
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
+import SectionHeading from "./SectionHeading";
 import { CheckIcon, ArrowRightIcon } from "./Icons";
 import type { SolutionPage } from "@/data/solutionPages";
 
-interface Props { service: SolutionPage; }
+interface Props {
+  service: SolutionPage;
+}
 
 const stats = [
-  { value: "22+", label: "Years of experience" },
-  { value: "119+", label: "Projects delivered" },
-  { value: "75+", label: "Happy clients" },
-  { value: "24×7", label: "Pan-India support" },
+  { value: "22+", label: "Years of Experience" },
+  { value: "119+", label: "Projects Delivered" },
+  { value: "75+", label: "Happy Clients" },
+  { value: "24×7", label: "Pan-India Support" },
 ];
 
 const challenges = [
@@ -21,163 +25,260 @@ const challenges = [
   "No single team accountable when something breaks across the boundary",
 ];
 
-const deliverables = [
-  { num: "01", title: "Hybrid Architecture", tag: "Decide what runs where, and why", items: ["Workload assessment against compliance and latency needs", "Deliberate placement decisions, documented and justified", "Architecture designed for both environments together"] },
-  { num: "02", title: "Connectivity", tag: "Secure links between on-premise and cloud", items: ["Site-to-site VPN or dedicated private connections", "Bandwidth and latency sized to workload needs", "Redundant links to avoid single points of failure"] },
-  { num: "03", title: "Unified Management", tag: "One operating model across both", items: ["Single pane of glass for monitoring and operations", "Consistent tooling across on-premise and cloud", "One accountable team, no finger-pointing between silos"] },
-  { num: "04", title: "Consistent Security", tag: "Same policies, everywhere", items: ["Unified identity and access management", "Consistent security policies across the boundary", "Centralized logging and threat visibility"] },
-  { num: "05", title: "Workload Placement", tag: "Data stays where compliance requires", items: ["Compliance-driven placement for regulated data", "Latency-sensitive workloads kept close to users", "Ongoing review as requirements change"] },
-  { num: "06", title: "Cost & Performance Balance", tag: "The best of both worlds", items: ["CAPEX efficiency on-premise, OPEX flexibility on cloud", "Burst to cloud for peak demand, stay lean otherwise", "Ongoing optimization across both environments"] },
+const phases = [
+  {
+    num: "01",
+    title: "Hybrid Architecture",
+    tag: "Decide what runs where, and why",
+    items: [
+      "Workload assessment against compliance and latency needs",
+      "Deliberate placement decisions, documented and justified",
+      "Architecture designed for both environments together",
+    ],
+  },
+  {
+    num: "02",
+    title: "Connectivity",
+    tag: "Secure links between on-premise and cloud",
+    items: [
+      "Site-to-site VPN or dedicated private connections",
+      "Bandwidth and latency sized to workload needs",
+      "Redundant links to avoid single points of failure",
+    ],
+  },
+  {
+    num: "03",
+    title: "Unified Management",
+    tag: "One operating model across both",
+    items: [
+      "Single pane of glass for monitoring and operations",
+      "Consistent tooling across on-premise and cloud",
+      "One accountable team, no finger-pointing between silos",
+    ],
+  },
+  {
+    num: "04",
+    title: "Consistent Security",
+    tag: "Same policies, everywhere",
+    items: [
+      "Unified identity and access management",
+      "Consistent security policies across the boundary",
+      "Centralized logging and threat visibility",
+    ],
+  },
+  {
+    num: "05",
+    title: "Workload Placement",
+    tag: "Data stays where compliance requires",
+    items: [
+      "Compliance-driven placement for regulated data",
+      "Latency-sensitive workloads kept close to users",
+      "Ongoing review as requirements change",
+    ],
+  },
+  {
+    num: "06",
+    title: "Cost & Performance Balance",
+    tag: "The best of both worlds",
+    items: [
+      "CAPEX efficiency on-premise, OPEX flexibility on cloud",
+      "Burst to cloud for peak demand, stay lean otherwise",
+      "Ongoing optimization across both environments",
+    ],
+  },
 ];
 
-const comparisonData = [
-  { factor: "Workload placement", accidental: "Wherever it ended up", deliberate: "Decided by compliance, latency, and cost" },
-  { factor: "Security policy", accidental: "Different policies per environment", deliberate: "Consistent policies across the boundary" },
-  { factor: "Management", accidental: "Different teams, different tools", deliberate: "Single team, unified tooling" },
-  { factor: "Connectivity", accidental: "Ad hoc VPN, no redundancy", deliberate: "Designed links sized to workload needs" },
-  { factor: "Accountability", accidental: "Nobody owns the boundary", deliberate: "One team accountable end-to-end" },
+const comparison = [
+  { factor: "Workload placement", accidental: "Wherever it landed historically", deliberate: "Decided by compliance, latency, and cost" },
+  { factor: "Security policy", accidental: "Different rules in each environment", deliberate: "One consistent policy everywhere" },
+  { factor: "Management", accidental: "Separate teams, separate tools", deliberate: "Unified operations, single pane of glass" },
+  { factor: "Connectivity", accidental: "Ad hoc, sometimes unsecured", deliberate: "Purpose-built, redundant, secure links" },
+  { factor: "Accountability", accidental: "No one owns cross-environment issues", deliberate: "One team accountable end to end" },
 ];
 
-const workloadPlacementData = [
-  { workload: "Core banking", placement: "On-premise", reason: "Regulatory mandates, data sovereignty, low-latency requirements" },
-  { workload: "Customer-facing apps", placement: "Public cloud", reason: "Scalability for variable traffic, global CDN reach" },
-  { workload: "ERP / legacy", placement: "On-premise", reason: "Dedicated resources, licensing constraints, integration needs" },
-  { workload: "Seasonal workloads", placement: "Cloud burst", reason: "Peak demand handled on cloud, baseline on-premise" },
-  { workload: "Backup / DR", placement: "Cloud", reason: "Offsite protection, cost-efficient retention, no second facility" },
-  { workload: "Analytics / dev-test", placement: "Cloud", reason: "Elastic compute, pay-per-use, no production impact" },
+const placement = [
+  { workload: "Core banking / regulated financial data", placement: "On-premise or Private Cloud" },
+  { workload: "Customer-facing web and mobile apps", placement: "Public Cloud" },
+  { workload: "ERP and legacy systems with tight latency needs", placement: "On-premise" },
+  { workload: "Seasonal or variable-demand workloads", placement: "Public Cloud" },
+  { workload: "Backup and disaster recovery copies", placement: "Public Cloud (offsite)" },
+  { workload: "Analytics and dev/test environments", placement: "Public Cloud" },
 ];
 
-const connectivityData = [
-  { option: "Site-to-Site VPN", description: "Encrypted tunnels over the public internet — cost-effective for most workloads, quick to deploy, suitable for non-latency-critical traffic" },
-  { option: "Dedicated Private Connection", description: "Private, low-latency links (AWS Direct Connect, Azure ExpressRoute) — predictable performance, not routed over the public internet, best for production workloads" },
-  { option: "SD-WAN Overlay", description: "Intelligent routing across multiple WAN links — prioritizes critical traffic, aggregates bandwidth, provides visibility across all connectivity paths" },
+const connectivity = [
+  { title: "Site-to-Site VPN", desc: "An encrypted tunnel over the public internet — cost-effective and quick to set up, suited to moderate bandwidth and non-latency-critical workloads." },
+  { title: "Dedicated Private Connection", desc: "A direct, private link such as Azure ExpressRoute or AWS Direct Connect — bypasses the public internet for higher bandwidth, lower latency, and more predictable performance." },
+  { title: "SD-WAN Overlay", desc: "A software-defined network layer that intelligently routes traffic across multiple connection types, useful for multi-site businesses connecting several locations to cloud." },
 ];
 
 const industries = [
-  { title: "BFSI", desc: "Core banking on-premise, customer channels on cloud, managed as one." },
-  { title: "Manufacturing", desc: "Plant systems on-premise, analytics and IoT on cloud, unified operations." },
-  { title: "Healthcare", desc: "Patient data on-premise for compliance, scalable apps on cloud." },
-  { title: "Retail & E-commerce", desc: "ERP on-premise, seasonal scaling on cloud, seamless customer experience." },
-  { title: "Government / PSU", desc: "Sovereign workloads on-premise, citizen services on cloud, consistent governance." },
+  { title: "BFSI", desc: "Core systems on-premise, customer-facing apps scaled on cloud." },
+  { title: "Manufacturing", desc: "Plant systems on-premise, analytics and ERP extended to cloud." },
+  { title: "Healthcare", desc: "Patient records private, non-sensitive systems public cloud." },
+  { title: "Retail & E-commerce", desc: "Core inventory on-premise, storefront elastic on public cloud." },
+  { title: "Government / PSU", desc: "Sovereignty-bound data on-premise, services extended to cloud." },
 ];
 
-const faqs = [
-  { q: "What is a hybrid cloud?", a: "A hybrid cloud combines on-premise infrastructure with public or private cloud, connected and managed as a single environment. It lets sensitive or latency-critical workloads stay on-premise while other workloads scale on cloud. CoreGenix designs deliberate hybrid architectures rather than the accidental hybrid most businesses end up with." },
-  { q: "How is hybrid cloud different from multi-cloud?", a: "Hybrid cloud combines on-premise with cloud. Multi-cloud uses multiple public cloud providers (e.g., Azure and AWS together). They can overlap — a hybrid strategy can also be multi-cloud. CoreGenix clarifies which model fits your needs." },
-  { q: "When should I use hybrid cloud instead of full public cloud?", a: "Use hybrid when compliance keeps certain workloads on-premise, when latency-sensitive systems can't move to the cloud, or when you want to keep existing on-premise investments while scaling new workloads on cloud. CoreGenix helps you decide what stays and what moves." },
-  { q: "How do you connect on-premise and cloud securely?", a: "CoreGenix connects on-premise and cloud using site-to-site VPN, dedicated private connections (Direct Connect / ExpressRoute), or SD-WAN overlays — sized and redundant based on your workload requirements." },
-  { q: "How do you manage security across both environments?", a: "CoreGenix implements unified identity and access management, consistent security policies across the boundary, and centralized logging and threat visibility — so on-premise and cloud are secured the same way." },
-  { q: "What does hybrid cloud management look like in practice?", a: "One team, one set of tools, one accountability model. CoreGenix provides unified monitoring, consistent operations, and a single point of contact — so your hybrid environment runs as one, not two disconnected halves." },
+const whys = [
+  "Workloads placed where they belong — cost, control, compliance",
+  "Secure links between on-premise and cloud",
+  "One operating model across your whole estate",
+  "Consistent security policies everywhere",
+  "22+ years across on-premise and cloud environments",
+  "Mumbai base, Pan-India delivery",
 ];
 
 export default function HybridCloudLanding({ service }: Props) {
+  const whatYouGet = service.sections.find((s) => s.heading === "What You Get");
+
   return (
-    <main>
-      <section className="br-hero">
-        <div className="container">
-          <Reveal as="span" className="br-eyebrow" delay={1}><span className="br-dot" />Cloud Infrastructure Solutions</Reveal>
-          <Reveal delay={2}><h1 className="br-hero-title">{service.h1}</h1></Reveal>
-          <Reveal as="p" className="br-hero-desc" delay={3}>{service.intro}</Reveal>
-          <Reveal as="div" className="br-hero-actions" delay={4}>
-            <Link href="/contact" className="btn btn-grad">Get free consultation<ArrowRightIcon /></Link>
-            <Link href="/solutions" className="btn btn-hero-secondary">View all solutions</Link>
+    <>
+      {/* Hero */}
+      <section className="brr-hero">
+        <div className="float-shape float-shape-1" aria-hidden="true" />
+        <div className="float-shape float-shape-2" aria-hidden="true" />
+        <div className="container brr-hero-grid">
+          <div className="brr-hero-content">
+            <Reveal as="span" className="eyebrow" delay={1}>
+              Cloud Infrastructure Solutions
+            </Reveal>
+            <Reveal delay={2}>
+              <h1 className="section-title brr-hero-title">
+                {service.h1.split("—").map((part, i) =>
+                  i === 0 ? part : <span key={i} className="grad"> — {part}</span>
+                )}
+              </h1>
+            </Reveal>
+            <Reveal as="p" className="brr-hero-desc" delay={3}>
+              {service.intro}
+            </Reveal>
+            <Reveal as="div" className="brr-hero-actions" delay={4}>
+              <Link href="/contact" className="btn btn-grad">
+                Get Free Consultation
+                <ArrowRightIcon />
+              </Link>
+              <Link href="/solutions" className="btn btn-hero-secondary">
+                View All Solutions
+              </Link>
+            </Reveal>
+          </div>
+          <Reveal className="brr-hero-media" delay={3}>
+            <div className="brr-hero-img">
+              <Image
+                src="/images/coregenix/service-3.png"
+                alt="Hybrid cloud solutions"
+                width={900}
+                height={600}
+                className="main-img"
+              />
+            </div>
           </Reveal>
-          <div className="br-stat-bar">
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="brr-stats" aria-label="Hybrid cloud solutions by the numbers">
+        <div className="container">
+          <div className="brr-stats-grid">
             {stats.map((stat, i) => (
-              <Reveal key={stat.label} delay={(i % 4) + 1}><div className="br-stat"><span className="br-stat-num">{stat.value}</span><span className="br-stat-label">{stat.label}</span></div></Reveal>
+              <Reveal key={stat.label} delay={(i % 4) + 1}>
+                <div className="brr-stat">
+                  <span className="brr-stat-value">{stat.value}</span>
+                  <span className="brr-stat-label">{stat.label}</span>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="br-answer">
-        <div className="container br-answer-grid">
-          <Reveal delay={1}><h2>What is a hybrid cloud?</h2></Reveal>
-          <Reveal as="div" className="br-answer-copy" delay={2}>
-            <p>A hybrid cloud combines on-premise infrastructure with public or private cloud, connected and managed as a single environment. It lets sensitive or latency-critical workloads stay on-premise while other workloads scale on cloud. CoreGenix designs deliberate hybrid architectures — with defined workload placement, secure connectivity, and consistent security — rather than the &apos;accidental hybrid&apos; most businesses end up with by default.</p>
-          </Reveal>
+      {/* What is */}
+      <section className="section brr-what">
+        <div className="container">
+          <SectionHeading
+            center
+            eyebrow="What We Provide"
+            title={
+              <>
+                What is a <span className="grad">hybrid cloud?</span>
+              </>
+            }
+            desc="A hybrid cloud combines on-premise infrastructure with public or private cloud, connected and managed as a single environment. CoreGenix designs deliberate hybrid architectures — with defined workload placement, secure connectivity, and consistent security — rather than the accidental hybrid most businesses end up with by default."
+          />
+          <div className="brr-check-grid">
+            {[
+              "Hybrid architecture",
+              "Secure connectivity",
+              "Unified management",
+              "Consistent security",
+              "Deliberate workload placement",
+              "Cost & performance balance",
+            ].map((item, i) => (
+              <Reveal key={item} delay={(i % 3) + 1}>
+                <div className="brr-check-item">
+                  <span className="ce-check">
+                    <CheckIcon />
+                  </span>
+                  {item}
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="br-challenge">
+      {/* Challenge */}
+      <section className="section brr-challenge section-dark">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}><h2>The problem we solve</h2></Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>Most businesses already run a hybrid environment — by accident. Some workloads on-premise, some in cloud, different teams, different tools, no single strategy.</Reveal>
-          </div>
-          <div className="br-challenge-grid">
+          <SectionHeading
+            center
+            light
+            eyebrow="The Problem We Solve"
+            title={
+              <>
+                A hybrid environment <span className="grad">by accident</span>
+              </>
+            }
+            desc="Most businesses already run a hybrid environment — by accident. Some workloads on-premise, some in cloud, different teams, different tools, no single strategy. That's not hybrid cloud, that's chaos."
+          />
+          <div className="brr-challenge-grid">
             {challenges.map((item, i) => (
               <Reveal key={item} delay={(i % 3) + 1}>
-                <div className="br-challenge-item"><span className="br-challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" strokeWidth="1.3"/><path d="M8 4v5M8 11.5v.1" stroke="currentColor" strokeWidth="1.3"/></svg></span><p>{item}</p></div>
+                <div className="brr-challenge-card">
+                  <p>{item}</p>
+                </div>
               </Reveal>
             ))}
           </div>
-          <Reveal as="div" className="br-challenge-note" delay={3}>
-            <p>The result is security blind spots, duplicated effort, and workloads in the wrong place. <strong>Hybrid cloud done right is deliberate and managed — not something that happens to you.</strong></p>
+          <Reveal as="div" className="brr-challenge-note" delay={3}>
+            <p>The result is security blind spots, duplicated effort, and workloads in the wrong place. <strong>Hybrid cloud done right is deliberate and managed</strong> — not something that happens to you.</p>
           </Reveal>
         </div>
       </section>
 
-      <section className="br-deliver">
+      {/* Deliver */}
+      <section className="section brr-deliver">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}><h2>What we deliver</h2></Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>A complete hybrid cloud engagement — architecture, connectivity, unified management, security, and cost optimization, under one accountable team.</Reveal>
-          </div>
-          {deliverables.map((d) => (
-            <Reveal key={d.num} delay={1}>
-              <div className="br-phase"><span className="br-phase-num">{d.num}</span><div><h3>{d.title}</h3><p className="br-phase-tag">{d.tag}</p></div><ul className="br-phase-list">{d.items.map((item) => <li key={item}>{item}</li>)}</ul></div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="br-rpo-rto">
-        <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}><h2>Accidental vs. deliberate hybrid</h2></Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>Most businesses are here by accident. The difference between accidental and deliberate is outcomes.</Reveal>
-          </div>
-          <Reveal delay={3}>
-            <div className="br-table-wrap">
-              <table className="br-table">
-                <thead><tr><th>Factor</th><th>Accidental Hybrid</th><th>Deliberate Hybrid</th></tr></thead>
-                <tbody>{comparisonData.map((row) => <tr key={row.factor}><td>{row.factor}</td><td>{row.accidental}</td><td>{row.deliberate}</td></tr>)}</tbody>
-              </table>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="br-rpo-rto">
-        <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}><h2>Workload placement decisions</h2></Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>What runs where — and why — depends on compliance, latency, and cost requirements.</Reveal>
-          </div>
-          <Reveal delay={3}>
-            <div className="br-table-wrap">
-              <table className="br-table">
-                <thead><tr><th>Workload</th><th>Recommended placement</th><th>Reason</th></tr></thead>
-                <tbody>{workloadPlacementData.map((row) => <tr key={row.workload}><td>{row.workload}</td><td>{row.placement}</td><td>{row.reason}</td></tr>)}</tbody>
-              </table>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="br-industries">
-        <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}><h2>Connectivity options</h2></Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>How on-premise and cloud are connected — sized to workload needs and redundancy requirements.</Reveal>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginTop: 8 }}>
-            {connectivityData.map((item, i) => (
-              <Reveal key={item.option} delay={(i % 3) + 1}>
-                <div style={{ background: "var(--bg-dark)", border: "1px solid var(--border)", borderRadius: 12, padding: 24 }}>
-                  <h3 style={{ fontFamily: "var(--font-heading)", fontSize: 16, fontWeight: 700, color: "var(--navy)", margin: "0 0 8px" }}>{item.option}</h3>
-                  <p style={{ fontSize: 14, color: "var(--text-soft)", margin: 0 }}>{item.description}</p>
+          <SectionHeading
+            center
+            eyebrow="What We Deliver"
+            title={
+              <>
+                Complete Hybrid Cloud <span className="grad">Engagements</span>
+              </>
+            }
+            desc="A complete hybrid cloud engagement — architecture, connectivity, management, and security, unified under one operating model."
+          />
+          <div className="brr-deliver-grid">
+            {phases.map((p, i) => (
+              <Reveal key={p.num} delay={(i % 3) + 1}>
+                <div className="brr-deliver-card">
+                  <span className="brr-deliver-num">{p.num}</span>
+                  <h3>{p.title}</h3>
+                  <p className="brr-deliver-tag">{p.tag}</p>
+                  <ul className="brr-deliver-list">
+                    {p.items.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
                 </div>
               </Reveal>
             ))}
@@ -185,39 +286,201 @@ export default function HybridCloudLanding({ service }: Props) {
         </div>
       </section>
 
-      <section className="br-rpo-rto">
+      {/* Accidental vs deliberate */}
+      <section className="section brr-table-sec">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}><h2>Hybrid cloud vs. multi-cloud</h2></Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>These terms get used interchangeably — they mean different things.</Reveal>
+          <SectionHeading
+            center
+            eyebrow="The Difference"
+            title={
+              <>
+                Accidental hybrid <span className="grad">vs. deliberate hybrid</span>
+              </>
+            }
+            desc="Most businesses already have a hybrid environment. The question is whether it happened on purpose."
+          />
+          <div className="brr-table-wrap">
+            <table className="brr-table">
+              <thead>
+                <tr>
+                  <th>Factor</th>
+                  <th>Accidental Hybrid</th>
+                  <th>Deliberate Hybrid</th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparison.map((row) => (
+                  <tr key={row.factor}>
+                    <td><strong>{row.factor}</strong></td>
+                    <td>{row.accidental}</td>
+                    <td>{row.deliberate}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-          <Reveal delay={3}>
-            <div className="br-table-wrap">
-              <table className="br-table">
-                <thead><tr><th>Model</th><th>Definition</th><th>Example</th></tr></thead>
-                <tbody>
-                  <tr><td>Hybrid cloud</td><td>On-premise + one or more public clouds, connected and managed together</td><td>Data center + Azure, managed as one</td></tr>
-                  <tr><td>Multi-cloud</td><td>Two or more public cloud providers, with no on-premise component required</td><td>AWS + Azure, no private data center</td></tr>
-                  <tr><td>Hybrid multi-cloud</td><td>On-premise + multiple public clouds — combines both models</td><td>Data center + AWS + Azure, managed together</td></tr>
-                </tbody>
-              </table>
-            </div>
+        </div>
+      </section>
+
+      {/* Placement table */}
+      <section className="section brr-table-sec">
+        <div className="container">
+          <SectionHeading
+            center
+            eyebrow="Workload Placement"
+            title={
+              <>
+                Where should each <span className="grad">workload live?</span>
+              </>
+            }
+            desc="A general guide to workload placement in a hybrid model — CoreGenix tailors this to your specific compliance and performance needs."
+          />
+          <div className="brr-table-wrap">
+            <table className="brr-table">
+              <thead>
+                <tr>
+                  <th>Workload type</th>
+                  <th>Typical placement</th>
+                </tr>
+              </thead>
+              <tbody>
+                {placement.map((row) => (
+                  <tr key={row.workload}>
+                    <td><strong>{row.workload}</strong></td>
+                    <td>{row.placement}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Connectivity models */}
+      <section className="section brr-deliver">
+        <div className="container">
+          <SectionHeading
+            center
+            eyebrow="Connectivity"
+            title={
+              <>
+                How on-premise <span className="grad">connects to cloud</span>
+              </>
+            }
+            desc="The three common ways to link on-premise infrastructure with your cloud environment."
+          />
+          <div className="brr-deliver-grid">
+            {connectivity.map((c, i) => (
+              <Reveal key={c.title} delay={(i % 3) + 1}>
+                <div className="brr-deliver-card">
+                  <h3>{c.title}</h3>
+                  <p className="brr-deliver-tag">{c.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hybrid vs multi-cloud */}
+      <section className="section brr-what">
+        <div className="container">
+          <SectionHeading
+            center
+            eyebrow="Hybrid vs. Multi-Cloud"
+            title={
+              <>
+                Hybrid cloud <span className="grad">vs. multi-cloud</span>
+              </>
+            }
+            desc="These two terms are often used interchangeably, but they mean different things."
+          />
+          <Reveal as="div" className="brr-answer-copy" delay={2}>
+            <p style={{ maxWidth: "820px", margin: "0 auto", textAlign: "center", color: "var(--text-soft)", fontSize: "16px", lineHeight: "1.8" }}>
+              <strong>Hybrid cloud</strong> combines on-premise infrastructure with one or more cloud environments. <strong>Multi-cloud</strong> means using two or more public cloud providers — such as Azure and AWS together — without necessarily including on-premise infrastructure at all. A business can run both hybrid and multi-cloud simultaneously: on-premise systems connected to workloads spread across Azure and AWS. CoreGenix designs for whichever combination fits your compliance and resilience needs.
+            </p>
           </Reveal>
         </div>
       </section>
 
-      <section className="br-industries">
+      {/* Industries */}
+      <section className="section brr-audience">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}><h2>Hybrid cloud for every sector</h2></Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>Architecture and management tuned to the compliance and connectivity needs of your industry.</Reveal>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginTop: 8 }}>
+          <SectionHeading
+            center
+            eyebrow="Who Needs It"
+            title={
+              <>
+                Hybrid cloud <span className="grad">for every sector</span>
+              </>
+            }
+            desc="Deliberate workload placement tuned to the compliance and performance needs of your industry."
+          />
+          <div className="wwp-grid">
             {industries.map((ind, i) => (
-              <Reveal key={ind.title} delay={(i % 3) + 1}>
-                <div style={{ background: "var(--bg-dark)", border: "1px solid var(--border)", borderRadius: 12, padding: 24 }}>
-                  <h3 style={{ fontFamily: "var(--font-heading)", fontSize: 16, fontWeight: 700, color: "var(--navy)", margin: "0 0 8px" }}>{ind.title}</h3>
-                  <p style={{ fontSize: 14, color: "var(--text-soft)", margin: 0 }}>{ind.desc}</p>
+              <Reveal key={ind.title} delay={(i % 3) + 1} className="wwp-wrap">
+                <article className="wwp-card brr-audience-card">
+                  <div className="wwp-card-inner">
+                    <h3>{ind.title}</h3>
+                    <p>{ind.desc}</p>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Outcomes */}
+      {whatYouGet && (
+        <section className="section brr-outcomes section-dark">
+          <div className="container">
+            <SectionHeading
+              center
+              light
+              eyebrow="Outcomes"
+              title={
+                <>
+                  Outcomes that <span className="grad">move your business</span>
+                </>
+              }
+              desc="What you get once hybrid cloud is deliberate, not accidental."
+            />
+            <div className="brr-outcome-grid">
+              {whatYouGet.body.map((item, i) => (
+                <Reveal key={item} delay={(i % 4) + 1}>
+                  <div className="brr-outcome-item">
+                    <span className="ce-check">
+                      <CheckIcon />
+                    </span>
+                    <p>{item}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Why choose */}
+      <section className="section brr-why">
+        <div className="container">
+          <SectionHeading
+            center
+            eyebrow="The CoreGenix Difference"
+            title={
+              <>
+                Why teams choose <span className="grad">CoreGenix</span>
+              </>
+            }
+            desc="What sets our hybrid cloud delivery apart."
+          />
+          <div className="brr-why-grid">
+            {whys.map((w, i) => (
+              <Reveal key={w} delay={(i % 3) + 1}>
+                <div className="brr-why-card">
+                  <span className="brr-why-num">{String(i + 1).padStart(2, "0")}</span>
+                  <h3>{w}</h3>
                 </div>
               </Reveal>
             ))}
@@ -225,62 +488,50 @@ export default function HybridCloudLanding({ service }: Props) {
         </div>
       </section>
 
-      <section className="br-outcomes">
+      {/* FAQ */}
+      <section className="section brr-faq">
         <div className="container">
-          <div className="br-section-head br-section-head-light">
-            <Reveal delay={1}><h2>Outcomes that move your business</h2></Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>What you get from a properly designed and managed hybrid cloud.</Reveal>
-          </div>
-          <div className="br-outcome-grid">
-            {service.sections.find((s) => s.heading === "What You Get")?.body.map((item, i) => (
-              <Reveal key={item} delay={(i % 4) + 1}><div className="br-outcome-item"><CheckIcon className="br-outcome-check" /><p>{item}</p></div></Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="br-why">
-        <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}><h2>The CoreGenix difference</h2></Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>What sets our hybrid cloud delivery apart.</Reveal>
-          </div>
-          <div className="br-why-grid">
-            {service.sections.find((s) => s.heading === "Why Choose CoreGenix")?.body.map((item, i) => (
-              <Reveal key={item} delay={(i % 3) + 1}><div className="br-why-cell"><span className="br-why-num">{String(i + 1).padStart(2, "0")}</span><h3>{item}</h3></div></Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="br-faq">
-        <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}><h2>Frequently asked questions</h2></Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>Straight answers about hybrid cloud architecture and management.</Reveal>
-          </div>
-          <div className="br-faq-list">
-            {faqs.map((f, i) => (
-              <Reveal key={f.q} delay={(i % 3) + 1}>
-                <details className="br-faq-item" open={i === 0}><summary>{f.q}<span className="br-plus" /></summary><div className="br-faq-answer">{f.a}</div></details>
+          <SectionHeading
+            center
+            eyebrow="FAQ"
+            title={
+              <>
+                Frequently asked <span className="grad">questions</span>
+              </>
+            }
+            desc="Straight answers about hybrid cloud, connectivity, and placement."
+          />
+          <div className="brr-faq-list">
+            {service.faq.map((f) => (
+              <Reveal key={f.q}>
+                <div className="brr-faq-item">
+                  <h3>{f.q}</h3>
+                  <p>{f.a}</p>
+                </div>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="br-closing">
-        <div className="container">
+      {/* CTA */}
+      <section className="brr-closing">
+        <div className="container brr-closing-inner">
           <Reveal>
-            <div className="br-closing-inner">
-              <h2>Stop running your infrastructure by accident</h2>
-              <p className="br-closing-sub">Get a free hybrid cloud assessment and a clear workload placement strategy.</p>
-              <div className="br-closing-meta"><span>Call <a href="tel:+918355958119">+91 83559 58119</a></span><span>Email <a href="mailto:sales@cgcein.com">sales@cgcein.com</a></span><span>C 1405 Kailash Business Park, Vikhroli (W), Mumbai</span></div>
-              <Link href="/contact" className="btn btn-grad">Get free consultation<ArrowRightIcon /></Link>
+            <h2 className="section-title">Stop running your infrastructure <span className="grad">by accident</span></h2>
+            <p className="brr-closing-sub">{service.cta}</p>
+            <div className="brr-closing-meta">
+              <span>Call <a href="tel:+918355958119">+91 83559 58119</a></span>
+              <span>Email <a href="mailto:sales@cgcein.com">sales@cgcein.com</a></span>
+              <span>C 1405 Kailash Business Park, Vikhroli (W), Mumbai</span>
             </div>
+            <Link href="/contact" className="btn btn-grad">
+              Get Free Consultation
+              <ArrowRightIcon />
+            </Link>
           </Reveal>
         </div>
       </section>
-    </main>
+    </>
   );
 }

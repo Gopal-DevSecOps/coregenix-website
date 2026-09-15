@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
+import SectionHeading from "./SectionHeading";
 import { CheckIcon, ArrowRightIcon } from "./Icons";
 import type { ServicePage } from "@/data/services";
 
@@ -8,10 +10,10 @@ interface Props {
 }
 
 const stats = [
-  { value: "22+", label: "Years of experience" },
-  { value: "119+", label: "Projects delivered" },
-  { value: "75+", label: "Happy clients" },
-  { value: "24×7", label: "Pan-India support" },
+  { value: "22+", label: "Years of Experience" },
+  { value: "119+", label: "Projects Delivered" },
+  { value: "75+", label: "Happy Clients" },
+  { value: "24×7", label: "Pan-India Support" },
 ];
 
 const challenges = [
@@ -91,35 +93,59 @@ export default function CloudInfrastructureLanding({ service }: Props) {
   const whyChoose = service.sections.find((s) => s.heading === "Why Choose CoreGenix");
 
   return (
-    <main>
+    <>
       {/* Hero */}
-      <section className="br-hero">
+      <section className="brr-hero">
+        <div className="float-shape float-shape-1" aria-hidden="true" />
+        <div className="float-shape float-shape-2" aria-hidden="true" />
+        <div className="container brr-hero-grid">
+          <div className="brr-hero-content">
+            <Reveal as="span" className="eyebrow" delay={1}>
+              Cloud Managed Services
+            </Reveal>
+            <Reveal delay={2}>
+              <h1 className="section-title brr-hero-title">
+                {service.h1.split("—").map((part, i) =>
+                  i === 0 ? part : <span key={i} className="grad"> — {part}</span>
+                )}
+              </h1>
+            </Reveal>
+            <Reveal as="p" className="brr-hero-desc" delay={3}>
+              {service.intro}
+            </Reveal>
+            <Reveal as="div" className="brr-hero-actions" delay={4}>
+              <Link href="/contact" className="btn btn-grad">
+                Get Free Consultation
+                <ArrowRightIcon />
+              </Link>
+              <Link href="/services" className="btn btn-hero-secondary">
+                View All Services
+              </Link>
+            </Reveal>
+          </div>
+          <Reveal className="brr-hero-media" delay={3}>
+            <div className="brr-hero-img">
+              <Image
+                src="/images/coregenix/service-7.jpg"
+                alt="Managed cloud infrastructure"
+                width={900}
+                height={600}
+                className="main-img"
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="brr-stats" aria-label="Cloud management by the numbers">
         <div className="container">
-          <Reveal as="span" className="br-eyebrow" delay={1}>
-            <span className="br-dot" />
-            Cloud Managed Services
-          </Reveal>
-          <Reveal delay={2}>
-            <h1 className="br-hero-title">{service.h1}</h1>
-          </Reveal>
-          <Reveal as="p" className="br-hero-desc" delay={3}>
-            {service.intro}
-          </Reveal>
-          <Reveal as="div" className="br-hero-actions" delay={4}>
-            <Link href="/contact" className="btn btn-grad">
-              Get free consultation
-              <ArrowRightIcon />
-            </Link>
-            <Link href="/services" className="btn btn-hero-secondary">
-              View all services
-            </Link>
-          </Reveal>
-          <div className="br-stat-bar">
+          <div className="brr-stats-grid">
             {stats.map((stat, i) => (
               <Reveal key={stat.label} delay={(i % 4) + 1}>
-                <div className="br-stat">
-                  <span className="br-stat-num">{stat.value}</span>
-                  <span className="br-stat-label">{stat.label}</span>
+                <div className="brr-stat">
+                  <span className="brr-stat-value">{stat.value}</span>
+                  <span className="brr-stat-label">{stat.label}</span>
                 </div>
               </Reveal>
             ))}
@@ -127,190 +153,219 @@ export default function CloudInfrastructureLanding({ service }: Props) {
         </div>
       </section>
 
-      {/* Answer Block */}
-      <section className="br-answer">
-        <div className="container br-answer-grid">
-          <Reveal delay={1}>
-            <h2>What is cloud infrastructure management?</h2>
-          </Reveal>
-          <Reveal as="div" className="br-answer-copy" delay={2}>
-            <p>Cloud infrastructure management is the day-to-day operation, monitoring, security, and optimization of a cloud environment — including 24x7 monitoring, patching and access control, cost optimization, backup and disaster recovery, and controlled change management. CoreGenix delivers this as a fully managed service across Azure, AWS, private, and hybrid cloud, run from our own Network Operations Center with Pan-India support.</p>
-          </Reveal>
+      {/* What is */}
+      <section className="section brr-what">
+        <div className="container">
+          <SectionHeading
+            center
+            eyebrow="Cloud Infrastructure Management"
+            title={
+              <>
+                What is <span className="grad">cloud infrastructure management?</span>
+              </>
+            }
+            desc="The day-to-day operation, monitoring, security, and optimization of a cloud environment — delivered as a fully managed service across Azure, AWS, private, and hybrid cloud."
+          />
+          <div className="brr-check-grid">
+            {[
+              "24x7 monitoring & alerting",
+              "Patching & access control",
+              "Cost optimization & right-sizing",
+              "Backup & disaster recovery",
+              "Controlled change management",
+              "Multi-cloud expertise",
+            ].map((item, i) => (
+              <Reveal key={item} delay={(i % 3) + 1}>
+                <div className="brr-check-item">
+                  <span className="ce-check">
+                    <CheckIcon />
+                  </span>
+                  {item}
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Challenge */}
-      <section className="br-challenge">
+      <section className="section brr-challenge section-dark">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>The problem we solve</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              Migrating to the cloud is the easy part. Running it well is the hard part. Environments drift, security gets sloppy, and costs creep up until something breaks or the bill surprises you.
-            </Reveal>
-          </div>
-          <div className="br-challenge-grid">
+          <SectionHeading
+            center
+            light
+            eyebrow="The Problem We Solve"
+            title={
+              <>
+                Cloud that runs itself — <span className="grad">until it doesn&apos;t</span>
+              </>
+            }
+            desc="Migrating to the cloud is the easy part. Running it well is the hard part."
+          />
+          <div className="brr-challenge-grid">
             {challenges.map((item, i) => (
               <Reveal key={item} delay={(i % 3) + 1}>
-                <div className="br-challenge-item">
-                  <span className="br-challenge-icon">
-                    <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" strokeWidth="1.3"/><path d="M8 4v5M8 11.5v.1" stroke="currentColor" strokeWidth="1.3"/></svg>
-                  </span>
+                <div className="brr-challenge-card">
                   <p>{item}</p>
                 </div>
               </Reveal>
             ))}
           </div>
-          <Reveal as="div" className="br-challenge-note" delay={3}>
-            <p>Without dedicated cloud management, <strong>you pay more, risk more, and spend your team&apos;s time babysitting infrastructure instead of running the business.</strong> CoreGenix takes that operational burden off your plate.</p>
+          <Reveal as="div" className="brr-challenge-note" delay={3}>
+            <p>Without dedicated cloud management, <strong>you pay more, risk more, and spend your team&apos;s time babysitting infrastructure</strong> instead of running the business.</p>
           </Reveal>
         </div>
       </section>
 
-      {/* What We Deliver */}
-      <section className="br-deliver">
+      {/* Deliver */}
+      <section className="section brr-deliver">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>What we deliver</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              A complete managed cloud engagement — monitoring, security, cost, backup, and change control, all under one accountable team.
-            </Reveal>
-          </div>
-          {deliverables.map((d) => (
-            <Reveal key={d.num} delay={1}>
-              <div className="br-phase">
-                <span className="br-phase-num">{d.num}</span>
-                <div>
+          <SectionHeading
+            center
+            eyebrow="What We Deliver"
+            title={
+              <>
+                Complete Managed Cloud <span className="grad">Operations</span>
+              </>
+            }
+            desc="Monitoring, security, cost, backup, and change control — all under one accountable team."
+          />
+          <div className="brr-deliver-grid">
+            {deliverables.map((d, i) => (
+              <Reveal key={d.num} delay={(i % 3) + 1}>
+                <div className="brr-deliver-card">
+                  <span className="brr-deliver-num">{d.num}</span>
                   <h3>{d.title}</h3>
-                  <p className="br-phase-tag">{d.tag}</p>
+                  <p className="brr-deliver-tag">{d.tag}</p>
+                  <ul className="brr-deliver-list">
+                    {d.items.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
                 </div>
-                <ul className="br-phase-list">
-                  {d.items.map((item) => <li key={item}>{item}</li>)}
-                </ul>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* SLA Table */}
-      <section className="br-rpo-rto">
+      {/* SLA table */}
+      <section className="section brr-table-sec">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>What&apos;s in a managed cloud SLA</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              Cloud management is only as good as the response times behind it. Here&apos;s how CoreGenix structures incident response by severity.
-            </Reveal>
-          </div>
-          <Reveal delay={3}>
-            <div className="br-table-wrap">
-              <table className="br-table">
-                <thead>
-                  <tr>
-                    <th>Severity</th>
-                    <th>Definition</th>
-                    <th>Response Time</th>
-                    <th>Target Resolution</th>
+          <SectionHeading
+            center
+            eyebrow="SLA"
+            title={
+              <>
+                What&apos;s in a <span className="grad">managed cloud SLA</span>
+              </>
+            }
+            desc="Cloud management is only as good as the response times behind it."
+          />
+          <div className="brr-table-wrap">
+            <table className="brr-table">
+              <thead>
+                <tr>
+                  <th>Severity</th>
+                  <th>Definition</th>
+                  <th>Response Time</th>
+                  <th>Target Resolution</th>
+                </tr>
+              </thead>
+              <tbody>
+                {slaData.map((row) => (
+                  <tr key={row.severity}>
+                    <td><strong>{row.severity}</strong></td>
+                    <td>{row.definition}</td>
+                    <td>{row.response}</td>
+                    <td>{row.resolution}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {slaData.map((row) => (
-                    <tr key={row.severity}>
-                      <td>{row.severity}</td>
-                      <td>{row.definition}</td>
-                      <td>{row.response}</td>
-                      <td>{row.resolution}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </Reveal>
-          <p style={{ marginTop: 16, fontSize: 14, color: "var(--text-muted)" }}>Final SLA terms are confirmed per engagement based on workload criticality and support tier.</p>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="brr-table-note">Final SLA terms are confirmed per engagement based on workload criticality and support tier.</p>
         </div>
       </section>
 
-      {/* Process Steps */}
-      <section className="br-deliver">
+      {/* Process */}
+      <section className="section brr-deliver">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>How a managed cloud engagement runs</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              A structured onboarding and operating rhythm — not a black box.
-            </Reveal>
-          </div>
-          {processSteps.map((step) => (
-            <Reveal key={step.num} delay={1}>
-              <div className="br-phase">
-                <span className="br-phase-num">{step.num}</span>
-                <div>
+          <SectionHeading
+            center
+            eyebrow="How It Works"
+            title={
+              <>
+                How a managed cloud <span className="grad">engagement runs</span>
+              </>
+            }
+            desc="A structured onboarding and operating rhythm — not a black box."
+          />
+          <div className="brr-deliver-grid">
+            {processSteps.map((step, i) => (
+              <Reveal key={step.num} delay={(i % 3) + 1}>
+                <div className="brr-deliver-card">
+                  <span className="brr-deliver-num">{step.num}</span>
                   <h3>{step.title}</h3>
+                  <p className="brr-deliver-tag">{step.desc}</p>
                 </div>
-                <p style={{ fontSize: 15, color: "var(--text-soft)" }}>{step.desc}</p>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Comparison Table */}
-      <section className="br-compare">
+      {/* Comparison table */}
+      <section className="section brr-table-sec">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>In-house vs. managed cloud operations</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              What changes when cloud operations move from an internal team to a dedicated managed service.
-            </Reveal>
-          </div>
-          <Reveal delay={3}>
-            <div className="br-table-wrap">
-              <table className="br-table">
-                <thead>
-                  <tr>
-                    <th>Factor</th>
-                    <th>In-House Team</th>
-                    <th>CoreGenix Managed Service</th>
+          <SectionHeading
+            center
+            eyebrow="Compare"
+            title={
+              <>
+                In-house vs. managed <span className="grad">cloud operations</span>
+              </>
+            }
+            desc="What changes when cloud operations move from an internal team to a dedicated managed service."
+          />
+          <div className="brr-table-wrap">
+            <table className="brr-table">
+              <thead>
+                <tr>
+                  <th>Factor</th>
+                  <th>In-House Team</th>
+                  <th>CoreGenix Managed Service</th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonData.map((row) => (
+                  <tr key={row.factor}>
+                    <td><strong>{row.factor}</strong></td>
+                    <td>{row.inHouse}</td>
+                    <td>{row.managed}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {comparisonData.map((row) => (
-                    <tr key={row.factor}>
-                      <td>{row.factor}</td>
-                      <td>{row.inHouse}</td>
-                      <td>{row.managed}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </Reveal>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
       {/* Tools */}
-      <section className="br-industries">
+      <section className="section brr-deliver">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>Platforms &amp; tools we work with</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              Native cloud tooling combined with dedicated monitoring and cost-management platforms.
-            </Reveal>
-          </div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 8 }}>
-            {tools.map((tool) => (
-              <Reveal key={tool} delay={1}>
-                <span style={{ background: "var(--bg-darker)", border: "1px solid var(--border)", borderRadius: 100, padding: "8px 20px", fontSize: 14, fontWeight: 500, color: "var(--navy)" }}>{tool}</span>
+          <SectionHeading
+            center
+            eyebrow="Platforms & Tools"
+            title={
+              <>
+                Tools we <span className="grad">work with</span>
+              </>
+            }
+            desc="Native cloud tooling combined with dedicated monitoring and cost-management platforms."
+          />
+          <div className="brr-tags">
+            {tools.map((tool, i) => (
+              <Reveal key={tool} delay={(i % 4) + 1}>
+                <span className="brr-tag">{tool}</span>
               </Reveal>
             ))}
           </div>
@@ -319,21 +374,26 @@ export default function CloudInfrastructureLanding({ service }: Props) {
 
       {/* Outcomes */}
       {whatYouGet && (
-        <section className="br-outcomes">
+        <section className="section brr-outcomes section-dark">
           <div className="container">
-            <div className="br-section-head br-section-head-light">
-              <Reveal delay={1}>
-                <h2>Outcomes that move your business</h2>
-              </Reveal>
-              <Reveal as="p" className="br-sub" delay={2}>
-                What you walk away with once your cloud is properly managed.
-              </Reveal>
-            </div>
-            <div className="br-outcome-grid">
+            <SectionHeading
+              center
+              light
+              eyebrow="Outcomes"
+              title={
+                <>
+                  Outcomes that <span className="grad">move your business</span>
+                </>
+              }
+              desc="What you walk away with once your cloud is properly managed."
+            />
+            <div className="brr-outcome-grid">
               {whatYouGet.body.map((item, i) => (
                 <Reveal key={item} delay={(i % 4) + 1}>
-                  <div className="br-outcome-item">
-                    <CheckIcon className="br-outcome-check" />
+                  <div className="brr-outcome-item">
+                    <span className="ce-check">
+                      <CheckIcon />
+                    </span>
                     <p>{item}</p>
                   </div>
                 </Reveal>
@@ -343,23 +403,25 @@ export default function CloudInfrastructureLanding({ service }: Props) {
         </section>
       )}
 
-      {/* Why Choose */}
+      {/* Why choose */}
       {whyChoose && (
-        <section className="br-why">
+        <section className="section brr-why">
           <div className="container">
-            <div className="br-section-head">
-              <Reveal delay={1}>
-                <h2>The CoreGenix difference</h2>
-              </Reveal>
-              <Reveal as="p" className="br-sub" delay={2}>
-                What sets our cloud management apart from a ticket-based support desk.
-              </Reveal>
-            </div>
-            <div className="br-why-grid">
+            <SectionHeading
+              center
+              eyebrow="The CoreGenix Difference"
+              title={
+                <>
+                  Why teams choose <span className="grad">CoreGenix</span>
+                </>
+              }
+              desc="What sets our cloud management apart from a ticket-based support desk."
+            />
+            <div className="brr-why-grid">
               {whyChoose.body.map((item, i) => (
                 <Reveal key={item} delay={(i % 3) + 1}>
-                  <div className="br-why-cell">
-                    <span className="br-why-num">{String(i + 1).padStart(2, "0")}</span>
+                  <div className="brr-why-card">
+                    <span className="brr-why-num">{String(i + 1).padStart(2, "0")}</span>
                     <h3>{item}</h3>
                   </div>
                 </Reveal>
@@ -370,26 +432,25 @@ export default function CloudInfrastructureLanding({ service }: Props) {
       )}
 
       {/* FAQ */}
-      <section className="br-faq">
+      <section className="section brr-faq">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>Frequently asked questions</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              Straight answers about managed cloud, SLAs, and cost.
-            </Reveal>
-          </div>
-          <div className="br-faq-list">
-            {service.faq.map((f, i) => (
-              <Reveal key={f.q} delay={(i % 3) + 1}>
-                <details className="br-faq-item" open={i === 0}>
-                  <summary>
-                    {f.q}
-                    <span className="br-plus" />
-                  </summary>
-                  <div className="br-faq-answer">{f.a}</div>
-                </details>
+          <SectionHeading
+            center
+            eyebrow="FAQ"
+            title={
+              <>
+                Frequently asked <span className="grad">questions</span>
+              </>
+            }
+            desc="Straight answers about managed cloud, SLAs, and cost."
+          />
+          <div className="brr-faq-list">
+            {service.faq.map((f) => (
+              <Reveal key={f.q}>
+                <div className="brr-faq-item">
+                  <h3>{f.q}</h3>
+                  <p>{f.a}</p>
+                </div>
               </Reveal>
             ))}
           </div>
@@ -397,25 +458,23 @@ export default function CloudInfrastructureLanding({ service }: Props) {
       </section>
 
       {/* CTA */}
-      <section className="br-closing">
-        <div className="container">
+      <section className="brr-closing">
+        <div className="container brr-closing-inner">
           <Reveal>
-            <div className="br-closing-inner">
-              <h2>Let your cloud work for you</h2>
-              <p className="br-closing-sub">Get a free cloud infrastructure assessment and a clear view of where your environment stands today.</p>
-              <div className="br-closing-meta">
-                <span>Call <a href="tel:+918355958119">+91 83559 58119</a></span>
-                <span>Email <a href="mailto:sales@cgcein.com">sales@cgcein.com</a></span>
-                <span>C 1405 Kailash Business Park, Vikhroli (W), Mumbai</span>
-              </div>
-              <Link href="/contact" className="btn btn-grad">
-                Get free consultation
-                <ArrowRightIcon />
-              </Link>
+            <h2 className="section-title">Let your cloud <span className="grad">work for you</span></h2>
+            <p className="brr-closing-sub">{service.cta}</p>
+            <div className="brr-closing-meta">
+              <span>Call <a href="tel:+918355958119">+91 83559 58119</a></span>
+              <span>Email <a href="mailto:sales@cgcein.com">sales@cgcein.com</a></span>
+              <span>C 1405 Kailash Business Park, Vikhroli (W), Mumbai</span>
             </div>
+            <Link href="/contact" className="btn btn-grad">
+              Get Free Consultation
+              <ArrowRightIcon />
+            </Link>
           </Reveal>
         </div>
       </section>
-    </main>
+    </>
   );
 }

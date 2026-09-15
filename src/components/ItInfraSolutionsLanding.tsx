@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
-import { ArrowRightIcon } from "./Icons";
+import SectionHeading from "./SectionHeading";
+import { CheckIcon, ArrowRightIcon } from "./Icons";
 
 const stats = [
   { value: "22+", label: "Years of experience" },
@@ -75,172 +77,226 @@ const faqs = [
 
 export default function ItInfraSolutionsLanding() {
   return (
-    <main>
+    <>
       {/* Hero */}
-      <section className="br-hero">
-        <div className="container">
-          <Reveal as="span" className="br-eyebrow" delay={1}>
-            <span className="br-dot" />
-            Solutions
-          </Reveal>
-          <Reveal delay={2}>
-            <h1 className="br-hero-title">IT infrastructure solutions — networks, data centers &amp; disaster recovery, built for uptime</h1>
-          </Reveal>
-          <Reveal as="p" className="br-hero-desc" delay={3}>
-            Networks, data centers, data backup, and disaster recovery — designed, built, and managed for uptime and growth. CoreGenix covers the full infrastructure stack under one accountable team.
-          </Reveal>
-          <Reveal as="div" className="br-hero-actions" delay={4}>
-            <Link href="/contact" className="btn btn-grad">
-              Get free consultation
-              <ArrowRightIcon />
-            </Link>
-            <Link href="/solutions" className="btn btn-hero-secondary">
-              View all solutions
-            </Link>
-          </Reveal>
-          <div className="br-stat-bar">
-            {stats.map((stat, i) => (
-              <Reveal key={stat.label} delay={(i % 4) + 1}>
-                <div className="br-stat">
-                  <span className="br-stat-num">{stat.value}</span>
-                  <span className="br-stat-label">{stat.label}</span>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Answer Block */}
-      <section className="br-answer">
-        <div className="container br-answer-grid">
-          <Reveal delay={1}>
-            <h2>What are IT infrastructure solutions?</h2>
-          </Reveal>
-          <Reveal as="div" className="br-answer-copy" delay={2}>
-            <p>IT infrastructure solutions cover the physical and technical foundation a business runs on: Network Infrastructure (LAN, WAN, SD-WAN, and cabling), Data Center Solutions (design, build, and server/virtualization), Data Backup &amp; Restore (automated, on-premise and cloud), and Disaster Recovery &amp; Business Continuity (defined RPO/RTO with tested recovery plans). CoreGenix designs, builds, and manages all four for businesses across India.</p>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Four Pillars */}
-      <section className="br-deliver">
-        <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>Four pillars of a reliable IT foundation</h2>
+      <section className="brr-hero">
+        <div className="float-shape float-shape-1" aria-hidden="true" />
+        <div className="float-shape float-shape-2" aria-hidden="true" />
+        <div className="container brr-hero-grid">
+          <div className="brr-hero-content">
+            <Reveal as="span" className="eyebrow" delay={1}>
+              Solutions
             </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              From the network that connects you to the recovery plan that saves you — CoreGenix builds and manages the whole stack.
+            <Reveal delay={2}>
+              <h1 className="section-title brr-hero-title">
+                IT infrastructure solutions — <span className="grad">networks, data centers &amp; disaster recovery, built for uptime</span>
+              </h1>
+            </Reveal>
+            <Reveal as="p" className="brr-hero-desc" delay={3}>
+              Networks, data centers, data backup, and disaster recovery — designed, built, and managed for uptime and growth. CoreGenix covers the full infrastructure stack under one accountable team.
+            </Reveal>
+            <Reveal as="div" className="brr-hero-actions" delay={4}>
+              <Link href="/contact" className="btn btn-grad">
+                Get free consultation
+                <ArrowRightIcon />
+              </Link>
+              <Link href="/solutions" className="btn btn-hero-secondary">
+                View all solutions
+              </Link>
             </Reveal>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginTop: 8 }}>
-            {pillars.map((item, i) => (
-              <Reveal key={item.stage} delay={(i % 4) + 1}>
-                <div style={{ background: "var(--bg-dark)", border: "1px solid var(--border)", borderRadius: 12, padding: 28 }}>
-                  <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--gold)" }}>{item.stage}</span>
-                  <h3 style={{ fontFamily: "var(--font-heading)", fontSize: 20, fontWeight: 700, color: "var(--navy)", margin: "8px 0 12px" }}>{item.title}</h3>
-                  <p style={{ fontSize: 14, color: "var(--text-soft)", margin: "0 0 16px", lineHeight: 1.6 }}>{item.desc}</p>
-                  <Link href={item.href} style={{ fontSize: 14, fontWeight: 600, color: "var(--gold)", textDecoration: "none" }}>
-                    Learn more →
-                  </Link>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Subservice Details */}
-      <section className="br-answer">
-        <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>What&apos;s included in each solution</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              A closer look at what CoreGenix delivers across network, data center, backup, and disaster recovery.
-            </Reveal>
-          </div>
-          {subservices.map((s, i) => (
-            <Reveal key={s.title} delay={1}>
-              <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 32, padding: "28px 0", borderBottom: i < subservices.length - 1 ? "1px solid var(--border)" : "none" }}>
-                <div>
-                  <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--gold)" }}>{s.stage}</span>
-                  <h3 style={{ fontFamily: "var(--font-heading)", fontSize: 18, fontWeight: 700, color: "var(--navy)", margin: "4px 0 0" }}>{s.title}</h3>
-                </div>
-                <div>
-                  <p style={{ fontSize: 15, color: "var(--text-soft)", margin: "0 0 12px", lineHeight: 1.6 }}>{s.desc}</p>
-                  <ul style={{ listStyle: "none", padding: 0, margin: "0 0 16px" }}>
-                    {s.items.map((item) => (
-                      <li key={item} style={{ fontSize: 14, color: "var(--text-soft)", padding: "4px 0 4px 16px", position: "relative" as const }}>
-                        <span style={{ position: "absolute", left: 0, top: 11, width: 6, height: 6, borderRadius: "50%", background: "var(--gold)" }} />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link href={s.href} style={{ fontSize: 14, fontWeight: 600, color: "var(--gold)", textDecoration: "none" }}>
-                    Learn more about {s.title} →
-                  </Link>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* Decision Table */}
-      <section className="br-rpo-rto">
-        <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>Which IT infrastructure solution do you need?</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              A quick way to figure out where to start, based on your current situation.
-            </Reveal>
-          </div>
-          <Reveal delay={3}>
-            <div className="br-table-wrap">
-              <table className="br-table">
-                <thead>
-                  <tr>
-                    <th>Your situation</th>
-                    <th>Start with</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {decisionData.map((row) => (
-                    <tr key={row.situation}>
-                      <td>{row.situation}</td>
-                      <td>{row.start}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+          <Reveal className="brr-hero-media" delay={3}>
+            <div className="brr-hero-img">
+              <Image
+                src="/images/coregenix/service-2.jpg"
+                alt="IT infrastructure solutions"
+                width={900}
+                height={600}
+                className="main-img"
+              />
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* Industries */}
-      <section className="br-industries">
+      {/* Stats */}
+      <section className="brr-stats" aria-label="IT infrastructure solutions by the numbers">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>IT infrastructure for every sector</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              The right mix of network, data center, backup, and recovery for the uptime and compliance needs of your industry.
-            </Reveal>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginTop: 8 }}>
-            {industries.map((ind, i) => (
-              <Reveal key={ind.title} delay={(i % 3) + 1}>
-                <div style={{ background: "var(--bg-dark)", border: "1px solid var(--border)", borderRadius: 12, padding: 24 }}>
-                  <h3 style={{ fontFamily: "var(--font-heading)", fontSize: 16, fontWeight: 700, color: "var(--navy)", margin: "0 0 8px" }}>{ind.title}</h3>
-                  <p style={{ fontSize: 14, color: "var(--text-soft)", margin: 0 }}>{ind.desc}</p>
+          <div className="brr-stats-grid">
+            {stats.map((stat, i) => (
+              <Reveal key={stat.label} delay={(i % 4) + 1}>
+                <div className="brr-stat">
+                  <span className="brr-stat-value">{stat.value}</span>
+                  <span className="brr-stat-label">{stat.label}</span>
                 </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What is */}
+      <section className="section brr-what">
+        <div className="container">
+          <SectionHeading
+            center
+            eyebrow="Overview"
+            title={
+              <>
+                What are <span className="grad">IT infrastructure solutions?</span>
+              </>
+            }
+            desc="IT infrastructure solutions cover the physical and technical foundation a business runs on: Network Infrastructure (LAN, WAN, SD-WAN, and cabling), Data Center Solutions (design, build, and server/virtualization), Data Backup & Restore (automated, on-premise and cloud), and Disaster Recovery & Business Continuity (defined RPO/RTO with tested recovery plans). CoreGenix designs, builds, and manages all four for businesses across India."
+          />
+          <div className="brr-check-grid">
+            {[
+              "Network Infrastructure — LAN, WAN, SD-WAN & cabling",
+              "Data Center Solutions — design, build & virtualization",
+              "Data Backup & Restore — automated, on-premise & cloud",
+              "Disaster Recovery & Business Continuity — defined RPO/RTO",
+              "Design, build & manage under one team",
+              "Delivered for businesses across India",
+            ].map((item, i) => (
+              <Reveal key={item} delay={(i % 3) + 1}>
+                <div className="brr-check-item">
+                  <span className="ce-check">
+                    <CheckIcon />
+                  </span>
+                  {item}
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Four Pillars */}
+      <section className="section brr-deliver">
+        <div className="container">
+          <SectionHeading
+            center
+            eyebrow="Four Pillars"
+            title={
+              <>
+                Four pillars of a reliable <span className="grad">IT foundation</span>
+              </>
+            }
+            desc="From the network that connects you to the recovery plan that saves you — CoreGenix builds and manages the whole stack."
+          />
+          <div className="brr-deliver-grid">
+            {pillars.map((item, i) => (
+              <Reveal key={item.stage} delay={(i % 4) + 1}>
+                <div className="brr-deliver-card">
+                  <span className="brr-deliver-num">{item.stage}</span>
+                  <h3>{item.title}</h3>
+                  <p className="brr-deliver-tag">{item.desc}</p>
+                  <Link href={item.href} className="brr-deliver-link">
+                    Learn more
+                    <ArrowRightIcon />
+                  </Link>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Subservices */}
+      <section className="section brr-table-sec">
+        <div className="container">
+          <SectionHeading
+            center
+            eyebrow="What's Included"
+            title={
+              <>
+                What&apos;s included in <span className="grad">each solution</span>
+              </>
+            }
+            desc="A closer look at what CoreGenix delivers across network, data center, backup, and disaster recovery."
+          />
+          <div className="brr-table-wrap">
+            <table className="brr-table">
+              <thead>
+                <tr>
+                  <th>Stage</th>
+                  <th>Service</th>
+                  <th>What&apos;s included</th>
+                </tr>
+              </thead>
+              <tbody>
+                {subservices.map((s) => (
+                  <tr key={s.title}>
+                    <td><strong>{s.stage}</strong></td>
+                    <td><strong>{s.title}</strong></td>
+                    <td>
+                      {s.items.map((item) => (
+                        <span key={item} className="brr-cell-item">{item}</span>
+                      ))}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Decision table */}
+      <section className="section brr-table-sec">
+        <div className="container">
+          <SectionHeading
+            center
+            eyebrow="Find Your Fit"
+            title={
+              <>
+                Which IT infrastructure solution <span className="grad">do you need?</span>
+              </>
+            }
+            desc="A quick way to figure out where to start, based on your current situation."
+          />
+          <div className="brr-table-wrap">
+            <table className="brr-table">
+              <thead>
+                <tr>
+                  <th>Your situation</th>
+                  <th>Start with</th>
+                </tr>
+              </thead>
+              <tbody>
+                {decisionData.map((row) => (
+                  <tr key={row.situation}>
+                    <td>{row.situation}</td>
+                    <td><strong>{row.start}</strong></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Industries */}
+      <section className="section brr-audience">
+        <div className="container">
+          <SectionHeading
+            center
+            eyebrow="Who Needs It"
+            title={
+              <>
+                IT infrastructure <span className="grad">for every sector</span>
+              </>
+            }
+            desc="The right mix of network, data center, backup, and recovery for the uptime and compliance needs of your industry."
+          />
+          <div className="wwp-grid">
+            {industries.map((ind, i) => (
+              <Reveal key={ind.title} delay={(i % 3) + 1} className="wwp-wrap">
+                <article className="wwp-card brr-audience-card">
+                  <div className="wwp-card-inner">
+                    <h3>{ind.title}</h3>
+                    <p>{ind.desc}</p>
+                  </div>
+                </article>
               </Reveal>
             ))}
           </div>
@@ -248,26 +304,25 @@ export default function ItInfraSolutionsLanding() {
       </section>
 
       {/* FAQ */}
-      <section className="br-faq">
+      <section className="section brr-faq">
         <div className="container">
-          <div className="br-section-head">
-            <Reveal delay={1}>
-              <h2>Frequently asked questions</h2>
-            </Reveal>
-            <Reveal as="p" className="br-sub" delay={2}>
-              Straight answers about network, data center, backup, and disaster recovery.
-            </Reveal>
-          </div>
-          <div className="br-faq-list">
-            {faqs.map((f, i) => (
-              <Reveal key={f.q} delay={(i % 3) + 1}>
-                <details className="br-faq-item" open={i === 0}>
-                  <summary>
-                    {f.q}
-                    <span className="br-plus" />
-                  </summary>
-                  <div className="br-faq-answer">{f.a}</div>
-                </details>
+          <SectionHeading
+            center
+            eyebrow="FAQ"
+            title={
+              <>
+                Frequently asked <span className="grad">questions</span>
+              </>
+            }
+            desc="Straight answers about network, data center, backup, and disaster recovery."
+          />
+          <div className="brr-faq-list">
+            {faqs.map((f) => (
+              <Reveal key={f.q}>
+                <div className="brr-faq-item">
+                  <h3>{f.q}</h3>
+                  <p>{f.a}</p>
+                </div>
               </Reveal>
             ))}
           </div>
@@ -275,20 +330,23 @@ export default function ItInfraSolutionsLanding() {
       </section>
 
       {/* CTA */}
-      <section className="br-closing">
-        <div className="container">
+      <section className="brr-closing">
+        <div className="container brr-closing-inner">
           <Reveal>
-            <div className="br-closing-inner">
-              <h2>Not sure which solution fits your business?</h2>
-              <p className="br-closing-sub">Talk to our experts for a free consultation and a tailored technology plan.</p>
-              <Link href="/contact" className="btn btn-grad">
-                Get free consultation
-                <ArrowRightIcon />
-              </Link>
+            <h2 className="section-title">Not sure which solution <span className="grad">fits your business?</span></h2>
+            <p className="brr-closing-sub">Talk to our experts for a free consultation and a tailored technology plan.</p>
+            <div className="brr-closing-meta">
+              <span>Call <a href="tel:+918355958119">+91 83559 58119</a></span>
+              <span>Email <a href="mailto:sales@cgcein.com">sales@cgcein.com</a></span>
+              <span>C 1405 Kailash Business Park, Vikhroli (W), Mumbai</span>
             </div>
+            <Link href="/contact" className="btn btn-grad">
+              Get free consultation
+              <ArrowRightIcon />
+            </Link>
           </Reveal>
         </div>
       </section>
-    </main>
+    </>
   );
 }

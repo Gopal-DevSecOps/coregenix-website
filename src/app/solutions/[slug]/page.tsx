@@ -13,8 +13,8 @@ import PublicCloudLanding from "@/components/PublicCloudLanding";
 import HybridCloudLanding from "@/components/HybridCloudLanding";
 import { getSolutionPage, solutionPages } from "@/data/solutionPages";
 import { SITE } from "@/lib/site";
+import "../../services/[slug]/backup-recovery.css";
 import "../../services/[slug]/service-landing.css";
-import "../../services/[slug]/cloud-infra-mgmt.css";
 
 interface Props {
   params: Promise<{ slug: string }>;
