@@ -49,15 +49,26 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: `${SITE.name} — IT Infrastructure & Cyber Security Company in Mumbai`,
     description: SITE.description,
+    images: [
+      {
+        url: `${SITE.url}/images/coregenix/logo.png`,
+        width: 512,
+        height: 512,
+        type: "image/png",
+        alt: SITE.name,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${SITE.name} — IT Infrastructure & Cyber Security Company in Mumbai`,
     description: SITE.description,
+    images: [`${SITE.url}/images/coregenix/logo.png`],
   },
   icons: {
-    icon: "/images/coregenix/logo.png",
-    apple: "/images/coregenix/logo.png",
+    icon: [{ url: "/images/coregenix/logo.png", type: "image/png", sizes: "512x512" }],
+    apple: [{ url: "/images/coregenix/logo.png", type: "image/png", sizes: "180x180" }],
+    shortcut: "/favicon.ico",
   },
 };
 
