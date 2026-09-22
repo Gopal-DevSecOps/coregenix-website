@@ -3,7 +3,7 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import { CheckIcon, MailIcon } from "@/components/Icons";
 
-const CONTACT_EMAIL = "gopal@coregenix.in";
+const CONTACT_EMAIL = "sales@cgcein.com";
 
 interface FormValues {
   name: string;

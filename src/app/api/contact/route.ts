@@ -32,7 +32,7 @@ export async function POST(req: Request) {
   const SMTP_PORT = Number(process.env.SMTP_PORT ?? 465);
   const SMTP_USER = process.env.SMTP_USER;
   const SMTP_PASS = process.env.SMTP_PASS;
-  const CONTACT_EMAIL = process.env.CONTACT_EMAIL ?? "gopal@coregenix.in";
+  const CONTACT_EMAIL = process.env.CONTACT_EMAIL ?? "sales@cgcein.com";
 
   if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
     return NextResponse.json(
