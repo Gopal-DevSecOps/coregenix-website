@@ -3,7 +3,7 @@ import Link from "next/link";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import CtaSection from "./CtaSection";
-import { CheckIcon, ArrowRightIcon } from "./Icons";
+import { CheckIcon, ArrowRightIcon, ClockIcon, RefreshIcon } from "./Icons";
 import type { SolutionPage } from "@/data/solutionPages";
 
 interface Props { service: SolutionPage; }
@@ -15,51 +15,65 @@ const stats = [
   { value: "24×7", label: "Pan-India support" },
 ];
 
+const whatWeCover = [
+  "DR strategy design",
+  "Recovery architecture",
+  "Business continuity planning",
+  "Backup integration",
+  "Tested failover",
+  "Incident playbooks",
+];
+
 const challenges = [
-  "No defined RPO or RTO — recovery time is a guess",
-  "DR plans that exist on paper but were never tested",
-  "Backup without failover — data is safe, but systems aren't",
-  "No incident playbooks — staff don't know what to do first",
-  "Business continuity planning that ignores non-IT operations",
-  "Compliance gaps — auditors asking for DR evidence you don't have",
+  "A DR plan that exists only as a document nobody has tested",
+  "No defined RPO or RTO — nobody knows how much data is at risk or how long recovery takes",
+  "Backup exists, but no replicated systems ready to actually fail over",
+  "IT recovery plans that ignore how the rest of the business keeps running",
+  "No clear playbook — the first hour of a disaster spent figuring out who does what",
+  "No board-ready documentation to satisfy auditors or insurers",
 ];
 
 const deliverables = [
-  { num: "01", title: "DR Strategy Design", tag: "RPO and RTO defined for your business", items: ["Recovery objectives aligned to business impact", "Risk assessment and gap analysis", "DR tier recommendation matched to budget"] },
-  { num: "02", title: "Recovery Architecture", tag: "Replicated systems, ready to fail over", items: ["Cross-site or cross-region replication", "Automated failover and failback procedures", "Standby infrastructure ready to activate"] },
-  { num: "03", title: "Business Continuity Planning", tag: "Keep operations running", items: ["Non-IT process continuity plans", "Staff communication and role assignment", "Alternate site and vendor arrangements"] },
-  { num: "04", title: "Backup Integration", tag: "DR layered on reliable backups", items: ["DR strategy built on verified backup foundation", "Consistent retention and recovery policies", "Unified monitoring across backup and DR"] },
-  { num: "05", title: "Tested Failover", tag: "Regular DR drills, not just documentation", items: ["Scheduled failover tests with documented results", " tabletop exercises for incident response", "Continuous improvement based on test outcomes"] },
-  { num: "06", title: "Incident Playbooks", tag: "Clear steps when disaster strikes", items: ["Role-based response procedures", "Communication templates and escalation paths", "Post-incident review and improvement process"] },
-];
-
-const rpoRtoData = [
-  { rpo: "RPO 24h", rto: "RTO 4-8h", description: "Daily backup, next-business-day recovery — suitable for non-critical systems" },
-  { rpo: "RPO 4h", rto: "RTO 2-4h", description: "Near-real-time replication, same-day recovery — suitable for important business systems" },
-  { rpo: "RPO 1h", rto: "RTO <1h", description: "Continuous replication, rapid failover — suitable for critical production systems" },
-  { rpo: "RPO 0", rto: "RTO <15min", description: "Zero data loss, instant failover — suitable for mission-critical, always-on systems" },
+  { num: "01", title: "DR Strategy Design", tag: "RPO and RTO defined for your business", items: ["Business Impact Analysis to prioritize critical systems", "RPO and RTO defined per system, not one blanket target", "Recovery site strategy — hot, warm, or cold"] },
+  { num: "02", title: "Recovery Architecture", tag: "Replicated systems, ready to fail over", items: ["Real-time or near-real-time replication for critical systems", "Failover and failback procedures documented and rehearsed", "Recovery infrastructure sized to actual RTO targets"] },
+  { num: "03", title: "Business Continuity Planning", tag: "Keep operations running", items: ["Critical process mapping beyond IT systems", "Alternate operating procedures during downtime", "Staff and customer communication plans"] },
+  { num: "04", title: "Backup Integration", tag: "DR layered on reliable backups", items: ["DR architecture built on top of tested backup systems", "Consistent RPO alignment between backup and DR", "Single view of both backup and recovery health"] },
+  { num: "05", title: "Tested Failover", tag: "Regular DR drills, not just documentation", items: ["Scheduled failover drills, at least annually", "Tabletop exercises for business continuity scenarios", "Post-drill reports identifying gaps to fix"] },
+  { num: "06", title: "Incident Playbooks", tag: "Clear steps when disaster strikes", items: ["Step-by-step runbooks by disaster scenario", "Defined roles and escalation paths", "Board-ready documentation for audits and insurers"] },
 ];
 
 const hotWarmCold = [
-  { type: "Hot Site", description: "Fully operational standby, ready to take over immediately", rto: "<15 minutes", cost: "Highest" },
-  { type: "Warm Site", description: "Infrastructure ready, needs configuration before taking over", rto: "1-4 hours", cost: "Medium" },
-  { type: "Cold Site", description: "Basic space with power and connectivity, no pre-installed systems", rto: "24-72 hours", cost: "Lowest" },
+  { label: "Fastest recovery", type: "Hot Site", description: "A fully replicated, ready-to-use environment that can take over almost instantly — highest cost, lowest RTO." },
+  { label: "Balanced", type: "Warm Site", description: "Some infrastructure already in place, but final setup and data sync are needed before it's fully operational." },
+  { label: "Lowest cost", type: "Cold Site", description: "Basic space and power with no pre-installed systems — lowest cost, but the longest time to activate." },
 ];
 
-const drVsBcp = [
-  { factor: "Focus", dr: "IT systems and data", bcp: "Wider business operations" },
-  { factor: "Goal", dr: "Restore technology after disruption", bcp: "Keep business operating during disruption" },
-  { factor: "Scope", dr: "Servers, applications, network, data", bcp: "People, processes, communication, facilities" },
-  { factor: "Timeline", dr: "After the event (recovery)", bcp: "During the event (continuity)" },
+const drTiers = [
+  { tier: "Tier 1", criticality: "Mission-critical (core banking, e-commerce checkout)", rto: "Under 1 hour", rpo: "Near-zero (continuous replication)" },
+  { tier: "Tier 2", criticality: "Business-critical (ERP, email, CRM)", rto: "1–4 hours", rpo: "15 minutes – 1 hour" },
+  { tier: "Tier 3", criticality: "Important (internal tools, file shares)", rto: "4–24 hours", rpo: "4–24 hours" },
+  { tier: "Tier 4", criticality: "Non-critical (archives, dev/test systems)", rto: "72+ hours", rpo: "24–72 hours" },
+];
+
+const bcpComponents = [
+  "Business Impact Analysis (BIA)",
+  "Risk Assessment",
+  "Emergency Response Plan",
+  "Crisis Communication Plan",
+  "Alternate Site/Process Procedures",
+  "Roles & Escalation Matrix",
+  "Regular Testing & Review",
 ];
 
 const industries = [
-  { title: "BFSI", desc: "Zero-tolerance DR for core banking with RBI compliance." },
-  { title: "Healthcare", desc: "Clinical system availability and patient data protection." },
-  { title: "Manufacturing", desc: "Production system DR with defined recovery windows." },
-  { title: "Retail & E-commerce", desc: "Transaction continuity during peak trading periods." },
-  { title: "Government / PSU", desc: "National continuity framework compliance." },
+  { title: "BFSI", desc: "Near-zero RPO for core banking, with regulator-ready DR documentation." },
+  { title: "Manufacturing", desc: "Continuity plans that keep plant systems and ERP running." },
+  { title: "Healthcare", desc: "DR for patient records with strict data protection compliance." },
+  { title: "Retail & E-commerce", desc: "Fast recovery to protect revenue during peak trading periods." },
+  { title: "Government / PSU", desc: "Business continuity planning aligned to public-sector mandates." },
 ];
+
+const drVsBcp = "Disaster recovery restores IT systems and data after a disruption — servers, applications, and infrastructure back online. Business continuity is broader: it covers how the entire business keeps functioning during that disruption, including manual workarounds, staff communication, supplier coordination, and customer service continuity — regardless of whether IT is fully restored yet. A DR plan without a BCP leaves the business unable to operate even after systems come back; a BCP without DR has no technical foundation to recover to. CoreGenix builds both together as one coordinated plan.";
 
 export default function DisasterRecoveryLanding({ service }: Props) {
   const whatYouGet = service.sections.find((s) => s.heading === "What You Get");
@@ -88,11 +102,11 @@ export default function DisasterRecoveryLanding({ service }: Props) {
             </Reveal>
             <Reveal as="div" className="brr-hero-actions" delay={4}>
               <Link href="/contact" className="btn btn-grad">
-                Get Free Consultation
+                Get free consultation
                 <ArrowRightIcon />
               </Link>
               <Link href="/solutions" className="btn btn-hero-secondary">
-                View All Solutions
+                View all solutions
               </Link>
             </Reveal>
           </div>
@@ -134,20 +148,13 @@ export default function DisasterRecoveryLanding({ service }: Props) {
             eyebrow="Disaster Recovery & BCP"
             title={
               <>
-                What is <span className="grad">disaster recovery and business continuity?</span>
+                What is <span className="grad">disaster recovery and business continuity planning?</span>
               </>
             }
-            desc="Disaster recovery and business continuity planning ensures your business can survive and recover from any disruption — cyber attack, natural disaster, power failure, or system outage. CoreGenix builds tested DR/BCP plans with defined RPO/RTO, failover procedures, and incident playbooks so you know exactly what to do when something goes wrong."
+            desc="Disaster recovery (DR) is the process of restoring IT systems and data after a disruption, while business continuity planning (BCP) covers how the wider business keeps operating during that disruption. CoreGenix delivers both together — DR strategy with defined RPO/RTO, replicated recovery architecture, tested failover through regular drills, and business continuity plans covering critical processes beyond IT."
           />
           <div className="brr-check-grid">
-            {[
-              "DR strategy design",
-              "Recovery architecture",
-              "Business continuity planning",
-              "Backup integration",
-              "Tested failover",
-              "Incident playbooks",
-            ].map((item, i) => (
+            {whatWeCover.map((item, i) => (
               <Reveal key={item} delay={(i % 3) + 1}>
                 <div className="brr-check-item">
                   <span className="ce-check">
@@ -167,13 +174,13 @@ export default function DisasterRecoveryLanding({ service }: Props) {
           <SectionHeading
             center
             light
-            eyebrow="The Problem We Solve"
+            eyebrow="The problem we solve"
             title={
               <>
-                When disaster hits, <span className="grad">most businesses are unprepared</span>
+                When disaster hits — fire, flood, cyber attack, power failure — <span className="grad">most businesses are caught unprepared</span>
               </>
             }
-            desc="When disaster hits — fire, flood, cyber attack, power failure — most businesses are caught unprepared. Systems go down, data is at risk, and nobody has a tested plan to recover."
+            desc="Systems go down, data is at risk, and nobody has a tested plan to recover."
           />
           <div className="brr-challenge-grid">
             {challenges.map((item, i) => (
@@ -195,13 +202,13 @@ export default function DisasterRecoveryLanding({ service }: Props) {
         <div className="container">
           <SectionHeading
             center
-            eyebrow="What We Deliver"
+            eyebrow="What we deliver"
             title={
               <>
-                Complete DR & BCP <span className="grad">Engagements</span>
+                A complete DR &amp; BCP <span className="grad">engagement</span>
               </>
             }
-            desc="A complete DR and BCP engagement — strategy, architecture, testing, and playbooks, under one accountable team."
+            desc="Strategy, architecture, planning, and testing, under one accountable team."
           />
           <div className="brr-deliver-grid">
             {deliverables.map((d, i) => (
@@ -221,71 +228,91 @@ export default function DisasterRecoveryLanding({ service }: Props) {
       </section>
 
       {/* RPO vs RTO */}
-      <section className="section brr-table-sec">
+      <section className="section brr-rpo section-dark">
         <div className="container">
           <SectionHeading
             center
-            eyebrow="Recovery Objectives"
+            light
+            eyebrow="RPO vs. RTO"
             title={
               <>
-                Understanding <span className="grad">RPO and RTO</span>
+                The two numbers that define <span className="grad">your recovery plan</span>
               </>
             }
-            desc="RPO and RTO define how much data you can lose and how fast you need to recover."
+            desc="The two numbers that actually define your recovery plan."
           />
-          <div className="brr-table-wrap">
-            <table className="brr-table">
-              <thead>
-                <tr>
-                  <th>RPO</th>
-                  <th>RTO</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                {rpoRtoData.map((row) => (
-                  <tr key={row.rpo}>
-                    <td><strong>{row.rpo}</strong></td>
-                    <td>{row.rto}</td>
-                    <td>{row.description}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="brr-rpo-grid">
+            <Reveal className="brr-rpo-cell" delay={1}>
+              <h3><ClockIcon className="brr-rpo-icon" /> RPO — Recovery Point Objective</h3>
+              <p>The maximum acceptable amount of data loss, measured in time. If your RPO is 4 hours, your last good backup or replica can be no more than 4 hours old when disaster strikes.</p>
+              <p className="brr-rpo-axis">Answers: &quot;How much data can we afford to lose?&quot;</p>
+            </Reveal>
+            <Reveal className="brr-rpo-cell" delay={2}>
+              <h3><RefreshIcon className="brr-rpo-icon" /> RTO — Recovery Time Objective</h3>
+              <p>The maximum acceptable downtime before systems must be restored and operational again. If your RTO is 2 hours, operations must resume within 2 hours of an outage.</p>
+              <p className="brr-rpo-axis">Answers: &quot;How long can we afford to be down?&quot;</p>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* Hot vs Warm vs Cold */}
-      <section className="section brr-table-sec">
+      <section className="section brr-rule">
         <div className="container">
           <SectionHeading
             center
             eyebrow="DR Site Types"
             title={
               <>
-                Hot vs. warm <span className="grad">vs. cold DR sites</span>
+                Hot site vs. warm site <span className="grad">vs. cold site</span>
               </>
             }
-            desc="The right DR site type depends on your RTO and budget."
+            desc="Three levels of recovery site readiness — the right one depends on your RTO and budget."
+          />
+          <div className="brr-rule-grid">
+            {hotWarmCold.map((item, i) => (
+              <Reveal key={item.type} delay={(i % 3) + 1}>
+                <div className="brr-rule-item">
+                  <span className="brr-site-label">{item.label}</span>
+                  <h3>{item.type}</h3>
+                  <p>{item.description}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* DR tiers table */}
+      <section className="section brr-table-sec">
+        <div className="container">
+          <SectionHeading
+            center
+            eyebrow="DR Tiers"
+            title={
+              <>
+                DR tiers by <span className="grad">system criticality</span>
+              </>
+            }
+            desc="Not every system needs the same recovery speed. CoreGenix tiers systems by criticality to control cost without compromising what matters most."
           />
           <div className="brr-table-wrap">
             <table className="brr-table">
               <thead>
                 <tr>
-                  <th>Site Type</th>
-                  <th>Description</th>
-                  <th>RTO</th>
-                  <th>Cost</th>
+                  <th>Tier</th>
+                  <th>Criticality</th>
+                  <th>Typical RTO</th>
+                  <th>Typical RPO</th>
                 </tr>
               </thead>
               <tbody>
-                {hotWarmCold.map((row) => (
-                  <tr key={row.type}>
-                    <td><strong>{row.type}</strong></td>
-                    <td>{row.description}</td>
-                    <td>{row.rto}</td>
-                    <td>{row.cost}</td>
+                {drTiers.map((t) => (
+                  <tr key={t.tier}>
+                    <td><strong className="brr-tier">{t.tier}</strong></td>
+                    <td>{t.criticality}</td>
+                    <td>{t.rto}</td>
+                    <td>{t.rpo}</td>
                   </tr>
                 ))}
               </tbody>
@@ -294,38 +321,46 @@ export default function DisasterRecoveryLanding({ service }: Props) {
         </div>
       </section>
 
-      {/* DR vs BCP */}
-      <section className="section brr-table-sec">
+      {/* DR vs BCP paragraph */}
+      <section className="section brr-what">
         <div className="container">
           <SectionHeading
             center
-            eyebrow="DR vs. BCP"
+            eyebrow="DR vs. business continuity"
             title={
               <>
-                DR vs. <span className="grad">BCP</span>
+                DR restores, <span className="grad">BCP keeps you running</span>
               </>
             }
-            desc="These two work together but serve different purposes."
+            desc={drVsBcp}
           />
-          <div className="brr-table-wrap">
-            <table className="brr-table">
-              <thead>
-                <tr>
-                  <th>Factor</th>
-                  <th>Disaster Recovery</th>
-                  <th>Business Continuity</th>
-                </tr>
-              </thead>
-              <tbody>
-                {drVsBcp.map((row) => (
-                  <tr key={row.factor}>
-                    <td><strong>{row.factor}</strong></td>
-                    <td>{row.dr}</td>
-                    <td>{row.bcp}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        </div>
+      </section>
+
+      {/* BCP components */}
+      <section className="section brr-deliver">
+        <div className="container">
+          <SectionHeading
+            center
+            eyebrow="BCP Components"
+            title={
+              <>
+                Core components of a <span className="grad">business continuity plan</span>
+              </>
+            }
+            desc="What goes into a complete BCP, beyond the technical recovery plan."
+          />
+          <div className="brr-check-grid">
+            {bcpComponents.map((item, i) => (
+              <Reveal key={item} delay={(i % 3) + 1}>
+                <div className="brr-check-item">
+                  <span className="ce-check">
+                    <CheckIcon />
+                  </span>
+                  {item}
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -338,10 +373,10 @@ export default function DisasterRecoveryLanding({ service }: Props) {
             eyebrow="Who Needs It"
             title={
               <>
-                DR & BCP <span className="grad">for every sector</span>
+                DR &amp; BCP <span className="grad">for every sector</span>
               </>
             }
-            desc="Recovery and continuity plans tuned to the compliance and uptime needs of your industry."
+            desc="Recovery plans tuned to the compliance and continuity needs of your industry."
           />
           <div className="wwp-grid">
             {industries.map((ind, i) => (
@@ -371,7 +406,7 @@ export default function DisasterRecoveryLanding({ service }: Props) {
                   Outcomes that <span className="grad">move your business</span>
                 </>
               }
-              desc="What you get from properly designed and tested DR/BCP."
+              desc="What you get once DR and BCP are actually planned and tested."
             />
             <div className="brr-outcome-grid">
               {whatYouGet.body.map((item, i) => (
@@ -395,13 +430,13 @@ export default function DisasterRecoveryLanding({ service }: Props) {
           <div className="container">
             <SectionHeading
               center
-              eyebrow="The CoreGenix Difference"
+              eyebrow="The CoreGenix difference"
               title={
                 <>
-                  Why teams choose <span className="grad">CoreGenix</span>
+                  What sets our DR &amp; BCP <span className="grad">delivery apart</span>
                 </>
               }
-              desc="What sets our DR/BCP delivery apart."
+              desc="What sets our DR and BCP delivery apart from a document nobody has opened."
             />
             <div className="brr-why-grid">
               {whyChoose.body.map((item, i) => (
@@ -428,7 +463,7 @@ export default function DisasterRecoveryLanding({ service }: Props) {
                 Frequently asked <span className="grad">questions</span>
               </>
             }
-            desc="Straight answers about disaster recovery and business continuity."
+            desc="Straight answers about DR, BCP, RPO/RTO, and recovery sites."
           />
           <div className="brr-faq-list">
             {service.faq.map((f) => (
@@ -444,7 +479,7 @@ export default function DisasterRecoveryLanding({ service }: Props) {
       </section>
 
       {/* CTA */}
-      <CtaSection title="Don't plan for disaster during a disaster" />
+      <CtaSection title="Don't plan for disaster during a disaster" desc={service.cta} />
     </>
   );
 }

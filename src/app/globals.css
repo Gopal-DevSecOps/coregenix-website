@@ -3254,8 +3254,9 @@ a.mega-group-title:focus-visible {
 body,
 body * {
   text-align: justify !important;
-  hyphens: auto;
+  word-break: normal;
   overflow-wrap: break-word;
+  hyphens: none;
 }
 
 h1,
@@ -3404,6 +3405,15 @@ h6 {
 .trust-title,
 .video-content {
   text-align: center !important;
+}
+
+/* Prevent heading words from breaking or clipping (site-wide) */
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.brr-hero-title {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
 }
 
 .section-title,

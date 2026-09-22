@@ -11,10 +11,10 @@ interface Props {
 }
 
 const stats = [
-  { value: "22+", label: "Years of Experience" },
-  { value: "119+", label: "Projects Delivered" },
-  { value: "75+", label: "Happy Clients" },
-  { value: "24×7", label: "Pan-India Support" },
+  { value: "22+", label: "Years of experience" },
+  { value: "119+", label: "Projects delivered" },
+  { value: "75+", label: "Happy clients" },
+  { value: "24×7", label: "Pan-India support" },
 ];
 
 const challenges = [
@@ -116,11 +116,11 @@ export default function CloudInfrastructureLanding({ service }: Props) {
             </Reveal>
             <Reveal as="div" className="brr-hero-actions" delay={4}>
               <Link href="/contact" className="btn btn-grad">
-                Get Free Consultation
+                Get free consultation
                 <ArrowRightIcon />
               </Link>
               <Link href="/services" className="btn btn-hero-secondary">
-                View All Services
+                View all services
               </Link>
             </Reveal>
           </div>
@@ -165,27 +165,9 @@ export default function CloudInfrastructureLanding({ service }: Props) {
                 What is <span className="grad">cloud infrastructure management?</span>
               </>
             }
-            desc="The day-to-day operation, monitoring, security, and optimization of a cloud environment — delivered as a fully managed service across Azure, AWS, private, and hybrid cloud."
+            desc="Cloud infrastructure management is the day-to-day operation, monitoring, security, and optimization of a cloud environment — including 24x7 monitoring, patching and access control, cost optimization, backup and disaster recovery, and controlled change management. CoreGenix delivers this as a fully managed service across Azure, AWS, private, and hybrid cloud, run from our own Network Operations Center with Pan-India support."
           />
-          <div className="brr-check-grid">
-            {[
-              "24x7 monitoring & alerting",
-              "Patching & access control",
-              "Cost optimization & right-sizing",
-              "Backup & disaster recovery",
-              "Controlled change management",
-              "Multi-cloud expertise",
-            ].map((item, i) => (
-              <Reveal key={item} delay={(i % 3) + 1}>
-                <div className="brr-check-item">
-                  <span className="ce-check">
-                    <CheckIcon />
-                  </span>
-                  {item}
-                </div>
-              </Reveal>
-            ))}
-          </div>
+        
         </div>
       </section>
 
@@ -195,13 +177,13 @@ export default function CloudInfrastructureLanding({ service }: Props) {
           <SectionHeading
             center
             light
-            eyebrow="The Problem We Solve"
+            eyebrow="The problem we solve"
             title={
               <>
-                Cloud that runs itself — <span className="grad">until it doesn&apos;t</span>
+                Migrating to the cloud is the easy part. <span className="grad">Running it well is the hard part.</span>
               </>
             }
-            desc="Migrating to the cloud is the easy part. Running it well is the hard part."
+            desc="Environments drift, security gets sloppy, and costs creep up until something breaks or the bill surprises you."
           />
           <div className="brr-challenge-grid">
             {challenges.map((item, i) => (
@@ -213,7 +195,7 @@ export default function CloudInfrastructureLanding({ service }: Props) {
             ))}
           </div>
           <Reveal as="div" className="brr-challenge-note" delay={3}>
-            <p>Without dedicated cloud management, <strong>you pay more, risk more, and spend your team&apos;s time babysitting infrastructure</strong> instead of running the business.</p>
+            <p>Without dedicated cloud management, <strong>you pay more, risk more, and spend your team&apos;s time babysitting infrastructure</strong> instead of running the business. CoreGenix takes that operational burden off your plate.</p>
           </Reveal>
         </div>
       </section>
@@ -223,10 +205,10 @@ export default function CloudInfrastructureLanding({ service }: Props) {
         <div className="container">
           <SectionHeading
             center
-            eyebrow="What We Deliver"
+            eyebrow="What we deliver"
             title={
               <>
-                Complete Managed Cloud <span className="grad">Operations</span>
+                A complete managed cloud <span className="grad">engagement</span>
               </>
             }
             desc="Monitoring, security, cost, backup, and change control — all under one accountable team."
@@ -259,7 +241,7 @@ export default function CloudInfrastructureLanding({ service }: Props) {
                 What&apos;s in a <span className="grad">managed cloud SLA</span>
               </>
             }
-            desc="Cloud management is only as good as the response times behind it."
+            desc="Cloud management is only as good as the response times behind it. Here&apos;s how CoreGenix structures incident response by severity."
           />
           <div className="brr-table-wrap">
             <table className="brr-table">
@@ -292,7 +274,7 @@ export default function CloudInfrastructureLanding({ service }: Props) {
         <div className="container">
           <SectionHeading
             center
-            eyebrow="How It Works"
+            eyebrow="How it works"
             title={
               <>
                 How a managed cloud <span className="grad">engagement runs</span>
@@ -410,12 +392,12 @@ export default function CloudInfrastructureLanding({ service }: Props) {
           <div className="container">
             <SectionHeading
               center
-              eyebrow="The CoreGenix Difference"
-              title={
-                <>
-                  Why teams choose <span className="grad">CoreGenix</span>
-                </>
-              }
+eyebrow="The CoreGenix difference"
+            title={
+              <>
+                Why teams choose <span className="grad">CoreGenix</span>
+              </>
+            }
               desc="What sets our cloud management apart from a ticket-based support desk."
             />
             <div className="brr-why-grid">

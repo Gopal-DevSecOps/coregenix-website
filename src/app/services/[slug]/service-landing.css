@@ -379,6 +379,13 @@
   font-size: 15px;
 }
 
+.sl-cta-desc {
+  font-size: 17px !important;
+  font-weight: 500;
+  max-width: 640px;
+  line-height: 1.7;
+}
+
 @media (max-width: 992px) {
   .sl-hero {
     padding: 150px 0 56px;

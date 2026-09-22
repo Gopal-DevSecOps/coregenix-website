@@ -95,9 +95,9 @@ const deliverables = [
 ];
 
 const backupTypes = [
-  { type: "Full Backup", copies: "All data, every time", backupSpeed: "Slowest", restoreSpeed: "Fastest — single copy needed" },
-  { type: "Incremental Backup", copies: "Only changes since the last backup of any type", backupSpeed: "Fastest", restoreSpeed: "Slowest — needs full + every increment" },
-  { type: "Differential Backup", copies: "All changes since the last full backup", backupSpeed: "Moderate", restoreSpeed: "Moderate — needs full + latest differential" },
+  { type: "Full Backup", copies: "All data, every time", backupSpeed: "Slowest", backupClass: "slow", restoreSpeed: "Fastest", restoreNote: "single copy needed", restoreClass: "fast", recommended: false },
+  { type: "Incremental Backup", copies: "Only changes since the last backup of any type", backupSpeed: "Fastest", backupClass: "fast", restoreSpeed: "Slowest", restoreNote: "needs full + every increment", restoreClass: "slow", recommended: false },
+  { type: "Differential Backup", copies: "All changes since the last full backup", backupSpeed: "Moderate", backupClass: "moderate", restoreSpeed: "Moderate", restoreNote: "needs full + latest differential", restoreClass: "moderate", recommended: true },
 ];
 
 const drTiers = [
@@ -302,7 +302,7 @@ export default function BackupRecoveryLanding({ service }: Props) {
                 Built to survive <span className="grad">ransomware &amp; disaster</span>
               </>
             }
-            desc="The industry-standard approach CoreGenix builds every backup strategy around."
+            desc="The industry-standard approach CoreGenix builds every backup strategy around — designed specifically to survive ransomware and physical disasters."
           />
           <div className="brr-rule-grid">
             {[
@@ -336,7 +336,7 @@ export default function BackupRecoveryLanding({ service }: Props) {
             desc="The three core backup methods, and the trade-off each one makes between backup speed and restore speed."
           />
           <div className="brr-table-wrap">
-            <table className="brr-table">
+            <table className="brr-table brr-method-table">
               <thead>
                 <tr>
                   <th>Type</th>
@@ -347,11 +347,19 @@ export default function BackupRecoveryLanding({ service }: Props) {
               </thead>
               <tbody>
                 {backupTypes.map((b) => (
-                  <tr key={b.type}>
-                    <td><strong>{b.type}</strong></td>
-                    <td>{b.copies}</td>
-                    <td>{b.backupSpeed}</td>
-                    <td>{b.restoreSpeed}</td>
+                  <tr key={b.type} className={b.recommended ? "brr-method-row brr-method-row-rec" : "brr-method-row"}>
+                    <td className="brr-method-type">
+                      <strong>{b.type}</strong>
+                      {b.recommended && <span className="brr-method-badge">Recommended</span>}
+                    </td>
+                    <td className="brr-method-copies">{b.copies}</td>
+                    <td className="brr-method-speed">
+                      <span className={`brr-speed-pill brr-speed-${b.backupClass}`}>{b.backupSpeed}</span>
+                    </td>
+                    <td className="brr-method-restore">
+                      <span className={`brr-speed-pill brr-speed-${b.restoreClass}`}>{b.restoreSpeed}</span>
+                      <span className="brr-speed-note">{b.restoreNote}</span>
+                    </td>
                   </tr>
                 ))}
               </tbody>

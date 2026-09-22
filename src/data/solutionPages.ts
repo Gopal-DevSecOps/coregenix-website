@@ -272,7 +272,7 @@ export const solutionPages: SolutionPage[] = [
     title: "Disaster Recovery & Business Continuity Planning India",
     description:
       "Disaster recovery (DR) and business continuity planning (BCP) in India — recover systems fast and keep operations running through any disruption.",
-    h1: "Disaster Recovery & Business Continuity Planning in India",
+    h1: "Disaster recovery & business continuity — recover fast, keep running",
     intro:
       "CoreGenix builds disaster recovery and business continuity plans that keep your business running through outages, disasters, and ransomware — with defined RPO/RTO, tested failover, and clear incident playbooks.",
     sections: [

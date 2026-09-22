@@ -3,7 +3,7 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import { CheckIcon, MailIcon } from "@/components/Icons";
 
-const CONTACT_EMAIL = "sales@cgcein.com";
+const CONTACT_EMAIL = "gopal@coregenix.in";
 
 interface FormValues {
   name: string;
@@ -43,7 +43,7 @@ const subjects = [
 export default function ContactForm() {
   const [values, setValues] = useState<FormValues>(initialValues);
   const [errors, setErrors] = useState<FormErrors>({});
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -81,22 +81,23 @@ export default function ContactForm() {
 
     setStatus("sending");
 
-    const subject = `${values.subject} — Enquiry from ${values.name}`;
-    const body = [
-      `Name: ${values.name}`,
-      `Phone: ${values.phone}`,
-      `Email: ${values.email}`,
-      `Subject: ${values.subject}`,
-      ``,
-      `Message:`,
-      values.message,
-    ].join("\n");
-
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-
-    setTimeout(() => setStatus("sent"), 600);
+    fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: values.name,
+        phone: values.phone,
+        email: values.email,
+        subject: values.subject,
+        message: values.message,
+      }),
+    })
+      .then(async (res) => {
+        const data = await res.json();
+        if (!res.ok || !data.ok) throw new Error(data.error || "send failed");
+        setStatus("sent");
+      })
+      .catch(() => setStatus("error"));
   };
 
   return (
@@ -116,10 +117,10 @@ export default function ContactForm() {
           <span className="form-success-icon">
             <CheckIcon />
           </span>
-          <h3>Almost there!</h3>
+          <h3>Thank you!</h3>
           <p>
-            Your email client should have opened with your enquiry. If not, email us directly at{" "}
-            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+            Your enquiry has been sent to our team at {CONTACT_EMAIL}. We&apos;ll get back to you
+            within 24 hours.
           </p>
           <button
             type="button"
@@ -130,6 +131,24 @@ export default function ContactForm() {
             }}
           >
             Send Another Message
+          </button>
+        </div>
+      ) : status === "error" ? (
+        <div className="form-success" role="alert">
+          <span className="form-success-icon">
+            <MailIcon />
+          </span>
+          <h3>Something went wrong</h3>
+          <p>
+            We couldn&apos;t send your message. Please try again, or email us directly at{" "}
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+          </p>
+          <button
+            type="button"
+            className="btn btn-light form-again"
+            onClick={() => setStatus("idle")}
+          >
+            Try Again
           </button>
         </div>
       ) : (

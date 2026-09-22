@@ -438,9 +438,13 @@
   text-align: center !important;
 }
 
+.about-title-light {
+  color: #fff;
+}
+
 .about-pillars-grid.pillars-two {
   grid-template-columns: repeat(2, 1fr);
-  gap: 56px;
+  gap: 72px;
 }
 
 .pillar-card {

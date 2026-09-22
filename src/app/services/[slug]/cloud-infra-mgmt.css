@@ -262,6 +262,28 @@
 .br-phase:last-child {
   border-bottom: none;
 }
+.br-phase-wide {
+  grid-template-columns: 48px 1fr;
+}
+.br-phase-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.br-chip {
+  display: inline-block;
+  background: var(--bg-darker);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+  transition: border-color 0.3s ease;
+}
+.br-chip:hover {
+  border-color: rgba(242, 107, 33, 0.45);
+}
 .br-phase-num {
   font-family: var(--font-heading);
   font-size: 28px;

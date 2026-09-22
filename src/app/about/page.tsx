@@ -270,7 +270,7 @@ export default function AboutPage() {
           <div className="container">
             <div className="about-pillars-head">
               <Reveal as="h2" className="about-section-title" delay={2}>
-                Mission, Vision &amp; <span className="grad">Values</span>
+                <span style={{ color: "white" }}>Mission, Vision &amp;</span> <span className="grad">Values</span>
               </Reveal>
             </div>
             <div className="about-pillars-grid pillars-two">

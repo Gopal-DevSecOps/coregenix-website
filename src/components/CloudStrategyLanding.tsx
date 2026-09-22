@@ -82,6 +82,12 @@ const cloudComparison = [
   { factor: "Typical adopters", public: "Startups, digital-first businesses", private: "BFSI, government, healthcare", hybrid: "Enterprises mid-way through migration" },
 ];
 
+const cloudColumns: { key: "public" | "private" | "hybrid"; title: string }[] = [
+  { key: "public", title: "Public Cloud" },
+  { key: "private", title: "Private Cloud" },
+  { key: "hybrid", title: "Hybrid Cloud" },
+];
+
 const industries = [
   { title: "BFSI", desc: "Hybrid strategies that keep sensitive data compliant with RBI and DPDPA norms." },
   { title: "Manufacturing", desc: "Cloud roadmaps that connect plant systems with modern ERP and analytics." },
@@ -263,7 +269,7 @@ export default function CloudStrategyLanding({ service }: Props) {
             }
             desc="Every workload gets classified into one of six migration strategies during the readiness analysis phase."
           />
-          <div className="brr-rpo-grid">
+          <div className="brr-rpo-grid brr-rpo-grid--six">
             {sixRs.map((r, i) => (
               <Reveal key={r.name} className="brr-rpo-cell" delay={(i % 2) + 1}>
                 <h3>{r.name} <span className="brr-rpo-sub">— {r.sub}</span></h3>
@@ -275,8 +281,8 @@ export default function CloudStrategyLanding({ service }: Props) {
       </section>
 
       {/* Comparison table */}
-      <section className="section brr-table-sec">
-        <div className="container">
+      <section className="cloud-comparison">
+        <div className="cloud-container">
           <SectionHeading
             center
             eyebrow="Compare"
@@ -287,28 +293,41 @@ export default function CloudStrategyLanding({ service }: Props) {
             }
             desc="Public, private, and hybrid cloud each solve different problems — the right fit depends on workload, compliance, and cost."
           />
-          <div className="brr-table-wrap">
-            <table className="brr-table">
-              <thead>
-                <tr>
-                  <th>Factor</th>
-                  <th>Public Cloud (Azure / AWS)</th>
-                  <th>Private Cloud</th>
-                  <th>Hybrid Cloud</th>
-                </tr>
-              </thead>
-              <tbody>
-                {cloudComparison.map((row) => (
-                  <tr key={row.factor}>
-                    <td><strong>{row.factor}</strong></td>
-                    <td>{row.public}</td>
-                    <td>{row.private}</td>
-                    <td>{row.hybrid}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+
+          <Reveal delay={3}>
+            <div className="comparison-shell">
+              <div className="comparison-scroll">
+                <table className="comparison-table">
+                  <thead>
+                    <tr>
+                      <th>Factor</th>
+                      {cloudColumns.map((col) => (
+                        <th key={col.key}>{col.title}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cloudComparison.map((row) => (
+                      <tr key={row.factor}>
+                        <td className="factor-cell">
+                          <span className="factor-title">{row.factor}</span>
+                        </td>
+                        {cloudColumns.map((col) => (
+                          <td key={col.key}>
+                            <span className="comparison-value">{row[col.key]}</span>
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="scroll-hint">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>
+                Swipe horizontally to compare cloud models
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 

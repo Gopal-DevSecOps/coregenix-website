@@ -1,13 +1,16 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
 import Reveal from "@/components/Reveal";
+import SectionHeading from "@/components/SectionHeading";
+import CtaSection from "@/components/CtaSection";
 import JsonLd from "@/components/JsonLd";
-import { ArrowRightIcon } from "@/components/Icons";
+import { CheckIcon, ArrowRightIcon } from "@/components/Icons";
 import { SITE } from "@/lib/site";
-import "../services/[slug]/cloud-infra-mgmt.css";
+import "../services/[slug]/backup-recovery.css";
 
 export const metadata: Metadata = {
   title: "IT, Data Center & Cyber Security Staffing India | CoreGenix",
@@ -44,6 +47,15 @@ const stats = [
   { value: "120+", label: "Engineers deployed" },
   { value: "75+", label: "Clients served" },
   { value: "99.9%", label: "SLA-backed uptime" },
+];
+
+const whatWeCover = [
+  "IT Infrastructure staffing",
+  "Data center support staffing",
+  "Cyber security staffing",
+  "Helpdesk & end-user IT support",
+  "Managed IT asset & vendor coordination",
+  "Compliance & audit-ready documentation",
 ];
 
 const problems = [
@@ -91,17 +103,14 @@ const offerings = [
 const rolesGrid = [
   {
     tag: "IT Infrastructure",
-    title: "Network & Systems",
     items: ["Network Engineer (L1 / L2 / L3)", "Windows / Linux System Administrator", "NOC Engineer", "Storage & Virtualization Engineer", "IT Helpdesk & Desktop Support"],
   },
   {
     tag: "Data Center",
-    title: "DC Operations",
     items: ["Data Center Operations Engineer", "Remote Hands / Smart Hands Technician", "Rack, Stack & Cabling Technician", "DCIM & Environmental Monitoring Specialist", "Server & Storage Hardware Support"],
   },
   {
     tag: "Cyber Security",
-    title: "Security Operations",
     items: ["SOC Analyst (L1 / L2 / L3)", "Security Engineer / Administrator", "VAPT / Penetration Testing Analyst", "GRC & Compliance Analyst", "Identity & Access Management Specialist"],
   },
 ];
@@ -168,33 +177,55 @@ export default function StaffingPage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="br-hero">
+        <section className="brr-hero">
+          <div className="float-shape float-shape-1" aria-hidden="true" />
+          <div className="float-shape float-shape-2" aria-hidden="true" />
+          <div className="container brr-hero-grid">
+            <div className="brr-hero-content">
+              <Reveal as="span" className="eyebrow" delay={1}>
+                IT Managed Services
+              </Reveal>
+              <Reveal delay={2}>
+                <h1 className="section-title brr-hero-title">
+                  Skilled IT, data center &amp; cyber security staffing — <span className="grad">on demand</span>
+                </h1>
+              </Reveal>
+              <Reveal as="p" className="brr-hero-desc" delay={3}>
+                CoreGenix deploys skilled engineers for IT infrastructure, data center operations, and cyber security — on-site, remote, or project-based — so your technical teams are never short-staffed. 22+ years of experience placing the right people, fast.
+              </Reveal>
+              <Reveal as="div" className="brr-hero-actions" delay={4}>
+                <Link href="/contact" className="btn btn-grad">
+                  Get free consultation
+                  <ArrowRightIcon />
+                </Link>
+                <a href="#models" className="btn btn-hero-secondary">
+                  View staffing models
+                </a>
+              </Reveal>
+            </div>
+            <Reveal className="brr-hero-media" delay={3}>
+              <div className="brr-hero-img">
+                <Image
+                  src="/images/coregenix/service-3.png"
+                  alt="IT and cyber security staffing"
+                  width={900}
+                  height={600}
+                  className="main-img"
+                />
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* Stats */}
+        <section className="brr-stats" aria-label="IT staffing by the numbers">
           <div className="container">
-            <Reveal as="span" className="br-eyebrow" delay={1}>
-              <span className="br-dot" />
-              IT Managed Services
-            </Reveal>
-            <Reveal delay={2}>
-              <h1 className="br-hero-title">Skilled IT, data center &amp; cyber security staffing — on demand</h1>
-            </Reveal>
-            <Reveal as="p" className="br-hero-desc" delay={3}>
-              CoreGenix deploys skilled engineers for IT infrastructure, data center operations, and cyber security — on-site, remote, or project-based — so your technical teams are never short-staffed. 22+ years of experience placing the right people, fast.
-            </Reveal>
-            <Reveal as="div" className="br-hero-actions" delay={4}>
-              <Link href="/contact" className="btn btn-grad">
-                Get free consultation
-                <ArrowRightIcon />
-              </Link>
-              <a href="#models" className="btn btn-hero-secondary">
-                View staffing models
-              </a>
-            </Reveal>
-            <div className="br-stat-bar">
+            <div className="brr-stats-grid">
               {stats.map((stat, i) => (
                 <Reveal key={stat.label} delay={(i % 4) + 1}>
-                  <div className="br-stat">
-                    <span className="br-stat-num">{stat.value}</span>
-                    <span className="br-stat-label">{stat.label}</span>
+                  <div className="brr-stat">
+                    <span className="brr-stat-value">{stat.value}</span>
+                    <span className="brr-stat-label">{stat.label}</span>
                   </div>
                 </Reveal>
               ))}
@@ -202,98 +233,85 @@ export default function StaffingPage() {
           </div>
         </section>
 
-        {/* Answer Block */}
-        <section className="br-answer">
-          <div className="container br-answer-grid">
-            <Reveal delay={1}>
-              <h2>What IT staffing services does CoreGenix provide?</h2>
-            </Reveal>
-            <Reveal as="div" className="br-answer-copy" delay={2}>
-              <p>CoreGenix provides IT staffing and technical manpower outsourcing for three core areas: IT infrastructure (network, systems, and helpdesk engineers), data center operations (DC support engineers, remote hands, and monitoring staff), and cyber security (SOC analysts, security engineers, and GRC/compliance staff). Engineers are deployed on-site, remote, hybrid, or on a project basis, across India.</p>
-            </Reveal>
+        {/* What */}
+        <section className="section brr-what">
+          <div className="container">
+            <SectionHeading
+              center
+              eyebrow="Overview"
+              title={
+                <>
+                  What IT staffing services does <span className="grad">CoreGenix provide?</span>
+                </>
+              }
+              desc="CoreGenix provides IT staffing and technical manpower outsourcing for three core areas: IT infrastructure (network, systems, and helpdesk engineers), data center operations (DC support engineers, remote hands, and monitoring staff), and cyber security (SOC analysts, security engineers, and GRC/compliance staff). Engineers are deployed on-site, remote, hybrid, or on a project basis, across India."
+            />
+            <div className="brr-check-grid">
+              {whatWeCover.map((item, i) => (
+                <Reveal key={item} delay={(i % 3) + 1}>
+                  <div className="brr-check-item">
+                    <span className="ce-check">
+                      <CheckIcon />
+                    </span>
+                    {item}
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* Problem */}
-        <section className="br-challenge">
+        {/* Challenge */}
+        <section className="section brr-challenge section-dark">
           <div className="container">
-            <div className="br-section-head">
-              <Reveal delay={1}>
-                <h2>Hiring skilled technical talent shouldn&apos;t slow you down</h2>
-              </Reveal>
-              <Reveal as="p" className="br-sub" delay={2}>
-                Recruiting and retaining IT, data center, and cyber security professionals takes time, budget, and specialized screening most businesses can&apos;t spare.
-              </Reveal>
-            </div>
-            <div className="br-challenge-grid">
+            <SectionHeading
+              center
+              light
+              eyebrow="The Problem We Solve"
+              title={
+                <>
+                  Hiring skilled technical talent <span className="grad">shouldn&apos;t slow you down</span>
+                </>
+              }
+              desc="Recruiting and retaining IT, data center, and cyber security professionals takes time, budget, and specialized screening most businesses can't spare."
+            />
+            <div className="brr-challenge-grid">
               {problems.map((item, i) => (
                 <Reveal key={item} delay={(i % 3) + 1}>
-                  <div className="br-challenge-item">
-                    <span className="br-challenge-icon">
-                      <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" strokeWidth="1.3"/><path d="M8 4v5M8 11.5v.1" stroke="currentColor" strokeWidth="1.3"/></svg>
-                    </span>
+                  <div className="brr-challenge-card">
                     <p>{item}</p>
                   </div>
                 </Reveal>
               ))}
             </div>
-            <Reveal as="div" className="br-challenge-note" delay={3}>
+            <Reveal as="div" className="brr-challenge-note" delay={3}>
               <p>Think of CoreGenix as <strong>one accountable staffing partner across IT, data center, and cyber security</strong> — skilled technical talent, deployed when and where you need it.</p>
             </Reveal>
           </div>
         </section>
 
         {/* Offerings */}
-        <section className="br-deliver">
+        <section className="section brr-deliver">
           <div className="container">
-            <div className="br-section-head">
-              <Reveal delay={1}>
-                <h2>Complete IT, data center &amp; security staffing portfolio</h2>
-              </Reveal>
-              <Reveal as="p" className="br-sub" delay={2}>
-                Skilled technical talent across three specialized areas — deployed under one accountable partner.
-              </Reveal>
-            </div>
-            {offerings.map((o, i) => (
-              <Reveal key={o.title} delay={1}>
-                <div className="br-phase">
-                  <span className="br-phase-num">{String(i + 1).padStart(2, "0")}</span>
-                  <div>
+            <SectionHeading
+              center
+              eyebrow="What We Deliver"
+              title={
+                <>
+                  Complete IT, data center &amp; security <span className="grad">staffing portfolio</span>
+                </>
+              }
+              desc="Skilled technical talent across three specialized areas — deployed under one accountable partner."
+            />
+            <div className="brr-deliver-grid">
+              {offerings.map((o, i) => (
+                <Reveal key={o.title} delay={(i % 3) + 1}>
+                  <div className="brr-deliver-card">
+                    <span className="brr-deliver-num">{String(i + 1).padStart(2, "0")}</span>
                     <h3>{o.title}</h3>
-                    <p style={{ fontSize: 14, color: "var(--text-soft)", margin: "4px 0 12px" }}>{o.desc}</p>
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                      {o.roles.map((role) => (
-                        <span key={role} style={{ background: "var(--bg-darker)", border: "1px solid var(--border)", borderRadius: 100, padding: "4px 14px", fontSize: 13, color: "var(--text-muted)" }}>{role}</span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </section>
-
-        {/* Roles We Staff */}
-        <section className="br-answer">
-          <div className="container">
-            <div className="br-section-head">
-              <Reveal delay={1}>
-                <h2>Common roles we place</h2>
-              </Reveal>
-              <Reveal as="p" className="br-sub" delay={2}>
-                A sample of the technical roles CoreGenix regularly staffs across IT, data center, and security functions — screened and vetted before deployment.
-              </Reveal>
-            </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginTop: 32 }}>
-              {rolesGrid.map((col) => (
-                <Reveal key={col.tag} delay={1}>
-                  <div style={{ background: "var(--bg-dark)", border: "1px solid var(--border)", borderRadius: 12, padding: 28 }}>
-                    <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--gold)" }}>{col.tag}</span>
-                    <h3 style={{ fontFamily: "var(--font-heading)", fontSize: 18, fontWeight: 700, color: "var(--navy)", margin: "8px 0 16px" }}>{col.title}</h3>
-                    <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                      {col.items.map((item) => (
-                        <li key={item} style={{ fontSize: 14, color: "var(--text-soft)", padding: "6px 0", borderBottom: "1px solid var(--border)" }}>{item}</li>
-                      ))}
+                    <p className="brr-deliver-tag">{o.desc}</p>
+                    <ul className="brr-deliver-list">
+                      {o.roles.map((role) => <li key={role}>{role}</li>)}
                     </ul>
                   </div>
                 </Reveal>
@@ -302,74 +320,120 @@ export default function StaffingPage() {
           </div>
         </section>
 
-        {/* Deployment Process */}
-        <section className="br-deliver">
+        {/* Roles table */}
+        <section className="section brr-table-sec">
           <div className="container">
-            <div className="br-section-head">
-              <Reveal delay={1}>
-                <h2>How we deploy talent</h2>
-              </Reveal>
-              <Reveal as="p" className="br-sub" delay={2}>
-                A structured process that gets the right technical talent in place quickly, without compromising on quality.
-              </Reveal>
+            <SectionHeading
+              center
+              eyebrow="Roles We Staff"
+              title={
+                <>
+                  Common roles <span className="grad">we place</span>
+                </>
+              }
+              desc="A sample of the technical roles CoreGenix regularly staffs across IT, data center, and security functions — screened and vetted before deployment."
+            />
+            <div className="brr-table-wrap">
+              <table className="brr-table">
+                <thead>
+                  <tr>
+                    <th>Function</th>
+                    <th>Roles we staff</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rolesGrid.map((col) => (
+                    <tr key={col.tag}>
+                      <td><strong>{col.tag}</strong></td>
+                      <td>
+                        {col.items.map((item) => (
+                          <span key={item} className="brr-cell-item">{item}</span>
+                        ))}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-            {deploySteps.map((step) => (
-              <Reveal key={step.num} delay={1}>
-                <div className="br-phase">
-                  <span className="br-phase-num">{step.num}</span>
-                  <div>
-                    <h3>{step.title}</h3>
-                  </div>
-                  <p style={{ fontSize: 15, color: "var(--text-soft)" }}>{step.desc}</p>
-                </div>
-              </Reveal>
-            ))}
           </div>
         </section>
 
-        {/* Staffing Models */}
-        <section className="br-deliver" id="models">
+        {/* Process */}
+        <section className="section brr-deliver">
           <div className="container">
-            <div className="br-section-head">
-              <Reveal delay={1}>
-                <h2>Flexible engagement models for every technical need</h2>
-              </Reveal>
-              <Reveal as="p" className="br-sub" delay={2}>
-                Choose the model that fits — dedicated, hybrid, project-based, or fully managed.
-              </Reveal>
-            </div>
-            {models.map((m) => (
-              <Reveal key={m.num} delay={1}>
-                <div className="br-phase">
-                  <span className="br-phase-num">{m.num}</span>
-                  <div>
-                    <h3>{m.title}</h3>
+            <SectionHeading
+              center
+              eyebrow="How It Works"
+              title={
+                <>
+                  How we <span className="grad">deploy talent</span>
+                </>
+              }
+              desc="A structured process that gets the right technical talent in place quickly, without compromising on quality."
+            />
+            <div className="brr-deliver-grid">
+              {deploySteps.map((step, i) => (
+                <Reveal key={step.num} delay={(i % 3) + 1}>
+                  <div className="brr-deliver-card">
+                    <span className="brr-deliver-num">{step.num}</span>
+                    <h3>{step.title}</h3>
+                    <p className="brr-deliver-tag">{step.desc}</p>
                   </div>
-                  <p style={{ fontSize: 15, color: "var(--text-soft)" }}>{m.desc}</p>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Models */}
+        <section className="section brr-why" id="models">
+          <div className="container">
+            <SectionHeading
+              center
+              eyebrow="Engagement Models"
+              title={
+                <>
+                  Flexible engagement models for <span className="grad">every technical need</span>
+                </>
+              }
+              desc="Choose the model that fits — dedicated, hybrid, project-based, or fully managed."
+            />
+            <div className="brr-deliver-grid">
+              {models.map((m, i) => (
+                <Reveal key={m.num} delay={(i % 3) + 1}>
+                  <div className="brr-deliver-card">
+                    <span className="brr-deliver-num">{m.num}</span>
+                    <h3>{m.title}</h3>
+                    <p className="brr-deliver-tag">{m.desc}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* Industries */}
-        <section className="br-industries">
+        <section className="section brr-audience">
           <div className="container">
-            <div className="br-section-head">
-              <Reveal delay={1}>
-                <h2>IT, data center &amp; security staffing for every sector</h2>
-              </Reveal>
-              <Reveal as="p" className="br-sub" delay={2}>
-                Technical staffing solutions tailored to the compliance and uptime needs of your industry.
-              </Reveal>
-            </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginTop: 8 }}>
+            <SectionHeading
+              center
+              eyebrow="Who Needs It"
+              title={
+                <>
+                  IT, data center &amp; security staffing <span className="grad">for every sector</span>
+                </>
+              }
+              desc="Technical staffing solutions tailored to the compliance and uptime needs of your industry."
+            />
+            <div className="wwp-grid">
               {industries.map((ind, i) => (
-                <Reveal key={ind.title} delay={(i % 3) + 1}>
-                  <div style={{ background: "var(--bg-dark)", border: "1px solid var(--border)", borderRadius: 12, padding: 24 }}>
-                    <h3 style={{ fontFamily: "var(--font-heading)", fontSize: 16, fontWeight: 700, color: "var(--navy)", margin: "0 0 8px" }}>{ind.title}</h3>
-                    <p style={{ fontSize: 14, color: "var(--text-soft)", margin: 0 }}>{ind.desc}</p>
-                  </div>
+                <Reveal key={ind.title} delay={(i % 3) + 1} className="wwp-wrap">
+                  <article className="wwp-card brr-audience-card">
+                    <div className="wwp-card-inner">
+                      <h3>{ind.title}</h3>
+                      <p>{ind.desc}</p>
+                    </div>
+                  </article>
                 </Reveal>
               ))}
             </div>
@@ -377,26 +441,25 @@ export default function StaffingPage() {
         </section>
 
         {/* FAQ */}
-        <section className="br-faq">
+        <section className="section brr-faq">
           <div className="container">
-            <div className="br-section-head">
-              <Reveal delay={1}>
-                <h2>Frequently asked questions</h2>
-              </Reveal>
-              <Reveal as="p" className="br-sub" delay={2}>
-                Straight answers about our IT, data center, and security staffing services.
-              </Reveal>
-            </div>
-            <div className="br-faq-list">
-              {faqs.map((f, i) => (
-                <Reveal key={f.q} delay={(i % 3) + 1}>
-                  <details className="br-faq-item" open={i === 0}>
-                    <summary>
-                      {f.q}
-                      <span className="br-plus" />
-                    </summary>
-                    <div className="br-faq-answer">{f.a}</div>
-                  </details>
+            <SectionHeading
+              center
+              eyebrow="FAQ"
+              title={
+                <>
+                  Frequently asked <span className="grad">questions</span>
+                </>
+              }
+              desc="Straight answers about our IT, data center, and security staffing services."
+            />
+            <div className="brr-faq-list">
+              {faqs.map((f) => (
+                <Reveal key={f.q}>
+                  <div className="brr-faq-item">
+                    <h3>{f.q}</h3>
+                    <p>{f.a}</p>
+                  </div>
                 </Reveal>
               ))}
             </div>
@@ -404,20 +467,7 @@ export default function StaffingPage() {
         </section>
 
         {/* CTA */}
-        <section className="br-closing">
-          <div className="container">
-            <Reveal>
-              <div className="br-closing-inner">
-                <h2>Need skilled IT, DC, or security talent — fast?</h2>
-                <p className="br-closing-sub">Talk to us about your technical staffing needs and get a tailored deployment plan.</p>
-                <Link href="/contact" className="btn btn-grad">
-                  Get free consultation
-                  <ArrowRightIcon />
-                </Link>
-              </div>
-            </Reveal>
-          </div>
-        </section>
+        <CtaSection title="Need skilled IT, DC, or security talent — fast?" />
       </main>
       <Footer />
       <ScrollTop />

@@ -38,7 +38,7 @@ const menu: MenuItem[] = [
         items: [
           { label: "Network Operations Center", href: "/network-operations-center" },
           { label: "Annual Maintenance Contract", href: "/annual-maintenance-contract" },
-          { label: "Cyber Security Services", href: "/staffing-fms-facility-management" },
+          { label: "STAFFING & FMS FACILITY MANAGEMENT", href: "/staffing-fms-facility-management" },
         ],
       },
       {
@@ -51,18 +51,8 @@ const menu: MenuItem[] = [
         ],
       },
       {
-        title: "Audit & Assessment",
-        href: "/services/audit-assessment",
-        items: [
-          { label: "GRC & DPDPA", href: "/services/grc-dpdpa" },
-          { label: "Vulnerability Assessment & Penetration Testing", href: "/services/vapt" },
-          { label: "Red Teaming", href: "/services/red-teaming" },
-          { label: "Audit", href: "/services/audit" },
-        ],
-      },
-      {
         title: "Managed Security Services",
-        wide: true,
+      
         href: "/services/managed-security-services",
         items: [
           { label: "Managed Security Operations Center as a Service", href: "/services/soc-mss" },
@@ -73,6 +63,18 @@ const menu: MenuItem[] = [
           { label: "Operational Technology Security", href: "/services/ot-security" },
         ],
       },
+      {
+        title: "Audit & Assessment",
+          wide: true,
+        href: "/services/audit-assessment",
+        items: [
+          { label: "GRC & DPDPA", href: "/services/grc-dpdpa" },
+          { label: "Vulnerability Assessment & Penetration Testing", href: "/services/vapt" },
+          { label: "Red Teaming", href: "/services/red-teaming" },
+          { label: "Audit", href: "/services/audit" },
+        ],
+      },
+      
     ],
   },
   {

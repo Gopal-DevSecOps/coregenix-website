@@ -131,7 +131,7 @@ export default function CloudManagedServicesPage() {
               </Reveal>
               <Reveal delay={2}>
                 <h1 className="section-title brr-hero-title">
-                  Cloud managed services — <span className="grad">strategy, migration &amp; management</span>
+                  Cloud managed services — <span className="grad">strategy, migration &amp; ongoing management</span>
                 </h1>
               </Reveal>
               <Reveal as="p" className="brr-hero-desc" delay={3}>
@@ -188,7 +188,7 @@ export default function CloudManagedServicesPage() {
                   What are <span className="grad">cloud managed services?</span>
                 </>
               }
-              desc="Cloud managed services cover the full cloud lifecycle: Cloud Strategy for planning and migration, Cloud Infrastructure Management for ongoing monitoring, security, and cost optimization, and Backup & Recovery for data protection and disaster recovery."
+              desc="Cloud managed services cover the full cloud lifecycle: Cloud Strategy for planning and migration, Cloud Infrastructure Management for ongoing monitoring, security, and cost optimization, and Backup & Recovery for data protection and disaster recovery. CoreGenix delivers all three across public, private, and hybrid cloud environments for businesses across India."
             />
             <div className="brr-check-grid">
               {[
@@ -244,41 +244,30 @@ export default function CloudManagedServicesPage() {
         </section>
 
         {/* Subservices */}
-        <section className="section brr-table-sec">
+        <section className="section brr-deliver">
           <div className="container">
             <SectionHeading
               center
-              eyebrow="What's Included"
-              title={
-                <>
-                  A closer look at <span className="grad">each service</span>
-                </>
-              }
-              desc="What CoreGenix delivers across strategy, management, and backup."
+              eyebrow="What's included in each service"
+              title="A closer look at what CoreGenix delivers across strategy, management, and backup."
             />
-            <div className="brr-table-wrap">
-              <table className="brr-table">
-                <thead>
-                  <tr>
-                    <th>Stage</th>
-                    <th>Service</th>
-                    <th>What&apos;s included</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {subservices.map((s) => (
-                    <tr key={s.title}>
-                      <td><strong>{s.stage}</strong></td>
-                      <td><strong>{s.title}</strong></td>
-                      <td>
-                        {s.items.map((item) => (
-                          <span key={item} className="brr-cell-item">{item}</span>
-                        ))}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="brr-deliver-grid">
+              {subservices.map((s, i) => (
+                <Reveal key={s.stage} delay={(i % 3) + 1}>
+                  <div className="brr-deliver-card">
+                    <span className="brr-deliver-num">{s.stage}</span>
+                    <h3>{s.title}</h3>
+                    <p className="brr-deliver-tag">{s.desc}</p>
+                    <ul className="brr-deliver-list">
+                      {s.items.map((item) => <li key={item}>{item}</li>)}
+                    </ul>
+                    <Link href={s.href} className="brr-deliver-link">
+                      Learn more about {s.title}
+                      <ArrowRightIcon />
+                    </Link>
+                  </div>
+                </Reveal>
+              ))}
             </div>
           </div>
         </section>
@@ -288,7 +277,6 @@ export default function CloudManagedServicesPage() {
           <div className="container">
             <SectionHeading
               center
-              eyebrow="Find Your Fit"
               title={
                 <>
                   Which cloud managed service <span className="grad">do you need?</span>
@@ -322,7 +310,6 @@ export default function CloudManagedServicesPage() {
           <div className="container">
             <SectionHeading
               center
-              eyebrow="Who Needs It"
               title={
                 <>
                   Cloud managed services <span className="grad">for every sector</span>
@@ -372,7 +359,7 @@ export default function CloudManagedServicesPage() {
         </section>
 
         {/* CTA */}
-        <CtaSection title="Not sure which solution fits your business?" />
+        <CtaSection title="Talk to our experts for a free consultation and a tailored technology plan." />
       </main>
       <Footer />
       <ScrollTop />

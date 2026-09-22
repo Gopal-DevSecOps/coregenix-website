@@ -4,9 +4,10 @@ import { ArrowRightIcon } from "./Icons";
 
 interface CtaSectionProps {
   title: React.ReactNode;
+  desc?: string;
 }
 
-export default function CtaSection({ title }: CtaSectionProps) {
+export default function CtaSection({ title, desc }: CtaSectionProps) {
   return (
     <section className="section sl-cta">
       <div className="container">
@@ -14,6 +15,7 @@ export default function CtaSection({ title }: CtaSectionProps) {
           <div className="sl-cta-box">
             <div>
               <h2>{title}</h2>
+              {desc && <p className="sl-cta-desc">{desc}</p>}
               <p>
                 Call +91 83559 58119 · Email sales@cgcein.com · C 1405 Kailash Business
                 Park, Vikhroli (W), Mumbai
