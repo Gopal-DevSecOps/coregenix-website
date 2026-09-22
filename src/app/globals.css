@@ -2127,29 +2127,29 @@ a.mega-group-title:focus-visible {
   position: absolute;
   left: -26px;
   bottom: 40px;
-  background: rgba(27, 42, 56, 0.95);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--border);
+  background: var(--accent-grad);
+  color: #fff;
+  border: none;
   border-radius: 18px;
   padding: 26px 67px;
   min-width: 210px;
   display: flex;
   align-items: center;
   gap: 16px;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 20px 40px rgba(242, 107, 33, 0.35);
 }
 
 .about-media .float-card .num {
   font-family: var(--font-heading);
   font-size: 42px;
   font-weight: 800;
-  color: var(--gold);
+  color: #fff;
 }
 
 .about-media .float-card .txt {
-  font-size: 15px;
-  color: #dce6f5;
-  line-height: 1.45;
+  font-size: 13px;
+  color: #fff;
+  line-height: 1.5;
 }
 
 .about-list {
