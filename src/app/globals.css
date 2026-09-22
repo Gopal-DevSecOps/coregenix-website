@@ -3171,7 +3171,8 @@ a.mega-group-title:focus-visible {
   .wwp-link { opacity: 1; transform: none; }
   .hero { min-height: 100vh; margin-top: 0; padding: 100px 0 90px; }
   .hero-slide .bg { background-position: center 20%; }
-  .hero-content { padding: 32px 24px; width: auto; max-width: 480px; height: auto; margin: 12vh 20px 12vh; text-align: center; }
+  .hero-slide .container { height: 100%; display: flex; flex-direction: column; justify-content: flex-end; }
+  .hero-content { padding: 32px 24px; width: auto; max-width: 480px; height: auto; margin: 0 20px 28px; text-align: center; }
   .hero-actions { justify-content: center; }
   .hero-scroll { display: none; }
   .hero-desc { font-size: 16px; text-align: center; }
