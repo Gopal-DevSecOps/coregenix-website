@@ -111,6 +111,10 @@ const menu: MenuItem[] = [
           { label: "Zero Trust", href: "/solutions/zero-trust" },
           { label: "Data Loss Prevention", href: "/solutions/data-loss-prevention" },
           { label: "Endpoint / Managed / Extended Detection & Response", href: "/solutions/edr-mdr-xdr" },
+          { label: "Email Security", href: "/solutions/email-security" },
+          { label: "Application Security", href: "/solutions/application-security" },
+          { label: "SIEM, SOAR & UEBA", href: "/solutions/siem-soar-ueba" },
+          { label: "Cloud Security (CSPM)", href: "/solutions/cloud-security-cspm" },
         ],
       },
       {

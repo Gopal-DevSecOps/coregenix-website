@@ -173,10 +173,10 @@ export default function NocLandingPage() {
             <Reveal className="noc-hero-media" delay={3}>
               <div className="noc-hero-img">
                 <Image
-                  src="/images/coregenix/hero-1.png"
+                  src="/images/coregenix/noc.png"
                   alt="Network Operations Center monitoring"
-                  width={900}
-                  height={600}
+                  width={1671}
+                  height={941}
                   className="main-img"
                 />
               </div>

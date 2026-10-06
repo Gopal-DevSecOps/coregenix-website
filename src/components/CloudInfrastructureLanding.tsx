@@ -127,10 +127,10 @@ export default function CloudInfrastructureLanding({ service }: Props) {
           <Reveal className="brr-hero-media" delay={3}>
             <div className="brr-hero-img">
               <Image
-                src="/images/coregenix/service-7.jpg"
+                src="/images/coregenix/cloud-infra-management.png"
                 alt="Managed cloud infrastructure"
-                width={900}
-                height={600}
+                width={1473}
+                height={1068}
                 className="main-img"
               />
             </div>

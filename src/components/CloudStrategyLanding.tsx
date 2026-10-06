@@ -134,10 +134,10 @@ export default function CloudStrategyLanding({ service }: Props) {
           <Reveal className="brr-hero-media" delay={3}>
             <div className="brr-hero-img">
               <Image
-                src="/images/coregenix/hero-2.png"
+                src="/images/coregenix/cloud-strategy.png"
                 alt="Cloud strategy consulting"
-                width={900}
-                height={600}
+                width={1672}
+                height={941}
                 className="main-img"
               />
             </div>

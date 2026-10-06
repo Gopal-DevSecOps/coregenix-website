@@ -206,10 +206,10 @@ export default function StaffingPage() {
             <Reveal className="brr-hero-media" delay={3}>
               <div className="brr-hero-img">
                 <Image
-                  src="/images/coregenix/service-3.png"
+                  src="/images/coregenix/staffing.png"
                   alt="IT and cyber security staffing"
-                  width={900}
-                  height={600}
+                  width={1672}
+                  height={941}
                   className="main-img"
                 />
               </div>

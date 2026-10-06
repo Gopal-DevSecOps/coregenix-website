@@ -96,10 +96,10 @@ export default function NetworkLanding({ service }: Props) {
           <Reveal className="brr-hero-media" delay={3}>
             <div className="brr-hero-img">
               <Image
-                src="/images/coregenix/service-7.jpg"
+                src="/images/coregenix/network-infrastructure-solutions.png"
                 alt="Enterprise network infrastructure"
-                width={900}
-                height={600}
+                width={1672}
+                height={941}
                 className="main-img"
               />
             </div>

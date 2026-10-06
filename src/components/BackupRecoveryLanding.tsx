@@ -154,10 +154,10 @@ export default function BackupRecoveryLanding({ service }: Props) {
           <Reveal className="brr-hero-media" delay={3}>
             <div className="brr-hero-img">
               <Image
-                src="/images/coregenix/hero-1.png"
+                src="/images/coregenix/backup-dr.png"
                 alt="Data backup and disaster recovery"
-                width={900}
-                height={600}
+                width={1672}
+                height={941}
                 className="main-img"
               />
             </div>

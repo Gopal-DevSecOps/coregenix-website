@@ -41,12 +41,13 @@ export async function POST(req: Request) {
     );
   }
 
-  const transporter = nodemailer.createTransport({
-    host: SMTP_HOST,
-    port: SMTP_PORT,
-    secure: SMTP_PORT === 465,
-    auth: { user: SMTP_USER, pass: SMTP_PASS },
-  });
+  const buildTransporter = (port: number) =>
+    nodemailer.createTransport({
+      host: SMTP_HOST,
+      port,
+      secure: port === 465,
+      auth: { user: SMTP_USER, pass: SMTP_PASS },
+    });
 
   const text = [
     `Name: ${name}`,
@@ -58,17 +59,22 @@ export async function POST(req: Request) {
     message,
   ].join("\n");
 
-  try {
-    await transporter.sendMail({
-      from: `"CoreGenix Website" <${SMTP_USER}>`,
-      to: CONTACT_EMAIL,
-      replyTo: email,
-      subject: `${subject || "New Enquiry"} — Enquiry from ${name}`,
-      text,
-    });
-    return NextResponse.json({ ok: true });
-  } catch (err) {
-    console.error("Email send failed:", err);
-    return NextResponse.json({ ok: false, error: "Email could not be sent." }, { status: 500 });
+  const ports = SMTP_PORT === 465 ? [465, 587] : [587, 465];
+
+  for (const port of ports) {
+    try {
+      await buildTransporter(port).sendMail({
+        from: `"CoreGenix Website" <${SMTP_USER}>`,
+        to: CONTACT_EMAIL,
+        replyTo: email,
+        subject: `${subject || "New Enquiry"} — Enquiry from ${name}`,
+        text,
+      });
+      return NextResponse.json({ ok: true });
+    } catch (err) {
+      console.error(`Email send failed on port ${port}:`, err);
+    }
   }
+
+  return NextResponse.json({ ok: false, error: "Email could not be sent." }, { status: 500 });
 }

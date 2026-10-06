@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
@@ -112,6 +113,16 @@ export default function SolutionsPage() {
                     {cat.solutions.map((solution, i) => (
                       <Reveal key={solution.title} delay={(i % 3) + 1}>
                         <article className="service-page-card">
+                          {solution.image && (
+                            <div className="service-card-img">
+                              <Image
+                                src={solution.image}
+                                alt={solution.title}
+                                fill
+                                sizes="(max-width: 640px) 100vw, 33vw"
+                              />
+                            </div>
+                          )}
                           <span className="icon-box">
                             <solution.icon />
                           </span>

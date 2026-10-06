@@ -104,6 +104,23 @@
   margin-bottom: 22px;
 }
 
+.service-card-img {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin: -12px 0 22px;
+}
+
+.service-card-img img {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-page-card:hover .service-card-img img {
+  transform: scale(1.05);
+}
+
 .service-page-card .icon-box svg {
   width: 28px;
   height: 28px;

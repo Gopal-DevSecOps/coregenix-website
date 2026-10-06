@@ -162,10 +162,10 @@ export default function PublicCloudLanding({ service }: Props) {
           <Reveal className="brr-hero-media" delay={3}>
             <div className="brr-hero-img">
               <Image
-                src="/images/coregenix/service-7.jpg"
+                src="/images/coregenix/public-cloud-solutions.png"
                 alt="Public cloud solutions"
-                width={900}
-                height={600}
+                width={1672}
+                height={941}
                 className="main-img"
               />
             </div>

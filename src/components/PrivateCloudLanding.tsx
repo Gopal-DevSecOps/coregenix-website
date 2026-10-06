@@ -159,10 +159,10 @@ export default function PrivateCloudLanding({ service }: Props) {
           <Reveal className="brr-hero-media" delay={3}>
             <div className="brr-hero-img">
               <Image
-                src="/images/coregenix/service-5.jpg"
+                src="/images/coregenix/private-cloud-solutions.png"
                 alt="Private cloud solutions"
-                width={900}
-                height={600}
+                width={1672}
+                height={941}
                 className="main-img"
               />
             </div>

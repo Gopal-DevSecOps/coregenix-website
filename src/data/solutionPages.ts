@@ -1638,6 +1638,266 @@ export const solutionPages: SolutionPage[] = [
     ],
     cta: "Plan now so you never have to improvise during a disaster. Get a free BCP/DR assessment today.",
   },
+  {
+    slug: "email-security",
+    category: "Cyber Security Solutions",
+    title: "Email Security Solutions India | Phishing & BEC Protection",
+    description:
+      "Email security solutions in India — stop phishing, business email compromise, malware and spam before they reach your inbox. Advanced protection from CoreGenix.",
+    h1: "Email Security Solutions in India",
+    intro:
+      "CoreGenix secures your email — the channel attackers use most — with advanced protection that stops phishing, business email compromise, malware and spam before they ever reach your people.",
+    sections: [
+      {
+        heading: "The Problem",
+        body: [
+          "Most breaches start with a single email. A convincing phishing message, a spoofed invoice, a malicious attachment — and one click is all attackers need to steal credentials, deploy ransomware or redirect a payment.",
+          "Native email filters miss sophisticated attacks. Business email compromise, zero-day links and weaponised documents slip through. **Your inbox is the front door attackers knock on first — and for most businesses it's barely locked.**",
+        ],
+      },
+      {
+        heading: "What We Provide",
+        body: [
+          "Phishing & BEC defense — detect impersonation and social engineering",
+          "Malware & spam filtering — block malicious attachments and links",
+          "Email authentication — SPF, DKIM and DMARC configured and enforced",
+          "Link & attachment sandboxing — detonate threats before delivery",
+          "Data loss protection — stop sensitive data leaving by email",
+          "Awareness & reporting — user reporting and incident response",
+        ],
+      },
+      {
+        heading: "What You Get",
+        body: [
+          "Fewer phishing emails reaching your people",
+          "Protection against BEC and payment fraud",
+          "Stronger sender authentication and domain trust",
+          "Visibility and response when an attack gets through",
+        ],
+      },
+      {
+        heading: "Why Choose CoreGenix",
+        body: [
+          "Protection tuned to the attacks that actually reach inboxes",
+          "SPF, DKIM and DMARC set up and enforced correctly",
+          "Sandboxing that stops links and attachments before delivery",
+          "Email layered with DLP, EDR and SOC monitoring",
+          "22+ years of IT and security expertise",
+          "Mumbai base, Pan-India delivery",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What is email security?",
+        a: "Email security is the set of controls that protect your email from phishing, malware, spam and data loss. It filters malicious messages, authenticates senders and stops attacks before they reach users.",
+      },
+      {
+        q: "Why do I need email security if my provider has filters?",
+        a: "Built-in filters block basic spam but miss sophisticated phishing, business email compromise and zero-day links. Dedicated email security adds sandboxing, impersonation detection and DMARC enforcement.",
+      },
+      {
+        q: "How much does email security cost in India?",
+        a: "It depends on your mailbox count and requirements. Contact CoreGenix for a free email security assessment.",
+      },
+    ],
+    cta: "Stop attacks before they reach the inbox. Get a free email security assessment today.",
+  },
+  {
+    slug: "application-security",
+    category: "Cyber Security Solutions",
+    title: "Application Security Services India | Secure Apps & APIs",
+    description:
+      "Application security services in India — protect web apps, mobile apps and APIs from attacks. Secure design, testing, WAF and continuous protection from CoreGenix.",
+    h1: "Application Security Services in India",
+    intro:
+      "CoreGenix protects your applications and APIs at every layer — from secure design and testing to runtime defense — so your software stays secure under real-world attack.",
+    sections: [
+      {
+        heading: "The Problem",
+        body: [
+          "Your applications hold your most valuable data — and they're exposed to the internet every second. Injection flaws, broken authentication, insecure APIs and misconfigurations give attackers a direct path in.",
+          "Security often gets tested once at launch, then forgotten. Code changes, new features and third-party components quietly introduce new weaknesses. **Every release is a fresh attack surface if security isn't built in.**",
+        ],
+      },
+      {
+        heading: "What We Provide",
+        body: [
+          "Secure design review — threat modelling before you build",
+          "Application testing — SAST, DAST and manual code review",
+          "API security — authentication, authorization and abuse protection",
+          "Web application firewall — managed WAF configured and tuned",
+          "Secure SDLC — security built into your development process",
+          "Continuous protection — monitoring and patching after go-live",
+        ],
+      },
+      {
+        heading: "What You Get",
+        body: [
+          "Applications that resist real-world attacks",
+          "APIs secured against abuse and data exposure",
+          "Security built into development, not bolted on",
+          "Continuous protection after go-live",
+        ],
+      },
+      {
+        heading: "Why Choose CoreGenix",
+        body: [
+          "Testing that combines automated tools with manual expertise",
+          "APIs secured against the abuses attackers actually use",
+          "A managed WAF tuned to your applications",
+          "Security embedded across the development lifecycle",
+          "22+ years of security and application expertise",
+          "Mumbai base, Pan-India delivery",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What is application security?",
+        a: "Application security is the practice of protecting web, mobile and API applications from attack — through secure design, testing and runtime defenses like WAF.",
+      },
+      {
+        q: "What is the difference between SAST and DAST?",
+        a: "SAST analyses source code for vulnerabilities from the inside; DAST tests a running application from the outside like an attacker would. CoreGenix uses both, plus manual review.",
+      },
+      {
+        q: "How much does application security testing cost in India?",
+        a: "It depends on application size and complexity. Contact CoreGenix for a free application security assessment.",
+      },
+    ],
+    cta: "Secure your applications before attackers find the gaps. Get a free application security assessment today.",
+  },
+  {
+    slug: "siem-soar-ueba",
+    category: "Cyber Security Solutions",
+    title: "SIEM, SOAR & UEBA Services India | 24x7 Threat Detection",
+    description:
+      "SIEM, SOAR and UEBA services in India — centralized log management, automated response and user behaviour analytics for faster, smarter threat detection.",
+    h1: "SIEM, SOAR & UEBA Services in India",
+    intro:
+      "CoreGenix delivers SIEM, SOAR and UEBA — centralized visibility, automated response and behaviour analytics that detect threats faster and cut the noise your team has to chase.",
+    sections: [
+      {
+        heading: "The Problem",
+        body: [
+          "Logs pile up across dozens of systems, but no one has time to watch them. Without correlation, real attacks hide behind thousands of alerts — and mean time to detect stretches into days or weeks.",
+          "Manual response can't keep pace with modern threats. Analysts burn out chasing false positives while genuine intrusions slip through. **Visibility without correlation isn't detection — it's just noise.**",
+        ],
+      },
+      {
+        heading: "What We Provide",
+        body: [
+          "SIEM — centralized log collection, correlation and alerting",
+          "SOAR — automated playbooks that respond in seconds",
+          "UEBA — behaviour analytics that flag anomalous user activity",
+          "Use-case engineering — detections tuned to your threats",
+          "SOC integration — 24x7 monitoring backed by our SOC",
+          "Reporting — clear metrics on detection and response",
+        ],
+      },
+      {
+        heading: "What You Get",
+        body: [
+          "One place to see everything happening in your environment",
+          "Automated response that acts in seconds, not hours",
+          "Behaviour-based detection of insider and compromised accounts",
+          "Fewer false positives and less analyst fatigue",
+        ],
+      },
+      {
+        heading: "Why Choose CoreGenix",
+        body: [
+          "Detections tuned to your environment, not left at defaults",
+          "Automated playbooks that respond in seconds",
+          "Behaviour analytics that catch what rules miss",
+          "24x7 monitoring backed by our SOC",
+          "22+ years of security operations experience",
+          "Mumbai base, Pan-India delivery",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What is SIEM?",
+        a: "SIEM (Security Information and Event Management) centralizes logs from across your systems, correlates them and raises alerts on suspicious activity.",
+      },
+      {
+        q: "What do SOAR and UEBA add?",
+        a: "SOAR automates responses to alerts using playbooks, and UEBA analyses user behaviour to detect anomalies that static rules miss — together they make detection faster and smarter.",
+      },
+      {
+        q: "How much does a SIEM/SOAR service cost in India?",
+        a: "It depends on log volume, data sources and service level. Contact CoreGenix for a free assessment.",
+      },
+    ],
+    cta: "See everything and respond in seconds. Get a free SIEM, SOAR & UEBA assessment today.",
+  },
+  {
+    slug: "cloud-security-cspm",
+    category: "Cyber Security Solutions",
+    title: "Cloud Security & CSPM Services India | Cloud Posture Management",
+    description:
+      "Cloud security and CSPM services in India — continuously find and fix misconfigurations across AWS, Azure and GCP. Protect your cloud posture with CoreGenix.",
+    h1: "Cloud Security (CSPM) Services in India",
+    intro:
+      "CoreGenix secures your cloud with CSPM — continuous discovery of misconfigurations, excessive permissions and compliance drift across AWS, Azure and GCP.",
+    sections: [
+      {
+        heading: "The Problem",
+        body: [
+          "In the cloud, a single misconfigured storage bucket, an over-permissive role or an exposed service is all it takes to leak data at scale. Misconfigurations — not sophisticated exploits — cause most cloud breaches.",
+          "Cloud environments change by the minute. Without continuous visibility, drift and risky permissions quietly accumulate. **A one-time cloud audit is outdated the moment it's finished.**",
+        ],
+      },
+      {
+        heading: "What We Provide",
+        body: [
+          "CSPM — continuous posture scanning across AWS, Azure and GCP",
+          "Misconfiguration detection — exposed storage, services and ports",
+          "Identity & permission review — eliminate excessive access",
+          "Compliance monitoring — map findings to ISO, NIST and DPDP",
+          "Workload protection — secure containers and virtual machines",
+          "Remediation guidance — fix findings with clear priorities",
+        ],
+      },
+      {
+        heading: "What You Get",
+        body: [
+          "A clear, continuous view of your cloud risk",
+          "Misconfigurations found and fixed before they're exploited",
+          "Least-privilege permissions across cloud accounts",
+          "Compliance evidence for audits and regulators",
+        ],
+      },
+      {
+        heading: "Why Choose CoreGenix",
+        body: [
+          "Continuous posture scanning across AWS, Azure and GCP",
+          "Misconfigurations prioritised by real risk, not noise",
+          "Permissions reviewed and reduced to least privilege",
+          "Findings mapped to the frameworks you must follow",
+          "22+ years across cloud and security architecture",
+          "Mumbai base, Pan-India delivery",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What is CSPM?",
+        a: "Cloud Security Posture Management (CSPM) continuously scans your cloud accounts for misconfigurations, excessive permissions and compliance drift, so you can fix risks before attackers exploit them.",
+      },
+      {
+        q: "Why is cloud security different from traditional security?",
+        a: "Cloud environments change constantly and are API-driven. Most cloud breaches come from misconfigurations and identity issues rather than malware, so continuous, automated posture management is essential.",
+      },
+      {
+        q: "How much does cloud security / CSPM cost in India?",
+        a: "It depends on the number of cloud accounts, workloads and providers. Contact CoreGenix for a free cloud security assessment.",
+      },
+    ],
+    cta: "Find cloud misconfigurations before attackers do. Get a free CSPM assessment today.",
+  },
 ];
 
 export const solutionSlugMap: Record<string, string> = Object.fromEntries(

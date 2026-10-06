@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import Reveal from "./Reveal";
-import { ArrowRightIcon, CalendarIcon, UserIcon } from "./Icons";
+import { ArrowRightIcon, CalendarIcon, UserIcon, SearchIcon, CloseIcon } from "./Icons";
 import type { BlogPost } from "@/data/posts";
 
 const ALL = "All";
@@ -14,6 +14,7 @@ function categoryFrom(post: BlogPost) {
 
 export default function BlogList({ posts }: { posts: BlogPost[] }) {
   const [active, setActive] = useState(ALL);
+  const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
   const PER_PAGE = 9;
 
@@ -23,9 +24,33 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
     return [ALL, ...Array.from(seen)];
   }, [posts]);
 
-  const featured = posts[0];
-  const filtered = active === ALL ? posts.slice(1) : posts.filter((p) => p.tag === active);
-  const showFeatured = active === ALL ? Boolean(featured) : false;
+  const counts = useMemo(() => {
+    const c: Record<string, number> = { [ALL]: posts.length };
+    posts.forEach((p) => {
+      c[p.tag] = (c[p.tag] ?? 0) + 1;
+    });
+    return c;
+  }, [posts]);
+
+  const searching = query.trim().length > 0;
+
+  const matches = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return posts.filter((post) => {
+      if (active !== ALL && post.tag !== active) return false;
+      if (!q) return true;
+      return (
+        post.title.toLowerCase().includes(q) ||
+        post.excerpt.toLowerCase().includes(q) ||
+        post.tag.toLowerCase().includes(q) ||
+        post.content.some((line) => line.toLowerCase().includes(q))
+      );
+    });
+  }, [posts, active, query]);
+
+  const showFeatured = active === ALL && !searching && matches.length > 0;
+  const featured = matches[0];
+  const filtered = showFeatured ? matches.slice(1) : matches;
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
   const current = Math.min(page, totalPages);
@@ -36,8 +61,41 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
     setPage(1);
   };
 
+  const changeQuery = (value: string) => {
+    setQuery(value);
+    setPage(1);
+  };
+
   return (
     <>
+      <p className="blog-total">
+        Browse all <strong>{posts.length}</strong> articles
+      </p>
+
+      <div className="blog-search">
+        <span className="blog-search-icon" aria-hidden="true">
+          <SearchIcon />
+        </span>
+        <input
+          type="search"
+          className="blog-search-input"
+          placeholder="Search articles by title, topic or keyword…"
+          value={query}
+          onChange={(e) => changeQuery(e.target.value)}
+          aria-label="Search articles"
+        />
+        {searching && (
+          <button
+            type="button"
+            className="blog-search-clear"
+            onClick={() => changeQuery("")}
+            aria-label="Clear search"
+          >
+            <CloseIcon />
+          </button>
+        )}
+      </div>
+
       {showFeatured && featured && (
         <Reveal className="blog-featured">
           <a href={`/blog/${featured.slug}`} className="blog-featured-media">
@@ -82,10 +140,34 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
             onClick={() => changeCategory(cat)}
           >
             {cat}
+            <span className="blog-cat-count">{counts[cat] ?? 0}</span>
           </button>
         ))}
       </div>
 
+      {(searching || active !== ALL) && (
+        <p className="blog-results" aria-live="polite">
+          {matches.length} {matches.length === 1 ? "article" : "articles"} found
+          {searching ? ` for “${query.trim()}”` : ` in ${active}`}
+        </p>
+      )}
+
+      {pageItems.length === 0 ? (
+        <div className="blog-empty">
+          <p>No articles found{searching ? ` for “${query.trim()}”` : ""}.</p>
+          <button
+            type="button"
+            className="btn btn-grad"
+            onClick={() => {
+              setQuery("");
+              setActive(ALL);
+              setPage(1);
+            }}
+          >
+            Clear filters
+          </button>
+        </div>
+      ) : (
       <div className="blog-grid blog-page-grid">
         {pageItems.map((post, i) => (
           <Reveal key={post.title} delay={(i % 3) + 1}>
@@ -122,6 +204,7 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
           </Reveal>
         ))}
       </div>
+      )}
 
       {totalPages > 1 && (
         <nav className="blog-pagination" aria-label="Blog pagination">

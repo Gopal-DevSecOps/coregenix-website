@@ -20,6 +20,8 @@ import {
   ScanIcon,
   ShieldAlertIcon,
   BugIcon,
+  AppIcon,
+  EmailTrapIcon,
   FileTextIcon,
   BoxIcon,
   RouteIcon,
@@ -40,6 +42,7 @@ export interface SolutionCategory {
     desc: string;
     features: string[];
     href: string;
+    image?: string;
   }[];
 }
 
@@ -95,6 +98,10 @@ const solutionIcons: Record<string, IconType> = {
   "zero-trust": ShieldCheckIcon,
   "data-loss-prevention": EyeIcon,
   "edr-mdr-xdr": CpuIcon,
+  "email-security": EmailTrapIcon,
+  "application-security": AppIcon,
+  "siem-soar-ueba": ActivityIcon,
+  "cloud-security-cspm": CloudIcon,
   "grc-cyber-audits": ClipboardCheckIcon,
   "risk-management": ActivityIcon,
   compliance: AwardIcon,
@@ -121,6 +128,10 @@ const solutionTitles: Record<string, string> = {
   "zero-trust": "Zero Trust Security",
   "data-loss-prevention": "Data Loss Prevention (DLP)",
   "edr-mdr-xdr": "EDR / MDR / XDR",
+  "email-security": "Email Security",
+  "application-security": "Application Security",
+  "siem-soar-ueba": "SIEM, SOAR & UEBA",
+  "cloud-security-cspm": "Cloud Security (CSPM)",
   "grc-cyber-audits": "GRC & Cyber Audits",
   "risk-management": "IT Risk Management",
   compliance: "IT Compliance Services",
@@ -130,6 +141,16 @@ const solutionTitles: Record<string, string> = {
   "it-policy-security-policy": "IT & Security Policies",
   "isms-cyber-security": "ISMS & ISO 27001",
   "bcp-dr": "BCP & Disaster Recovery",
+};
+
+const solutionImages: Record<string, string> = {
+  network: "/images/coregenix/network-infrastructure-solutions.png",
+  "data-center": "/images/coregenix/data-center-solutions.png",
+  "data-backup": "/images/coregenix/data-backup-solutions.png",
+  "disaster-recovery-bcp": "/images/coregenix/disaster-recovery-bcp-solutions.png",
+  "private-cloud": "/images/coregenix/private-cloud-solutions.png",
+  "public-cloud": "/images/coregenix/public-cloud-solutions.png",
+  "hybrid-cloud": "/images/coregenix/hybrid-cloud-solutions.png",
 };
 
 export const solutionCategories: SolutionCategory[] = categoryMeta.map((cat) => {
@@ -145,6 +166,7 @@ export const solutionCategories: SolutionCategory[] = categoryMeta.map((cat) => 
         desc: p.intro,
         features: (provideSection?.body ?? []).slice(0, 3),
         href: `/solutions/${p.slug}`,
+        image: solutionImages[p.slug],
       };
     });
   return { ...cat, solutions };

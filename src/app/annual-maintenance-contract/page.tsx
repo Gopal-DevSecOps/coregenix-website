@@ -201,10 +201,10 @@ export default function AmcLandingPage() {
             <Reveal className="amc-hero-media" delay={3}>
               <div className="amc-hero-img">
                 <Image
-                  src="/images/coregenix/service-1.jpg"
+                  src="/images/coregenix/amc.png"
                   alt="Annual Maintenance Contract services"
-                  width={900}
-                  height={600}
+                  width={1672}
+                  height={941}
                   className="main-img"
                 />
               </div>
