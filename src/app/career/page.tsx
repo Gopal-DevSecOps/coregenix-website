@@ -58,7 +58,7 @@ const jobs = [
     title: "Enterprise Account Manager",
     type: "Full Time",
     location: "Mumbai (Hybrid)",
-    openings: "2",
+    openings: "1",
     desc: "Own and grow relationships with enterprise clients, driving revenue across CoreGenix's IT infrastructure, cloud, and cyber security portfolio. Manage the full account lifecycle — from renewals to upsells — working closely with our technical team to design solutions that match client needs.",
     tags: ["Enterprise Sales", "Account Management", "Client Relationships"],
   },
@@ -66,7 +66,7 @@ const jobs = [
     title: "Business Development Executive",
     type: "Full Time",
     location: "Mumbai",
-    openings: "2",
+    openings: "1",
     desc: "Identify and pursue new business opportunities for CoreGenix's IT infrastructure and cyber security services. Generate qualified leads, build a pipeline through outreach and networking, and work with the sales team to convert prospects into long-term clients.",
     tags: ["Lead Generation", "B2B Sales", "Client Outreach"],
   },
@@ -74,7 +74,7 @@ const jobs = [
     title: "Inside Sales Representative",
     type: "Full Time",
     location: "Mumbai",
-    openings: "4",
+    openings: "2",
     desc: "Handle inbound and outbound sales conversations for CoreGenix's IT and cyber security services. Qualify leads, schedule demos and consultations, and maintain accurate CRM records to keep the sales pipeline moving efficiently.",
     tags: ["Inside Sales", "CRM", "Lead Qualification"],
   },
@@ -194,7 +194,7 @@ export default function CareerPage() {
                         </span>
                       ))}
                     </div>
-                    <a href="mailto:sales@cgcein.com?subject=Application%20for%20job" className="job-apply">
+                    <a href={`mailto:${SITE.email}?subject=Application%20for%20job`} className="job-apply">
                       Apply Now
                       <ArrowRightIcon />
                     </a>
@@ -236,9 +236,14 @@ export default function CareerPage() {
                     <ClockIcon />
                   </span>
                   <h2>Don&apos;t see the right role?</h2>
-                  <p>We&apos;re always looking for great talent. Send us your resume and we&apos;ll keep you in mind.</p>
+                  <p>We&apos;re always looking for great talent. Email your resume to{" "}
+                    <a className="career-cta-email" href={`mailto:${SITE.email}?subject=Open%20Application%20-%20Resume`}>
+                      {SITE.email}
+                    </a>{" "}
+                    and we&apos;ll keep you in mind.
+                  </p>
                 </div>
-                <a href="mailto:sales@cgcein.com?subject=Open%20Application" className="btn btn-light">
+                <a href={`mailto:${SITE.email}?subject=Open%20Application%20-%20Resume`} className="btn btn-light">
                   Send Your Resume
                   <ArrowRightIcon />
                 </a>

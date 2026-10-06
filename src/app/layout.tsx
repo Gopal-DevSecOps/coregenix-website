@@ -66,8 +66,8 @@ export const metadata: Metadata = {
     images: [`${SITE.url}/images/coregenix/logo.png`],
   },
   icons: {
-    icon: [{ url: "/images/coregenix/logo.png", type: "image/png", sizes: "512x512" }],
-    apple: [{ url: "/images/coregenix/logo.png", type: "image/png", sizes: "180x180" }],
+    icon: [{ url: "/favicon.ico", sizes: "any" }],
+    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
     shortcut: "/favicon.ico",
   },
 };
