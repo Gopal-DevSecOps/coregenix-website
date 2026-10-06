@@ -323,7 +323,7 @@ export default function AboutPage() {
               </details>
               <details className="faq-item">
                 <summary>When was CoreGenix founded?<span className="plus" /></summary>
-                <div className="answer">CoreGenix was founded in 2004 as CG Consultancy and Engineering Services (CGCES) and has over 18 years of experience in IT and cyber security.</div>
+                <div className="answer">CoreGenix was founded in 2004 as CG Consultancy and Engineering Services (CGCES) and has over 22 years of experience in IT and cyber security.</div>
               </details>
               <details className="faq-item">
                 <summary>Where is CoreGenix located?<span className="plus" /></summary>
