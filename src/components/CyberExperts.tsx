@@ -40,7 +40,7 @@ export default function CyberExperts() {
 
           <div className="ce-content">
             <Wow delay={300} as="p" className="ce-text">
-              For over 15 years, we have safeguarded organizations from evolving cyber
+              For over 22 years, we have safeguarded organizations from evolving cyber
               threats. Our team provides end-to-end security solutions — from proactive
               threat detection and vulnerability assessments to rapid incident response —
               ensuring your data, systems, and reputation stay fully protected in an
