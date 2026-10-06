@@ -39,6 +39,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "2M9vqrD-oSvS0pHB9IynaWCEFxe0a-VPxlzwp1rDShA",
+  },
   alternates: {
     canonical: "/",
   },
@@ -119,6 +122,10 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <head>
+        <meta
+          name="google-site-verification"
+          content="2M9vqrD-oSvS0pHB9IynaWCEFxe0a-VPxlzwp1rDShA"
+        />
         <JsonLd data={organizationJsonLd} />
         <JsonLd data={websiteJsonLd} />
       </head>
