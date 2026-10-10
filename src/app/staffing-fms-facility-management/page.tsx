@@ -11,6 +11,7 @@ import JsonLd from "@/components/JsonLd";
 import { CheckIcon, ArrowRightIcon } from "@/components/Icons";
 import { SITE } from "@/lib/site";
 import "../services/[slug]/backup-recovery.css";
+import "../services/[slug]/service-landing.css";
 
 export const metadata: Metadata = {
   title: "IT, Data Center & Cyber Security Staffing India | CoreGenix",

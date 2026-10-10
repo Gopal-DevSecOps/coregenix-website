@@ -411,7 +411,7 @@
 .brr-rule-item p {
   font-size: 14.5px;
   color: var(--text-muted);
-  text-align: center !important;
+  text-align: justify !important;
 }
 
 /* TABLES */
@@ -581,13 +581,20 @@
   max-width: 1000px;
   margin: 0 auto;
 }
+.brr-tags > .wow-element {
+  display: inline-flex;
+}
+
 .brr-tag {
+  display: inline-flex;
+  align-items: center;
   background: var(--bg-darker);
   border: 1px solid var(--border);
   border-radius: 100px;
   padding: 10px 22px;
   font-size: 14px;
   font-weight: 600;
+  line-height: 1.4;
   color: var(--navy);
   font-family: var(--font-body);
   transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;

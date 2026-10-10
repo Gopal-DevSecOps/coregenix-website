@@ -75,6 +75,11 @@ ${solutionPages
     .map((p) => `- [${p.title}](https://coregenix.com/solutions/${p.slug}): ${p.description}`)
     .join("\n")}
 
+## Products
+
+- [UniShield360](https://coregenix.com/unishield360): Unified Cyber Assurance Platform (UCAP) with 30+ built-in security products, NOC, SOC, TOC and vulnerability management
+- [Comply360](https://coregenix.com/comply360): AI-native DPDP compliance platform unifying consent, DSAR, gap assessment, PIA, ROPA, TPRM, breach management and policy store
+
 ## Rankings
 
 - [No. 1 Cyber Security Company in India](https://coregenix.com/no-1-cyber-security-company-india)

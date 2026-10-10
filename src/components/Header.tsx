@@ -136,6 +136,7 @@ const menu: MenuItem[] = [
     ],
   },
   { label: "UniShield360", href: "/unishield360" },
+  { label: "Comply360", href: "/comply360" },
   { label: "Blog", href: "/blog" },
   { label: "Career", href: "/career" },
   { label: "Contact", href: "/contact" },

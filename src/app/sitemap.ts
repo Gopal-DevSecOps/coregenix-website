@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/career`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.5 },
     { url: `${base}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
     { url: `${base}/unishield360`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/comply360`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
   ];
 
   const serviceRoutes: MetadataRoute.Sitemap = services.map((s) => ({
