@@ -3,7 +3,7 @@ import Link from "next/link";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import CtaSection from "./CtaSection";
-import { CheckIcon, ArrowRightIcon } from "./Icons";
+import { CheckIcon, ArrowRightIcon, NetworkIcon, ServerIcon, DatabaseIcon, RefreshIcon } from "./Icons";
 
 const stats = [
   { value: "22+", label: "Years of experience" },
@@ -13,10 +13,34 @@ const stats = [
 ];
 
 const pillars = [
-  { stage: "Connect", title: "Network", desc: "Reliable, scalable, secure connectivity across your business.", href: "/solutions/network" },
-  { stage: "Host", title: "Data Center", desc: "From a single rack to a full enterprise facility, planned and built right.", href: "/solutions/data-center" },
-  { stage: "Protect", title: "Data Backup", desc: "Automated backup that restores fast when disaster strikes.", href: "/solutions/data-backup" },
-  { stage: "Recover", title: "DR & Business Continuity", desc: "Defined recovery plans that keep the business running through disruption.", href: "/solutions/disaster-recovery-bcp" },
+  {
+    title: "Network",
+    desc: "Reliable, scalable, secure connectivity across your business.",
+    href: "/solutions/network",
+    icon: NetworkIcon,
+    features: ["LAN, WAN & SD-WAN design", "Structured copper & fiber cabling", "Secure enterprise Wi-Fi"],
+  },
+  {
+    title: "Data Center",
+    desc: "From a single rack to a full enterprise facility, planned and built right.",
+    href: "/solutions/data-center",
+    icon: ServerIcon,
+    features: ["Design, capacity & power planning", "Server room build-out", "Server & virtualization platforms"],
+  },
+  {
+    title: "Data Backup",
+    desc: "Automated backup that restores fast when disaster strikes.",
+    href: "/solutions/data-backup",
+    icon: DatabaseIcon,
+    features: ["Automated server & database backup", "Fast on-premise restore", "Offsite cloud backup"],
+  },
+  {
+    title: "DR & Business Continuity",
+    desc: "Defined recovery plans that keep the business running through disruption.",
+    href: "/solutions/disaster-recovery-bcp",
+    icon: RefreshIcon,
+    features: ["RPO & RTO defined for your business", "Replicated failover systems", "Business continuity planning"],
+  },
 ];
 
 const subservices = [
@@ -185,19 +209,24 @@ export default function ItInfraSolutionsLanding() {
             desc="From the network that connects you to the recovery plan that saves you — CoreGenix builds and manages the whole stack."
           />
           <div className="brr-deliver-grid">
-            {pillars.map((item, i) => (
-              <Reveal key={item.stage} delay={(i % 4) + 1}>
-                <div className="brr-deliver-card">
-                  <span className="brr-deliver-num">{item.stage}</span>
-                  <h3>{item.title}</h3>
-                  <p className="brr-deliver-tag">{item.desc}</p>
-                  <Link href={item.href} className="brr-deliver-link">
-                    Learn more
-                    <ArrowRightIcon />
-                  </Link>
-                </div>
-              </Reveal>
-            ))}
+            {pillars.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <Reveal key={item.title} delay={(i % 4) + 1}>
+                  <article className="service-page-card">
+                    <span className="icon-box"><Icon /></span>
+                    <h3>{item.title}</h3>
+                    <p>{item.desc}</p>
+                    <ul className="service-features">
+                      {item.features.map((feature) => (
+                        <li key={feature}><CheckIcon />{feature}</li>
+                      ))}
+                    </ul>
+                    <Link href={item.href} className="service-link">Learn More<ArrowRightIcon /></Link>
+                  </article>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>

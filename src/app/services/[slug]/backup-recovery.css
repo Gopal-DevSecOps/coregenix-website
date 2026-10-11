@@ -208,6 +208,12 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
+.brr-deliver-grid > .wow-element {
+  display: flex;
+}
+.brr-deliver-grid .service-page-card {
+  width: 100%;
+}
 .brr-deliver-card {
   position: relative;
   background: var(--bg-card);
@@ -559,17 +565,27 @@
 .brr-deliver-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
   color: var(--gold);
   font-family: var(--font-button);
-  font-size: 14px;
-  font-weight: 600;
-  margin-top: 14px;
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  margin-top: 16px;
   transition: color 0.3s ease, gap 0.3s ease;
+}
+.brr-deliver-link svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 .brr-deliver-link:hover {
   color: var(--gold-bright);
-  gap: 12px;
+  gap: 13px;
+}
+.brr-deliver-link:hover svg {
+  transform: translateX(3px);
 }
 
 /* TAGS / CHIPS */
